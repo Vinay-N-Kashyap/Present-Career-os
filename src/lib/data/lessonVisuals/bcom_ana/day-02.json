@@ -10,11 +10,11 @@
       "codeHash": "6941b78bbe0ff456be9ca87653ef1250f570014c0a6ffceb644b8be273a9c26f",
       "spec": {
         "template": "bars",
-        "title": "Logistic Regression Credit Scoring & Default ... — Quantitative KPI Distribution",
+        "title": "Logistic Regression Credit Scoring & Default Probability Engine — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Logistic Regression Credit Scoring ...",
+            "caption": "Baseline KPI cohort metrics for Logistic Regression Credit Scoring.",
             "max": 100,
             "bars": [
               {
@@ -95,7 +95,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Logistic Regression Credit ...",
+            "caption": "Commit audited analytical dashboard for Logistic Regression Credit Scoring.",
             "max": 100,
             "bars": [
               {
@@ -124,11 +124,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Logistic Regression Credit Scoring & Default ... — Quantitative KPI Distribution",
+        "title": "Logistic Regression Credit Scoring & Default Probability Engine — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Logistic Regression Credit Scoring ...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Logistic Regression Credit Scoring.",
             "max": 100,
             "bars": [
               {
@@ -209,7 +209,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Logistic Regression Credit ...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -242,11 +242,11 @@
       "codeHash": "0ceae3eeb7c746b2d7640194e0cd480177ac18da9164b42dce5044c9ee381e16",
       "spec": {
         "template": "bars",
-        "title": "RFM Customer Lifetime Value & Behavioral Port... — Quantitative KPI Distribution",
+        "title": "RFM Customer Lifetime Value & Behavioral Portfolio Segmentation — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for RFM Customer Lifetime Value & Behav...",
+            "caption": "Baseline KPI cohort metrics for RFM Customer Lifetime Value.",
             "max": 100,
             "bars": [
               {
@@ -327,7 +327,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for RFM Customer Lifetime Value...",
+            "caption": "Commit audited analytical dashboard for RFM Customer Lifetime Value.",
             "max": 100,
             "bars": [
               {
@@ -356,11 +356,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "RFM Customer Lifetime Value & Behavioral Port... — Quantitative KPI Distribution",
+        "title": "RFM Customer Lifetime Value & Behavioral Portfolio Segmentation — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for RFM Customer Lifetime Value & Behav...",
+            "caption": "Step 1: Baseline KPI cohort metrics for RFM Customer Lifetime Value.",
             "max": 100,
             "bars": [
               {
@@ -441,7 +441,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for RFM Customer Lifetime Value...",
+            "caption": "Step 4: Commit audited analytical dashboard for RFM Customer Lifetime Value.",
             "max": 100,
             "bars": [
               {
@@ -474,11 +474,11 @@
       "codeHash": "60a4b1588d1f98e2fc63cbf88e138c8c77018398ba1d0d7813718f3b5d6f6750",
       "spec": {
         "template": "bars",
-        "title": "Time-Series Demand Forecasting with Multiplic... — Quantitative KPI Distribution",
+        "title": "Time-Series Demand Forecasting with Multiplicative Seasonality & Trend — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Time-Series Demand Forecasting with...",
+            "caption": "Baseline KPI cohort metrics.",
             "max": 100,
             "bars": [
               {
@@ -559,7 +559,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Time-Series Demand Forecast...",
+            "caption": "Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -588,11 +588,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Time-Series Demand Forecasting with Multiplic... — Quantitative KPI Distribution",
+        "title": "Time-Series Demand Forecasting with Multiplicative Seasonality & Trend — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Time-Series Demand Forecasting with...",
+            "caption": "Step 1: Baseline KPI cohort metrics.",
             "max": 100,
             "bars": [
               {
@@ -673,7 +673,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Time-Series Demand Forecast...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -706,11 +706,11 @@
       "codeHash": "44e65e901d8c9949cf7189b18fd1822b2b36379fd572fc008b46c3eb5635ac70",
       "spec": {
         "template": "bars",
-        "title": "A/B Testing Statistical Power & Minimum Detec... — Quantitative KPI Distribution",
+        "title": "A/B Testing Statistical Power & Minimum Detectable Effect (MDE) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for A/B Testing Statistical Power & Min...",
+            "caption": "Baseline KPI cohort metrics for A/B Testing Statistical Power.",
             "max": 100,
             "bars": [
               {
@@ -791,7 +791,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for A/B Testing Statistical Pow...",
+            "caption": "Commit audited analytical dashboard for A/B Testing Statistical Power.",
             "max": 100,
             "bars": [
               {
@@ -820,11 +820,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "A/B Testing Statistical Power & Minimum Detec... — Quantitative KPI Distribution",
+        "title": "A/B Testing Statistical Power & Minimum Detectable Effect (MDE) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for A/B Testing Statistical Power & Min...",
+            "caption": "Step 1: Baseline KPI cohort metrics for A/B Testing Statistical Power.",
             "max": 100,
             "bars": [
               {
@@ -905,7 +905,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for A/B Testing Statistical Pow...",
+            "caption": "Step 4: Commit audited analytical dashboard for A/B Testing Statistical Power.",
             "max": 100,
             "bars": [
               {
@@ -938,11 +938,11 @@
       "codeHash": "006c8b332688ffc555fa7764b7ad44d94a5f2f53ae175590af9bb65e4d67d723",
       "spec": {
         "template": "bars",
-        "title": "Executive Revenue Decomposition & NRR Cohort ... — Quantitative KPI Distribution",
+        "title": "Executive Revenue Decomposition & NRR Cohort Retention Matrix — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Executive Revenue Decomposition & N...",
+            "caption": "Baseline KPI cohort metrics for Executive Revenue Decomposition.",
             "max": 100,
             "bars": [
               {
@@ -1023,7 +1023,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Executive Revenue Decomposi...",
+            "caption": "Commit audited analytical dashboard for Executive Revenue Decomposition.",
             "max": 100,
             "bars": [
               {
@@ -1052,11 +1052,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Executive Revenue Decomposition & NRR Cohort ... — Quantitative KPI Distribution",
+        "title": "Executive Revenue Decomposition & NRR Cohort Retention Matrix — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Executive Revenue Decomposition & N...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Executive Revenue Decomposition.",
             "max": 100,
             "bars": [
               {
@@ -1137,7 +1137,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Executive Revenue Decomposi...",
+            "caption": "Step 4: Commit audited analytical dashboard for Executive Revenue Decomposition.",
             "max": 100,
             "bars": [
               {

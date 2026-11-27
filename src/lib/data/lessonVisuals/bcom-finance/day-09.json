@@ -10,11 +10,11 @@
       "codeHash": "83d5e74e840a238795cccce53e0d2912f2df5a8e3ae05b236e423f8242e03a80",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The NPV Decision Rule & Theoretical Founda... — General Ledger Verification",
+        "title": "The NPV Decision Rule & Theoretical Foundations — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The NPV.",
+            "caption": "Open primary facility debit entry for The NPV Decision Rule.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 67800,
@@ -139,11 +139,11 @@
       "codeHash": "a726416e5be565f768608648af05b9a27ddecdf295ed50fdc251781815f96a2b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Free Cash Flow Modeling: Operating Inflows... — General Ledger Verification",
+        "title": "Free Cash Flow Modeling: Operating — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Free Cash Flow.",
+            "caption": "Open primary facility debit entry for Free Cash Flow Modeling.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 57750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69300,
@@ -268,11 +268,11 @@
       "codeHash": "0a034fd7ae9fccc43fa039dc079f92bb9e6ee0556b85785b779e33ea2899930c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "NPV Superiority Axioms & Value Additivity ... — General Ledger Verification",
+        "title": "NPV Superiority Axioms & Value Additivity Principle — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for NPV.",
+            "caption": "Open primary facility debit entry for NPV Superiority Axioms.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 59000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 70800,
@@ -397,11 +397,11 @@
       "codeHash": "6fa178033d0e26bcb21184a08f4b7e887f7ba480e5d4d5f9e797bf7cebafe54c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mutually Exclusive Project Selection: Scal... — General Ledger Verification",
+        "title": "Mutually Exclusive Project Selection: Scale & Timing Disparities — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Mutually.",
+            "caption": "Open primary facility debit entry for Mutually Exclusive Project Selection.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72300,
@@ -526,11 +526,11 @@
       "codeHash": "056aadf530c60be82672a646f6c41890886c263cad621ff61df321004cbc76c8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Executive Capital Allocation Suite & Sensi... — General Ledger Verification",
+        "title": "Executive Capital Allocation Suite & Sensitivity Matrix — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Executive.",
+            "caption": "Open primary facility debit entry for Executive Capital Allocation Suite.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73800,

@@ -10,11 +10,11 @@
       "codeHash": "2d3f52025547f6faf8cf494009434b29d1977ffe601ac2b41c915be38edbb3de",
       "spec": {
         "template": "ledger-sheet",
-        "title": "M&A Legal Due Diligence Architecture & Red-Fl... — General Ledger Verification",
+        "title": "M&A Legal Due Diligence Architecture & Red-Flag Risk Scoring — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for M&A Legal Due Diligence Archite...",
+            "caption": "Open primary debit entry for M&A Legal Due Diligence Architecture.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "M&A Legal Due Diligence Architecture & Red-Fl... — General Ledger Verification",
+        "title": "M&A Legal Due Diligence Architecture & Red-Flag Risk Scoring — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2950) for M&A Legal Due Diligence Archite...",
+            "caption": "Step 1: Open primary debit entry (2950).",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -264,11 +264,11 @@
       "codeHash": "57921d4280e7106fc556b8b55ae556c3c0420b34c064b5d50273de1f632150f2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Representations & Warranties, Indemnification... — General Ledger Verification",
+        "title": "Representations & Warranties, Indemnification Baskets, Caps & RWI Insurance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Representations & Warranties, I...",
+            "caption": "Open primary debit entry for Representations.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Representations & Warranties, Indemnification... — General Ledger Verification",
+        "title": "Representations & Warranties, Indemnification Baskets, Caps & RWI Insurance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3150) for Representations & Warranties, I...",
+            "caption": "Step 1: Open primary debit entry (3150) for Representations.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -518,11 +518,11 @@
       "codeHash": "4430b56f2c03a7dc07ddf09d11e894fa4a2b58987d71afd721f11d413ab0d619",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Material Adverse Effect (MAE / MAC) Clauses &... — General Ledger Verification",
+        "title": "Material Adverse Effect (MAE / MAC) Clauses & Deal Walkaway Litigation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Material Adverse Effect (MAE / ...",
+            "caption": "Open primary debit entry for Material Adverse Effect.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Material Adverse Effect (MAE / MAC) Clauses &... — General Ledger Verification",
+        "title": "Material Adverse Effect (MAE / MAC) Clauses & Deal Walkaway Litigation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3350) for Material Adverse Effect (MAE / ...",
+            "caption": "Step 1: Open primary debit entry (3350) for Material Adverse Effect.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -772,11 +772,11 @@
       "codeHash": "1bbe85d8be104e522b1f523e684e393f9341a9e863b8484985e81ae0f9391cb7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "FTC / DOJ Antitrust Merger Guidelines, Market... — General Ledger Verification",
+        "title": "FTC / DOJ Antitrust Merger Guidelines, Market Concentration & HHI Delta — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for FTC / DOJ Antitrust Merger Guid...",
+            "caption": "Open primary debit entry for FTC / DOJ Antitrust Merger Guidelines.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "FTC / DOJ Antitrust Merger Guidelines, Market... — General Ledger Verification",
+        "title": "FTC / DOJ Antitrust Merger Guidelines, Market Concentration & HHI Delta — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3550) for FTC / DOJ Antitrust Merger Guid...",
+            "caption": "Step 1: Open primary debit entry (3550).",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -1026,11 +1026,11 @@
       "codeHash": "7205e3627d8e43cda33f98b92a039ddec2f07aee266be04c284c93e21e4770f4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Breakup Fees, Reverse Breakup Fees & Deal Pro... — General Ledger Verification",
+        "title": "Breakup Fees, Reverse Breakup Fees & Deal Protection Covenants — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Breakup Fees, Reverse Breakup F...",
+            "caption": "Open primary debit entry for Breakup Fees.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Breakup Fees, Reverse Breakup Fees & Deal Pro... — General Ledger Verification",
+        "title": "Breakup Fees, Reverse Breakup Fees & Deal Protection Covenants — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3750) for Breakup Fees, Reverse Breakup F...",
+            "caption": "Step 1: Open primary debit entry (3750) for Breakup Fees.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,

@@ -10,11 +10,11 @@
       "codeHash": "c022afb04641e21f22035224e98b1ed6cc6a627f9e91ccb68fbb35f735912c8a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "CTO Cockpit Architecture & Unified Master Data Pip — Tax Governance Ledger",
+        "title": "CTO Cockpit Architecture & Unified Master Data Pipelines — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for CTO.",
+            "caption": "Open primary enterprise tax / governance ledger for CTO Cockpit Architecture.",
             "title": "Day 30 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1550000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 30 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1675000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise case study for CTO Cockpit Architecture &.",
+            "caption": "Execute simulated enterprise case study for CTO Cockpit Architecture.",
             "title": "Day 30 Enterprise Tax Ledger — Executive Audit",
             "isBalanced": true,
             "totalDebit": 1675000,
@@ -141,11 +141,11 @@
       "codeHash": "9aa4c00ff6eb1536c6648d8ac2f2767be667320549fbd479a5c340fe20440d4b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Direct Tax Engine: PGBP, MAT Sec 115JB & — Tax Governance Ledger",
+        "title": "Corporate Direct Tax Engine: PGBP, MAT Sec 115JB — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Corporate.",
+            "caption": "Open primary enterprise tax / governance ledger for Corporate Direct Tax Engine.",
             "title": "Day 30 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1565000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 30 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1697500,
@@ -272,11 +272,11 @@
       "codeHash": "35da5666771911f128f94f0161e1490f0a1a376882ba4abf78ff18859038d9eb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Indirect Tax Engine: Real-Time GST, GSTR-1/3B/2B & — Tax Governance Ledger",
+        "title": "Indirect Tax Engine: Real-Time GST, GSTR-1/3B/2B — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Indirect.",
+            "caption": "Open primary enterprise tax / governance ledger for Indirect Tax Engine.",
             "title": "Day 30 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1580000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 30 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1720000,
@@ -403,11 +403,11 @@
       "codeHash": "be01b792b4484a55a85e8616f29d7b455e201aa3c1f210b601ec8d7bffbd77a5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Transfer Pricing & International Tax  — Tax Governance Ledger",
+        "title": "Cross-Border Transfer Pricing & International Tax Defense Module — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for.",
+            "caption": "Open primary enterprise tax / governance ledger.",
             "title": "Day 30 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1595000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 30 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1742500,
@@ -534,11 +534,11 @@
       "codeHash": "a0776bd1a7b5653cf099565da288d1ac559ff8be10fd31ef702ee3f1fd8f5dd5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Integrated Master Capstone: The Chief Tax Officer  — Tax Governance Ledger",
+        "title": "Integrated Master Capstone: The Chief Tax Officer — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Integrated.",
+            "caption": "Open primary enterprise tax / governance ledger for Integrated Master Capstone.",
             "title": "Day 30 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1610000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 30 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1765000,

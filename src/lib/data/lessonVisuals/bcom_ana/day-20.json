@@ -8,7 +8,7 @@
       "codeHash": "a3ff4470f07b3dbbf32a7f3e31c92a3abc51f87f0ddac961623462e64f30c236",
       "spec": {
         "template": "bars",
-        "title": "Simple Exponential Smoothing (SES): Me... \u2014 Temporal Evaluation",
+        "title": "Simple Exponential Smoothing (SES): Memory Decay, Alpha Damping — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "76af2f98f8648d1dab8a997aa975cb34c8cdffa082641e4c9667951ba711c49f",
       "spec": {
         "template": "bars",
-        "title": "Holt's Linear Trend Method: Level Equa... \u2014 Temporal Evaluation",
+        "title": "Holt's Linear Trend Method: Level — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "791ad6ae6820794c4b504122f767c68a0ea073bf79c57a9faf108a25d2345979",
       "spec": {
         "template": "bars",
-        "title": "Damped Trend Filtering (Gardner-McKenz... \u2014 Temporal Evaluation",
+        "title": "Damped Trend Filtering (Gardner-McKenzie): Preventing Long-Horizon — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "0b57b5c897d43955541b40ce25d85bfe452ea3b0f79d10a0e776090e38b8a14c",
       "spec": {
         "template": "bars",
-        "title": "Holt-Winters Seasonal Filtering: Addit... \u2014 Temporal Evaluation",
+        "title": "Holt-Winters Seasonal Filtering: Additive vs Multiplicative Gamma — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "3120b589164dfeb8131f069f62ab73a87ad2eb5c821dd8a601c4b457e10fa5c7",
       "spec": {
         "template": "bars",
-        "title": "State-Space Innovations (ETS Models): ... \u2014 Temporal Evaluation",
+        "title": "State-Space Innovations (ETS Models): Automated Error-Trend-Seasonal — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",

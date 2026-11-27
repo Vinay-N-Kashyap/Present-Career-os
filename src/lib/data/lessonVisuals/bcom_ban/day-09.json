@@ -10,11 +10,11 @@
       "codeHash": "d994c03c90ae0f0fb3e07a3d7e3d01164c12aece6aede098348cc965187be0f9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Consumer Credit Expansion Dilemma & Re... — General Ledger Verification",
+        "title": "The Consumer Credit Expansion Dilemma & Retail Underwriting Boundaries — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Consumer Credit Expansion Dilemma.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 67800,
@@ -139,11 +139,11 @@
       "codeHash": "5ee9b8606623d3525060b8f71f341d057d66fe71f88b381532d5dec8f998b7e0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Residential Mortgages, Amortization Mechan... — General Ledger Verification",
+        "title": "Residential Mortgages, Amortization Mechanics & Prepayment Negative — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Residential.",
+            "caption": "Open primary facility debit entry for Residential Mortgages.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 57750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69300,
@@ -268,11 +268,11 @@
       "codeHash": "e82af2e5f230f75d906a222ac09d089154a6b4cf142c24cfeafe0161f53fa2ce",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Credit Bureau Scoring: FICO / CIBIL Scorec... — General Ledger Verification",
+        "title": "Credit Bureau Scoring: FICO / CIBIL — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Credit Bureau.",
+            "caption": "Open primary facility debit entry for Credit Bureau Scoring.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 59000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 70800,
@@ -397,11 +397,11 @@
       "codeHash": "03934c02ea9475e61cd7d68f6687c4e0024b74e5382ec0daf6360ef939561a32",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Unsecured Personal Lending, Revolving Cred... — General Ledger Verification",
+        "title": "Unsecured Personal Lending, Revolving Credit Cards & Charge-Off — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Unsecured.",
+            "caption": "Open primary facility debit entry for Unsecured Personal Lending.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72300,
@@ -526,11 +526,11 @@
       "codeHash": "7db535332d1f50f0a80d0495720568ab7147e4727458516b5aea71e150e5d6e1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synthesis, Post-Mortem & Consumer Credit R... — General Ledger Verification",
+        "title": "Synthesis, Post-Mortem & Consumer Credit Risk Governance Checklist — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Synthesis.",
+            "caption": "Open primary facility debit entry for Synthesis.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73800,

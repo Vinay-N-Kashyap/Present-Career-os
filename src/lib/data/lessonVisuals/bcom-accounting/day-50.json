@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Strategic Role of the Group CFO & Lead F... — Ledger Verification",
+        "title": "Strategic Role of the Group CFO & Lead Forensic Auditor in Corporate — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94005000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 1: Enterprise Liquidity Architect... — Ledger Verification",
+        "title": "Module 1: Enterprise Liquidity — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94010000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 2: 5-Stage Extended DuPont ROE De... — Ledger Verification",
+        "title": "Module 2: 5-Stage Extended DuPont ROE Decomposition, Capital Charge & Economic Value Added — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94015000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 3 & Module 4: Leverage Dynamics, ... — Ledger Verification",
+        "title": "Module 3 & Module 4: Leverage — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94020000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Grand Milestone 10 Verification, Audit C... — Ledger Verification",
+        "title": "Grand Milestone 10 Verification, Audit Certification & Block 10 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94025000,

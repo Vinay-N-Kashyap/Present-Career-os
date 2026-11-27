@@ -10,11 +10,11 @@
       "codeHash": "058285af3f5d6c784ce8947308c916359f234b6bd7149c16fc9dd5779a35f687",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Hart-Scott-Rodino (HSR) Antitrust Act & Pr... — General Ledger Verification",
+        "title": "Hart-Scott-Rodino (HSR) Antitrust Act & Premerger Notification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 130800,
@@ -139,11 +139,11 @@
       "codeHash": "d18f3f92ddf70735d15b11ed32971e4878e91635a39fb7015940099b55f2eb80",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The HSR Review Timeline, Second Requests &... — General Ledger Verification",
+        "title": "The HSR Review Timeline, Second Requests & Gun-Jumping Invariants — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The HSR Review.",
+            "caption": "Open primary facility debit entry for The HSR Review Timeline.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132300,
@@ -268,11 +268,11 @@
       "codeHash": "e1bb934c986279b656807e4125674f70754572bdaaa76d1454a12ab5ebc69a36",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Substantive Merger Antitrust Analysis: 202... — General Ledger Verification",
+        "title": "Substantive Merger Antitrust Analysis: 2023 FTC/DOJ Merger Guidelines — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 111500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 133800,
@@ -397,11 +397,11 @@
       "codeHash": "7205ceb7b9166d041b9190097476af598bcf36a0089ee4555f09d12f752aca48",
       "spec": {
         "template": "ledger-sheet",
-        "title": "CFIUS National Security Clearance & FIRRMA... — General Ledger Verification",
+        "title": "CFIUS National Security Clearance & FIRRMA Invariants — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for CFIUS National.",
+            "caption": "Open primary facility debit entry for CFIUS National Security Clearance.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 112750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 135300,
@@ -526,11 +526,11 @@
       "codeHash": "53d07e1e10a2f08b95f0a7b3f6d6ab8568322a0f9706cfc8743e56d0330bafa1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Contractual Regulatory Risk Allocation in ... — General Ledger Verification",
+        "title": "Contractual Regulatory Risk Allocation in Merger Agreements — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Contractual.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 114000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 136800,

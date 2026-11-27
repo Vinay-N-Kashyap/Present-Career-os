@@ -10,11 +10,11 @@
       "codeHash": "7414381dc69312c127d27767db2af4a39a1563628d902d1c1ceba578a85d7c68",
       "spec": {
         "template": "ledger-sheet",
-        "title": "TP Defense Cockpit Architecture & Associated Enter — International Tax Ledger",
+        "title": "TP Defense Cockpit Architecture & Associated Enterprise Diagnostics — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for TP Defense.",
+            "caption": "Open primary international tax / TP ledger for TP Defense Cockpit Architecture.",
             "title": "Day 20 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 850000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 20 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 945000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for TP Defense Cockpit.",
+            "caption": "Execute simulated cross-border case study for TP Defense Cockpit Architecture.",
             "title": "Day 20 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 945000,
@@ -141,11 +141,11 @@
       "codeHash": "248c7954a5515bc949217728cad81feaae3ce02cd40eaa38e06d7a373be6c73d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Arm's Length Range Benchmarking & TNMM Dispute Set — International Tax Ledger",
+        "title": "Arm's Length Range Benchmarking & TNMM Dispute Settlement Simulator — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Arm's Length.",
+            "caption": "Open primary international tax / TP ledger for Arm's Length Range Benchmarking.",
             "title": "Day 20 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 860000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 20 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 960000,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Arm's Length Range.",
+            "caption": "Execute simulated cross-border case study for Arm's Length Range Benchmarking.",
             "title": "Day 20 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 960000,
@@ -272,11 +272,11 @@
       "codeHash": "722909d3da985c0de285a1afd81f3c2720690e77579b3d5e91785674eef23199",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Secondary Adjustment & Repatriation Cockpit with S — International Tax Ledger",
+        "title": "Secondary Adjustment & Repatriation Cockpit with Sec 92CE(2A) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Secondary.",
+            "caption": "Open primary international tax / TP ledger for Secondary Adjustment.",
             "title": "Day 20 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 870000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 20 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 975000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Secondary Adjustment &.",
+            "caption": "Execute simulated cross-border case study for Secondary Adjustment.",
             "title": "Day 20 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 975000,
@@ -403,11 +403,11 @@
       "codeHash": "439038d017afdf154bdaa47a5f983ce15f71238eaf43f236044deb5891df633a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Withholding, DTAA & Form 15CA/CB Exec — International Tax Ledger",
+        "title": "Cross-Border Withholding, DTAA & Form 15CA/CB Execution Engine — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Cross-Border.",
+            "caption": "Open primary international tax / TP ledger for Cross-Border Withholding.",
             "title": "Day 20 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 880000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 20 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 990000,
@@ -534,11 +534,11 @@
       "codeHash": "b8be5972632e3fe153b233616ba993feac661dfdcc69bc28cd5e3c4dcce9eb98",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Integrated Master Capstone: The Global Transfer Pr — International Tax Ledger",
+        "title": "Integrated Master Capstone: The Global Transfer Pricing — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Integrated.",
+            "caption": "Open primary international tax / TP ledger for Integrated Master Capstone.",
             "title": "Day 20 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 890000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 20 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1005000,

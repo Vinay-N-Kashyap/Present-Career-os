@@ -313,7 +313,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Stochastic Demand Pooling  Safet Funnel",
+        "title": "Stochastic Demand Pooling Safet Funnel",
         "steps": [
           {
             "at": "intro",

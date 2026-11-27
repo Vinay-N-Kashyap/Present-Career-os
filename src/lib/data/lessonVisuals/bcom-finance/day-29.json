@@ -10,11 +10,11 @@
       "codeHash": "c22f68aa47f5f633cf4ecaf6feb4d63c3ac38155016bc595572aa20f75ca733e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Efficient Market Hypothesis (EMH) vs B... — General Ledger Verification",
+        "title": "The Efficient Market Hypothesis (EMH) vs Behavioral Realities — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Efficient Market Hypothesis.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 126500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 151800,
@@ -139,11 +139,11 @@
       "codeHash": "932987de973e3b41c5c263272b1a559121a4af3bc942d5f92e6927b74e2c446f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Prospect Theory & Cognitive Investor Biase... — General Ledger Verification",
+        "title": "Prospect Theory & Cognitive Investor Biases — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Prospect.",
+            "caption": "Open primary facility debit entry for Prospect Theory.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 127750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 153300,
@@ -268,11 +268,11 @@
       "codeHash": "9216d339b6db6978a14628d0311854722b669865ddf2910fef632f60fbda0267",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Market Anomalies: Momentum, Value, and Her... — General Ledger Verification",
+        "title": "Market Anomalies: Momentum, Value — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Market.",
+            "caption": "Open primary facility debit entry for Market Anomalies.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 129000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 154800,
@@ -397,11 +397,11 @@
       "codeHash": "be9df4a5dbdeb847f292fa8817ccbc7b18ec8eacb3f97243b850ee86c7dd2d16",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Governance: The Agency Problem &... — General Ledger Verification",
+        "title": "Corporate Governance: The Agency Problem — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Corporate.",
+            "caption": "Open primary facility debit entry for Corporate Governance.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 130250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 156300,
@@ -526,11 +526,11 @@
       "codeHash": "9f3bed97d5ec96c611d6165760c0f7c5aeca2a5faef324590bb807805911eba8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Stewardship, ESG Metrics & Regul... — General Ledger Verification",
+        "title": "Corporate Stewardship, ESG Metrics & Regulatory Compliance Frameworks — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Corporate.",
+            "caption": "Open primary facility debit entry for Corporate Stewardship.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 131500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 157800,

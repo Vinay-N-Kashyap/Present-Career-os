@@ -10,11 +10,11 @@
       "codeHash": "5d43954e0102553c1d370c13059de06609e29f9ac3a3d7300793783f51c932f2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Triple-Column Cash Book Architecture: Cash... — General Ledger Verification",
+        "title": "Triple-Column Cash Book Architecture: Cash — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Triple-Column.",
+            "caption": "Open primary facility debit entry for Triple-Column Cash Book Architecture.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 46000,
@@ -139,11 +139,11 @@
       "codeHash": "a5178e9b7fd06aa3728047c82f928bbcc5a284e50e745b6f20b680d1d6f94ec3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Analytical Petty Cash Book & The Imprest F... — General Ledger Verification",
+        "title": "Analytical Petty Cash Book & The Imprest Float Replenishment System — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Analytical.",
+            "caption": "Open primary facility debit entry for Analytical Petty Cash Book.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 47250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 56700,
@@ -268,11 +268,11 @@
       "codeHash": "e3920004d6bdd14047d5230b0735a8e1acb1f28df20660095c9bed017b671433",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bank Overdraft Facilities, Daily Interest ... — General Ledger Verification",
+        "title": "Bank Overdraft Facilities, Daily Interest Accruals & Credit Waterfall — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Bank.",
+            "caption": "Open primary facility debit entry for Bank Overdraft Facilities.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 48500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 58200,
@@ -397,11 +397,11 @@
       "codeHash": "b2c3cc87d6cdb15b9ff51d8b4fc946cdcd64892fb856ca62fe8188de26c9ed2e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cheque Clearing Lifecycle: Dishonour, Stal... — General Ledger Verification",
+        "title": "Cheque Clearing Lifecycle: Dishonour — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cheque.",
+            "caption": "Open primary facility debit entry for Cheque Clearing Lifecycle.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59700,
@@ -526,11 +526,11 @@
       "codeHash": "e37fb2d6a018e85e8b911d4c633ca586ea233ace565e52bf3d8d211fe039587e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cash Book Audit Trail, Segregation of Duti... — General Ledger Verification",
+        "title": "Cash Book Audit Trail, Segregation of Duties & General Ledger Closure — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cash Book.",
+            "caption": "Open primary facility debit entry for Cash Book Audit Trail.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 51000,

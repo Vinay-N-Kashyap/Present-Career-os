@@ -8,7 +8,7 @@
       "codeHash": "40751484e5cc335d0ae75ed7bb07f3076dda3431ed3b37f8eb46c195b5b45a26",
       "spec": {
         "template": "bars",
-        "title": "High-Dimensional Business Data, Multic... — Learning Evaluation",
+        "title": "High-Dimensional Business Data, Multicollinearity Breakdown — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "c79c06cae954f5a67abe802ad08bbf9e13a2d802e58fb84eab51070d2246f801",
       "spec": {
         "template": "bars",
-        "title": "Ridge Regression (L2 Regularization): ... — Learning Evaluation",
+        "title": "Ridge Regression (L2 Regularization): Tikhonov Regularization & Smooth Shrinkage Physics — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "193a03d74c3f386ff54f29795f63d8203b82a0b3f4e9c5a0168cb429030451da",
       "spec": {
         "template": "bars",
-        "title": "Lasso Regression (L1 Regularization): ... — Learning Evaluation",
+        "title": "Lasso Regression (L1 Regularization): Sparsity Geometry — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "0b25e922a0d5cc6a248e5eaf0e6d5c0b87d694a017f8f7c20e42f752858fac51",
       "spec": {
         "template": "bars",
-        "title": "ElasticNet: Balancing L1 Sparsity & L2... — Learning Evaluation",
+        "title": "ElasticNet: Balancing L1 Sparsity — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "298f3f0d35bfc9d8f5fab895c992b843c6c51760896e38fb9a3957885d6a7c70",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise High-Dimensiona... — Learning Evaluation",
+        "title": "Building an Enterprise High-Dimensional ElasticNet Predictor in Python — Learning Evaluation",
         "steps": [
           {
             "at": "intro",

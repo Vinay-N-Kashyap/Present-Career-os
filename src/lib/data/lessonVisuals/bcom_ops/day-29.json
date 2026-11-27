@@ -10,7 +10,7 @@
       "codeHash": "7c73c1006266470c77420100d15acc08c7f1fc0031518a4e3fab51fa538dabfa",
       "spec": {
         "template": "workflow",
-        "title": "Edge Computer Vision & High-Speed Optical Def... — Operational Workflow",
+        "title": "Edge Computer Vision & High-Speed Optical Defect Inspection — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Edge Computer Vision & High-Speed Optical Def... — Operational Workflow",
+        "title": "Edge Computer Vision & High-Speed Optical Defect Inspection — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Edge Computer Vision & High-Speed Optica...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Edge Computer Vision & High-Speed",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "bd81478b7f65150d6464f0aa127ca93157e07d446f68950e707c37d231d40c2d",
       "spec": {
         "template": "workflow",
-        "title": "AI Predictive Maintenance (PdM) & Vibration T... — Operational Workflow",
+        "title": "AI Predictive Maintenance (PdM) & Vibration Telemetry Anomaly — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -380,7 +380,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize AI Predictive Maintenance (PdM) &.",
+            "caption": "Stage one (Demand Forecast): Initialize AI Predictive Maintenance (PdM).",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "AI Predictive Maintenance (PdM) & Vibration T... — Operational Workflow",
+        "title": "AI Predictive Maintenance (PdM) & Vibration Telemetry Anomaly — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize AI Predictive Maintenance (PdM) & Vibrat...",
+            "caption": "Stage 1 (Demand Forecast): Initialize AI Predictive Maintenance (PdM)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "9fc4e7547156cab7655c73c3f968c3e1089a7b61abc4fc515d6dc09c79acb19f",
       "spec": {
         "template": "workflow",
-        "title": "Robotic Process Automation (RPA) & Generative... — Operational Workflow",
+        "title": "Robotic Process Automation (RPA) & Generative AI in Procurement — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Robotic Process Automation (RPA) & Generative... — Operational Workflow",
+        "title": "Robotic Process Automation (RPA) & Generative AI in Procurement — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Robotic Process Automation (RPA) & Gener...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Robotic Process Automation (RPA)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "ce33c19447044edc827f4b0a530cc40aa4c6fabddb59cfb45b75b5fcd3086f65",
       "spec": {
         "template": "workflow",
-        "title": "Autonomous Logistics Optimization: Dynamic Ro... — Operational Workflow",
+        "title": "Autonomous Logistics Optimization: Dynamic — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Autonomous Logistics Optimization: Dynamic Ro... — Operational Workflow",
+        "title": "Autonomous Logistics Optimization: Dynamic — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Autonomous Logistics Optimization: Dynam...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Autonomous Logistics Optimization: Dynam",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "8b5940b4455f3690ab00e4081dd43e0d159df76d722f7b9b191da1587ae44908",
       "spec": {
         "template": "workflow",
-        "title": "Executive Synthesis: The Master AI & Autonomo... — Operational Workflow",
+        "title": "Executive Synthesis: The Master AI & Autonomous Operations Performance Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Executive Synthesis: The Master AI & Autonomo... — Operational Workflow",
+        "title": "Executive Synthesis: The Master AI & Autonomous Operations Performance Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Executive Synthesis: The Master AI & Aut...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Executive Synthesis: The Master AI",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

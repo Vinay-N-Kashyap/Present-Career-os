@@ -162,7 +162,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "IoT Sensor Telemetry  Mean Kinet Funnel",
+        "title": "IoT Sensor Telemetry Mean Kinet Funnel",
         "steps": [
           {
             "at": "intro",
@@ -313,7 +313,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "RealTime Hazard Detection  Autom Funnel",
+        "title": "RealTime Hazard Detection Autom Funnel",
         "steps": [
           {
             "at": "intro",

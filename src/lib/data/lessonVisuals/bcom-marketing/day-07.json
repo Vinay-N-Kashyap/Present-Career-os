@@ -10,11 +10,11 @@
       "codeHash": "bac33b00d4b3034ea4a5a9904496e49d821368f64af3803da094f0edb8ebb0b0",
       "spec": {
         "template": "funnel",
-        "title": "The 4 Classical Market Coverage Postures: ... — Conversion Funnel",
+        "title": "The 4 Classical Market Coverage Postures: From Mass Commodity — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "ba53d85ed2f703873368388deacc3a9fc0e13811647adc0163f2968b8cc297ca",
       "spec": {
         "template": "funnel",
-        "title": "Structural Segment Attractiveness: Porter'... — Conversion Funnel",
+        "title": "Structural Segment Attractiveness: Porter's Micro-Environmental — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "9714658c1cbd17fb28b0783830701869a45e8a8652d67d550fa309af36d742de",
       "spec": {
         "template": "funnel",
-        "title": "Niche Economics & Customer Acquisition Cos... — Conversion Funnel",
+        "title": "Niche Economics & Customer Acquisition Cost (CAC) Payback Dynamics — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "9c4cced02922f338b2af402874b525205951d2f15bb94be8655d609ae7c55b3a",
       "spec": {
         "template": "funnel",
-        "title": "The Ethical Targeting Boundary: Predatory ... — Conversion Funnel",
+        "title": "The Ethical Targeting Boundary: Predatory — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "17763091813e09c7a481b808d49845ccc6e5db0e242fc5577492f037300787bb",
       "spec": {
         "template": "funnel",
-        "title": "Production Post-Mortem & Target Portfolio ... — Conversion Funnel",
+        "title": "Production Post-Mortem & Target Portfolio Optimization Synthesis — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

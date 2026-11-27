@@ -10,7 +10,7 @@
       "codeHash": "1b0c428e37a277205ee68844fc82fb18f8624c3d3e98066feb85d44eb80e2fa1",
       "spec": {
         "template": "tree-graph",
-        "title": "The Enterprise Latency Wall: Interactive SLA ... — Enterprise AI Decision Graph",
+        "title": "The Enterprise Latency Wall: Interactive — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The Enterprise Latency Wall: In...",
+            "caption": "Ingest enterprise Context Query for The Enterprise Latency Wall.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The Enterprise Latency Wall: Interactive SLA ... — Enterprise AI Decision Graph",
+        "title": "The Enterprise Latency Wall: Interactive — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The Enterprise Latency Wall: In...",
+            "caption": "Step 1: Ingest enterprise Context Query for The Enterprise Latency Wall.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "cb437bd3e11de0aa1f65d57b35ee9f468a926c15c2781574cfa2c0ce4167ac15",
       "spec": {
         "template": "tree-graph",
-        "title": "Speculative Decoding Mechanics: Draft Model v... — Enterprise AI Decision Graph",
+        "title": "Speculative Decoding Mechanics: Draft Model — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Speculative Decoding Mechanics:...",
+            "caption": "Ingest enterprise Context Query for Speculative Decoding Mechanics.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Speculative Decoding Mechanics: Draft Model v... — Enterprise AI Decision Graph",
+        "title": "Speculative Decoding Mechanics: Draft Model — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Speculative Decoding Mechanics:...",
+            "caption": "Step 1: Ingest enterprise Context Query for Speculative Decoding Mechanics.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "43cc2ca47864f2b4c247968ffb9a98458af1f2307f622eaca9c41b6d4dce8b77",
       "spec": {
         "template": "tree-graph",
-        "title": "Medusa & Multi-Token Prediction: Parallel Pre... — Enterprise AI Decision Graph",
+        "title": "Medusa & Multi-Token Prediction: Parallel — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Medusa & Multi-Token Prediction...",
+            "caption": "Ingest enterprise Context Query for Medusa.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Medusa & Multi-Token Prediction: Parallel Pre... — Enterprise AI Decision Graph",
+        "title": "Medusa & Multi-Token Prediction: Parallel — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Medusa & Multi-Token Prediction...",
+            "caption": "Step 1: Ingest enterprise Context Query for Medusa.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "4b29635dd0c06e091171a4e6898a56dcb02c36d7a874642bd2dbf3d399b5b636",
       "spec": {
         "template": "tree-graph",
-        "title": "Speculative Rejection Sampling & Speculative ... — Enterprise AI Decision Graph",
+        "title": "Speculative Rejection Sampling & Speculative Acceptance Rate — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Speculative Rejection Sampling ...",
+            "caption": "Ingest enterprise Context Query for Speculative Rejection Sampling.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Speculative Rejection Sampling & Speculative ... — Enterprise AI Decision Graph",
+        "title": "Speculative Rejection Sampling & Speculative Acceptance Rate — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Speculative Rejection Sampling ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Speculative Rejection Sampling.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "e3cd6bbef51ba5bae932e5da285747c96aad863030dd61c3302c37baac0a292b",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

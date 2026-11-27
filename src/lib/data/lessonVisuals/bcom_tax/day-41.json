@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Foundations & Taxable Event under S... — General Ledger Verification",
+        "title": "Statutory Foundations & Taxable Event under Section 12: Territorial — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Statutory Foundations (Alpha Alpha).",
+            "caption": "Open primary debit entry for Statutory Foundations.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 8650,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Statutory Foundations (Alpha).",
+            "caption": "Record secondary accrual adjustment for Statutory Foundations.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10380,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Statutory Foundations (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Statutory Foundations.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10380,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Statutory Foundations (Alpha).",
+            "caption": "Verify double-entry trial balance for Statutory Foundations.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10380,
@@ -134,11 +134,11 @@
       "partTitle": "Statutory Foundations & Taxable Event under Section 12: Territorial Waters & Maritime Zones Architecture",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Statutory Foundations & Taxable Event under S... — General Ledger Verification",
+        "title": "Statutory Foundations & Taxable Event under Section 12: Territorial — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Statutory Foundations (Alpha Alpha).",
+            "caption": "Open primary debit entry for Statutory Foundations.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 8650,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Statutory Foundations (Alpha).",
+            "caption": "Record secondary accrual adjustment for Statutory Foundations.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10380,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Statutory Foundations (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Statutory Foundations.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10380,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Statutory Foundations (Alpha).",
+            "caption": "Verify double-entry trial balance for Statutory Foundations.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10380,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Importation Lifecycle: Entry Inwards, Bill of... — General Ledger Verification",
+        "title": "Importation Lifecycle: Entry Inwards, Bill — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Importation Lifecycle (Alpha Beta).",
+            "caption": "Open primary debit entry for Importation Lifecycle.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 8850,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Importation Lifecycle (Beta).",
+            "caption": "Record secondary accrual adjustment for Importation Lifecycle.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10620,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Importation Lifecycle (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Importation Lifecycle.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10620,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Importation Lifecycle (Beta).",
+            "caption": "Verify double-entry trial balance for Importation Lifecycle.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10620,
@@ -389,11 +389,11 @@
       "partTitle": "Importation Lifecycle: Entry Inwards, Bill of Entry Classifications & ICEGATE Electronic Clearance",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Importation Lifecycle: Entry Inwards, Bill of... — General Ledger Verification",
+        "title": "Importation Lifecycle: Entry Inwards, Bill — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Importation Lifecycle (Alpha Beta).",
+            "caption": "Open primary debit entry for Importation Lifecycle.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 8850,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Importation Lifecycle (Beta).",
+            "caption": "Record secondary accrual adjustment for Importation Lifecycle.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10620,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Importation Lifecycle (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Importation Lifecycle.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10620,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Importation Lifecycle (Beta).",
+            "caption": "Verify double-entry trial balance for Importation Lifecycle.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10620,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "High Seas Sales (HSS): Contractual Mechanics,... — General Ledger Verification",
+        "title": "High Seas Sales (HSS): Contractual — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for High Seas Sales HSS Co (Alpha Gamma).",
+            "caption": "Open primary debit entry for High Seas Sales.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9050,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for High Seas Sales HSS Co (Gamma).",
+            "caption": "Record secondary accrual adjustment for High Seas Sales.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10860,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for High Seas Sales HSS Co (Alpha).",
+            "caption": "Reconcile sub-ledger balances for High Seas Sales.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10860,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for High Seas Sales HSS Co (Gamma).",
+            "caption": "Verify double-entry trial balance for High Seas Sales.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10860,
@@ -644,11 +644,11 @@
       "partTitle": "High Seas Sales (HSS): Contractual Mechanics, GST Schedule III Exemption & Customs Valuation",
       "filled": {
         "template": "ledger-sheet",
-        "title": "High Seas Sales (HSS): Contractual Mechanics,... — General Ledger Verification",
+        "title": "High Seas Sales (HSS): Contractual — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for High Seas Sales HSS Co (Alpha Gamma).",
+            "caption": "Open primary debit entry for High Seas Sales.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9050,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for High Seas Sales HSS Co (Gamma).",
+            "caption": "Record secondary accrual adjustment for High Seas Sales.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10860,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for High Seas Sales HSS Co (Alpha).",
+            "caption": "Reconcile sub-ledger balances for High Seas Sales.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10860,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for High Seas Sales HSS Co (Gamma).",
+            "caption": "Verify double-entry trial balance for High Seas Sales.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10860,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Exportation Statutory Framework: Entry Outwar... — General Ledger Verification",
+        "title": "Exportation Statutory Framework: Entry — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Exportation Statutory (Alpha Delta).",
+            "caption": "Open primary debit entry for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9250,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Exportation Statutory (Delta).",
+            "caption": "Record secondary accrual adjustment for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Exportation Statutory (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Exportation Statutory (Delta).",
+            "caption": "Verify double-entry trial balance for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -899,11 +899,11 @@
       "partTitle": "Exportation Statutory Framework: Entry Outwards, Shipping Bill under Section 50 & LEO Verification",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Exportation Statutory Framework: Entry Outwar... — General Ledger Verification",
+        "title": "Exportation Statutory Framework: Entry — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Exportation Statutory (Alpha Delta).",
+            "caption": "Open primary debit entry for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9250,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Exportation Statutory (Delta).",
+            "caption": "Record secondary accrual adjustment for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Exportation Statutory (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Exportation Statutory (Delta).",
+            "caption": "Verify double-entry trial balance for Exportation Statutory Framework.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "title": "Production Python Architecture: Deterministic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Alpha Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9450,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11340,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11340,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11340,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Deterministic Customs Import & High Seas Sales Assessment Engine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "title": "Production Python Architecture: Deterministic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Alpha Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9450,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 41 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11340,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Alpha).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 41 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11340,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 41 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11340,

@@ -10,11 +10,11 @@
       "codeHash": "03bc8c66937fb41f6ff0d87cd53e76b26e9a50e4a831b10cc177c932454ca9ce",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Green Bond Principles (GBP), Use of Procee... — General Ledger Verification",
+        "title": "Green Bond Principles (GBP), Use of Proceeds & The Greenium — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Green Bond.",
+            "caption": "Open primary facility debit entry for Green Bond Principles.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 102000,
@@ -139,11 +139,11 @@
       "codeHash": "20c3da723aa3eeaa47989f880e32b8069ebcdbd9a836f52147e0c197433118ca",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Equator Principles (EP4) & Environmental S... — General Ledger Verification",
+        "title": "Equator Principles (EP4) & Environmental Social Due Diligence (ESDD) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Equator.",
+            "caption": "Open primary facility debit entry for Equator Principles.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 103250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 123900,
@@ -268,11 +268,11 @@
       "codeHash": "5af6744b78b3d888c01bce684933c69de542365d2c90a45c8d7cfb15982e3a94",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Partnership for Carbon Accounting Financia... — General Ledger Verification",
+        "title": "Partnership for Carbon Accounting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 104500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 125400,
@@ -397,11 +397,11 @@
       "codeHash": "7fbde6291214b556755f55e1f3e6cac54115aae00fc00765ce6eb573c461cfc7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "NGFS Climate Scenarios & Climate Stress Te... — General Ledger Verification",
+        "title": "NGFS Climate Scenarios & Climate Stress Testing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for NGFS Climate.",
+            "caption": "Open primary facility debit entry for NGFS Climate Scenarios.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 126900,
@@ -526,11 +526,11 @@
       "codeHash": "5745f14fbcc0add5a5a2dd7c0bced099570e49dd28a52a433076a442b664ef93",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Sustainability-Linked Loans (SLL) & Margin... — General Ledger Verification",
+        "title": "Sustainability-Linked Loans (SLL) & Margin Step-Down Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 107000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 128400,

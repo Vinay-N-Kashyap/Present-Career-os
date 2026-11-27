@@ -10,11 +10,11 @@
       "codeHash": "c40d17cd9cbc4d514a78d487af5e4e902e15f99c3e60f9283723bee404562a3c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Fractional Reserve Banking & The Money Multip... — General Ledger Verification",
+        "title": "Fractional Reserve Banking & The Money Multiplier — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Fractional Reserve Banking & Th...",
+            "caption": "Open primary debit entry for Fractional Reserve Banking & The Money Multiplier",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Fractional Reserve Banking & The Money Multip... — General Ledger Verification",
+        "title": "Fractional Reserve Banking & The Money Multiplier — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2650) for Fractional Reserve Banking & Th...",
+            "caption": "Step 1: Open primary debit entry (2650) for Fractional Reserve Banking.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -264,11 +264,11 @@
       "codeHash": "29e7980446e3435963e89bea347d0be2874dfeaabb3b0961a7cddff0f5de2484",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Asset-Liability Management (ALM) & The Durati... — General Ledger Verification",
+        "title": "Asset-Liability Management (ALM) & The Duration Gap — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Asset-Liability Management (ALM...",
+            "caption": "Open primary debit entry for Asset-Liability Management (ALM) & The Duration Gap",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Asset-Liability Management (ALM) & The Durati... — General Ledger Verification",
+        "title": "Asset-Liability Management (ALM) & The Duration Gap — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2850) for Asset-Liability Management (ALM...",
+            "caption": "Step 1: Open primary debit entry (2850) for Asset-Liability Management.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -518,11 +518,11 @@
       "codeHash": "dfece316d43374ecb79d8cd91e0b11953168a65a587586464405123cdb6a5e33",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Basel III Capital Adequacy & Risk-Weighted As... — General Ledger Verification",
+        "title": "Basel III Capital Adequacy & Risk-Weighted Assets (RWA) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Basel III Capital Adequacy & Ri...",
+            "caption": "Open primary debit entry for Basel III Capital Adequacy.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Basel III Capital Adequacy & Risk-Weighted As... — General Ledger Verification",
+        "title": "Basel III Capital Adequacy & Risk-Weighted Assets (RWA) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3050) for Basel III Capital Adequacy & Ri...",
+            "caption": "Step 1: Open primary debit entry (3050) for Basel III Capital Adequacy.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -772,11 +772,11 @@
       "codeHash": "8f2f90a42c9dffc0f248a077d51d09131d5950d94d4ce7535176ab8eb6420f13",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Liquidity Coverage Ratio (LCR) & 30-Day Stres... — General Ledger Verification",
+        "title": "Liquidity Coverage Ratio (LCR) & 30-Day Stressed Cash Outflows — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Liquidity Coverage Ratio (LCR) ...",
+            "caption": "Open primary debit entry for Liquidity Coverage Ratio.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Liquidity Coverage Ratio (LCR) & 30-Day Stres... — General Ledger Verification",
+        "title": "Liquidity Coverage Ratio (LCR) & 30-Day Stressed Cash Outflows — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Liquidity Coverage Ratio (LCR) ...",
+            "caption": "Step 1: Open primary debit entry (3250) for Liquidity Coverage Ratio.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -1026,11 +1026,11 @@
       "codeHash": "21c85d199ef0274724669e21e3283ea17726d42fab59cdbada6f219173127d04",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Credit Risk Scoring & Expected Credit Loss (E... — General Ledger Verification",
+        "title": "Credit Risk Scoring & Expected Credit Loss (ECL / CECL) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Credit Risk Scoring & Expected ...",
+            "caption": "Open primary debit entry for Credit Risk Scoring.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Credit Risk Scoring & Expected Credit Loss (E... — General Ledger Verification",
+        "title": "Credit Risk Scoring & Expected Credit Loss (ECL / CECL) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for Credit Risk Scoring & Expected ...",
+            "caption": "Step 1: Open primary debit entry (3450) for Credit Risk Scoring.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,

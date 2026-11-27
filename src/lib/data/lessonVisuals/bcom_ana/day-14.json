@@ -8,7 +8,7 @@
       "codeHash": "fe03ada8b0bda30f3644c4a67b10a7ed77f4f90415cb4a58ea4c4247fcb2bedb",
       "spec": {
         "template": "bars",
-        "title": "Curse of Dimensionality, Covariance Ma... \u2014 Quantitative Evaluation",
+        "title": "Curse of Dimensionality, Covariance Matrices & Eigen-Decomposition — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "5488722a47ed330b581203dca2bd9298601490a501ea66e610aa249908fbb219",
       "spec": {
         "template": "bars",
-        "title": "Maximum Variance Projections & Orthogo... \u2014 Quantitative Evaluation",
+        "title": "Maximum Variance Projections & Orthogonal Coordinate Transformation — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "8917faafb6d3c9a9428035832bd65577ed620aa2bc5004584f8b69795d7b0fb6",
       "spec": {
         "template": "bars",
-        "title": "Scree Plots, Kaiser Criterion & Cumula... \u2014 Quantitative Evaluation",
+        "title": "Scree Plots, Kaiser Criterion & Cumulative Explained Variance — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "ba983d2fe0c3bfd6081517f07f265a4d4ffd6480fddaabe8acceee4999ea6349",
       "spec": {
         "template": "bars",
-        "title": "Factor Loading Interpretability, Commu... \u2014 Quantitative Evaluation",
+        "title": "Factor Loading Interpretability, Communalities & Varimax Rotation — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "36ca5b0cf59348f13c80b87c6f025b9924d38a740ce33f5f8b5fbb328da0fabd",
       "spec": {
         "template": "bars",
-        "title": "Composite Customer Health Index Engine... \u2014 Quantitative Evaluation",
+        "title": "Composite Customer Health Index Engineering & Executive Dimensional — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",

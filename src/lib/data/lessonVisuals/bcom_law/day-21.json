@@ -10,11 +10,11 @@
       "codeHash": "7217a31962b1e0bff448ead9e55a33dbfceee5034cf9d580859121f16813ff8e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Hostile Takeover Era & Inherent Confli... — General Ledger Verification",
+        "title": "The Hostile Takeover Era & Inherent Conflicts of Interest: Enhanced — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Hostile Takeover Era.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 98500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 118200,
@@ -139,11 +139,11 @@
       "codeHash": "82330127f646134a56a68475deafe15721a32b36cc28c4d8a7a93e00cf3c1add",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Unocal Enhanced Scrutiny Two-Prong Tes... — General Ledger Verification",
+        "title": "The Unocal Enhanced Scrutiny Two-Prong Test & Unitrin Proportionality — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Unocal.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 99750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 119700,
@@ -268,11 +268,11 @@
       "codeHash": "21e9158c330a4d710991ab0278d2d6d07cfe47b85264eda6af4f38aab34d4a5f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Shareholder Rights Plan: Anatomy of th... — General Ledger Verification",
+        "title": "The Shareholder Rights Plan: Anatomy — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The.",
+            "caption": "Open primary facility debit entry for The Shareholder Rights Plan.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 101000,
@@ -397,11 +397,11 @@
       "codeHash": "7c473cfe6f8179c90e80a3789d109691be37dfbd78bcd1ab88a9b6f30d63b081",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Staggered Boards & The Interplay with Pois... — General Ledger Verification",
+        "title": "Staggered Boards & The Interplay with Poison Pills: Airgas & Just Say — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Staggered.",
+            "caption": "Open primary facility debit entry for Staggered Boards.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 102250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 122700,
@@ -526,11 +526,11 @@
       "codeHash": "bace0a691f7afac2b87c067a25a397b4448635bf319e988e2c0eb67f4abacf40",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tactical Bylaw Defenses: Advance Notice By... — General Ledger Verification",
+        "title": "Tactical Bylaw Defenses: Advance Notice — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Tactical.",
+            "caption": "Open primary facility debit entry for Tactical Bylaw Defenses.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 103500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 124200,

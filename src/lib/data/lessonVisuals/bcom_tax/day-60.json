@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Anatomy, Global Supply Chain & The... — General Ledger Verification",
+        "title": "Enterprise Anatomy, Global Supply Chain & The Chief Tax Officer — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Enterprise Anatomy Glo (Upsilon Alpha).",
+            "caption": "Open primary debit entry for Enterprise Anatomy.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11500,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Enterprise Anatomy Glo (Alpha).",
+            "caption": "Record secondary accrual adjustment for Enterprise Anatomy.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Enterprise Anatomy Glo (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for Enterprise Anatomy.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Enterprise Anatomy Glo (Alpha).",
+            "caption": "Verify double-entry trial balance for Enterprise Anatomy.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -134,11 +134,11 @@
       "partTitle": "Enterprise Anatomy, Global Supply Chain & The Chief Tax Officer Command Mandate",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Anatomy, Global Supply Chain & The... — General Ledger Verification",
+        "title": "Enterprise Anatomy, Global Supply Chain & The Chief Tax Officer — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Enterprise Anatomy Glo (Upsilon Alpha).",
+            "caption": "Open primary debit entry for Enterprise Anatomy.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11500,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Enterprise Anatomy Glo (Alpha).",
+            "caption": "Record secondary accrual adjustment for Enterprise Anatomy.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Enterprise Anatomy Glo (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for Enterprise Anatomy.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Enterprise Anatomy Glo (Alpha).",
+            "caption": "Verify double-entry trial balance for Enterprise Anatomy.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border GAAR Defense, Commercial Substan... — General Ledger Verification",
+        "title": "Cross-Border GAAR Defense, Commercial Substance & Section 144BA — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Cross Border GAAR Defe (Upsilon Beta).",
+            "caption": "Open primary debit entry for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Cross Border GAAR Defe (Beta).",
+            "caption": "Record secondary accrual adjustment for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Cross Border GAAR Defe (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Cross Border GAAR Defe (Beta).",
+            "caption": "Verify double-entry trial balance for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -389,11 +389,11 @@
       "partTitle": "Cross-Border GAAR Defense, Commercial Substance & Section 144BA Approving Panel Proceedings",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Cross-Border GAAR Defense, Commercial Substan... — General Ledger Verification",
+        "title": "Cross-Border GAAR Defense, Commercial Substance & Section 144BA — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Cross Border GAAR Defe (Upsilon Beta).",
+            "caption": "Open primary debit entry for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Cross Border GAAR Defe (Beta).",
+            "caption": "Record secondary accrual adjustment for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Cross Border GAAR Defe (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Cross Border GAAR Defe (Beta).",
+            "caption": "Verify double-entry trial balance for Cross-Border GAAR Defense.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "OECD Pillar Two GloBE 15% ETR Architecture & ... — General Ledger Verification",
+        "title": "OECD Pillar Two GloBE 15% ETR Architecture & Indian QDMTT — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for OECD Pillar Two GloBE (Upsilon Gamma).",
+            "caption": "Open primary debit entry for OECD Pillar Two GloBE 15% ETR Architecture.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11900,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for OECD Pillar Two GloBE (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14280,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for OECD Pillar Two GloBE (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for OECD Pillar Two GloBE 15% ETR Architecture.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14280,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for OECD Pillar Two GloBE (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14280,
@@ -644,11 +644,11 @@
       "partTitle": "OECD Pillar Two GloBE 15% ETR Architecture & Indian QDMTT Optimization Strategy",
       "filled": {
         "template": "ledger-sheet",
-        "title": "OECD Pillar Two GloBE 15% ETR Architecture & ... — General Ledger Verification",
+        "title": "OECD Pillar Two GloBE 15% ETR Architecture & Indian QDMTT — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for OECD Pillar Two GloBE (Upsilon Gamma).",
+            "caption": "Open primary debit entry for OECD Pillar Two GloBE 15% ETR Architecture.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11900,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for OECD Pillar Two GloBE (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14280,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for OECD Pillar Two GloBE (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for OECD Pillar Two GloBE 15% ETR Architecture.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14280,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for OECD Pillar Two GloBE (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14280,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "M&A Amalgamation Tax Optimization & Expat Sec... — General Ledger Verification",
+        "title": "M&A Amalgamation Tax Optimization & Expat Secondment GST Defense — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for M A Amalgamation Tax O (Upsilon Delta).",
+            "caption": "Open primary debit entry for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12100,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for M A Amalgamation Tax O (Delta).",
+            "caption": "Record secondary accrual adjustment for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14520,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for M A Amalgamation Tax O (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14520,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for M A Amalgamation Tax O (Delta).",
+            "caption": "Verify double-entry trial balance for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14520,
@@ -899,11 +899,11 @@
       "partTitle": "M&A Amalgamation Tax Optimization & Expat Secondment GST Defense",
       "filled": {
         "template": "ledger-sheet",
-        "title": "M&A Amalgamation Tax Optimization & Expat Sec... — General Ledger Verification",
+        "title": "M&A Amalgamation Tax Optimization & Expat Secondment GST Defense — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for M A Amalgamation Tax O (Upsilon Delta).",
+            "caption": "Open primary debit entry for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12100,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for M A Amalgamation Tax O (Delta).",
+            "caption": "Record secondary accrual adjustment for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14520,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for M A Amalgamation Tax O (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14520,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for M A Amalgamation Tax O (Delta).",
+            "caption": "Verify double-entry trial balance for M&A Amalgamation Tax Optimization.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14520,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Global Tax Di... — General Ledger Verification",
+        "title": "Production Python Architecture: Global Tax — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Upsilon Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14760,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14760,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14760,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Global Tax Director & CTO Enterprise Command Simulator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Global Tax Di... — General Ledger Verification",
+        "title": "Production Python Architecture: Global Tax — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Upsilon Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 60 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14760,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Upsilon).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 60 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14760,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 60 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14760,

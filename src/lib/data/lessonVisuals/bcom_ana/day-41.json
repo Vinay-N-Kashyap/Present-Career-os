@@ -8,7 +8,7 @@
       "codeHash": "8df42648a0c345c4cba10bd2db0e16fbc8db33840c76ffee6bc907566a7c3d0f",
       "spec": {
         "template": "bars",
-        "title": "Fraud Physics & The Isolation Principl... - Learning Evaluation",
+        "title": "Fraud Physics & The Isolation Principle: Why Anomalies Are 'Few - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "64b02dadcfa9b12764860c388a33f1200789cdfcbe268d3970956ab79734c97b",
       "spec": {
         "template": "bars",
-        "title": "Local Outlier Factor (LOF): Density-Ba... - Learning Evaluation",
+        "title": "Local Outlier Factor (LOF): Density-Based Outlier Scoring - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "d7feb5e1d825b062557c9d8cb6fbba824f2eb5b978c41ef28047931d863aa084",
       "spec": {
         "template": "bars",
-        "title": "Multi-Transaction Carding Ring Detecti... - Learning Evaluation",
+        "title": "Multi-Transaction Carding Ring Detection & Velocity Entropy Analytics - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "6b61480fb972b1114c1bee764270123ac80f244e3b5a60a982fcc2aeb15a3134",
       "spec": {
         "template": "bars",
-        "title": "Dynamic Contamination Thresholding & E... - Learning Evaluation",
+        "title": "Dynamic Contamination Thresholding & Extreme Value Theory (EVT) - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "3772d22f29aad6b82fe60ee45eaea60716aeb639dfc54da64c81f33f1527d13a",
       "spec": {
         "template": "bars",
-        "title": "Alert Fatigue Mitigation: Deduplicatio... - Learning Evaluation",
+        "title": "Alert Fatigue Mitigation: Deduplication, SOC Triage Queues & Top-K Governance - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

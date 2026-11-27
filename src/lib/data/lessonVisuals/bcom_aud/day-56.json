@@ -8,7 +8,7 @@
       "codeHash": "8eb235b5bb1e55c5d96378a0ddc4560c25104bb93357443d69d3261c3021c705",
       "spec": {
         "template": "funnel",
-        "title": "The Modern Statutory Audit Report Arch... — Assurance Review",
+        "title": "The Modern Statutory Audit Report Architecture (PCAOB AS 3101 & ISA 700) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "8aabb00afcbc2b80159e1704c58233f3e676304d5626990ac7d01ccc3387118d",
       "spec": {
         "template": "funnel",
-        "title": "The Basis for Opinion & Independence D... — Assurance Review",
+        "title": "The Basis for Opinion & Independence — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "7951e9a4121639ec184e01ebf754015f7d431521d23adbce08cb8dccf6b8ccf5",
       "spec": {
         "template": "funnel",
-        "title": "Explanatory Paragraphs & Emphasis of M... — Assurance Review",
+        "title": "Explanatory Paragraphs & Emphasis of Matter (AS 3101 vs. ISA 706) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "3df7e3f0c876c90edb7575986842414ebf445deb86127ef1b1ce0b1f54a7a929",
       "spec": {
         "template": "funnel",
-        "title": "Report Dating, Dual-Dating Mechanics &... — Assurance Review",
+        "title": "Report Dating, Dual-Dating Mechanics & Signature Protocols (AS 3110) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "d78a3bc9b63fd61915295a73c69a0f8252696788ea2f7e59609b8aec84b5a9a6",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Audit Report ... — Assurance Review",
+        "title": "Comprehensive Enterprise Audit Report Generator & Compliance Engine — Assurance Review",
         "steps": [
           {
             "at": "intro",

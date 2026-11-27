@@ -464,7 +464,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "ESG  Carbon Footprint Tracking a Funnel",
+        "title": "ESG Carbon Footprint Tracking a Funnel",
         "steps": [
           {
             "at": "intro",

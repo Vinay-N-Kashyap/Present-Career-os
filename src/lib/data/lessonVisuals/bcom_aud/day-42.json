@@ -8,7 +8,7 @@
       "codeHash": "30201ed9c24bff7fa93ba589f91cc4794f514cd78a1e4342fe266f63e8934bf8",
       "spec": {
         "template": "funnel",
-        "title": "The Architecture of an Integrated Audi... \u2014 Assurance Review",
+        "title": "The Architecture of an Integrated Audit under PCAOB AS 2201 & COSO 2013 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "412a06cc20ba62012d9fd000cce361f485840673f8a3490edcfa3d0ad5461f2d",
       "spec": {
         "template": "funnel",
-        "title": "The Top-Down, Risk-Based Audit Approac... \u2014 Assurance Review",
+        "title": "The Top-Down, Risk-Based Audit Approach & Entity-Level Controls (ELCs) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "efe77452116912a6f7735b4fd33e43cdef6c1c60148638b43bf812f2673ff977",
       "spec": {
         "template": "funnel",
-        "title": "Identifying Significant Accounts, Disc... \u2014 Assurance Review",
+        "title": "Identifying Significant Accounts, Disclosures & Relevant Financial — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "c0735cec23a2e392227a024e092c643287211e51b49c69ffc34888e850e0fffe",
       "spec": {
         "template": "funnel",
-        "title": "Testing Design and Operating Effective... \u2014 Assurance Review",
+        "title": "Testing Design and Operating Effectiveness of Controls: Sampling — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "17641fbdb48d8d7506a80ae68cc6f536af32e4c7da80e1e8ce22687016cd95f4",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive PCAOB AS 2201 Integrated... \u2014 Assurance Review",
+        "title": "Comprehensive PCAOB AS 2201 Integrated Audit & ELC Scoping Simulator — Assurance Review",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "1498cfc81cfc1aaf604d5639e52adabd959979a42cebf39bcea934aef1d7abf1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Systemic Bank Failure Dynamics & The Lende... — General Ledger Verification",
+        "title": "Systemic Bank Failure Dynamics & The Lender of Last Resort — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Systemic.",
+            "caption": "Open primary facility debit entry for Systemic Bank Failure Dynamics.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 126500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 151800,
@@ -139,11 +139,11 @@
       "codeHash": "93e1f9a2b21eb3c1affc05d507d5881a2ad73076c20abb2e7b26633e3d390d67",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dodd-Frank Title I Living Wills & Single P... — General Ledger Verification",
+        "title": "Dodd-Frank Title I Living Wills & Single Point of Entry (SPOE) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Dodd-Frank.",
+            "caption": "Open primary facility debit entry for Dodd-Frank Title I Living Wills.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 127750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 153300,
@@ -268,11 +268,11 @@
       "codeHash": "da3ec791d4817f623ae3ebc01d4636dd62e1d8bd076fc5bf4d48264527020de4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Total Loss-Absorbing Capacity (TLAC) & Sta... — General Ledger Verification",
+        "title": "Total Loss-Absorbing Capacity (TLAC) & Statutory Bail-in Mechanics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Total.",
+            "caption": "Open primary facility debit entry for Total Loss-Absorbing Capacity.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 129000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 154800,
@@ -397,11 +397,11 @@
       "codeHash": "138066b69e8ad2940c4e4eccffa5b227257f495cc1a49533bafbaf2c280f0887",
       "spec": {
         "template": "ledger-sheet",
-        "title": "FDIC Resolution Waterfalls, Bridge Banks &... — General Ledger Verification",
+        "title": "FDIC Resolution Waterfalls, Bridge Banks & Purchase and Assumption — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for FDIC.",
+            "caption": "Open primary facility debit entry for FDIC Resolution Waterfalls.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 130250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 156300,
@@ -526,11 +526,11 @@
       "codeHash": "4d2c466b2dc44bddb748c7d611f3f26e695b9042762b87ce3f054a746ef77323",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Resolution Coordination & Rin... — General Ledger Verification",
+        "title": "Cross-Border Resolution Coordination & Ring-Fencing Conflicts — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 131500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 157800,

@@ -8,7 +8,7 @@
       "codeHash": "132e923556d8b4ef71c9a2d2752150c3f46d89741cd1336b3cac0f55f5ab59da",
       "spec": {
         "template": "funnel",
-        "title": "War Room Briefing: The $14.8B Global E... \u2014 Assurance Review",
+        "title": "War Room Briefing: The $14.8B Global — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "f29f240b49e9aa96dcc91342e1e520a14901a90f991d0fbf3c81254b90aab3b6",
       "spec": {
         "template": "funnel",
-        "title": "War Room Phase 1 & 2: Entity-Level Gov... \u2014 Assurance Review",
+        "title": "War Room Phase 1 & 2: Entity-Level — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "cd31e87b8305314261fc2df3c1aef3b39908c762d01dcca7feab4b274c41e9c4",
       "spec": {
         "template": "funnel",
-        "title": "War Room Phase 3 & 4: Business Process... \u2014 Assurance Review",
+        "title": "War Room Phase 3 & 4: Business — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "98f7ebdf43d2b0453ce9c9cf77f849a724620c15b765d80668bb2a6c1d5b4968",
       "spec": {
         "template": "funnel",
-        "title": "War Room Phase 5 & 6: Deficiency Sever... \u2014 Assurance Review",
+        "title": "War Room Phase 5 & 6: Deficiency — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "a220a8b9c02fbf7949f11ae95e7b7463f4fe22dc1aa6cbeff9f71a44efd47869",
       "spec": {
         "template": "funnel",
-        "title": "War Room Master Simulator: The Enterpr... \u2014 Assurance Review",
+        "title": "War Room Master Simulator — Assurance Review",
         "steps": [
           {
             "at": "intro",

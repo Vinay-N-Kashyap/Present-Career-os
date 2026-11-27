@@ -8,7 +8,7 @@
       "codeHash": "9acb32a91179ee447eebda80413a9ec88eb4cc12b4ce073cae7af1ee80f6e34c",
       "spec": {
         "template": "bars",
-        "title": "Co-Occurrence Dynamics, Transactions &... - Learning Evaluation",
+        "title": "Co-Occurrence Dynamics, Transactions & Association Rules: Support - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "c9094ffbadf0bc77af676306332fd26e8c017c5c8f25683aec2011b596d60ead",
       "spec": {
         "template": "bars",
-        "title": "The Apriori Downward Closure Property ... - Learning Evaluation",
+        "title": "The Apriori Downward Closure Property & Combinatorial Candidate - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "170b9a40b63b77d44788300dc1a680944eeacc8c3c1d2b4c9a501156fe3a89fc",
       "spec": {
         "template": "bars",
-        "title": "Frequent Pattern Trees (FP-Tree) & Rec... - Learning Evaluation",
+        "title": "Frequent Pattern Trees (FP-Tree) & Recursive Conditional Mining - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "beeebe41a27be19ae6fe5bc8964e8ee827ea746f3427f77c53498076aba2894c",
       "spec": {
         "template": "bars",
-        "title": "High-Confidence vs. High-Lift Retail T... - Learning Evaluation",
+        "title": "High-Confidence vs. High-Lift Retail Traps, Leverage, Conviction - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "5f95a22b1fc09b7410b534ef39993c7cd99ee3cbfc01d8faa3bd8d7af7a93cca",
       "spec": {
         "template": "bars",
-        "title": "Scalable Rule Mining in Big Data, Spar... - Learning Evaluation",
+        "title": "Scalable Rule Mining in Big Data, Sparse Encodings & Combinatorial - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

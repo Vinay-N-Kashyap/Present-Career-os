@@ -10,11 +10,11 @@
       "codeHash": "3a711d30d6650d3064f4718daa888c148ddd61894e55c90f32c4c2e06f35740c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "GSTR-1 Outward Supplies Reporting Architec... — General Ledger Verification",
+        "title": "GSTR-1 Outward Supplies Reporting Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for GSTR-one.",
+            "caption": "Open primary facility debit entry for GSTR-one.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 95000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 114000,
@@ -139,11 +139,11 @@
       "codeHash": "447c74f3106931bbe7dd274593f2687f5ce0af60ee3b27174922df4f2be0b268",
       "spec": {
         "template": "ledger-sheet",
-        "title": "GSTR-2B Auto-Drafted Statement & Static IT... — General Ledger Verification",
+        "title": "GSTR-2B Auto-Drafted Statement & Static ITC Lock Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for GSTR-twoB.",
+            "caption": "Open primary facility debit entry for GSTR-twoB.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 96250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 115500,
@@ -268,11 +268,11 @@
       "codeHash": "3db3df31677d29039f5ddd48d223f3df774455e4d206cfa377571bf253956ebe",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Purchase Register vs GSTR-2B Automated 3-W... — General Ledger Verification",
+        "title": "Purchase Register vs GSTR-2B Automated 3-Way Reconciliation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Purchase.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 97500,
@@ -397,11 +397,11 @@
       "codeHash": "4a07058cdd3c3c8a03aeed05b1f3468be3521b37e70d14eef98c39bbbe3ab6e6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Form GSTR-3B Monthly Summary & Net Tax Set... — General Ledger Verification",
+        "title": "Form GSTR-3B Monthly Summary & Net Tax Settlement Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Form.",
+            "caption": "Open primary facility debit entry for Form GSTR-3B Monthly Summary.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 98750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 118500,
@@ -526,11 +526,11 @@
       "codeHash": "89438bad44240f8e247472e5b05ec0615d714f5e7cd79a08b9fa28baedcf6fe3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Financial Controller GST Compliance Audit ... — General Ledger Verification",
+        "title": "Financial Controller GST Compliance Audit & Milestone 4 Accreditation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($one hundred,multiple) for Financial.",
+            "caption": "Open primary facility debit entry for Financial Controller GST Compliance Audit.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 100000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 120000,

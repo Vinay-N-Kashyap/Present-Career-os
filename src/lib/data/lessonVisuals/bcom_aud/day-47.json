@@ -8,7 +8,7 @@
       "codeHash": "24d1f2223f02b3840f18acd9a68e712183f3820e688ef32472c6b482dc023c27",
       "spec": {
         "template": "funnel",
-        "title": "The Procurement Cycle & Primary Audit ... — Assurance Review",
+        "title": "The Procurement Cycle & Primary Audit Assertion: Completeness — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "4c0f0bb800d554d2bf95a6df0cb48d9903fb5d67549c40e71b570c47734decce",
       "spec": {
         "template": "funnel",
-        "title": "The Search for Unrecorded Liabilities ... — Assurance Review",
+        "title": "The Search for Unrecorded — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "da6e4bd47a878acc2bdeac631be7c65653173ab527af6ec22c4bc4e35e6e5790",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Audit of Accrued Expenses ... — Assurance Review",
+        "title": "Substantive Audit of Accrued Expenses & Contingent Liabilities (ASC 450 / IAS 37) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "afa15578a5f26b805d3029de6f8072b870e2bbc89b0857b16edf89bee0e077fb",
       "spec": {
         "template": "funnel",
-        "title": "Purchases Cut-Off Testing & Goods in T... — Assurance Review",
+        "title": "Purchases Cut-Off Testing & Goods in Transit (Incoterms) Interrogation — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "06618ada98d3aec47592cf7f9a889e47155696d9070d9447c1e68c780d518693",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Substantive Procurement,... — Assurance Review",
+        "title": "Comprehensive Substantive Procurement, AP & SOUL Audit Simulator — Assurance Review",
         "steps": [
           {
             "at": "intro",

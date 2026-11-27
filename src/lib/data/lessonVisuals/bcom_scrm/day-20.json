@@ -10,11 +10,11 @@
       "codeHash": "baf8b90167793b68e76038ad56ba150775b0af2c8e1189a4a7e0bbf2d9c85ff4",
       "spec": {
         "template": "funnel",
-        "title": "Conversational Intelligence Telemetry & Go \u2014 RevOps Funnel",
+        "title": "Conversational Intelligence Telemetry & Gong Talk/Listen Ratio — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (ten,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Conversational Intelligence Telemetry & Go \u2014 RevOps Funnel",
+        "title": "Conversational Intelligence Telemetry & Gong Talk/Listen Ratio — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (ten,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "2859ffa4d08f9a74c50c779bf2b09cba6ce565d6c2456c2c00d0ff9aa9a39435",
       "spec": {
         "template": "funnel",
-        "title": "Conversational Dynamics: Question Pacing,  \u2014 RevOps Funnel",
+        "title": "Conversational Dynamics: Question Pacing, Interactivity & Monologue — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Conversational Dynamics: Question Pacing,  \u2014 RevOps Funnel",
+        "title": "Conversational Dynamics: Question Pacing, Interactivity & Monologue — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "0588e2ef2b53321a3267596dbcd03a37aa1202102620090d071cf9898ee6d9ef",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise 1-on-1 Deal Inspection & Mutual \u2014 RevOps Funnel",
+        "title": "Enterprise 1-on-1 Deal Inspection & Mutual — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (eight,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Enterprise 1-on-1 Deal Inspection & Mutual \u2014 RevOps Funnel",
+        "title": "Enterprise 1-on-1 Deal Inspection & Mutual — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (eight,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "4d302f6587d232b4bb0fdbc058d893949e325e884608f9127e3be53a0a1b2b25",
       "spec": {
         "template": "funnel",
-        "title": "RevOps Infrastructure Integration & Boardr \u2014 RevOps Funnel",
+        "title": "RevOps Infrastructure Integration & Boardroom Efficiency Metrics — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "RevOps Infrastructure Integration & Boardr \u2014 RevOps Funnel",
+        "title": "RevOps Infrastructure Integration & Boardroom Efficiency Metrics — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "5b909417987048d1f45c4916441969ea0d766b6de83f301fafe90f881e3c21b7",
       "spec": {
         "template": "funnel",
-        "title": "Master Milestone 4 Grand Capstone: Soverei \u2014 RevOps Funnel",
+        "title": "Master Milestone 4 Grand Capstone: Sovereign RevOps Operating Control — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (multiple,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Milestone 4 Grand Capstone: Soverei \u2014 RevOps Funnel",
+        "title": "Master Milestone 4 Grand Capstone: Sovereign RevOps Operating Control — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (multiple,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {

@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 1: Section 177(9) Vigil Mechanism Man... — Compliance Workflow",
+        "title": "Part 1: Section 177(9) Vigil Mechanism — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part one: Section multiple(nine) Vigil Mechanism...",
+            "caption": "Stage one: Initialize Part one: Section multiple(nine) Vigil",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 2: Whistleblower Anti-Victimization S... — Compliance Workflow",
+        "title": "Part 2: Whistleblower Anti-Victimization — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part two: Whistleblower Anti-Victimizati...",
+            "caption": "Stage one: Initialize Part two: Whistleblower",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 3: SEBI PIT Chapter IIIA Informant Me... — Compliance Workflow",
+        "title": "Part 3: SEBI PIT Chapter IIIA Informant — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part three: SEBI PIT Chapter IIIA Informan...",
+            "caption": "Stage one: Initialize Part three: SEBI PIT Chapter IIIA",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 4: Digital Whistleblower Architecture... — Compliance Workflow",
+        "title": "Part 4: Digital Whistleblower — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part four: Digital Whistleblower Architec...",
+            "caption": "Stage one: Initialize Part four: Digital Whistleblower",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 5: Production Vigil Mechanism & Anti-... — Compliance Workflow",
+        "title": "Part 5: Production Vigil Mechanism — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part five: Production Vigil Mechanism & A...",
+            "caption": "Stage one: Initialize Part five: Production Vigil Mechanism",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

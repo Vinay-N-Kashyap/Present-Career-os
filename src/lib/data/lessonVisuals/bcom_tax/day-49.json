@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 270A Penalty Taxonomy: Under-Reportin... — General Ledger Verification",
+        "title": "Section 270A Penalty Taxonomy: Under-Reporting of Income — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section A Penalty Taxo (Iota Alpha).",
+            "caption": "Open primary debit entry for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9850,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section A Penalty Taxo (Alpha).",
+            "caption": "Record secondary accrual adjustment for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11820,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section A Penalty Taxo (Iota).",
+            "caption": "Reconcile sub-ledger balances for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11820,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section A Penalty Taxo (Alpha).",
+            "caption": "Verify double-entry trial balance for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11820,
@@ -134,11 +134,11 @@
       "partTitle": "Section 270A Penalty Taxonomy: Under-Reporting of Income vs Misreporting of Income",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Section 270A Penalty Taxonomy: Under-Reportin... — General Ledger Verification",
+        "title": "Section 270A Penalty Taxonomy: Under-Reporting of Income — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section A Penalty Taxo (Iota Alpha).",
+            "caption": "Open primary debit entry for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9850,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section A Penalty Taxo (Alpha).",
+            "caption": "Record secondary accrual adjustment for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11820,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section A Penalty Taxo (Iota).",
+            "caption": "Reconcile sub-ledger balances for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11820,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section A Penalty Taxo (Alpha).",
+            "caption": "Verify double-entry trial balance for Section 270A Penalty Taxonomy.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11820,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Six Statutory Misreporting Gateways & Saf... — General Ledger Verification",
+        "title": "The Six Statutory Misreporting Gateways & Safe Harbour Carve-outs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Six Statutory Misr (Iota Beta).",
+            "caption": "Open primary debit entry for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10050,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Six Statutory Misr (Beta).",
+            "caption": "Record secondary accrual adjustment for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12060,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Six Statutory Misr (Iota).",
+            "caption": "Reconcile sub-ledger balances for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12060,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Six Statutory Misr (Beta).",
+            "caption": "Verify double-entry trial balance for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12060,
@@ -389,11 +389,11 @@
       "partTitle": "The Six Statutory Misreporting Gateways & Safe Harbour Carve-outs",
       "filled": {
         "template": "ledger-sheet",
-        "title": "The Six Statutory Misreporting Gateways & Saf... — General Ledger Verification",
+        "title": "The Six Statutory Misreporting Gateways & Safe Harbour Carve-outs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Six Statutory Misr (Iota Beta).",
+            "caption": "Open primary debit entry for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10050,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Six Statutory Misr (Beta).",
+            "caption": "Record secondary accrual adjustment for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12060,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Six Statutory Misr (Iota).",
+            "caption": "Reconcile sub-ledger balances for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12060,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Six Statutory Misr (Beta).",
+            "caption": "Verify double-entry trial balance for The Six Statutory Misreporting Gateways.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12060,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mandatory Statutory Immunity under Section 27... — General Ledger Verification",
+        "title": "Mandatory Statutory Immunity under Section 270AA & Penalty Waiver — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Mandatory Statutory Im (Iota Gamma).",
+            "caption": "Open primary debit entry for Mandatory Statutory Immunity under Section 270AA.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10250,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Mandatory Statutory Im (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Mandatory Statutory Im (Iota).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Mandatory Statutory Im (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -644,11 +644,11 @@
       "partTitle": "Mandatory Statutory Immunity under Section 270AA & Penalty Waiver under Section 273A",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Mandatory Statutory Immunity under Section 27... — General Ledger Verification",
+        "title": "Mandatory Statutory Immunity under Section 270AA & Penalty Waiver — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Mandatory Statutory Im (Iota Gamma).",
+            "caption": "Open primary debit entry for Mandatory Statutory Immunity under Section 270AA.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10250,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Mandatory Statutory Im (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Mandatory Statutory Im (Iota).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Mandatory Statutory Im (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12300,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 271AAD False Entry Penalties & Crimin... — General Ledger Verification",
+        "title": "Section 271AAD False Entry Penalties & Criminal Prosecutions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section AAD False Entr (Iota Delta).",
+            "caption": "Open primary debit entry for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10450,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section AAD False Entr (Delta).",
+            "caption": "Record secondary accrual adjustment for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section AAD False Entr (Iota).",
+            "caption": "Reconcile sub-ledger balances for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section AAD False Entr (Delta).",
+            "caption": "Verify double-entry trial balance for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -899,11 +899,11 @@
       "partTitle": "Section 271AAD False Entry Penalties & Criminal Prosecutions under Chapter XXII",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Section 271AAD False Entry Penalties & Crimin... — General Ledger Verification",
+        "title": "Section 271AAD False Entry Penalties & Criminal Prosecutions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section AAD False Entr (Iota Delta).",
+            "caption": "Open primary debit entry for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10450,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section AAD False Entr (Delta).",
+            "caption": "Record secondary accrual adjustment for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section AAD False Entr (Iota).",
+            "caption": "Reconcile sub-ledger balances for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section AAD False Entr (Delta).",
+            "caption": "Verify double-entry trial balance for Section 271AAD False Entry Penalties.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Section 270A ... — General Ledger Verification",
+        "title": "Production Python Architecture: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Iota Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10650,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Iota).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Section 270A Penalty & Section 270AA Immunity Simulator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Section 270A ... — General Ledger Verification",
+        "title": "Production Python Architecture: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Iota Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10650,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 49 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Iota).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 49 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 49 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12780,

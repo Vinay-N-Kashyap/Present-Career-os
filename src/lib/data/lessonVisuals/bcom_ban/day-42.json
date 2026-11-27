@@ -8,7 +8,7 @@
       "codeHash": "5a468b7c077fdfb1626a385fe5e6c5fa595082f35ae39fb5effc07d404e3e02a",
       "spec": {
         "template": "funnel",
-        "title": "The Institutional Letter of Credit Arc... — Treasury Risk Operations",
+        "title": "The Institutional Letter of Credit Architecture & UCP 600 Principles — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "0ae0b287847e49bde30f9e66f7e87e25fd5bc77d01b72e1f4334d6f509f01d3c",
       "spec": {
         "template": "funnel",
-        "title": "Documentary Examination, Strict Compli... — Treasury Risk Operations",
+        "title": "Documentary Examination, Strict Compliance & ISBP 745 Standards — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "14b86d7fee0d105125c110f0c844cf9452a57b1a07f9dc4dcf84bcf3de7db16e",
       "spec": {
         "template": "funnel",
-        "title": "Specialized Letter of Credit Architect... — Treasury Risk Operations",
+        "title": "Specialized Letter of Credit Architectures & Standby LCs (ISP98) — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "422e80409e63856317a3adc947a8aa4ccaa4b127cf3d847de552bf10e93d3d98",
       "spec": {
         "template": "funnel",
-        "title": "Pre-Shipment Packing Credit, Post-Ship... — Treasury Risk Operations",
+        "title": "Pre-Shipment Packing Credit, Post-Shipment Financing & Interest — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "6cd031ae8cfb23288b9e535b6fbac2de47e990f70551b96fb6df3e797d1e6bda",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Trade Finance... — Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Trade Finance Command & ECGC Default — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

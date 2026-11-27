@@ -8,7 +8,7 @@
       "codeHash": "249b13eeeb2e36605efadb2cdee4318d7383d0863ce9605d979889a8ccefcffa",
       "spec": {
         "template": "funnel",
-        "title": "Credit Default Swap Foundations: The P... — Structured Credit Operations",
+        "title": "Credit Default Swap Foundations — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "2a1650462df87d62903f2fd40a6f9e7d85f82994d49c1ebd6fb0e640d3ccfe84",
       "spec": {
         "template": "funnel",
-        "title": "Reduced-Form Credit Modeling: Hazard R... — Structured Credit Operations",
+        "title": "Reduced-Form Credit Modeling: Hazard — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "34de468527d034d9a15bfc1d04af9a31f1ad583d043757b68fb3a6ac6e26f890",
       "spec": {
         "template": "funnel",
-        "title": "The CDS-Bond Basis: Negative Basis Arb... — Structured Credit Operations",
+        "title": "The CDS-Bond Basis: Negative Basis — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "71f61af86de2f91ebee158864973e2cabfef4c5fc6ead2f3796140f6f3982cd3",
       "spec": {
         "template": "funnel",
-        "title": "ISDA Master Agreement, Credit Events &... — Structured Credit Operations",
+        "title": "ISDA Master Agreement, Credit Events & Auction Settlement — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "10e8dbf658f7211c0ea174d3c4da11bd57ff9dc648b328db2c93397387d5d95b",
       "spec": {
         "template": "funnel",
-        "title": "Master Single-Name CDS Pricing, Hazard... — Structured Credit Operations",
+        "title": "Master Single-Name CDS Pricing, Hazard Rate & Basis Arbitrage — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",

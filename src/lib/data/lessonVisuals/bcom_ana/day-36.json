@@ -8,7 +8,7 @@
       "codeHash": "819c3be4e030088626c3c06063ac8070740841448058d43325bd98947c924ed4",
       "spec": {
         "template": "bars",
-        "title": "Regulatory Frameworks, Monotonic Binni... - Learning Evaluation",
+        "title": "Regulatory Frameworks, Monotonic Binning & Weight of Evidence (WoE) - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "db9e8c06d9e662cbd5253e4b5919eee746f699c7eaf8037db164d049df558449",
       "spec": {
         "template": "bars",
-        "title": "Information Value (IV), Feature Select... - Learning Evaluation",
+        "title": "Information Value (IV), Feature Selection Thresholds & Predictive - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "65a1190f6102b8ef3f6a0a54e67631e9a37dacef76a0ced8d55e115937dc1a3f",
       "spec": {
         "template": "bars",
-        "title": "Calibrated Logistic Regression on WoE ... - Learning Evaluation",
+        "title": "Calibrated Logistic Regression on WoE & Scorecard Scaling via Points - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "9dab1cce0affd08af5b853e35db5139d04047493a2f9dccdd39311053b4254a0",
       "spec": {
         "template": "bars",
-        "title": "Expected Loss (EL = PD * LGD * EAD) & ... - Learning Evaluation",
+        "title": "Expected Loss (EL = PD * LGD * EAD) & Basel Rating Migration Matrices - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "e2d9695fd02f24676aabb81e62cd5daf79e43993967cfdb54f1a65e77563eaf5",
       "spec": {
         "template": "bars",
-        "title": "Production Scorecard Drift, Population... - Learning Evaluation",
+        "title": "Production Scorecard Drift, Population Stability Index (PSI) - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

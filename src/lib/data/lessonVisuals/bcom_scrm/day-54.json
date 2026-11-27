@@ -8,7 +8,7 @@
       "codeHash": "0e681c399e6d14aa180432ba10bc265e5e39919967a783cd9b7189607431e7ff",
       "spec": {
         "template": "funnel",
-        "title": "Unified GTM Strike Teams: 1-to-1, 1... - RevOps Funnel",
+        "title": "Unified GTM Strike Teams: 1-to-1 - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "abce1b3413a85cb16c6630494287c92b9f29d03821e8b5fb460ae439a5db1eca",
       "spec": {
         "template": "funnel",
-        "title": "Third-Party & First-Party Intent Te... - RevOps Funnel",
+        "title": "Third-Party & First-Party Intent Telemetry (Surge Topics, IP Resolution & Velocity) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "2696f50fadf7a1ce21ef6651812a887dcc38f3e4ab5a2019d0678ff2014faee8",
       "spec": {
         "template": "funnel",
-        "title": "Real-Time ABM Swarm Protocols: Cros... - RevOps Funnel",
+        "title": "Real-Time ABM Swarm Protocols: Cross-Functional Sales-Marketing SLA Orchestration - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "b9cfbbda29ddb5c235ef09c547a5b84ce2a02da3fef6e1e3ce4d0ba073c7f2a3",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic ICP Scoring & Algorithmic A... - RevOps Funnel",
+        "title": "Dynamic ICP Scoring & Algorithmic Account Promotion / Demotion DAGs - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "9d0836d7569a88523225dd5201a09d9c6448ba94ad2b8bed6d5c0af447c79ea9",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Complet... - RevOps Funnel",
+        "title": "Full Python Implementation: Complete ABM Intent Telemetry & Swarm - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

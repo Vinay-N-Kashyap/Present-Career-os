@@ -10,11 +10,11 @@
       "codeHash": "581de7a7c2e491532985870db1db7efe6722122a0e13cb3f616de0dc811c4061",
       "spec": {
         "template": "ledger-sheet",
-        "title": "OECD BEPS DEMPE Framework for Intangibles & V... — General Ledger Verification",
+        "title": "OECD BEPS DEMPE Framework for Intangibles — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for OECD BEPS DEMPE Framework for I...",
+            "caption": "Open primary debit entry for OECD BEPS DEMPE Framework for Intangibles.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "OECD BEPS DEMPE Framework for Intangibles & V... — General Ledger Verification",
+        "title": "OECD BEPS DEMPE Framework for Intangibles — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2950) for OECD BEPS DEMPE Framework for I...",
+            "caption": "Step 1: Open primary debit entry (2950).",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -264,11 +264,11 @@
       "codeHash": "6d63403c9fc919acb65de47eb313b3d90bac76113be9d46aa416dda2833c08cc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Residual Profit Split Method (RPSM) vs Transa... — General Ledger Verification",
+        "title": "Residual Profit Split Method (RPSM) vs Transactional Net Margin — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Residual Profit Split Method (R...",
+            "caption": "Open primary debit entry for Residual Profit Split Method.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Residual Profit Split Method (RPSM) vs Transa... — General Ledger Verification",
+        "title": "Residual Profit Split Method (RPSM) vs Transactional Net Margin — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3150) for Residual Profit Split Method (R...",
+            "caption": "Step 1: Open primary debit entry (3150) for Residual Profit Split Method.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -518,11 +518,11 @@
       "codeHash": "0a0cefea0f891fe101807c677b0e2461a00f2bbab74f771d6a027a7f3b156488",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Advance Pricing Agreements (APAs) & Mutual Ag... — General Ledger Verification",
+        "title": "Advance Pricing Agreements (APAs) & Mutual Agreement Procedures (MAP) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Advance Pricing Agreements (APA...",
+            "caption": "Open primary debit entry for Advance Pricing Agreements.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Advance Pricing Agreements (APAs) & Mutual Ag... — General Ledger Verification",
+        "title": "Advance Pricing Agreements (APAs) & Mutual Agreement Procedures (MAP) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3350) for Advance Pricing Agreements (APA...",
+            "caption": "Step 1: Open primary debit entry (3350) for Advance Pricing Agreements.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -772,11 +772,11 @@
       "codeHash": "bfebbb44e84d70933bebf74013e8f9ebb6b7e2cb3f233b0ee0f536955e71f108",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Thin Capitalization Rules & Interest Deductib... — General Ledger Verification",
+        "title": "Thin Capitalization Rules & Interest Deductibility Caps (IRC Section 163(j)) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Thin Capitalization Rules & Int...",
+            "caption": "Open primary debit entry for Thin Capitalization Rules.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Thin Capitalization Rules & Interest Deductib... — General Ledger Verification",
+        "title": "Thin Capitalization Rules & Interest Deductibility Caps (IRC Section 163(j)) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3550) for Thin Capitalization Rules & Int...",
+            "caption": "Step 1: Open primary debit entry (3550) for Thin Capitalization Rules.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -1026,11 +1026,11 @@
       "codeHash": "664905af1c534312cfb90ff1e0ced3e064290cf422efc5a77428dfb617761fb9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "OECD BEPS Action 13 Country-by-Country Report... — General Ledger Verification",
+        "title": "OECD BEPS Action 13 Country-by-Country Reporting (CbCR) & Audit Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for OECD BEPS Action multiple.",
+            "caption": "Open primary debit entry for OECD BEPS Action multiple.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "OECD BEPS Action 13 Country-by-Country Report... — General Ledger Verification",
+        "title": "OECD BEPS Action 13 Country-by-Country Reporting (CbCR) & Audit Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3750) for OECD BEPS Action 13 Country-by-...",
+            "caption": "Step 1: Open primary debit entry (3750).",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,

@@ -10,7 +10,7 @@
       "codeHash": "42337930f0964925aee76147fbd02d1c3e871cc878c64f6432278c1cd2a06e52",
       "spec": {
         "template": "tree-graph",
-        "title": "The Chunking Dilemma: Granularity Trade-offs ... — Enterprise AI Decision Graph",
+        "title": "The Chunking Dilemma: Granularity — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The Chunking Dilemma: Granulari...",
+            "caption": "Ingest enterprise Context Query for The Chunking Dilemma.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The Chunking Dilemma: Granularity Trade-offs ... — Enterprise AI Decision Graph",
+        "title": "The Chunking Dilemma: Granularity — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The Chunking Dilemma: Granulari...",
+            "caption": "Step 1: Ingest enterprise Context Query for The Chunking Dilemma.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "62cfeab9b49a6831a4e3af93efc125e268adc16e988838217b30761fba195f79",
       "spec": {
         "template": "tree-graph",
-        "title": "Hierarchical Chunking & Parent-Document Retri... — Enterprise AI Decision Graph",
+        "title": "Hierarchical Chunking & Parent-Document Retrieval (Small-to-Big Retrieval) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Hierarchical Chunking & Parent-...",
+            "caption": "Ingest enterprise Context Query for Hierarchical Chunking.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Hierarchical Chunking & Parent-Document Retri... — Enterprise AI Decision Graph",
+        "title": "Hierarchical Chunking & Parent-Document Retrieval (Small-to-Big Retrieval) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Hierarchical Chunking & Parent-...",
+            "caption": "Step 1: Ingest enterprise Context Query for Hierarchical Chunking.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "1947549a6fab4f4fcda6efaf1c9f1ffbe90e37b4600476e22340292a38e2d8d7",
       "spec": {
         "template": "tree-graph",
-        "title": "Contextual Compression & Token Pruning Algori... — Enterprise AI Decision Graph",
+        "title": "Contextual Compression & Token Pruning Algorithms — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Contextual Compression & Token ...",
+            "caption": "Ingest enterprise Context Query for Contextual Compression.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Contextual Compression & Token Pruning Algori... — Enterprise AI Decision Graph",
+        "title": "Contextual Compression & Token Pruning Algorithms — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Contextual Compression & Token ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Contextual Compression.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Dynamic Sliding Windows & Overl...",
+            "caption": "Ingest enterprise Context Query for Dynamic Sliding Windows & Overlap Management",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Sliding Windows & Overl...",
+            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Sliding Windows.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "b093a5854bd737efcd8436f70ea5e3e5704c350719ec13cbac058f8cc652f6b5",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a Production ... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a Production ... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

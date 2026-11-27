@@ -10,11 +10,11 @@
       "codeHash": "5adac685830bc26da921e733343a2ad86f5653cb77018d75e100ec82925a7f82",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Expert Report Writing & Judicial Standard — Forensic Assurance Ledger",
+        "title": "Forensic Expert Report Writing & Judicial Standards: Section 45 — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for Forensic.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 29 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2900000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 29 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3210000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Forensic Expert.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 29 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3210000,
@@ -141,11 +141,11 @@
       "codeHash": "fff785c7bdef5d04d91603d248743db83e7fe030494d06b7a97fd0b2069e4934",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Examination Tactics, Credibility Defense & E — Forensic Assurance Ledger",
+        "title": "Cross-Examination Tactics, Credibility Defense & Evidentiary Rules — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 29 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2925000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 29 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3247500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Cross-Examination.",
+            "caption": "Execute simulated enterprise forensic case study for Cross-Examination Tactics.",
             "title": "Day 29 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3247500,
@@ -272,11 +272,11 @@
       "codeHash": "2afcbd998fd709e1faa3a3c6bb084b104dc6c28316b2425e093a69c852f4f5b5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "NFRA Regulatory Enforcement & Sanctions: Section 1 — Forensic Assurance Ledger",
+        "title": "NFRA Regulatory Enforcement & Sanctions: Section 132 of Companies Act — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for NFRA.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 29 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 29 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3285000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for NFRA Regulatory.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 29 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3285000,
@@ -403,11 +403,11 @@
       "codeHash": "fbeed264f4180ccc8cd75091b8e481652b220631f44312a2a4b23c8bdf26008a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Forensic Auditor's Permanent Defense Shield: T — Forensic Assurance Ledger",
+        "title": "The Forensic Auditor's Permanent Defense Shield: The SA 230 Lockdown — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for The.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 29 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2975000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 29 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3322500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for The Forensic.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 29 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3322500,
@@ -538,7 +538,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 29 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3000000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 29 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3360000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Comprehensive Legal.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 29 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3360000,

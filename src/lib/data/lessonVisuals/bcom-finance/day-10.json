@@ -10,11 +10,11 @@
       "codeHash": "0eb9d9db9408e526c6ea0d656dd4238eb7632e78698e12db936165276e2484c6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Internal Rate of Return (IRR) & High-Preci... — General Ledger Verification",
+        "title": "Internal Rate of Return (IRR) & High-Precision Bisection Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Internal Rate.",
+            "caption": "Open primary facility debit entry for Internal Rate of Return.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72000,
@@ -139,11 +139,11 @@
       "codeHash": "ebb35a30f05b13af02b72d57e9636e6473058eafcdc53189adca3fa51828bd30",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Hurdle Rate Benchmark Testing & Net Presen... — General Ledger Verification",
+        "title": "Hurdle Rate Benchmark Testing & Net Present Value Profiles — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Hurdle Rate.",
+            "caption": "Open primary facility debit entry for Hurdle Rate Benchmark Testing.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73500,
@@ -268,11 +268,11 @@
       "codeHash": "7a93410c2dd05e93be4edad67b70e181d8e81c2473c1d76dad5b34fa4154a507",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Modified Internal Rate of Return (MIRR) & ... — General Ledger Verification",
+        "title": "Modified Internal Rate of Return (MIRR) & Reinvestment Realism — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Modified.",
+            "caption": "Open primary facility debit entry for Modified Internal Rate of Return.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 62500,
@@ -397,11 +397,11 @@
       "codeHash": "99ef84132d9cbe0aff4776f8912450ff5cb084098bad2701878029a7942708d3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Rationing & Profitability Index (P... — General Ledger Verification",
+        "title": "Capital Rationing & Profitability Index (PI) Optimization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capital.",
+            "caption": "Open primary facility debit entry for Capital Rationing.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 63750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 76500,
@@ -526,11 +526,11 @@
       "codeHash": "54cb19d21e5aadfda6da8a236472480f52333c1395b75587dea16050e7c71e18",
       "spec": {
         "template": "ledger-sheet",
-        "title": "⭐ Milestone 2 Capstone: Comprehensive Capi... — General Ledger Verification",
+        "title": "⭐ Milestone 2 Capstone: Comprehensive — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for ⭐ Milestone.",
+            "caption": "Open primary facility debit entry for ⭐ Milestone 2 Capstone.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 65000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 78000,

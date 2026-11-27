@@ -10,11 +10,11 @@
       "codeHash": "14da48613cbe757ff7c8cbbffd7f731dd9f6ea7367a9582ebdbaf2086239b2ad",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trade Secret Invariants & The 'Reasonable ... — General Ledger Verification",
+        "title": "Trade Secret Invariants & The 'Reasonable Measures' Standard (DTSA / UTSA) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Trade Secret.",
+            "caption": "Open primary facility debit entry for Trade Secret Invariants.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63600,
@@ -139,11 +139,11 @@
       "codeHash": "506d1c35b1a12bf48ef8d7a9d50114686e8d43f34bc71545eb761128e594ff5e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trade Secret Misappropriation, Improper Me... — General Ledger Verification",
+        "title": "Trade Secret Misappropriation, Improper Means & Whistleblower Immunity — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Trade Secret.",
+            "caption": "Open primary facility debit entry for Trade Secret Misappropriation.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65100,
@@ -268,11 +268,11 @@
       "codeHash": "d52f97ae70f1f912a06f8a1c42f22e063843fa7cb4f061aafa022f617705156d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Non-Compete Agreements, The Inevitable Dis... — General Ledger Verification",
+        "title": "Non-Compete Agreements, The Inevitable Disclosure Doctrine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 55500,
@@ -397,11 +397,11 @@
       "codeHash": "5f649a11bd57ee8388ef4a854f1fff872747b75507e8cf918df0d010c15968e7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "DTSA Civil Seizure Orders & Trade Secret D... — General Ledger Verification",
+        "title": "DTSA Civil Seizure Orders & Trade Secret Damages Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for DTSA Civil.",
+            "caption": "Open primary facility debit entry for DTSA Civil Seizure Orders.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 68100,
@@ -526,11 +526,11 @@
       "codeHash": "0b1f943653ce6a7bf210be7d167fc115b7d2c1a5ff2c9ae037fd120ddcda783b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Industrial Espionage, The Economic Espiona... — General Ledger Verification",
+        "title": "Industrial Espionage, The Economic Espionage Act (EEA) & Criminal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Industrial.",
+            "caption": "Open primary facility debit entry for Industrial Espionage.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 58000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69600,

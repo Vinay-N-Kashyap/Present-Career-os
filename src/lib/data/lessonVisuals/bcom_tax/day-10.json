@@ -10,11 +10,11 @@
       "codeHash": "11123f0c8ef744f642189b19e73259681d15eb2a1ab7c7f8e7d762cbc38be861",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Outward Return Architecture: GSTR-1 Table Synthesi — GST Ledger Verification",
+        "title": "Outward Return Architecture: GSTR-1 Table Synthesis, HSN Summaries — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Outward Return.",
+            "caption": "Open primary taxable supply ledger entry for Outward Return Architecture.",
             "title": "Day 10 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 350000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 10 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 400000,
@@ -141,11 +141,11 @@
       "codeHash": "bbf867063b4c6da995c5d72bd1dcaa1711d616f19fc0736b39e8bebf95c0b633",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Inward Return Architecture: GSTR-2B Ingestion & St — GST Ledger Verification",
+        "title": "Inward Return Architecture: GSTR-2B Ingestion & Strict Section — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Inward Return.",
+            "caption": "Open primary taxable supply ledger entry for Inward Return Architecture.",
             "title": "Day 10 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 355000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 10 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 407500,
@@ -272,11 +272,11 @@
       "codeHash": "2f349cc6f3a35995cdbf57bab85aaae97ba55c5cd936066fa51afea5f94bf850",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Rule 42/43 Reversals & Section 17(5) Blocking Inte — GST Ledger Verification",
+        "title": "Rule 42/43 Reversals & Section 17(5) Blocking Integration into — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Rule.",
+            "caption": "Open primary taxable supply ledger entry for Rule 42/43 Reversals.",
             "title": "Day 10 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 360000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 10 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 415000,
@@ -403,11 +403,11 @@
       "codeHash": "58acbbcc9fb2ad5cf3f23145e0d8fecc88bc3f5603c3517809c8330bb7e930a6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tax Offset Priority Optimization: Section 49, 49A, — GST Ledger Verification",
+        "title": "Tax Offset Priority Optimization: Section 49, 49A — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Tax Offset.",
+            "caption": "Open primary taxable supply ledger entry for Tax Offset Priority Optimization.",
             "title": "Day 10 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 365000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 10 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 422500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated commercial case study for Tax Offset Priority.",
+            "caption": "Execute simulated commercial case study for Tax Offset Priority Optimization.",
             "title": "Day 10 GST Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 422500,
@@ -534,11 +534,11 @@
       "codeHash": "d1e6a8f228d5ca54135dedbb46ddd3a1e8e199c6c63b3cf9d3e5d47802606e1d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Grand Milestone Capstone: Automated GSTR-3B Comput — GST Ledger Verification",
+        "title": "Grand Milestone Capstone: Automated GSTR-3B Computation & Controller — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Grand Milestone.",
+            "caption": "Open primary taxable supply ledger entry for Grand Milestone Capstone.",
             "title": "Day 10 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 370000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 10 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 430000,

@@ -10,11 +10,11 @@
       "codeHash": "2f4ba6565411d91a560e66484d3da9d58aa44b516fa6d214e242d5f3b47c5825",
       "spec": {
         "template": "ledger-sheet",
-        "title": "AS-3 / Ind AS 7 Statutory Architecture: Di... — General Ledger Verification",
+        "title": "AS-3 / Ind AS 7 Statutory Architecture: Direct vs Indirect Method — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for AS-three / Ind.",
+            "caption": "Open primary facility debit entry for AS-three / Ind.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147600,
@@ -139,11 +139,11 @@
       "codeHash": "c00e4afa3d57c9e4792c076c08996e183b3e88e19f408ea38d7a50d1aaccaa9b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Operating Cash Flows (CFO): Non-Cash Addba... — General Ledger Verification",
+        "title": "Operating Cash Flows (CFO): Non-Cash — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Operating Cash.",
+            "caption": "Open primary facility debit entry for Operating Cash Flows (CFO).",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149100,
@@ -268,11 +268,11 @@
       "codeHash": "80ec0d3762eca59e8242fd648a83903037a1b615a96ac54a4f840d913a90bd5c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Investing (CFI) & Financing (CFF) Activiti... — General Ledger Verification",
+        "title": "Investing (CFI) & Financing (CFF) Activities Ledger Reconstruction — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Investing.",
+            "caption": "Open primary facility debit entry for Investing.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 125500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 150600,
@@ -397,11 +397,11 @@
       "codeHash": "c0fd052d3f9b7981a0f04588b87166d7526234ca5713177384a3407ae6a00ad0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Complete AS-3 Cash Reconciliation & Free C... — General Ledger Verification",
+        "title": "Complete AS-3 Cash Reconciliation & Free Cash Flow (FCFF/FCFE) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Complete.",
+            "caption": "Open primary facility debit entry for Complete AS-3 Cash Reconciliation.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 126750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 152100,
@@ -526,11 +526,11 @@
       "codeHash": "fd5ebca8065f4f767bbc75edc8eeeb51c42f8eeaa609324517955ec26ab9bd99",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Executive Cash Flow Control Dossier & Liqu... — General Ledger Verification",
+        "title": "Executive Cash Flow Control Dossier & Liquidity Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($one-twenty-eight,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 128000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 153600,

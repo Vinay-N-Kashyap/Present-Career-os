@@ -8,7 +8,7 @@
       "codeHash": "52343d9ad6302a366d36114d88f8d9592c3f546a0dfcbe8828bc02ef714d1e39",
       "spec": {
         "template": "funnel",
-        "title": "Anatomy of Vapourware: Over-Promise... - RevOps Funnel",
+        "title": "Anatomy of Vapourware: Over-Promised Architectural Capabilities, SLAs - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "fcfef1dfea6dbb351ae8a603f7ea13c3b0bbdc29ff1229fd95ef696d85903138",
       "spec": {
         "template": "funnel",
-        "title": "Engineering Governance & Dual Co-Si... - RevOps Funnel",
+        "title": "Engineering Governance & Dual Co-Signature Workflows: Enforcing - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "5a90d59c453dccfa0bd952e470f1a42bbfa7c850ff8c1d9057fa0e3568cf0d1d",
       "spec": {
         "template": "funnel",
-        "title": "Contractual Liability, Liquidated D... - RevOps Funnel",
+        "title": "Contractual Liability, Liquidated Damages & Uncapped Indemnification - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "072d90577e85142d7b3a8b73981e41d9d39cb4a3448363960fd0d74fd31d5cfc",
       "spec": {
         "template": "funnel",
-        "title": "Automated Contract Clause Scanning ... - RevOps Funnel",
+        "title": "Automated Contract Clause Scanning & Ambiguity Detection via Pattern - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "f4828a5a4578c1fc69dca37fd70fc19ef8c0902e20a49234b75dc21adf71909e",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Complet... - RevOps Funnel",
+        "title": "Full Python Implementation: Complete Vapourware Defense & Roadmap - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

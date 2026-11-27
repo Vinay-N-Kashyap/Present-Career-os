@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Bilateral Investment Treaties (BITs) & Sub... Compliance Workflow",
+        "title": "Bilateral Investment Treaties (BITs) & Substantive Standards — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Bilateral Investment Treaties (BITs) &...",
+            "caption": "Stage one: Initialize Bilateral Investment Treaties (BITs)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "India's 2016 Model BIT, White Industries P... Compliance Workflow",
+        "title": "India's 2016 Model BIT, White Industries Precedent & Retrospective — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize India's multiple Model BIT, White Industri...",
+            "caption": "Stage one: Initialize India's multiple Model BIT, White",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Enforcement of Foreign Awards under Sectio... Compliance Workflow",
+        "title": "Enforcement of Foreign Awards under Section 48 of the Arbitration — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Enforcement of Foreign Awards under Se...",
+            "caption": "Stage one: Initialize Enforcement of Foreign Awards",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "The Public Policy Defense, Renusagar Doctr... Compliance Workflow",
+        "title": "The Public Policy Defense, Renusagar Doctrine & Elimination of Patent — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize The Public Policy Defense, Renusagar D...",
+            "caption": "Stage one: Initialize The Public Policy Defense, Renusagar",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Sovereign Immunity, Foreign Asset Attachme... Compliance Workflow",
+        "title": "Sovereign Immunity, Foreign Asset Attachment & Arbitral Execution — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Sovereign Immunity, Foreign Asset Atta...",
+            "caption": "Stage one: Initialize Sovereign Immunity, Foreign Asset",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

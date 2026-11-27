@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Amalgamations under Section 2(1B) &... — General Ledger Verification",
+        "title": "Corporate Amalgamations under Section 2(1B) & The Section 72A Loss — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Corporate Amalgamation (Sigma Alpha).",
+            "caption": "Open primary debit entry for Corporate Amalgamations under Section 2(1B).",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11200,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Corporate Amalgamation (Alpha).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13440,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Corporate Amalgamation (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Corporate Amalgamations under Section 2(1B).",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13440,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Corporate Amalgamation (Alpha).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13440,
@@ -134,11 +134,11 @@
       "partTitle": "Corporate Amalgamations under Section 2(1B) & The Section 72A Loss Carry Forward Architecture",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Corporate Amalgamations under Section 2(1B) &... — General Ledger Verification",
+        "title": "Corporate Amalgamations under Section 2(1B) & The Section 72A Loss — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Corporate Amalgamation (Sigma Alpha).",
+            "caption": "Open primary debit entry for Corporate Amalgamations under Section 2(1B).",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11200,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Corporate Amalgamation (Alpha).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13440,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Corporate Amalgamation (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Corporate Amalgamations under Section 2(1B).",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13440,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Corporate Amalgamation (Alpha).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13440,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Demergers under Section 2(19AA) & T... — General Ledger Verification",
+        "title": "Corporate Demergers under Section 2(19AA) & The Undertaking — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Corporate Demergers un (Sigma Beta).",
+            "caption": "Open primary debit entry for Corporate Demergers under Section 2(19AA).",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Corporate Demergers un (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13680,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Corporate Demergers un (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Corporate Demergers under Section 2(19AA).",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13680,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Corporate Demergers un (Beta).",
+            "caption": "Verify double-entry trial balance for Corporate Demergers under Section 2(19AA).",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13680,
@@ -389,11 +389,11 @@
       "partTitle": "Corporate Demergers under Section 2(19AA) & The Undertaking Allocation Doctrine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Corporate Demergers under Section 2(19AA) & T... — General Ledger Verification",
+        "title": "Corporate Demergers under Section 2(19AA) & The Undertaking — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Corporate Demergers un (Sigma Beta).",
+            "caption": "Open primary debit entry for Corporate Demergers under Section 2(19AA).",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Corporate Demergers un (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13680,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Corporate Demergers un (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Corporate Demergers under Section 2(19AA).",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13680,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Corporate Demergers un (Beta).",
+            "caption": "Verify double-entry trial balance for Corporate Demergers under Section 2(19AA).",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13680,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Slump Sale Architecture under Section 50B & R... — General Ledger Verification",
+        "title": "Slump Sale Architecture under Section 50B & Rule 11UAE Net Worth — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Slump Sale Architectur (Sigma Gamma).",
+            "caption": "Open primary debit entry for Slump Sale Architecture under Section 50B.",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11600,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Slump Sale Architectur (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13920,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Slump Sale Architectur (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Slump Sale Architecture under Section 50B.",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13920,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Slump Sale Architectur (Gamma).",
+            "caption": "Verify double-entry trial balance for Slump Sale Architecture under Section 50B.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13920,
@@ -644,11 +644,11 @@
       "partTitle": "Slump Sale Architecture under Section 50B & Rule 11UAE Net Worth Determination",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Slump Sale Architecture under Section 50B & R... — General Ledger Verification",
+        "title": "Slump Sale Architecture under Section 50B & Rule 11UAE Net Worth — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Slump Sale Architectur (Sigma Gamma).",
+            "caption": "Open primary debit entry for Slump Sale Architecture under Section 50B.",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11600,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Slump Sale Architectur (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13920,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Slump Sale Architectur (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Slump Sale Architecture under Section 50B.",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13920,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Slump Sale Architectur (Gamma).",
+            "caption": "Verify double-entry trial balance for Slump Sale Architecture under Section 50B.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13920,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Gains Exemptions under Section 47 & A... — General Ledger Verification",
+        "title": "Capital Gains Exemptions under Section 47 & Anti-Abuse Traps: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Capital Gains Exemptio (Sigma Delta).",
+            "caption": "Open primary debit entry for Capital Gains Exemptions under Section 47.",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11800,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Capital Gains Exemptio (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14160,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Capital Gains Exemptio (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Capital Gains Exemptions under Section 47.",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14160,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Capital Gains Exemptio (Delta).",
+            "caption": "Verify double-entry trial balance for Capital Gains Exemptions under Section 47.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14160,
@@ -899,11 +899,11 @@
       "partTitle": "Capital Gains Exemptions under Section 47 & Anti-Abuse Traps: Section 47A and 56(2)(x)",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Capital Gains Exemptions under Section 47 & A... — General Ledger Verification",
+        "title": "Capital Gains Exemptions under Section 47 & Anti-Abuse Traps: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Capital Gains Exemptio (Sigma Delta).",
+            "caption": "Open primary debit entry for Capital Gains Exemptions under Section 47.",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11800,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Capital Gains Exemptio (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14160,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Capital Gains Exemptio (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Capital Gains Exemptions under Section 47.",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14160,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Capital Gains Exemptio (Delta).",
+            "caption": "Verify double-entry trial balance for Capital Gains Exemptions under Section 47.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14160,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Corporate M&A... — General Ledger Verification",
+        "title": "Production Python Architecture: Corporate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Sigma Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14400,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14400,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14400,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Corporate M&A Restructuring & Section 72A/50B Tax Simulator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Corporate M&A... — General Ledger Verification",
+        "title": "Production Python Architecture: Corporate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Sigma Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 58 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 58 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14400,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Sigma).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 58 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14400,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 58 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14400,

@@ -8,7 +8,7 @@
       "codeHash": "1db58c7e4084d57e16a431b2d1a2bf84adc6a317f7bbdadc7022d4690f037945",
       "spec": {
         "template": "funnel",
-        "title": "The Regulatory Capital Stack: CET1, AT... — Treasury Risk Operations",
+        "title": "The Regulatory Capital Stack: CET1 — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "f883a66a70787ac295acf372c5f21b857e1d9209850a05187f8777a6d7a1085c",
       "spec": {
         "template": "funnel",
-        "title": "Macroprudential Capital Buffers: CCB, ... — Treasury Risk Operations",
+        "title": "Macroprudential Capital Buffers: CCB, Countercyclical Buffer (CCyB) & D-SIB Surcharges — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "42c3f9702b7286104aaed03aa296eef6b0e2e4904407b9c709aa6c23f6260cde",
       "spec": {
         "template": "funnel",
-        "title": "The Non-Risk-Based Backstop: The Basel... — Treasury Risk Operations",
+        "title": "The Non-Risk-Based Backstop — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "3ea2d4d30bf9439c7ce786b054b3db0f63e83895e9077b7b427e00cda20f0230",
       "spec": {
         "template": "funnel",
-        "title": "Basel IV (Finalized Basel III) Output ... — Treasury Risk Operations",
+        "title": "Basel IV (Finalized Basel III) Output Floors & Standardized Approach — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "c503a484a6f2fb3c472463f892325e4abad709b5ce904d75293babe1faba7af2",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise Capital Sizing & All... — Treasury Risk Operations",
+        "title": "Master Enterprise Capital Sizing & Allocation Engine: Comprehensive — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

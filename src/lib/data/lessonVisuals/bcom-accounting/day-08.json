@@ -10,11 +10,11 @@
       "codeHash": "bf6a9e8dccd45e74894be0c504dd6f3a127f58329863b2406402ee16d274f22c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bank Reconciliation Statement Fundamentals... — General Ledger Verification",
+        "title": "Bank Reconciliation Statement Fundamentals: Cash Book vs Pass Book — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Bank.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63600,
@@ -139,11 +139,11 @@
       "codeHash": "5376d219e3943b3a102713cfbae6e6ff46384e1fc30ebaba978eba2b3b520ac6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Corrected Cash Book Protocol: Adjustin... — General Ledger Verification",
+        "title": "The Corrected Cash Book Protocol: Adjusting General Ledger Prior to BRS — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Corrected.",
+            "caption": "Open primary facility debit entry for The Corrected Cash Book Protocol.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65100,
@@ -268,11 +268,11 @@
       "codeHash": "8c05b0b5abaa0715d108b844c6a7cbc0f0f69dd602edceccf5857557fb37462e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bank Overdraft BRS Inversion: Unfavorable ... — General Ledger Verification",
+        "title": "Bank Overdraft BRS Inversion: Unfavorable — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Bank.",
+            "caption": "Open primary facility debit entry for Bank Overdraft BRS Inversion.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 55500,
@@ -397,11 +397,11 @@
       "codeHash": "1f763179733333e7fe5602e1daaa32cd2a7cef1f6bd9f4dac5341d7c4fea3764",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Error Detection & Classification: Internal... — General Ledger Verification",
+        "title": "Error Detection & Classification: Internal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Error.",
+            "caption": "Open primary facility debit entry for Error Detection & Classification.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 68100,
@@ -526,11 +526,11 @@
       "codeHash": "7004858abcbbf78a0c871331a60cd5819e2a495731989346494f61e5befb76c7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Continuous Automated Reconciliation Pipeli... — General Ledger Verification",
+        "title": "Continuous Automated Reconciliation Pipelines & Audit Dossier — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Continuous.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 58000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69600,

@@ -302,7 +302,7 @@
           },
           {
             "at": "example",
-            "caption": "Non essential tracking scripts halt pending explicit consumer opt in.",
+            "caption": "Non essential tracking scripts halt pending explicit consumer opt.",
             "activeStageId": "s3",
             "stages": [
               {

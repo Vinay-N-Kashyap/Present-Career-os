@@ -313,7 +313,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Order Batching  Routing Wave Pic Funnel",
+        "title": "Order Batching Routing Wave Pic Funnel",
         "steps": [
           {
             "at": "intro",
@@ -464,7 +464,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Automated Guided Vehicles AGV  A Funnel",
+        "title": "Automated Guided Vehicles AGV A Funnel",
         "steps": [
           {
             "at": "intro",

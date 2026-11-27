@@ -8,7 +8,7 @@
       "codeHash": "b085a2cd6ab690d1ac49ee5c998fc58e8185f8457dc2779b9128d3ee2333ecf2",
       "spec": {
         "template": "funnel",
-        "title": "Deterministic & Stochastic CLV Modelin... \u2014 Conversion Funnel",
+        "title": "Deterministic & Stochastic CLV Modeling: Foundations of Customer — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "c454b302b4bc63e636d14856af2ee8556286633125c950e956c003ff9f727af1",
       "spec": {
         "template": "funnel",
-        "title": "Cohort Churn Analysis & Survival Curve... \u2014 Conversion Funnel",
+        "title": "Cohort Churn Analysis & Survival Curves: Kaplan-Meier & Cox Hazard — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "ab184e694617a872fe830f9f6ef496f732a260ef6025b96af61bfd6c68bd5014",
       "spec": {
         "template": "funnel",
-        "title": "Customer Acquisition Cost (CAC) to LTV... \u2014 Conversion Funnel",
+        "title": "Customer Acquisition Cost (CAC) to LTV Ratio & Margin Payback — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "76c5d0692a3d82bedafa044821f5399df4cec0133926ac9fac00fbaf84b57ab0",
       "spec": {
         "template": "funnel",
-        "title": "Retention Mechanics: Loyalty Architect... \u2014 Conversion Funnel",
+        "title": "Retention Mechanics: Loyalty — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "36e66238b2501a9043089d8b0829e8adbd15f5aa0991fe51fc3dbf11a8fd0a27",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Cohort CLV & Churn Sensiti... \u2014 Conversion Funnel",
+        "title": "Algorithmic Cohort CLV & Churn Sensitivity Simulator — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

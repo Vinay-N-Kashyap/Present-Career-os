@@ -40,6 +40,14 @@ self.onmessage = async (event) => {
   const out = [];
   try {
     const pyodide = await getPyodide();
+    // Load Pyodide-bundled packages the code imports (numpy, scipy, networkx, ...). Silent on purpose so
+    // "Loading numpy..." never lands in the student's output; if a package is unavailable (e.g. offline),
+    // Python reports the ordinary ModuleNotFoundError below.
+    try {
+      await pyodide.loadPackagesFromImports(code, { messageCallback: () => {}, errorCallback: () => {} });
+    } catch (_e) {
+      /* fall through: the import error is reported by Python itself */
+    }
     pyodide.setStdout({ batched: (line) => out.push(line) });
     pyodide.setStderr({ batched: (line) => out.push(line) });
 

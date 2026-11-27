@@ -10,7 +10,7 @@
       "codeHash": "577bdbf1b6b4cb9e634112e9f7af61f31e2b1e6bd020d01405e1cfda95cbab37",
       "spec": {
         "template": "tree-graph",
-        "title": "The Enterprise Data Bottleneck: Scarcity, Lab... — Enterprise AI Decision Graph",
+        "title": "The Enterprise Data Bottleneck: Scarcity — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The Enterprise Data Bottleneck:...",
+            "caption": "Ingest enterprise Context Query for The Enterprise Data Bottleneck.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The Enterprise Data Bottleneck: Scarcity, Lab... — Enterprise AI Decision Graph",
+        "title": "The Enterprise Data Bottleneck: Scarcity — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The Enterprise Data Bottleneck:...",
+            "caption": "Step 1: Ingest enterprise Context Query for The Enterprise Data Bottleneck.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "c06529ac0dab40b6891c445d0a8155ea834120131ec1a028101146cdd8e0cc63",
       "spec": {
         "template": "tree-graph",
-        "title": "Rejection Sampling & Automated Quality Filter... — Enterprise AI Decision Graph",
+        "title": "Rejection Sampling & Automated Quality Filtering (Self-Instruct & Evol-Instruct) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Rejection Sampling & Automated ...",
+            "caption": "Ingest enterprise Context Query for Rejection Sampling.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Rejection Sampling & Automated Quality Filter... — Enterprise AI Decision Graph",
+        "title": "Rejection Sampling & Automated Quality Filtering (Self-Instruct & Evol-Instruct) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Rejection Sampling & Automated ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Rejection Sampling.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "7bf907823c397bda7421c8d8026cca40acc91f5242d2f1b7b677627d9351fc3b",
       "spec": {
         "template": "tree-graph",
-        "title": "From RLHF to DPO: The Mathematical Revolution... — Enterprise AI Decision Graph",
+        "title": "From RLHF to DPO: The Mathematical — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for From RLHF to DPO: The Mathemati...",
+            "caption": "Ingest enterprise Context Query for From RLHF to DPO: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "From RLHF to DPO: The Mathematical Revolution... — Enterprise AI Decision Graph",
+        "title": "From RLHF to DPO: The Mathematical — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for From RLHF to DPO: The Mathemati...",
+            "caption": "Step 1: Ingest enterprise Context Query for From RLHF to DPO: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "48e9783aec1db8076039d401fb0aba367631ef9479f32fa1465985acd0df9089",
       "spec": {
         "template": "tree-graph",
-        "title": "Enterprise Preference Dataset Construction: W... — Enterprise AI Decision Graph",
+        "title": "Enterprise Preference Dataset Construction: Winning vs Losing Pairs — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Enterprise Preference Dataset C...",
+            "caption": "Ingest enterprise Context Query for Enterprise Preference Dataset Construction.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Enterprise Preference Dataset Construction: W... — Enterprise AI Decision Graph",
+        "title": "Enterprise Preference Dataset Construction: Winning vs Losing Pairs — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Enterprise Preference Dataset C...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "8d97392a06958c58291bf01dd908464461a198fe04d8fb80fe22772ad2c3f4a8",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an End-to-End... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an End-to-End... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

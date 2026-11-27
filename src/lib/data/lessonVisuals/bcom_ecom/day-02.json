@@ -10,7 +10,7 @@
       "codeHash": "8e152f524733637a2325f219ccc34daafdd80cd14895e1b55a8dd8cd235f1430",
       "spec": {
         "template": "funnel",
-        "title": "Inventory Turnover Velocity, DSI & Working Ca... — Conversion Pipeline",
+        "title": "Inventory Turnover Velocity, DSI & Working Capital Traps — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,7 +168,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Inventory Turnover Velocity, DSI & Working Ca... — Conversion Pipeline",
+        "title": "Inventory Turnover Velocity, DSI & Working Capital Traps — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -330,7 +330,7 @@
       "codeHash": "d2275763715e052f8856e6bc9eb42f1ee7c62fc34a1d8e83dea5e647c7761215",
       "spec": {
         "template": "funnel",
-        "title": "The Bullwhip Effect & Supply Chain Variance A... — Conversion Pipeline",
+        "title": "The Bullwhip Effect & Supply Chain Variance Amplification — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "The Bullwhip Effect & Supply Chain Variance A... — Conversion Pipeline",
+        "title": "The Bullwhip Effect & Supply Chain Variance Amplification — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -650,7 +650,7 @@
       "codeHash": "c22382bfff7dc637be7f138125aa17c62cc110cf133de46a64812dca53e3d39d",
       "spec": {
         "template": "funnel",
-        "title": "Direct-to-Consumer (DTC) 3-Tier Contribution ... — Conversion Pipeline",
+        "title": "Direct-to-Consumer (DTC) 3-Tier Contribution Margin Waterfall — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,7 +808,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Direct-to-Consumer (DTC) 3-Tier Contribution ... — Conversion Pipeline",
+        "title": "Direct-to-Consumer (DTC) 3-Tier Contribution Margin Waterfall — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -970,7 +970,7 @@
       "codeHash": "482898f66ff148f2aacbb30c310878adc44934030c175c77f7aba477f85d3c65",
       "spec": {
         "template": "funnel",
-        "title": "Distributed Order Management (DOM) & Omnichan... — Conversion Pipeline",
+        "title": "Distributed Order Management (DOM) & Omnichannel Routing Algorithms — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Distributed Order Management (DOM) & Omnichan... — Conversion Pipeline",
+        "title": "Distributed Order Management (DOM) & Omnichannel Routing Algorithms — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1290,7 +1290,7 @@
       "codeHash": "c2a6845124d2f956b7ae00d6ab3ab361f900e8083606535ebd4c104691d584d9",
       "spec": {
         "template": "funnel",
-        "title": "E-Commerce Fraud Velocity Rules & Chargeback ... — Conversion Pipeline",
+        "title": "E-Commerce Fraud Velocity Rules & Chargeback Prevention — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,7 +1448,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "E-Commerce Fraud Velocity Rules & Chargeback ... — Conversion Pipeline",
+        "title": "E-Commerce Fraud Velocity Rules & Chargeback Prevention — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

@@ -8,7 +8,7 @@
       "codeHash": "f06e3031da63666ea5d129fb3be159610ae84831f7afa0f74f496c675458a169",
       "spec": {
         "template": "funnel",
-        "title": "Visual Saliency, Top-Down vs. Bottom-U... \u2014 Conversion Funnel",
+        "title": "Visual Saliency, Top-Down vs. Bottom-Up Attention & Itti-Koch — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "976777f4437f719c2c1e10e1ce9ec3b976b70d2fdfa4f1789520aee1e10c6893",
       "spec": {
         "template": "funnel",
-        "title": "Eye-Tracking Metrics, Fixation Sequenc... \u2014 Conversion Funnel",
+        "title": "Eye-Tracking Metrics, Fixation Sequences & F-Shaped / Z-Pattern — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "c9389ecacd7fb53e79fab78982c31695089abe27c48d131fe8191ff7193133e7",
       "spec": {
         "template": "funnel",
-        "title": "Cognitive Biases in Digital Conversion... \u2014 Conversion Funnel",
+        "title": "Cognitive Biases in Digital Conversion: The Decoy Effect, Anchoring — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "5845d92103bd478e5366bf6c00ddddb8587706d0ba8b0b8011ef747eaf47ea79",
       "spec": {
         "template": "funnel",
-        "title": "Loss Aversion, Sunk Cost Fallacies & E... \u2014 Conversion Funnel",
+        "title": "Loss Aversion, Sunk Cost Fallacies & Endowment Effect in Gamification — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "8e19078a9e53c6a4333c1f188c15a42de34abf6ba28967e48407cabf26a67ee7",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Eye-Tracking & Cognitive L... \u2014 Conversion Funnel",
+        "title": "Algorithmic Eye-Tracking & Cognitive Load Optimization Simulator — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

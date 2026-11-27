@@ -10,11 +10,11 @@
       "codeHash": "61e9e094ec3460102e64894e4cb94bacb00e99152006969e0fbac1ae41f91882",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multi-Stage Forensic Ingestion, Benford Chi-S... — General Ledger Verification",
+        "title": "Multi-Stage Forensic Ingestion, Benford Chi-Square & Beneish — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Multi-Stage Forensic Ingestion,...",
+            "caption": "Open primary debit entry for Multi-Stage Forensic Ingestion.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Multi-Stage Forensic Ingestion, Benford Chi-S... — General Ledger Verification",
+        "title": "Multi-Stage Forensic Ingestion, Benford Chi-Square & Beneish — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Multi-Stage Forensic Ingestion,...",
+            "caption": "Step 1: Open primary debit entry (3250) for Multi-Stage Forensic Ingestion.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -264,11 +264,11 @@
       "codeHash": "bb9f7bd35d2d56c1dc279425d0b9e820bb44c67adbfdee9676d1cde290ad027e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "High-Risk Journal Entry Override Detection & ... — General Ledger Verification",
+        "title": "High-Risk Journal Entry Override Detection & Employee-Vendor — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for High-Risk Journal Entry Overrid...",
+            "caption": "Open primary debit entry for High-Risk Journal Entry Override Detection.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "High-Risk Journal Entry Override Detection & ... — General Ledger Verification",
+        "title": "High-Risk Journal Entry Override Detection & Employee-Vendor — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for High-Risk Journal Entry Overrid...",
+            "caption": "Step 1: Open primary debit entry (3450).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -518,11 +518,11 @@
       "codeHash": "c9b1b4109062a5729ee00b8472b539f50fcfff0bb8e4d86e6446e45ffd3b7691",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Electronic Evidence Custody (NIST SP 800-86) ... — General Ledger Verification",
+        "title": "Electronic Evidence Custody (NIST SP 800-86) & Carved Volatile Memory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Electronic Evidence Custody (NI...",
+            "caption": "Open primary debit entry for Electronic Evidence Custody.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Electronic Evidence Custody (NIST SP 800-86) ... — General Ledger Verification",
+        "title": "Electronic Evidence Custody (NIST SP 800-86) & Carved Volatile Memory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3650) for Electronic Evidence Custody (NI...",
+            "caption": "Step 1: Open primary debit entry (3650) for Electronic Evidence Custody.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -772,11 +772,11 @@
       "codeHash": "32756e14f61e67c1e6ec88d4d2602babe5c73f3986f4263321e4bb0b392d55ed",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Net Worth Method & Illicit Wealth Re... — General Ledger Verification",
+        "title": "Forensic Net Worth Method & Illicit Wealth Restitution Quantification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Forensic Net Worth Method & Ill...",
+            "caption": "Open primary debit entry for Forensic Net Worth Method.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Forensic Net Worth Method & Illicit Wealth Re... — General Ledger Verification",
+        "title": "Forensic Net Worth Method & Illicit Wealth Restitution Quantification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3850) for Forensic Net Worth Method & Ill...",
+            "caption": "Step 1: Open primary debit entry (3850) for Forensic Net Worth Method.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -1026,11 +1026,11 @@
       "codeHash": "97a70d67c5d65cc73bb02cffd4e78d38487d887eb3d75649ee18eeaaeee48e32",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Synthesis: Expert Witness Trial D... — General Ledger Verification",
+        "title": "Milestone 1 Synthesis: Expert Witness Trial — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Milestone one Synthesis: Expert.",
+            "caption": "Open primary debit entry for Milestone one Synthesis: Expert.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Synthesis: Expert Witness Trial D... — General Ledger Verification",
+        "title": "Milestone 1 Synthesis: Expert Witness Trial — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (4050) for Milestone 1 Synthesis: Expert W...",
+            "caption": "Step 1: Open primary debit entry (4050) for Milestone 1 Synthesis: Expert",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,

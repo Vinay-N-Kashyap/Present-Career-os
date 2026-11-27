@@ -10,11 +10,11 @@
       "codeHash": "762e739a369f24bd71a4fdd16043bac6c1b9f7e042792833d3d4bacfbf1ea59b",
       "spec": {
         "template": "funnel",
-        "title": "Conversion Rate Optimization Foundations: ... — Conversion Funnel",
+        "title": "Conversion Rate Optimization Foundations: Quantitative Heuristics — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "18141d89bee0ea2af9ad65c94c6a46f26bd563d16209de31eac6d95350ca5c46",
       "spec": {
         "template": "funnel",
-        "title": "Frequentist Statistical Testing: Two-Propo... — Conversion Funnel",
+        "title": "Frequentist Statistical Testing: Two-Proportion Z-Tests, P-Values — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "ba8d98ba1a585885a483afd8c3605a955604f895eada2702fe5959c5a79c49da",
       "spec": {
         "template": "funnel",
-        "title": "Sample Ratio Mismatch (SRM) Detection & Tr... — Conversion Funnel",
+        "title": "Sample Ratio Mismatch (SRM) Detection & Traffic Splitting Integrity — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,OK total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "baec772e746fadabd45dcb586bef6169c342e323629bffbc6beda2c70fd0cf94",
       "spec": {
         "template": "funnel",
-        "title": "Bayesian A/B Testing & Multi-Armed Bandits... — Conversion Funnel",
+        "title": "Bayesian A/B Testing & Multi-Armed Bandits: Balancing Exploration — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "36d119f64120797808afdada1b5cd6e0939066a9f79f2d7e1302db3b621e1156",
       "spec": {
         "template": "funnel",
-        "title": "APEX CRO & Experimentation Command Gateway... — Conversion Funnel",
+        "title": "APEX CRO & Experimentation Command Gateway — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "e5db80ae1fa4b16e9d67c47fa3856e38e6d10f5b56b5dfed88b7437d7e103bc0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Operating Leverage: Fixed Operating Costs ... — General Ledger Verification",
+        "title": "Operating Leverage: Fixed Operating — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Operating.",
+            "caption": "Open primary facility debit entry for Operating Leverage.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 81000,
@@ -139,11 +139,11 @@
       "codeHash": "b11fbae727ae533f45879fff683116a836bc5d5d59b7c6b0f9465d980357e881",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Financial Leverage: Fixed Financing Costs ... — General Ledger Verification",
+        "title": "Financial Leverage: Fixed Financing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Financial.",
+            "caption": "Open primary facility debit entry for Financial Leverage.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 82250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 98700,
@@ -268,11 +268,11 @@
       "codeHash": "bcbc9c0753096a4f6e3dc92604797605f2688e9a80f3112ff4527886ce6dbb91",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Combined Leverage: Total Risk Exposure & D... — General Ledger Verification",
+        "title": "Combined Leverage: Total Risk Exposure — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Combined.",
+            "caption": "Open primary facility debit entry for Combined Leverage.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 83500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 100200,
@@ -397,11 +397,11 @@
       "codeHash": "61986e033cafbdd0300badeb1a6b2869464e3def0f55c27d534a3379da6d2bee",
       "spec": {
         "template": "ledger-sheet",
-        "title": "EBIT-EPS Indifference Analysis: Debt vs Eq... — General Ledger Verification",
+        "title": "EBIT-EPS Indifference Analysis: Debt — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for EBIT-EPS.",
+            "caption": "Open primary facility debit entry for EBIT-EPS Indifference Analysis.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 84750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 101700,
@@ -526,11 +526,11 @@
       "codeHash": "a329f8666aeb4109cf419a8001404bb66ba0f8a6717dd882e86a8318d47d4218",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Leverage Governance & Risk Mana... — General Ledger Verification",
+        "title": "Enterprise Leverage Governance & Risk Management Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Leverage Governance.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 86000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 103200,

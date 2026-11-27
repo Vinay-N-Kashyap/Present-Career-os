@@ -10,11 +10,11 @@
       "codeHash": "4b478dac2a434fe3cbe27ae62d771dc129ac0de58759947fbf182a2502917b66",
       "spec": {
         "template": "funnel",
-        "title": "Integrated Startup Valuation Synthesis ( - Venture Pipeline",
+        "title": "Integrated Startup Valuation Synthesis - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Integrated Startup Valuation Synthesis ( - Venture Pipeline",
+        "title": "Integrated Startup Valuation Synthesis - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -286,7 +286,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "9bcea84be0c369ff21b4fb21b834c6b6cae5d616ff097ea51622708c80b3b76a",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Founder Governance & Equit - Venture Pipeline",
+        "title": "Comprehensive Founder Governance & Equity Defense (Vesting & Leaver Settlement) - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Comprehensive Founder Governance & Equit - Venture Pipeline",
+        "title": "Comprehensive Founder Governance & Equity Defense (Vesting & Leaver Settlement) - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -606,7 +606,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -654,7 +654,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -812,7 +812,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -926,7 +926,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "0525b635325af131100685f5ecd313b5b1eb491f5abbe8f3f9113fc4d2cf1c3a",
       "spec": {
         "template": "funnel",
-        "title": "Operational Flow, Little's Law & Bottlen - Venture Pipeline",
+        "title": "Operational Flow, Little's Law & Bottleneck Throughput Engineering - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Operational Flow, Little's Law & Bottlen - Venture Pipeline",
+        "title": "Operational Flow, Little's Law & Bottleneck Throughput Engineering - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "323cfa9a646336922ae837ae0fff17ca6701de9a9237eb27b904524502e995c4",
       "spec": {
         "template": "funnel",
-        "title": "Master Sovereign Milestone 3 Capstone En - Venture Pipeline",
+        "title": "Master Sovereign Milestone 3 Capstone Engine & Accreditation - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (one,multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Sovereign Milestone 3 Capstone En - Venture Pipeline",
+        "title": "Master Sovereign Milestone 3 Capstone Engine & Accreditation - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1566,7 +1566,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (one,multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {

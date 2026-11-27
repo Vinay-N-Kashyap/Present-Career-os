@@ -10,7 +10,7 @@
       "codeHash": "33099bcc1d5f97eed43b845cf38fa20a97ffed166772e1194de8da4fab557be6",
       "spec": {
         "template": "workflow",
-        "title": "Reverse Supply Chain Economics, Returns Gatek... — Operational Workflow",
+        "title": "Reverse Supply Chain Economics, Returns Gatekeeping & Fraud Prevention — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Reverse Supply Chain Economics, Returns Gatek... — Operational Workflow",
+        "title": "Reverse Supply Chain Economics, Returns Gatekeeping & Fraud Prevention — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Reverse Supply Chain Economics, Returns ...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Reverse Supply Chain Economics",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "7ef4389a6f633eab5dd2ca7d1c958d1da0fa379b5c8be0d23398bc2df122ae8e",
       "spec": {
         "template": "workflow",
-        "title": "Product Return Disposition Tree & Multi-Tier ... — Operational Workflow",
+        "title": "Product Return Disposition Tree & Multi-Tier Salvage Triage Matrix — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -380,7 +380,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize Product Return Disposition Tree &.",
+            "caption": "Stage one (Demand Forecast): Initialize Product Return Disposition Tree.",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Product Return Disposition Tree & Multi-Tier ... — Operational Workflow",
+        "title": "Product Return Disposition Tree & Multi-Tier Salvage Triage Matrix — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Product Return Disposition Tree & Multi-...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Product Return Disposition Tree",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "d6cdc68d96247e9d39f6542f4d7889306f19bcce00d17292933edbf8ea504d20",
       "spec": {
         "template": "workflow",
-        "title": "Remanufacturing Operations & Closed-Loop Cann... — Operational Workflow",
+        "title": "Remanufacturing Operations & Closed-Loop Cannibalization Economics — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -720,7 +720,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize Remanufacturing Operations &.",
+            "caption": "Stage one (Demand Forecast): Initialize Remanufacturing Operations.",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Remanufacturing Operations & Closed-Loop Cann... — Operational Workflow",
+        "title": "Remanufacturing Operations & Closed-Loop Cannibalization Economics — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Remanufacturing Operations & Closed-Loop...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Remanufacturing Operations",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "bcc723a60341b0e08040de4d0a9d244f0efb62284218a1c3ef70d90646be07e4",
       "spec": {
         "template": "workflow",
-        "title": "Extended Producer Responsibility (EPR) Statut... — Operational Workflow",
+        "title": "Extended Producer Responsibility (EPR) Statutory Regulations — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Extended Producer Responsibility (EPR) Statut... — Operational Workflow",
+        "title": "Extended Producer Responsibility (EPR) Statutory Regulations — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Extended Producer Responsibility (EPR) S...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Extended Producer Responsibility (EPR)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "bd554793c6f2c424157d78ae38443f7aeca1f4385aac7ca29e3a306e86914753",
       "spec": {
         "template": "workflow",
-        "title": "Circular Economy Return Recovery & Net Financ... — Operational Workflow",
+        "title": "Circular Economy Return Recovery & Net Financial Optimization Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Circular Economy Return Recovery & Net Financ... — Operational Workflow",
+        "title": "Circular Economy Return Recovery & Net Financial Optimization Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Circular Economy Return Recovery & Net F...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Circular Economy Return Recovery & Net",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

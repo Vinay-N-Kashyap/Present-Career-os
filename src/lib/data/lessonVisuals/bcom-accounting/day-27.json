@@ -10,11 +10,11 @@
       "codeHash": "2b5dd20d391284a449e735416fccad8c55d3f8ef234bef20e75c0b997b717568",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Liquidity Ratio Diagnostics: Current Ratio... — General Ledger Verification",
+        "title": "Liquidity Ratio Diagnostics: Current — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Liquidity.",
+            "caption": "Open primary facility debit entry for Liquidity Ratio Diagnostics.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143400,
@@ -139,11 +139,11 @@
       "codeHash": "baac91b6b6246a23b8ac7098cd6b3f1c2d4f74925493bb3cc4455d53ca2c173a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Solvency & Leverage Ratios: Debt-to-Equity... — General Ledger Verification",
+        "title": "Solvency & Leverage Ratios: Debt-to-Equity — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Solvency &.",
+            "caption": "Open primary facility debit entry for Solvency & Leverage Ratios.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 120750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 144900,
@@ -268,11 +268,11 @@
       "codeHash": "a48e98286a7705d1f597c4d72e79023f2ef9f0f22cec8c9cbb55b1b7d2f14dde",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Profitability Ratios & DuPont Return on Eq... — General Ledger Verification",
+        "title": "Profitability Ratios & DuPont Return on Equity (ROE) Decomposition — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Profitability.",
+            "caption": "Open primary facility debit entry for Profitability Ratios.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 122000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 146400,
@@ -397,11 +397,11 @@
       "codeHash": "c8d20ba773f853b5854a434d48a1445a4561e8d96efc011899355f11d5fedbd8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Activity & Turnover Ratios: Inventory Velo... — General Ledger Verification",
+        "title": "Activity & Turnover Ratios: Inventory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Activity &.",
+            "caption": "Open primary facility debit entry for Activity.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147900,
@@ -526,11 +526,11 @@
       "codeHash": "2df7cee125584b56a994cc9fb9459c027bcb4c168ca72b5c330b2af6585f1714",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive Corporate Financial Health D... — General Ledger Verification",
+        "title": "Comprehensive Corporate Financial Health Diagnostic Dashboard — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149400,

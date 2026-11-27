@@ -10,11 +10,11 @@
       "codeHash": "aaeea6bb8f1217cfe4643f43d8bd825231c32f8dd53b24955942b23d2af5c371",
       "spec": {
         "template": "bars",
-        "title": "Standard Costing & Multi-Level Flexible Budge... — Quantitative KPI Distribution",
+        "title": "Standard Costing & Multi-Level Flexible Budget Variance Analysis — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Standard Costing & Multi-Level Flex...",
+            "caption": "Baseline KPI cohort metrics for Standard Costing.",
             "max": 100,
             "bars": [
               {
@@ -95,7 +95,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Standard Costing & Multi-Le...",
+            "caption": "Commit audited analytical dashboard for Standard Costing.",
             "max": 100,
             "bars": [
               {
@@ -124,11 +124,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Standard Costing & Multi-Level Flexible Budge... — Quantitative KPI Distribution",
+        "title": "Standard Costing & Multi-Level Flexible Budget Variance Analysis — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Standard Costing & Multi-Level Flex...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Standard Costing.",
             "max": 100,
             "bars": [
               {
@@ -209,7 +209,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Standard Costing & Multi-Le...",
+            "caption": "Step 4: Commit audited analytical dashboard for Standard Costing.",
             "max": 100,
             "bars": [
               {
@@ -242,11 +242,11 @@
       "codeHash": "6a7d9b3456414ff2ad41183a370ecf53c635235799d41cd49138955fd33ca7d3",
       "spec": {
         "template": "bars",
-        "title": "Multi-Product Cost-Volume-Profit (CVP) & Degr... — Quantitative KPI Distribution",
+        "title": "Multi-Product Cost-Volume-Profit (CVP) & Degree of Operating Leverage — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Multi-Product Cost-Volume-Profit (C...",
+            "caption": "Baseline KPI cohort metrics for Multi-Product Cost-Volume-Profit.",
             "max": 100,
             "bars": [
               {
@@ -327,7 +327,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Multi-Product Cost-Volume-P...",
+            "caption": "Commit audited analytical dashboard for Multi-Product Cost-Volume-Profit.",
             "max": 100,
             "bars": [
               {
@@ -356,11 +356,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Multi-Product Cost-Volume-Profit (CVP) & Degr... — Quantitative KPI Distribution",
+        "title": "Multi-Product Cost-Volume-Profit (CVP) & Degree of Operating Leverage — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Multi-Product Cost-Volume-Profit (C...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Multi-Product Cost-Volume-Profit.",
             "max": 100,
             "bars": [
               {
@@ -441,7 +441,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Multi-Product Cost-Volume-P...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -474,11 +474,11 @@
       "codeHash": "a7e0da2ac9699dd02a028249d84e2df0538542dfebe7697b7214b9ce28535e00",
       "spec": {
         "template": "bars",
-        "title": "Activity-Based Costing (ABC) Cost Pools & Cro... — Quantitative KPI Distribution",
+        "title": "Activity-Based Costing (ABC) Cost Pools & Cross-Subsidization — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Activity-Based Costing (ABC) Cost P...",
+            "caption": "Baseline KPI cohort metrics for Activity-Based Costing.",
             "max": 100,
             "bars": [
               {
@@ -559,7 +559,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Activity-Based Costing (ABC...",
+            "caption": "Commit audited analytical dashboard for Activity-Based Costing.",
             "max": 100,
             "bars": [
               {
@@ -588,11 +588,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Activity-Based Costing (ABC) Cost Pools & Cro... — Quantitative KPI Distribution",
+        "title": "Activity-Based Costing (ABC) Cost Pools & Cross-Subsidization — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Activity-Based Costing (ABC) Cost P...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Activity-Based Costing.",
             "max": 100,
             "bars": [
               {
@@ -673,7 +673,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Activity-Based Costing (ABC...",
+            "caption": "Step 4: Commit audited analytical dashboard for Activity-Based Costing.",
             "max": 100,
             "bars": [
               {
@@ -706,11 +706,11 @@
       "codeHash": "4087d339b8b01c5e5e605fa4ca81e60b2774287c34ea741fce95e899d7732b39",
       "spec": {
         "template": "bars",
-        "title": "Capital Budgeting Decision Engine: Net Presen... — Quantitative KPI Distribution",
+        "title": "Capital Budgeting Decision Engine: Net — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Capital Budgeting Decision Engine: ...",
+            "caption": "Baseline KPI cohort metrics for Capital Budgeting Decision Engine:",
             "max": 100,
             "bars": [
               {
@@ -791,7 +791,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Capital Budgeting Decision ...",
+            "caption": "Commit audited analytical dashboard for Capital Budgeting Decision Engine.",
             "max": 100,
             "bars": [
               {
@@ -820,11 +820,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Capital Budgeting Decision Engine: Net Presen... — Quantitative KPI Distribution",
+        "title": "Capital Budgeting Decision Engine: Net — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Capital Budgeting Decision Engine: ...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Capital Budgeting Decision Engine:",
             "max": 100,
             "bars": [
               {
@@ -905,7 +905,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Capital Budgeting Decision ...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -938,11 +938,11 @@
       "codeHash": "f7f1dd0390f730386e822710febfb63f09a63f69ed340ce5005fcdb2e53f1886",
       "spec": {
         "template": "bars",
-        "title": "Three-Tier DuPont Return on Equity (ROE) Deco... — Quantitative KPI Distribution",
+        "title": "Three-Tier DuPont Return on Equity (ROE) Decomposition & Financial — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Three-Tier DuPont Return on Equity ...",
+            "caption": "Baseline KPI cohort metrics for Three-Tier DuPont Return on Equity.",
             "max": 100,
             "bars": [
               {
@@ -1023,7 +1023,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Three-Tier DuPont Return on...",
+            "caption": "Commit audited analytical dashboard for Three-Tier DuPont Return on Equity.",
             "max": 100,
             "bars": [
               {
@@ -1052,11 +1052,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Three-Tier DuPont Return on Equity (ROE) Deco... — Quantitative KPI Distribution",
+        "title": "Three-Tier DuPont Return on Equity (ROE) Decomposition & Financial — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Three-Tier DuPont Return on Equity ...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Three-Tier DuPont Return on Equity.",
             "max": 100,
             "bars": [
               {
@@ -1137,7 +1137,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Three-Tier DuPont Return on...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {

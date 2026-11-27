@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Section 144C Statutory Gateway: Eligible ... — General Ledger Verification",
+        "title": "The Section 144C Statutory Gateway: Eligible — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Section C Statutor (Mu Alpha).",
+            "caption": "Open primary debit entry for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10300,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Section C Statutor (Alpha).",
+            "caption": "Record secondary accrual adjustment for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12360,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Section C Statutor (Mu).",
+            "caption": "Reconcile sub-ledger balances for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12360,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Section C Statutor (Alpha).",
+            "caption": "Verify double-entry trial balance for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12360,
@@ -134,11 +134,11 @@
       "partTitle": "The Section 144C Statutory Gateway: Eligible Assessees & The Mandatory Draft Assessment Order",
       "filled": {
         "template": "ledger-sheet",
-        "title": "The Section 144C Statutory Gateway: Eligible ... — General Ledger Verification",
+        "title": "The Section 144C Statutory Gateway: Eligible — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Section C Statutor (Mu Alpha).",
+            "caption": "Open primary debit entry for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10300,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Section C Statutor (Alpha).",
+            "caption": "Record secondary accrual adjustment for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12360,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Section C Statutor (Mu).",
+            "caption": "Reconcile sub-ledger balances for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12360,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Section C Statutor (Alpha).",
+            "caption": "Verify double-entry trial balance for The Section 144C Statutory Gateway.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12360,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Bifurcated Statutory Choice under Section... — General Ledger Verification",
+        "title": "The Bifurcated Statutory Choice under Section 144C(2) & Form 35A — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Bifurcated Statuto (Mu Beta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10500,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Bifurcated Statuto (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12600,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Bifurcated Statuto (Mu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12600,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Bifurcated Statuto (Beta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12600,
@@ -389,11 +389,11 @@
       "partTitle": "The Bifurcated Statutory Choice under Section 144C(2) & Form 35A Objections Architecture",
       "filled": {
         "template": "ledger-sheet",
-        "title": "The Bifurcated Statutory Choice under Section... — General Ledger Verification",
+        "title": "The Bifurcated Statutory Choice under Section 144C(2) & Form 35A — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Bifurcated Statuto (Mu Beta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10500,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Bifurcated Statuto (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12600,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Bifurcated Statuto (Mu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12600,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Bifurcated Statuto (Beta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12600,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Collegiate Powers, Proceedings & The Nine-Mon... — General Ledger Verification",
+        "title": "Collegiate Powers, Proceedings & The Nine-Month Limitation Period — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Collegiate Powers Proc (Mu Gamma).",
+            "caption": "Open primary debit entry for Collegiate Powers.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10700,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Collegiate Powers Proc (Gamma).",
+            "caption": "Record secondary accrual adjustment for Collegiate Powers.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12840,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Collegiate Powers Proc (Mu).",
+            "caption": "Reconcile sub-ledger balances for Collegiate Powers.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12840,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Collegiate Powers Proc (Gamma).",
+            "caption": "Verify double-entry trial balance for Collegiate Powers.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12840,
@@ -644,11 +644,11 @@
       "partTitle": "Collegiate Powers, Proceedings & The Nine-Month Limitation Period under Section 144C",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Collegiate Powers, Proceedings & The Nine-Mon... — General Ledger Verification",
+        "title": "Collegiate Powers, Proceedings & The Nine-Month Limitation Period — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Collegiate Powers Proc (Mu Gamma).",
+            "caption": "Open primary debit entry for Collegiate Powers.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10700,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Collegiate Powers Proc (Gamma).",
+            "caption": "Record secondary accrual adjustment for Collegiate Powers.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12840,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Collegiate Powers Proc (Mu).",
+            "caption": "Reconcile sub-ledger balances for Collegiate Powers.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12840,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Collegiate Powers Proc (Gamma).",
+            "caption": "Verify double-entry trial balance for Collegiate Powers.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12840,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Implementation of DRP Directions under Sectio... — General Ledger Verification",
+        "title": "Implementation of DRP Directions under Section 144C(13) & Direct — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Implementation of DRP (Mu Delta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10900,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Implementation of DRP (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Implementation of DRP (Mu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Implementation of DRP (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -899,11 +899,11 @@
       "partTitle": "Implementation of DRP Directions under Section 144C(13) & Direct Gateway to ITAT",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Implementation of DRP Directions under Sectio... — General Ledger Verification",
+        "title": "Implementation of DRP Directions under Section 144C(13) & Direct — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Implementation of DRP (Mu Delta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10900,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Implementation of DRP (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Implementation of DRP (Mu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Implementation of DRP (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Section 144C ... — General Ledger Verification",
+        "title": "Production Python Architecture: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Mu Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Mu).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Section 144C DRP Objection & Timeline Orchestrator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Section 144C ... — General Ledger Verification",
+        "title": "Production Python Architecture: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Mu Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 52 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 52 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Mu).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 52 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 52 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13320,

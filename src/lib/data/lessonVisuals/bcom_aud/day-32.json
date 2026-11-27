@@ -8,7 +8,7 @@
       "codeHash": "09a2ee2a3d32bf9c2ae44f0f37528868d876da457e1d77a658fc5c08342e3f6a",
       "spec": {
         "template": "funnel",
-        "title": "Conceptual Foundations of Materiality:... \u2014 Assurance Review",
+        "title": "Conceptual Foundations of Materiality: Quantitative Benchmarks — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "124335a7955ec906eb79e58c42eb523eed2e75ffe90f3200ca56488349d8e076",
       "spec": {
         "template": "funnel",
-        "title": "Determining Overall Financial Statemen... \u2014 Assurance Review",
+        "title": "Determining Overall Financial Statement Materiality: Choosing — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "424a1e79327639a1cdf616701d5dcf4a73517eaa7269a5c7e25cf6023259c846",
       "spec": {
         "template": "funnel",
-        "title": "Performance Materiality & Assertion Al... \u2014 Assurance Review",
+        "title": "Performance Materiality & Assertion Allocation: Aggregation Risk — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "eb220db20006ef48b5774fbf07f83f24ad8798aa8f57ccc3dfd040221237c278",
       "spec": {
         "template": "funnel",
-        "title": "Clearly Trivial Threshold (CTT / SUM) ... \u2014 Assurance Review",
+        "title": "Clearly Trivial Threshold (CTT / SUM) & Accumulation of Uncorrected — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "44a81566dccd820b2b60abb246f9106b4f41e6852df22daf5da251e43c29ca3c",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Materiality Calculator &... \u2014 Assurance Review",
+        "title": "Comprehensive Materiality Calculator & Multi-Benchmark Decision — Assurance Review",
         "steps": [
           {
             "at": "intro",

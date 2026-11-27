@@ -10,11 +10,11 @@
       "codeHash": "bd3a50d5327d730f322a9e77157c96843a3c21ab8893d511b74458fb8cbef885",
       "spec": {
         "template": "ledger-sheet",
-        "title": "End-to-End Enterprise ERP Setup & GST Mast... — General Ledger Verification",
+        "title": "End-to-End Enterprise ERP Setup & GST Master Synchronization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for End-to-End.",
+            "caption": "Open primary facility debit entry for End-to-End Enterprise ERP Setup.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 98500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 118200,
@@ -139,11 +139,11 @@
       "codeHash": "fe40710f372dd22727bee984cae290e97df9d5e8118c735943e48ba313b9bc6c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Automated Multi-Item Invoice Generation & ... — General Ledger Verification",
+        "title": "Automated Multi-Item Invoice Generation & GST Ledgers Posting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Automated.",
+            "caption": "Open primary facility debit entry for Automated Multi-Item Invoice Generation.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 99750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 119700,
@@ -268,11 +268,11 @@
       "codeHash": "1d8183edc617b315a8cbb4e6592e81acf747f6166a9a5e490327b37a0b5c3120",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Automated Purchase Ingestion, Rule 36(4) M... — General Ledger Verification",
+        "title": "Automated Purchase Ingestion, Rule 36(4) Matching & ITC Lock — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Automated.",
+            "caption": "Open primary facility debit entry for Automated Purchase Ingestion.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 101000,
@@ -397,11 +397,11 @@
       "codeHash": "d2652069817ac93e99f599029a909c285d2b6c5344a92777805936717f0faa9a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dynamic Section 49 Tax Set-Off & Electroni... — General Ledger Verification",
+        "title": "Dynamic Section 49 Tax Set-Off & Electronic Cash Ledger Optimization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Dynamic.",
+            "caption": "Open primary facility debit entry for Dynamic Section 49 Tax Set-Off.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 102250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 122700,
@@ -526,11 +526,11 @@
       "codeHash": "28d2e645e7515cd5cca6347f5b3d9debeb77076f101a93d004e622683d4960b7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Complete ERP to Statutory Tax Return Pipel... — General Ledger Verification",
+        "title": "Complete ERP to Statutory Tax Return Pipeline & Controller Audit — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Complete.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 103500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 124200,

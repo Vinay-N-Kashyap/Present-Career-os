@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Case Architecture: Apex Industrial... — General Ledger Verification",
+        "title": "Enterprise Case Architecture: Apex — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Enterprise Case Archit (Kappa Alpha).",
+            "caption": "Open primary debit entry for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10000,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Enterprise Case Archit (Alpha).",
+            "caption": "Record secondary accrual adjustment for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Enterprise Case Archit (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Enterprise Case Archit (Alpha).",
+            "caption": "Verify double-entry trial balance for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -134,11 +134,11 @@
       "partTitle": "Enterprise Case Architecture: Apex Industrial Technologies Ltd. Multi-Year Tax Dispute",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Case Architecture: Apex Industrial... — General Ledger Verification",
+        "title": "Enterprise Case Architecture: Apex — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Enterprise Case Archit (Kappa Alpha).",
+            "caption": "Open primary debit entry for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10000,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Enterprise Case Archit (Alpha).",
+            "caption": "Record secondary accrual adjustment for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Enterprise Case Archit (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Enterprise Case Archit (Alpha).",
+            "caption": "Verify double-entry trial balance for Enterprise Case Architecture.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Faceless Scrutiny Defense & Transfer Pricing ... — General Ledger Verification",
+        "title": "Faceless Scrutiny Defense & Transfer Pricing Safe Harbour — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Faceless Scrutiny Defe (Kappa Beta).",
+            "caption": "Open primary debit entry for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10200,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Faceless Scrutiny Defe (Beta).",
+            "caption": "Record secondary accrual adjustment for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Faceless Scrutiny Defe (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Faceless Scrutiny Defe (Beta).",
+            "caption": "Verify double-entry trial balance for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -389,11 +389,11 @@
       "partTitle": "Faceless Scrutiny Defense & Transfer Pricing Safe Harbour Demonstration",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Faceless Scrutiny Defense & Transfer Pricing ... — General Ledger Verification",
+        "title": "Faceless Scrutiny Defense & Transfer Pricing Safe Harbour — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Faceless Scrutiny Defe (Kappa Beta).",
+            "caption": "Open primary debit entry for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10200,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Faceless Scrutiny Defe (Beta).",
+            "caption": "Record secondary accrual adjustment for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Faceless Scrutiny Defe (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Faceless Scrutiny Defe (Beta).",
+            "caption": "Verify double-entry trial balance for Faceless Scrutiny Defense.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Reassessment Quashing under Ashish Agarwal & ... — General Ledger Verification",
+        "title": "Reassessment Quashing under Ashish Agarwal & Section 133A Survey — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Reassessment Quashing (Kappa Gamma).",
+            "caption": "Open primary debit entry for Reassessment Quashing under Ashish Agarwal.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10400,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Reassessment Quashing (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12480,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Reassessment Quashing (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Reassessment Quashing under Ashish Agarwal.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12480,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Reassessment Quashing (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12480,
@@ -644,11 +644,11 @@
       "partTitle": "Reassessment Quashing under Ashish Agarwal & Section 133A Survey Retraction under Khader Khan",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Reassessment Quashing under Ashish Agarwal & ... — General Ledger Verification",
+        "title": "Reassessment Quashing under Ashish Agarwal & Section 133A Survey — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Reassessment Quashing (Kappa Gamma).",
+            "caption": "Open primary debit entry for Reassessment Quashing under Ashish Agarwal.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10400,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Reassessment Quashing (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12480,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Reassessment Quashing (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Reassessment Quashing under Ashish Agarwal.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12480,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Reassessment Quashing (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12480,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dispute Resolution Committee (DRC) under Sect... — General Ledger Verification",
+        "title": "Dispute Resolution Committee (DRC) under Section 245MA & Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Dispute Resolution Com (Kappa Delta).",
+            "caption": "Open primary debit entry for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10600,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Dispute Resolution Com (Delta).",
+            "caption": "Record secondary accrual adjustment for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12720,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Dispute Resolution Com (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12720,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Dispute Resolution Com (Delta).",
+            "caption": "Verify double-entry trial balance for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12720,
@@ -899,11 +899,11 @@
       "partTitle": "Dispute Resolution Committee (DRC) under Section 245MA & Section 270AA Immunity Execution",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Dispute Resolution Committee (DRC) under Sect... — General Ledger Verification",
+        "title": "Dispute Resolution Committee (DRC) under Section 245MA & Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Dispute Resolution Com (Kappa Delta).",
+            "caption": "Open primary debit entry for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10600,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Dispute Resolution Com (Delta).",
+            "caption": "Record secondary accrual adjustment for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12720,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Dispute Resolution Com (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12720,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Dispute Resolution Com (Delta).",
+            "caption": "Verify double-entry trial balance for Dispute Resolution Committee.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12720,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Enterprise Ta... — General Ledger Verification",
+        "title": "Production Python Architecture: Enterprise — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Kappa Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12960,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12960,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12960,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Enterprise Tax Dispute Defense Simulator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Enterprise Ta... — General Ledger Verification",
+        "title": "Production Python Architecture: Enterprise — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Kappa Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 50 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 50 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12960,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Kappa).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 50 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12960,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 50 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12960,

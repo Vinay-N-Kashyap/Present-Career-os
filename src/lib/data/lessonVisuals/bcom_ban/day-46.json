@@ -8,7 +8,7 @@
       "codeHash": "07da535d57d8808a80707b8323d33e2a7614330ec67466b93b2059f0f9f0f9fd",
       "spec": {
         "template": "funnel",
-        "title": "Credit Risk Architecture & Expected Lo... — Treasury Risk Operations",
+        "title": "Credit Risk Architecture & Expected Loss Decomposition: PD, LGD, EAD & Regulatory Granularity — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "380c10eaea61dedb7707645283eb34df87762411ee2aa0bda9942782653311a0",
       "spec": {
         "template": "funnel",
-        "title": "Accounting for Credit Impairment: Ind ... — Treasury Risk Operations",
+        "title": "Accounting for Credit Impairment: Ind — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "e735cbce3f99e841251e197143ebb920e9e3549e641877afcb7a2bebda2866ad",
       "spec": {
         "template": "funnel",
-        "title": "Classical Quantitative Credit Scoring:... — Treasury Risk Operations",
+        "title": "Classical Quantitative Credit Scoring: Altman Z-Score & Financial — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "c10d317d1f138d6eeedbe9a8b2b92372ee0b3a8c3c270fc10ffefc82ff1b5400",
       "spec": {
         "template": "funnel",
-        "title": "Structural Credit Risk & Distance-to-D... — Treasury Risk Operations",
+        "title": "Structural Credit Risk & Distance-to-Default: The Merton Model — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "c8f8b92900b23931645e6d8bb31f4e5632839634e3bf584d7f918103ccf266a8",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Portfolio Credit Risk Engin... — Treasury Risk Operations",
+        "title": "Enterprise Portfolio Credit Risk Engine: Vasicek Single-Index Model — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

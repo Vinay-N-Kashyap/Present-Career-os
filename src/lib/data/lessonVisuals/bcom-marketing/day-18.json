@@ -10,7 +10,7 @@
       "codeHash": "b32c062a10f854c271b9828ce8234fd18f03be405065b681af1b84c9bf99fe0f",
       "spec": {
         "template": "funnel",
-        "title": "The POEM Framework & Strategic Public Rela... — Conversion Funnel",
+        "title": "The POEM Framework & Strategic Public Relations Architecture — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "e5d3bd750a69bb77d1a9e31e8013dec1849fb83e210857f82a79ebe0dc1ff982",
       "spec": {
         "template": "funnel",
-        "title": "Coombs' Situational Crisis Communication T... — Conversion Funnel",
+        "title": "Coombs' Situational Crisis Communication Theory (SCCT) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "792b9b7cad6c2dad7eacba2241c859344c81735aeef3c9f1076aadfda07d8815",
       "spec": {
         "template": "funnel",
-        "title": "Crisis Response Postures & The Golden Hour... — Conversion Funnel",
+        "title": "Crisis Response Postures & The Golden Hour Protocol — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "b4c26565175dc4ebcf06c076cb6a496aff2e5a5a8a9880dbab340c0b3e84e8c7",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Code Simulation: Quantitative ... — Conversion Funnel",
+        "title": "Interactive Code Simulation: Quantitative — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (thirty-two,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "774613d504f17e4979edd2397ea1d61ef9eca86fd28e8762f30c6fa9e76c4679",
       "spec": {
         "template": "funnel",
-        "title": "Corporate Reputation Moats, ESG Governance... — Conversion Funnel",
+        "title": "Corporate Reputation Moats, ESG Governance & Long-Term Brand Equity — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

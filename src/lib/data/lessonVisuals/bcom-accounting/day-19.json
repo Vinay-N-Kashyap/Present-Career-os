@@ -10,11 +10,11 @@
       "codeHash": "3577b95cade600b54d1f5ef7460453976f418c0f8304c601d95d0ca8f0fd6057",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 16 Mandatory Eligibility Criteria ... — General Ledger Verification",
+        "title": "Section 16 Mandatory Eligibility Criteria for Claiming ITC — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Section.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 91500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 109800,
@@ -139,11 +139,11 @@
       "codeHash": "11a0fb003e69295313db6bca60ac627b5a6559148084cadfe597794190849d56",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Blocked Credits under Section 17(5) of the... — General Ledger Verification",
+        "title": "Blocked Credits under Section 17(5) of the CGST Act — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Blocked.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 92750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 111300,
@@ -268,11 +268,11 @@
       "codeHash": "89e444f2647bf071ab109a753afda7e7c26f7ad83d93d3371f3166a64dac6d9e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Statutory Cross-Utilization Set-Off Hi... — General Ledger Verification",
+        "title": "The Statutory Cross-Utilization Set-Off Hierarchy — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Statutory.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 112800,
@@ -397,11 +397,11 @@
       "codeHash": "8d40e27684b1cf9fffa26738e0d85050040b233a07fc219ab171e0e3f6a4453f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Goods ITC Apportionment & 60-Month... — General Ledger Verification",
+        "title": "Capital Goods ITC Apportionment & 60-Month Useful Life Rule — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capital Goods.",
+            "caption": "Open primary facility debit entry for Capital Goods ITC Apportionment.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 95250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 114300,
@@ -526,11 +526,11 @@
       "codeHash": "d94f78efeb0c855bf56c8bd57fee0e80abb0f7eca95eaf099f5408831b6abace",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Electronic Ledger Balancing & Cash Tax Min... — General Ledger Verification",
+        "title": "Electronic Ledger Balancing & Cash Tax Minimization Synthesis — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Electronic.",
+            "caption": "Open primary facility debit entry for Electronic Ledger Balancing.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 96500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 115800,

@@ -10,7 +10,7 @@
       "codeHash": "f926f12427200931cedb7a16863c872e804dea228851d807c6a6a115da8bc2c8",
       "spec": {
         "template": "tree-graph",
-        "title": "Architecture of the Global Multi-Region AI Ga... — Enterprise AI Decision Graph",
+        "title": "Architecture of the Global Multi-Region AI Gateway & Dynamic Tiering — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Architecture of the Global Mult...",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Architecture of the Global Multi-Region AI Ga... — Enterprise AI Decision Graph",
+        "title": "Architecture of the Global Multi-Region AI Gateway & Dynamic Tiering — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Architecture of the Global Mult...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "20521f97090da3ec9a0e0cd5f23fb3507e86b3d698cbeef44adad9517b981d08",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 1: The Dynamic Model Router (Tier 1 SL... — Enterprise AI Decision Graph",
+        "title": "Module 1: The Dynamic Model Router (Tier 1 SLM -> Tier 2 Medium -> Tier 3 Frontier) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module one: The Dynamic Model Rou...",
+            "caption": "Ingest enterprise Context Query for Module one: The Dynamic Model",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 1: The Dynamic Model Router (Tier 1 SL... — Enterprise AI Decision Graph",
+        "title": "Module 1: The Dynamic Model Router (Tier 1 SLM -> Tier 2 Medium -> Tier 3 Frontier) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 1: The Dynamic Model Rou...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 1: The Dynamic Model",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "f135ef6926c3cab26dfc7517d99dcc2936322fcdee7b5eff504d9381fdb1e53a",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 2: High-Performance Distributed Semant... — Enterprise AI Decision Graph",
+        "title": "Module 2: High-Performance Distributed — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module two: High-Performance Dist...",
+            "caption": "Ingest enterprise Context Query for Module two: High-Performance",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 2: High-Performance Distributed Semant... — Enterprise AI Decision Graph",
+        "title": "Module 2: High-Performance Distributed — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 2: High-Performance Dist...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 2: High-Performance",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "8946223f1ac33620e29017fe78275818139e2ab08a514c1d9eaf37ab6f5a5cb2",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 3: Real-Time Circuit Breaker, SLA Guar... — Enterprise AI Decision Graph",
+        "title": "Module 3: Real-Time Circuit Breaker, SLA Guard & Global FinOps Governor — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module three: Real-Time Circuit Bre...",
+            "caption": "Ingest enterprise Context Query for Module three: Real-Time Circuit",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 3: Real-Time Circuit Breaker, SLA Guar... — Enterprise AI Decision Graph",
+        "title": "Module 3: Real-Time Circuit Breaker, SLA Guard & Global FinOps Governor — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Real-Time Circuit Bre...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Real-Time Circuit",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "be12bdd40d749429bc78ebd1ebdc6dc95f077fae580e1a86620f478f30f82d94",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Grand Defense of t... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Grand Defense — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The Gran...",
+            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Grand Defense of t... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Grand Defense — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The Gran...",
+            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

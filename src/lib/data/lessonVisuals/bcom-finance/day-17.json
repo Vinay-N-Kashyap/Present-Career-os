@@ -10,11 +10,11 @@
       "codeHash": "f7c35934c86838fef8a06f0bbceba0fdb5bb38af8ca08fa8fcf3ed2eae983602",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Contribution Margin Economics & Profit-Vol... — General Ledger Verification",
+        "title": "Contribution Margin Economics & Profit-Volume (P/V) Ratio — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 84500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 101400,
@@ -139,11 +139,11 @@
       "codeHash": "85cb13b9745c5b6f0e35fa9d9e0fedc4fa73484415272d56ce197b76f7f894b1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Break-Even Point (BEP) Formulation: Physic... — General Ledger Verification",
+        "title": "Break-Even Point (BEP) Formulation: Physical Units & Value — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Break-Even.",
+            "caption": "Open primary facility debit entry for Break-Even Point.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 85750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 102900,
@@ -268,11 +268,11 @@
       "codeHash": "beddd6055c80046bee224fbb322c7c1810182d04dbce22274686b18cf6992f8d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Margin of Safety (MOS): Cushion Analysis &... — General Ledger Verification",
+        "title": "Margin of Safety (MOS): Cushion Analysis — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Margin of.",
+            "caption": "Open primary facility debit entry for Margin of Safety (MOS).",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 87000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 104400,
@@ -397,11 +397,11 @@
       "codeHash": "c5c6b9558bf978952008f83a663a78017fa200db927bcaec39d9dc96d7efc1b3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Target Profit Volume Planning & Tax-Adjust... — General Ledger Verification",
+        "title": "Target Profit Volume Planning & Tax-Adjusted Sales Models — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Target Profit.",
+            "caption": "Open primary facility debit entry for Target Profit Volume Planning.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 88250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 105900,
@@ -526,11 +526,11 @@
       "codeHash": "d9301962b21b5c4ca80136f79cdfb9bedf9abc3684eeb4eab9fcc479df3e5c87",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise CVP Multi-Product Break-Even & ... — General Ledger Verification",
+        "title": "Enterprise CVP Multi-Product Break-Even & Governance Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise CVP Multi-Product Break-Even.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 89500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 107400,

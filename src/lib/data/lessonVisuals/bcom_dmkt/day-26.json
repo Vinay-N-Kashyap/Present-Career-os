@@ -65,7 +65,7 @@
       "codeHash": "423cf697e852c4390a4c601c25dd3a287166bf75e00539bbab1d65c1e67c47df",
       "spec": {
         "template": "funnel",
-        "title": "Generative AI Multimodal Creative Pipelines &... — Conversion Pipeline",
+        "title": "Generative AI Multimodal Creative Pipelines & Brand Safety — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -107,7 +107,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -145,7 +145,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -183,7 +183,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -223,7 +223,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Generative AI Multimodal Creative Pipelines &... — Conversion Pipeline",
+        "title": "Generative AI Multimodal Creative Pipelines & Brand Safety — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -385,7 +385,7 @@
       "codeHash": "b47d7e0209f63f454cca9ba1e917f47665a75353dcf4725e832577f0cb48dcb2",
       "spec": {
         "template": "funnel",
-        "title": "Predictive Customer Churn Scoring & Behaviora... — Conversion Pipeline",
+        "title": "Predictive Customer Churn Scoring & Behavioral Telemetry — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -503,7 +503,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -543,7 +543,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Predictive Customer Churn Scoring & Behaviora... — Conversion Pipeline",
+        "title": "Predictive Customer Churn Scoring & Behavioral Telemetry — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -705,7 +705,7 @@
       "codeHash": "d587bbd47cb6185bab84ad30f5ebc4e2a2f5eb569ffe4cc47529cb107efabcf3",
       "spec": {
         "template": "funnel",
-        "title": "Automated Retention Discount Ladders & Interv... — Conversion Pipeline",
+        "title": "Automated Retention Discount Ladders & Intervention Workflows — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -747,7 +747,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -785,7 +785,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -823,7 +823,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -863,7 +863,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Automated Retention Discount Ladders & Interv... — Conversion Pipeline",
+        "title": "Automated Retention Discount Ladders & Intervention Workflows — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1025,7 +1025,7 @@
       "codeHash": "0f1be700116cdae84fc4a6a8b67a11a3fc02b64331f0c603e4a5342702b712d6",
       "spec": {
         "template": "funnel",
-        "title": "AI Bidding Optimization & Contextual Multi-Ar... — Conversion Pipeline",
+        "title": "AI Bidding Optimization & Contextual Multi-Armed Bandits — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1067,7 +1067,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1105,7 +1105,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1143,7 +1143,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1183,7 +1183,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "AI Bidding Optimization & Contextual Multi-Ar... — Conversion Pipeline",
+        "title": "AI Bidding Optimization & Contextual Multi-Armed Bandits — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1345,7 +1345,7 @@
       "codeHash": "aafa6c7cc1cd56a5c563827ae7fa5a46c0aa67712926f0017a015c793b1f630e",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise AI Marketing & Churn Prevention Ga... — Conversion Pipeline",
+        "title": "Enterprise AI Marketing & Churn Prevention Gateway — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1387,7 +1387,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1425,7 +1425,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1463,7 +1463,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1503,7 +1503,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Enterprise AI Marketing & Churn Prevention Ga... — Conversion Pipeline",
+        "title": "Enterprise AI Marketing & Churn Prevention Gateway — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

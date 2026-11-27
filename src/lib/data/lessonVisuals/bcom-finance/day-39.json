@@ -10,12 +10,12 @@
       "codeHash": "9b8683eeaa309d8f2c2650794667d4c206ea57ed5bccb2da4bbca9ab27330325",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multinational Corporate Treasury Archite \u2014 General Ledger Verification",
+        "title": "Multinational Corporate Treasury Architecture & Currency Exposure — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Multinational Corporate Treasu.",
-            "title": "Day 39 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance.",
+            "title": "Day 39 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 139000,
             "totalCredit": 139000,
@@ -41,7 +41,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 39 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 39 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 166800,
             "totalCredit": 166800,
@@ -72,7 +72,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 39 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 39 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 166800,
             "totalCredit": 166800,
@@ -103,7 +103,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 39 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 39 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 166800,
             "totalCredit": 166800,
@@ -139,12 +139,12 @@
       "codeHash": "9b8683eeaa309d8f2c2650794667d4c206ea57ed5bccb2da4bbca9ab27330325",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Covered Interest Rate Parity (CIRP), For \u2014 General Ledger Verification",
+        "title": "Covered Interest Rate Parity (CIRP), Forward Pricing & Cross-Currency — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Open primary capital facility balance for Covered Interest Rate Parity (.",
-            "title": "Day 39 Ledger \u2014 Initial Facility Allocation",
+            "title": "Day 39 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 139250,
             "totalCredit": 139250,
@@ -170,7 +170,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 39 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 39 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 167100,
             "totalCredit": 167100,
@@ -201,7 +201,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 39 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 39 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 167100,
             "totalCredit": 167100,
@@ -232,7 +232,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 39 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 39 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 167100,
             "totalCredit": 167100,
@@ -268,12 +268,12 @@
       "codeHash": "9b8683eeaa309d8f2c2650794667d4c206ea57ed5bccb2da4bbca9ab27330325",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multilateral Intercompany FX Netting Mat \u2014 General Ledger Verification",
+        "title": "Multilateral Intercompany FX Netting Matrices & Settlement — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Multilateral Intercompany FX N.",
-            "title": "Day 39 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance.",
+            "title": "Day 39 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 139500,
             "totalCredit": 139500,
@@ -299,7 +299,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 39 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 39 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 167400,
             "totalCredit": 167400,
@@ -330,7 +330,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 39 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 39 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 167400,
             "totalCredit": 167400,
@@ -361,7 +361,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 39 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 39 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 167400,
             "totalCredit": 167400,
@@ -397,12 +397,12 @@
       "codeHash": "9b8683eeaa309d8f2c2650794667d4c206ea57ed5bccb2da4bbca9ab27330325",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Plain-Vanilla Interest Rate Swaps (IRS): \u2014 General Ledger Verification",
+        "title": "Plain-Vanilla Interest Rate Swaps (IRS) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Plain-Vanilla Interest Rate Sw.",
-            "title": "Day 39 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Plain-Vanilla Interest Rate Swaps.",
+            "title": "Day 39 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 139750,
             "totalCredit": 139750,
@@ -428,7 +428,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 39 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 39 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 167700,
             "totalCredit": 167700,
@@ -459,7 +459,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 39 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 39 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 167700,
             "totalCredit": 167700,
@@ -490,7 +490,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 39 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 39 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 167700,
             "totalCredit": 167700,
@@ -526,12 +526,12 @@
       "codeHash": "9b8683eeaa309d8f2c2650794667d4c206ea57ed5bccb2da4bbca9ab27330325",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Currency Interest Rate Swaps (CCIR \u2014 General Ledger Verification",
+        "title": "Cross-Currency Interest Rate Swaps (CCIRS) & Global Treasury Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Cross-Currency Interest Rate S.",
-            "title": "Day 39 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Cross-Currency Interest Rate Swaps.",
+            "title": "Day 39 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 140000,
             "totalCredit": 140000,
@@ -557,7 +557,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 39 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 39 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 168000,
             "totalCredit": 168000,
@@ -588,7 +588,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 39 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 39 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 168000,
             "totalCredit": 168000,
@@ -619,7 +619,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 39 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 39 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 168000,
             "totalCredit": 168000,

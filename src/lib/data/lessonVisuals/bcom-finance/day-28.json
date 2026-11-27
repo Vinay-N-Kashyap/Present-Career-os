@@ -10,11 +10,11 @@
       "codeHash": "9cdb7de071ff6ef1c3df44235406e6bb0fc4c280483d4756b1e8cfd29c00e847",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Three Types of Foreign Exchange (FX) R... — General Ledger Verification",
+        "title": "The Three Types of Foreign Exchange (FX) Risk Exposure — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Three.",
+            "caption": "Open primary facility debit entry for The Three Types of Foreign Exchange.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147600,
@@ -139,11 +139,11 @@
       "codeHash": "7c7df3051ffec99950fcec16a8484b58c5d02f6c4c9852f9ca60f2038e0a1b0e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Purchasing Power Parity (PPP) & Relative P... — General Ledger Verification",
+        "title": "Purchasing Power Parity (PPP) & Relative Price Dynamics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Purchasing.",
+            "caption": "Open primary facility debit entry for Purchasing Power Parity.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149100,
@@ -268,11 +268,11 @@
       "codeHash": "965e31ee6de11d385b1b94d49a216624657917d5a70d9b4dee0c6e759be55903",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Covered Interest Rate Parity (CIRP) & Cove... — General Ledger Verification",
+        "title": "Covered Interest Rate Parity (CIRP) & Covered Arbitrage Mechanics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Covered.",
+            "caption": "Open primary facility debit entry for Covered Interest Rate Parity.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 125500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 150600,
@@ -397,11 +397,11 @@
       "codeHash": "72596a9e8c55feb1e201379cbda3627fb0c5c94247edbabd8519cd8de28dda17",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Hedging Transaction Exposure: Forward Mark... — General Ledger Verification",
+        "title": "Hedging Transaction Exposure: Forward — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Hedging.",
+            "caption": "Open primary facility debit entry for Hedging Transaction Exposure.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 126750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 152100,
@@ -526,11 +526,11 @@
       "codeHash": "471a6ac556ab4678d0b7c888c39b9376ce409ae3cddbe020768507a0587ad591",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Centralized Treasury Netting & Cross-Curre... — General Ledger Verification",
+        "title": "Centralized Treasury Netting & Cross-Currency Cash Pooling — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($one-twenty-eight,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 128000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 153600,

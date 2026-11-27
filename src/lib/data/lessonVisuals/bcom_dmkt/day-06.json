@@ -10,11 +10,11 @@
       "codeHash": "fbe5b6b247f5d3db90e049d2ef6ec71d3151492b04898f89514ee3be767ac692",
       "spec": {
         "template": "funnel",
-        "title": "Google E-E-A-T Architecture & Helpful Cont... — Conversion Funnel",
+        "title": "Google E-E-A-T Architecture & Helpful Content System — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "4b80f24ba8cd24627f3e1abea582e3ab3d57b9b331e133eeaae2a9d20f20ad72",
       "spec": {
         "template": "funnel",
-        "title": "Topic Cluster Architecture & Pillar-Spoke ... — Conversion Funnel",
+        "title": "Topic Cluster Architecture & Pillar-Spoke Content Mapping — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "621c5882eb384c0629d387c8ded8085861daf167ce503ae800a681da76cb3fec",
       "spec": {
         "template": "funnel",
-        "title": "Internal Link Equity Flow & PageRank Rando... — Conversion Funnel",
+        "title": "Internal Link Equity Flow & PageRank Random Surfer Dampening — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "45e6a07b5261a2b8efa5e0b2431f214a135794833ee685a7d60b57fe4dd4de2f",
       "spec": {
         "template": "funnel",
-        "title": "Crawl Depth Optimization & XML Sitemap Hie... — Conversion Funnel",
+        "title": "Crawl Depth Optimization & XML Sitemap Hierarchy — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "58ac1f52008b09315249cbd464aa99a5b4535a1d10f069bababaa43647413565",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Organic Topic Cluster Gateway &... — Conversion Funnel",
+        "title": "Enterprise Organic Topic Cluster Gateway & Executive Search Defense — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

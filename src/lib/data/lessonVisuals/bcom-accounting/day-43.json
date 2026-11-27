@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Contractual Joint Control & Classificati... — Ledger Verification",
+        "title": "Contractual Joint Control & Classification of Joint Arrangements (Ind AS 111) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($four,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 43 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4775000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Accounting for Joint Operations (Direct ... — Ledger Verification",
+        "title": "Accounting for Joint Operations — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($four,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 43 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4780000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Equity Method under Ind AS 28 (Inves... — Ledger Verification",
+        "title": "The Equity Method under Ind AS 28 (Investments in Associates & Joint Ventures) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($four,multiple,multiple) for The.",
+            "caption": "Open primary Ind AS ledger posting for The Equity Method under Ind AS 28.",
             "title": "Day 43 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4785000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Unrealized Profits Elimination & Loss Ab... — Ledger Verification",
+        "title": "Unrealized Profits Elimination & Loss Absorption Limits — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($four,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 43 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4790000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Executing the Python Joint Arrangements ... — Ledger Verification",
+        "title": "Executing the Python Joint Arrangements Suite & Governance — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($four,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 43 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4795000,

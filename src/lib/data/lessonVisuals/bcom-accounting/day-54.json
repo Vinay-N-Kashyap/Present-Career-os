@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ind AS 105 Classification Criteria: Avai... — Ledger Verification",
+        "title": "Ind AS 105 Classification Criteria: Available for Immediate Sale — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for Ind.",
+            "caption": "Open primary Ind AS ledger posting for Ind AS 105 Classification Criteria.",
             "title": "Day 54 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 27505000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Measurement Architecture: Lower of Carry... — Ledger Verification",
+        "title": "Measurement Architecture: Lower — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 54 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 27510000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Operational Invariants: Cessation of Dep... — Ledger Verification",
+        "title": "Operational Invariants: Cessation — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 54 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 27515000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Discontinued Operations Architecture & S... — Ledger Verification",
+        "title": "Discontinued Operations Architecture & Single-Line P&L Presentation — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 54 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 27520000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Ind AS 105 Software Engine, B... — Ledger Verification",
+        "title": "Enterprise Ind AS 105 Software Engine, Balance Sheet Carve-Out & Day — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 54 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 27525000,

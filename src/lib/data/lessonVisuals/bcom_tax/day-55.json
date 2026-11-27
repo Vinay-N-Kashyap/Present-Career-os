@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Dispute Anatomy & The Section 144C... — General Ledger Verification",
+        "title": "Enterprise Dispute Anatomy & The Section 144C Bifurcated Strategic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Enterprise Dispute Ana (Omicron Alpha).",
+            "caption": "Open primary debit entry for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10750,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Enterprise Dispute Ana (Alpha).",
+            "caption": "Record secondary accrual adjustment for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Enterprise Dispute Ana (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Enterprise Dispute Ana (Alpha).",
+            "caption": "Verify double-entry trial balance for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -134,11 +134,11 @@
       "partTitle": "Enterprise Dispute Anatomy & The Section 144C Bifurcated Strategic Crossroads",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Dispute Anatomy & The Section 144C... — General Ledger Verification",
+        "title": "Enterprise Dispute Anatomy & The Section 144C Bifurcated Strategic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Enterprise Dispute Ana (Omicron Alpha).",
+            "caption": "Open primary debit entry for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10750,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Enterprise Dispute Ana (Alpha).",
+            "caption": "Record secondary accrual adjustment for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Enterprise Dispute Ana (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Enterprise Dispute Ana (Alpha).",
+            "caption": "Verify double-entry trial balance for Enterprise Dispute Anatomy.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Form 35A Collegiate Advocacy, The 9-Month Lim... — General Ledger Verification",
+        "title": "Form 35A Collegiate Advocacy, The 9-Month Limitation Clock & Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Form A Collegiate Advo (Omicron Beta).",
+            "caption": "Open primary debit entry for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10950,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Form A Collegiate Advo (Beta).",
+            "caption": "Record secondary accrual adjustment for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Form A Collegiate Advo (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Form A Collegiate Advo (Beta).",
+            "caption": "Verify double-entry trial balance for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -389,11 +389,11 @@
       "partTitle": "Form 35A Collegiate Advocacy, The 9-Month Limitation Clock & Section 144C(13) Enforcement",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Form 35A Collegiate Advocacy, The 9-Month Lim... — General Ledger Verification",
+        "title": "Form 35A Collegiate Advocacy, The 9-Month Limitation Clock & Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Form A Collegiate Advo (Omicron Beta).",
+            "caption": "Open primary debit entry for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10950,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Form A Collegiate Advo (Beta).",
+            "caption": "Record secondary accrual adjustment for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Form A Collegiate Advo (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Form A Collegiate Advo (Beta).",
+            "caption": "Verify double-entry trial balance for Form 35A Collegiate Advocacy.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Direct ITAT Gateway under Section 253(1)(d), ... — General Ledger Verification",
+        "title": "Direct ITAT Gateway under Section 253(1)(d), Form 36 Pleadings — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Direct ITAT Gateway un (Omicron Gamma).",
+            "caption": "Open primary debit entry for Direct ITAT Gateway under Section 253(1)(d).",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11150,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Direct ITAT Gateway un (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13380,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Direct ITAT Gateway un (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Direct ITAT Gateway under Section 253(1)(d).",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13380,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Direct ITAT Gateway un (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13380,
@@ -644,11 +644,11 @@
       "partTitle": "Direct ITAT Gateway under Section 253(1)(d), Form 36 Pleadings & The Section 254(2A) Stay Defense",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Direct ITAT Gateway under Section 253(1)(d), ... — General Ledger Verification",
+        "title": "Direct ITAT Gateway under Section 253(1)(d), Form 36 Pleadings — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Direct ITAT Gateway un (Omicron Gamma).",
+            "caption": "Open primary debit entry for Direct ITAT Gateway under Section 253(1)(d).",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11150,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Direct ITAT Gateway un (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13380,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Direct ITAT Gateway un (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Direct ITAT Gateway under Section 253(1)(d).",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13380,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Direct ITAT Gateway un (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13380,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 260A High Court Formulation & CBDT Po... — General Ledger Verification",
+        "title": "Section 260A High Court Formulation & CBDT Policy Threshold In limine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section A High Court F (Omicron Delta).",
+            "caption": "Open primary debit entry for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11350,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section A High Court F (Delta).",
+            "caption": "Record secondary accrual adjustment for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section A High Court F (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section A High Court F (Delta).",
+            "caption": "Verify double-entry trial balance for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -899,11 +899,11 @@
       "partTitle": "Section 260A High Court Formulation & CBDT Policy Threshold In limine Dismissal Execution",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Section 260A High Court Formulation & CBDT Po... — General Ledger Verification",
+        "title": "Section 260A High Court Formulation & CBDT Policy Threshold In limine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section A High Court F (Omicron Delta).",
+            "caption": "Open primary debit entry for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11350,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section A High Court F (Delta).",
+            "caption": "Record secondary accrual adjustment for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section A High Court F (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section A High Court F (Delta).",
+            "caption": "Verify double-entry trial balance for Section 260A High Court Formulation.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Enterprise Mu... — General Ledger Verification",
+        "title": "Production Python Architecture: Enterprise — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Omicron Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11550,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Enterprise Multi-Tier Appellate Defense Simulator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Enterprise Mu... — General Ledger Verification",
+        "title": "Production Python Architecture: Enterprise — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Omicron Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 55 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11550,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 55 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Omicron).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 55 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 55 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13860,

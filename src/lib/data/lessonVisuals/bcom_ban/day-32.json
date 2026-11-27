@@ -8,7 +8,7 @@
       "codeHash": "9a72d6a6100736ac9899e1d946e5ba3fbffbdc45358ba295a408a685eb46e186",
       "spec": {
         "template": "funnel",
-        "title": "Non-Fund-Based Credit Architecture: Co... — Credit Underwriting Review",
+        "title": "Non-Fund-Based Credit Architecture: Contingent Liabilities — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "45441d69b9daa38718a9251d34b1322f99b645daae70674afe59682c60559763",
       "spec": {
         "template": "funnel",
-        "title": "Bank Guarantees (BGs): Financial Guara... — Credit Underwriting Review",
+        "title": "Bank Guarantees (BGs): Financial — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "181f2d4d951e09d46fc82d987984ec1db00881ca45424e0b1dd00df7999a7da0",
       "spec": {
         "template": "funnel",
-        "title": "Letters of Credit (LCs): Commercial Ar... — Credit Underwriting Review",
+        "title": "Letters of Credit (LCs): Commercial — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "151c90f0dce37f9358b5cd1e7f843ac913abd7528df30e6075574371cee806a0",
       "spec": {
         "template": "funnel",
-        "title": "Underwriting & Structuring NFB Credit ... — Credit Underwriting Review",
+        "title": "Underwriting & Structuring NFB Credit Facilities: Margins, Security — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "a88253438fa11934708752c9d89f730ce8f6302711be5c12fb8ea76e31a6ffcb",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Bank Guarante... — Credit Underwriting Review",
+        "title": "Comprehensive Enterprise Bank Guarantee & Letter of Credit — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",

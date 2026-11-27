@@ -10,7 +10,7 @@
       "codeHash": "ecaaf8fdfc926a7bb42dc76391dc3f020cf52def32961aa509b339d352fc271e",
       "spec": {
         "template": "tree-graph",
-        "title": "The Small Language Model (SLM) Paradigm Shift... — Enterprise AI Decision Graph",
+        "title": "The Small Language Model (SLM) Paradigm Shift: Edge Economics — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The Small Language Model (SLM) ...",
+            "caption": "Ingest enterprise Context Query for The Small Language Model.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The Small Language Model (SLM) Paradigm Shift... — Enterprise AI Decision Graph",
+        "title": "The Small Language Model (SLM) Paradigm Shift: Edge Economics — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The Small Language Model (SLM) ...",
+            "caption": "Step 1: Ingest enterprise Context Query for The Small Language Model.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "a39f127a316c3519c38adead784665452bcaeadee4418528b0ef8d0873bd046d",
       "spec": {
         "template": "tree-graph",
-        "title": "Activation-Aware Weight Quantization (AWQ) vs... — Enterprise AI Decision Graph",
+        "title": "Activation-Aware Weight Quantization (AWQ) vs GPTQ vs GGUF/llama.cpp — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Activation-Aware Weight Quantiz...",
+            "caption": "Ingest enterprise Context Query for Activation-Aware Weight Quantization.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Activation-Aware Weight Quantization (AWQ) vs... — Enterprise AI Decision Graph",
+        "title": "Activation-Aware Weight Quantization (AWQ) vs GPTQ vs GGUF/llama.cpp — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Activation-Aware Weight Quantiz...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "96ef8d9f45b8fd7a12b4b497fb677753a64c295d0a8c7af46b216bc843f6b2eb",
       "spec": {
         "template": "tree-graph",
-        "title": "Knowledge Distillation: Teacher-Student Logit... — Enterprise AI Decision Graph",
+        "title": "Knowledge Distillation: Teacher-Student — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Knowledge Distillation: Teacher...",
+            "caption": "Ingest enterprise Context Query for Knowledge Distillation: Teacher",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Knowledge Distillation: Teacher-Student Logit... — Enterprise AI Decision Graph",
+        "title": "Knowledge Distillation: Teacher-Student — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Knowledge Distillation: Teacher...",
+            "caption": "Step 1: Ingest enterprise Context Query for Knowledge Distillation: Teacher",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "8225e6020e1e9c7597b48c0f0912d08c242fea5ec25731f7d719ec3b614a70ff",
       "spec": {
         "template": "tree-graph",
-        "title": "Structured Pruning & Weight Sparsification (S... — Enterprise AI Decision Graph",
+        "title": "Structured Pruning & Weight Sparsification (SparseGPT / Magnitude Pruning) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Structured Pruning & Weight Spa...",
+            "caption": "Ingest enterprise Context Query for Structured Pruning.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Structured Pruning & Weight Sparsification (S... — Enterprise AI Decision Graph",
+        "title": "Structured Pruning & Weight Sparsification (SparseGPT / Magnitude Pruning) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Structured Pruning & Weight Spa...",
+            "caption": "Step 1: Ingest enterprise Context Query for Structured Pruning.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "264950c4fc759bbd0474c827a5d15d9ef2cdf365d41f78b818684fac64eb4425",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

@@ -10,11 +10,11 @@
       "codeHash": "b1998fe65e1972fdc98c6e4e08c28971354a9a2ec7001018f26d28b989dfda1e",
       "spec": {
         "template": "funnel",
-        "title": "CS Ops as a Revenue Multiplier & Enterpris \u2014 Retention Pipeline",
+        "title": "CS Ops as a Revenue Multiplier & Enterprise Tech Stack Architecture — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (ten,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "CS Ops as a Revenue Multiplier & Enterpris \u2014 Retention Pipeline",
+        "title": "CS Ops as a Revenue Multiplier & Enterprise Tech Stack Architecture — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (ten,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "3999e79d393d9d8332e5ee843dd54471957800a0bbbf033076b67ed45a13b3c0",
       "spec": {
         "template": "funnel",
-        "title": "Portfolio Segmentation & CSM ARR Capacity  \u2014 Retention Pipeline",
+        "title": "Portfolio Segmentation & CSM ARR Capacity Modeling — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Portfolio Segmentation & CSM ARR Capacity  \u2014 Retention Pipeline",
+        "title": "Portfolio Segmentation & CSM ARR Capacity Modeling — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "2b6a4a28b81e4ca83257f3a782afbfd86f995084b9ff0a51ca44cabdf443d76d",
       "spec": {
         "template": "funnel",
-        "title": "Account Whitespace Analysis & Cross-Sell P \u2014 Retention Pipeline",
+        "title": "Account Whitespace Analysis & Cross-Sell Propensity Scoring — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (eight,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Account Whitespace Analysis & Cross-Sell P \u2014 Retention Pipeline",
+        "title": "Account Whitespace Analysis & Cross-Sell Propensity Scoring — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (eight,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "e361898594583ec2e6fbd07d9a83e0f5c35da72f9fdc46403386bf7e4da62d70",
       "spec": {
         "template": "funnel",
-        "title": "Joint Success Plans (JSPs), Executive QBRs \u2014 Retention Pipeline",
+        "title": "Joint Success Plans (JSPs), Executive QBRs — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Joint Success Plans (JSPs), Executive QBRs \u2014 Retention Pipeline",
+        "title": "Joint Success Plans (JSPs), Executive QBRs — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "e027d33eea1332961b85630dcdce558274b465e97c0c45cab9fda097da098189",
       "spec": {
         "template": "funnel",
-        "title": "Master Customer Success Operations & White \u2014 Retention Pipeline",
+        "title": "Master Customer Success Operations & Whitespace Expansion Engine — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (multiple,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Customer Success Operations & White \u2014 Retention Pipeline",
+        "title": "Master Customer Success Operations & Whitespace Expansion Engine — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (multiple,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {

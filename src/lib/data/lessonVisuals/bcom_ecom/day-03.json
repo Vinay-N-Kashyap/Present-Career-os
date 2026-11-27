@@ -10,11 +10,11 @@
       "codeHash": "ed12e411e3ef8b539733ced19c120ae168bdf803117d9c5deec485740059724b",
       "spec": {
         "template": "funnel",
-        "title": "D2C Order Unit Economics: CM1, CM2, and Contr... — Conversion Pipeline",
+        "title": "D2C Order Unit Economics: CM1, CM2 — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,7 +168,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "D2C Order Unit Economics: CM1, CM2, and Contr... — Conversion Pipeline",
+        "title": "D2C Order Unit Economics: CM1, CM2 — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -330,11 +330,11 @@
       "codeHash": "045c653be4f9c0d6fea0c7e7bcd13a41ee20832edda3278474d471f0616fc569",
       "spec": {
         "template": "funnel",
-        "title": "Customer Lifetime Value (LTV) Cohorts, Repurc... — Conversion Pipeline",
+        "title": "Customer Lifetime Value (LTV) Cohorts, Repurchase Curves & LTV:CAC Ratios — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Customer Lifetime Value (LTV) Cohorts, Repurc... — Conversion Pipeline",
+        "title": "Customer Lifetime Value (LTV) Cohorts, Repurchase Curves & LTV:CAC Ratios — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -650,11 +650,11 @@
       "codeHash": "75a70605fde67a793f8228d3da62b15d50348305f83051bb20d8cbc83d3b3605",
       "spec": {
         "template": "funnel",
-        "title": "Checkout Funnel Drop-off Telemetry & Cart Aba... — Conversion Pipeline",
+        "title": "Checkout Funnel Drop-off Telemetry & Cart Abandonment Recovery — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,7 +808,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Checkout Funnel Drop-off Telemetry & Cart Aba... — Conversion Pipeline",
+        "title": "Checkout Funnel Drop-off Telemetry & Cart Abandonment Recovery — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -970,11 +970,11 @@
       "codeHash": "4fd3d0a441666a03882d1b6a2c5db4ef34a5a2301b6d05f3070ddfddcde6980f",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Channel Media Mix: Platform ROAS vs Ble... — Conversion Pipeline",
+        "title": "Multi-Channel Media Mix: Platform ROAS vs Blended MER & Attribution Realities — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Multi-Channel Media Mix: Platform ROAS vs Ble... — Conversion Pipeline",
+        "title": "Multi-Channel Media Mix: Platform ROAS vs Blended MER & Attribution Realities — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1290,11 +1290,11 @@
       "codeHash": "bf9f1b8eda6338b8f942a9fc1ed05d1329dff1ebd10e3a108071ed063cbdf993",
       "spec": {
         "template": "funnel",
-        "title": "Integrated E-Commerce Growth Control Tower & ... — Conversion Pipeline",
+        "title": "Integrated E-Commerce Growth Control Tower & Capital Optimization — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,7 +1448,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Integrated E-Commerce Growth Control Tower & ... — Conversion Pipeline",
+        "title": "Integrated E-Commerce Growth Control Tower & Capital Optimization — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

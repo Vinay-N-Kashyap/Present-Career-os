@@ -10,7 +10,7 @@
       "codeHash": "a64a91252ccc9e195d8b88da532a09b13c6a53f4813ef04e139ed3f55e0ce2ba",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Sovereign Yield Curve Anatomy: Par Yield — General Ledger Verification",
+        "title": "Sovereign Yield Curve Anatomy: Par Yields, Zero-Coupon Spot Rates — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
@@ -139,11 +139,11 @@
       "codeHash": "a64a91252ccc9e195d8b88da532a09b13c6a53f4813ef04e139ed3f55e0ce2ba",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Bootstrapping Algorithm: Recursive E — General Ledger Verification",
+        "title": "The Bootstrapping Algorithm: Recursive Extraction of Theoretical Spot — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for The Bootstrapping Algorithm: R.",
+            "caption": "Open primary capital facility balance for The Bootstrapping Algorithm.",
             "title": "Day 36 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 136250,
@@ -268,11 +268,11 @@
       "codeHash": "a64a91252ccc9e195d8b88da532a09b13c6a53f4813ef04e139ed3f55e0ce2ba",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forward Rate Matrices, Term Premium Dyna — General Ledger Verification",
+        "title": "Forward Rate Matrices, Term Premium Dynamics & Nelson-Siegel Curve — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Forward Rate Matrices, Term Pr.",
+            "caption": "Open primary capital facility balance for Forward Rate Matrices.",
             "title": "Day 36 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 136500,
@@ -530,7 +530,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for DV Sensitivity, Portfolio Im.",
+            "caption": "Open primary capital facility balance for DV01 Sensitivity.",
             "title": "Day 36 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 137000,

@@ -10,11 +10,11 @@
       "codeHash": "e684241ea8761699773d6d6ed3f5a30e4d05f13cd9fb4d9ab00a09e504db357f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Capital Asset Pricing Model (CAPM) & S... — General Ledger Verification",
+        "title": "The Capital Asset Pricing Model (CAPM) & Systematic Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Capital Asset Pricing Model.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 70500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 84600,
@@ -139,11 +139,11 @@
       "codeHash": "e983f15acf8835791b8f4550de314d391828a45d1419e6e54a75510fe2eab42b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Gordon Constant Growth Dividend Model & Gr... — General Ledger Verification",
+        "title": "Gordon Constant Growth Dividend Model & Growth Dynamics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Gordon.",
+            "caption": "Open primary facility debit entry for Gordon Constant Growth Dividend Model.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 71750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 86100,
@@ -268,11 +268,11 @@
       "codeHash": "ce6597355b2388c889c77270c1406d37ad643eefb01cfd3fff0fc6cfaabf8fe0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dual-Model Ke Triangulation: Harmonizing C... — General Ledger Verification",
+        "title": "Dual-Model Ke Triangulation: Harmonizing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Dual-Model Ke.",
+            "caption": "Open primary facility debit entry for Dual-Model Ke Triangulation.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 73000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 87600,
@@ -397,11 +397,11 @@
       "codeHash": "cab2c253141624e9a76c10392efa779804c9917122afe3b5724fbf4355567ea5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cost of Preference Capital (Kp) & Flotatio... — General Ledger Verification",
+        "title": "Cost of Preference Capital (Kp) & Flotation Adjustments — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cost of.",
+            "caption": "Open primary facility debit entry for Cost of Preference Capital.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 74250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 89100,
@@ -526,11 +526,11 @@
       "codeHash": "f92357cdc455cd48fed21ff4f2520d25d053085a266abe6e8e4a4662538618a0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Equity & Hybrid Capital Valuati... — General Ledger Verification",
+        "title": "Enterprise Equity & Hybrid Capital Valuation Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Equity.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 75500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 90600,

@@ -10,11 +10,11 @@
       "codeHash": "a856014dbcad207b72baf561a496e2e7d2f671fecc62da4d3e1882773a3859b2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Algorithmic Underwriting & Gradient Booste... — General Ledger Verification",
+        "title": "Algorithmic Underwriting & Gradient Boosted Machine Learning Models — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Algorithmic.",
+            "caption": "Open primary facility debit entry for Algorithmic Underwriting.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147600,
@@ -139,11 +139,11 @@
       "codeHash": "431d3d255adb53185cb46cb814e0149c0e44c62e3df2ce87fe2afb060348f6ac",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Alternative Data Integration & Open Bankin... — General Ledger Verification",
+        "title": "Alternative Data Integration & Open Banking Cash Flow Telemetry — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Alternative.",
+            "caption": "Open primary facility debit entry for Alternative Data Integration.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149100,
@@ -268,11 +268,11 @@
       "codeHash": "e77ddd51f861d9ccc250f12bd20a55684a80ac303846c29e60ba6de5aa8b368a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Explainable AI (XAI), SHAP Values & Regula... — General Ledger Verification",
+        "title": "Explainable AI (XAI), SHAP Values & Regulatory Adverse Action — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 125500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 150600,
@@ -397,11 +397,11 @@
       "codeHash": "b856c89c1e5a3b614352dd5dad6a0ec725f5dc5ead20f85bf056c988d00b6a3b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Algorithmic Bias Auditing & Fair Lending D... — General Ledger Verification",
+        "title": "Algorithmic Bias Auditing & Fair Lending Disparate Impact Metrics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Algorithmic.",
+            "caption": "Open primary facility debit entry for Algorithmic Bias Auditing.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 126750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 152100,
@@ -526,11 +526,11 @@
       "codeHash": "47e4f03f20a32ac5bbb37bb0944748d6c2f1888b148ab3b34f140f02df530c09",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Autonomous Real-Time Fraud Surveillance & ... — General Ledger Verification",
+        "title": "Autonomous Real-Time Fraud Surveillance & Graph Neural Networks (GNN) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($one-twenty-eight,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 128000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 153600,

@@ -10,11 +10,11 @@
       "codeHash": "2422da4a30ae53b0601e86949efd60c8519d38a893ad8252fe454e125d4a62eb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Salary Structure Components: Earnings, All... — General Ledger Verification",
+        "title": "Salary Structure Components: Earnings — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Salary.",
+            "caption": "Open primary facility debit entry for Salary Structure Components.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 126600,
@@ -139,11 +139,11 @@
       "codeHash": "bc9a7410cdc6e85333a892354e5b0bd1bc3dc728642a83a16e696207f349b01b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Employees' Provident Fund (EPF) Statutory ... — General Ledger Verification",
+        "title": "Employees' Provident Fund (EPF) Statutory Mechanics & EDLI — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Employees'.",
+            "caption": "Open primary facility debit entry for Employees' Provident Fund.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 106750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 128100,
@@ -268,11 +268,11 @@
       "codeHash": "b0c87238128366ea410205216236b5aeea86f6f994fe0563cef5ebfd54156ce6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Employees' State Insurance (ESI) & State P... — General Ledger Verification",
+        "title": "Employees' State Insurance (ESI) & State Professional Tax — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Employees'.",
+            "caption": "Open primary facility debit entry for Employees' State Insurance.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 108000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 129600,
@@ -397,11 +397,11 @@
       "codeHash": "ed98aafb14545006ce3321f891e3289510e89de52e7fb6c5af2d6f9317d79d13",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Net Pay Calculation, Pay Slip Generation &... — General Ledger Verification",
+        "title": "Net Pay Calculation, Pay Slip Generation & TDS Integration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Net Pay.",
+            "caption": "Open primary facility debit entry for Net Pay Calculation.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 131100,
@@ -526,11 +526,11 @@
       "codeHash": "c3e8d4d00b99be223d0e7ae4bdd4684ed8cae78ebd87d3b634aad989afccf55b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Payroll Journal Posting & Statu... — General Ledger Verification",
+        "title": "Enterprise Payroll Journal Posting & Statutory Remittance Accounting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Payroll Journal Posting.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132600,

@@ -8,7 +8,7 @@
       "codeHash": "997678c00986d39014c20d5cdf5555ad71d58559fe35418e91ac13bc88c4a991",
       "spec": {
         "template": "funnel",
-        "title": "The Deal Desk Paradigm: Balancing D... - RevOps Funnel",
+        "title": "The Deal Desk Paradigm: Balancing - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "5d392d37dd1c1f85eb8d987008da5d961ff173f48279a708e0c93a33dbd56c7d",
       "spec": {
         "template": "funnel",
-        "title": "Non-Standard Terms & The Concession... - RevOps Funnel",
+        "title": "Non-Standard Terms & The Concession Valuation Scoring Matrix - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "0da8c58f296774fcb316b013ae527d6acb97857cf819de0e0b612ea739929293",
       "spec": {
         "template": "funnel",
-        "title": "The $5M Margin Evaporation & Rogue ... - RevOps Funnel",
+        "title": "The $5M Margin Evaporation & Rogue AE Approval Bypass Disaster - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "5da46b1f25e83b867a3e8ee8c5a6abd75073fb826ba6c6a506626ccc1bcf7bcb",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Stakeholder Approval DAGs & E... - RevOps Funnel",
+        "title": "Multi-Stakeholder Approval DAGs & Escalation State Machines - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "0df90aba8b0637749c135bcb78cb4db1d7fec4a2347d020f4b2f3bf4c3fccfa5",
       "spec": {
         "template": "funnel",
-        "title": "Building the Production Deal Desk O... - RevOps Funnel",
+        "title": "Building the Production Deal Desk Operations & Concession Platform - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

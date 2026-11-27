@@ -10,11 +10,11 @@
       "codeHash": "1be4769cbe85ce8ba74c65e95d6d8cf25c30481527bd49088a299fb657c484e9",
       "spec": {
         "template": "funnel",
-        "title": "Win/Loss Ratio Analytics & Pipeline Conver - RevOps Funnel",
+        "title": "Win/Loss Ratio Analytics & Pipeline Conversion Economics - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Win/Loss Ratio Analytics & Pipeline Conver - RevOps Funnel",
+        "title": "Win/Loss Ratio Analytics & Pipeline Conversion Economics - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "afb1d3a696e1630a463484cb7f86ee393ba93cc6f491b8cae7dcf2019a91187a",
       "spec": {
         "template": "funnel",
-        "title": "Account Executive Ramp Time Analytics & Pr - RevOps Funnel",
+        "title": "Account Executive Ramp Time Analytics & Productivity Maturity Curves - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Account Executive Ramp Time Analytics & Pr - RevOps Funnel",
+        "title": "Account Executive Ramp Time Analytics & Productivity Maturity Curves - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "8a20aba1b3573baff88ac5c04fc8d2973b3fc70f98b8c2ddf883291a493f5dd2",
       "spec": {
         "template": "funnel",
-        "title": "Discount Rate Leakage, Price Integrity & G - RevOps Funnel",
+        "title": "Discount Rate Leakage, Price Integrity & Gross Margin Dilution - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Discount Rate Leakage, Price Integrity & G - RevOps Funnel",
+        "title": "Discount Rate Leakage, Price Integrity & Gross Margin Dilution - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "ec682bd8697a39ab5317af33e22eb7707f5802e40d93aeb9c3e842d99e0211b1",
       "spec": {
         "template": "funnel",
-        "title": "Master Sales Analytics Control Tower & Tel - RevOps Funnel",
+        "title": "Master Sales Analytics Control Tower & Telemetry Orchestration - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Sales Analytics Control Tower & Tel - RevOps Funnel",
+        "title": "Master Sales Analytics Control Tower & Telemetry Orchestration - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {

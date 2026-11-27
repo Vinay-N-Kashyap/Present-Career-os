@@ -8,7 +8,7 @@
       "codeHash": "eb087c9fe866049b44302762c8fb4beb19c27796d030a8e318258d6682dce726",
       "spec": {
         "template": "funnel",
-        "title": "Modern Data Stack Architecture: For... - RevOps Funnel",
+        "title": "Modern Data Stack Architecture: Forward ETL/ELT vs Reverse ETL in RevOps - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "7d38293e66ab62900fb4c1e083f567b3587fe92d3c13f25ace1ac9f7521fd6f3",
       "spec": {
         "template": "funnel",
-        "title": "Analytical Feature Engineering: Agg... - RevOps Funnel",
+        "title": "Analytical Feature Engineering: Aggregated Usage Metrics, Product - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "86e49d8be3c7e7458101a4e9f43603e512909d061e752906483e08aa48e21bc4",
       "spec": {
         "template": "funnel",
-        "title": "Incremental Sync Algorithms: Primar... - RevOps Funnel",
+        "title": "Incremental Sync Algorithms: Primary Key Hashing, Checksums & Merkle - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "fa62736e11b340dd40efbb9fa55a177889a1b46d1e717ea30580f29743f5c58b",
       "spec": {
         "template": "funnel",
-        "title": "Rate Limiting & High-Throughput Bul... - RevOps Funnel",
+        "title": "Rate Limiting & High-Throughput Bulk API Sync (Salesforce Bulk API 2.0 / HubSpot Batch API) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "251774df7be1ef710c79671fdf6d16a1d52919281f3f394452e4312df8c8f7ce",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Enterpr... - RevOps Funnel",
+        "title": "Full Python Implementation: Enterprise Reverse ETL Pipeline - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

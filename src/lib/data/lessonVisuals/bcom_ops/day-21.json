@@ -10,7 +10,7 @@
       "codeHash": "2315e113a6b101021f834d8b746c34e191fc80e91d108fe21d6afbe562b68c62",
       "spec": {
         "template": "workflow",
-        "title": "IoT Architecture in SCM: Edge Nodes, MQTT/CoA... — Operational Workflow",
+        "title": "IoT Architecture in SCM: Edge Nodes — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "IoT Architecture in SCM: Edge Nodes, MQTT/CoA... — Operational Workflow",
+        "title": "IoT Architecture in SCM: Edge Nodes — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize IoT Architecture in SCM: Edge Nodes, MQT...",
+            "caption": "Stage 1 (Demand Forecast): Initialize IoT Architecture in SCM: Edge Nodes",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "53c5dcf81acd3e8422e79d4c486b965b9d7e3b0e7b9a20d7f98d5b64989b6e43",
       "spec": {
         "template": "workflow",
-        "title": "Passive vs Active RFID, NFC & BLE Beacon Tria... — Operational Workflow",
+        "title": "Passive vs Active RFID, NFC & BLE Beacon Triangulation Calculus — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Passive vs Active RFID, NFC & BLE Beacon Tria... — Operational Workflow",
+        "title": "Passive vs Active RFID, NFC & BLE Beacon Triangulation Calculus — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Passive vs Active RFID, NFC & BLE Beacon...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Passive vs Active RFID, NFC & BLE",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "c3a9f2adb612d685a493513d2c6fb5159d0991507a2c0ba39daad6f12c8bffc7",
       "spec": {
         "template": "workflow",
-        "title": "Real-Time Fleet Telematics, Geofencing & Cold... — Operational Workflow",
+        "title": "Real-Time Fleet Telematics, Geofencing & Cold Chain Thermal Excursion — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Real-Time Fleet Telematics, Geofencing & Cold... — Operational Workflow",
+        "title": "Real-Time Fleet Telematics, Geofencing & Cold Chain Thermal Excursion — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time Fleet Telematics, Geofencing &...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time Fleet Telematics, Geofencing",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "7108bf7f17fb73eab3d0b185d6754a4c357e80b1fece4d8cbd26a9563e7d180d",
       "spec": {
         "template": "workflow",
-        "title": "Predictive Maintenance Telemetry: Acceleromet... — Operational Workflow",
+        "title": "Predictive Maintenance Telemetry: Accelerometer Vibration & FFT Spectral Analysis — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Predictive Maintenance Telemetry: Acceleromet... — Operational Workflow",
+        "title": "Predictive Maintenance Telemetry: Accelerometer Vibration & FFT Spectral Analysis — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Predictive Maintenance Telemetry: Accele...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Predictive Maintenance Telemetry: Accele",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "0d2b64854e3245371e730ba536dd8f9eb9a1579abcfcec650d0e422e4f67ceb4",
       "spec": {
         "template": "workflow",
-        "title": "Enterprise IoT Sensor Gateway & Executive Tel... — Operational Workflow",
+        "title": "Enterprise IoT Sensor Gateway & Executive Telematics Orchestrator — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1400,7 +1400,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize Enterprise IoT Sensor Gateway &.",
+            "caption": "Stage one (Demand Forecast): Initialize Enterprise IoT Sensor Gateway.",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Enterprise IoT Sensor Gateway & Executive Tel... — Operational Workflow",
+        "title": "Enterprise IoT Sensor Gateway & Executive Telematics Orchestrator — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Enterprise IoT Sensor Gateway & Executiv...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Enterprise IoT Sensor Gateway",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

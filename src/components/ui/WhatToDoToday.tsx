@@ -2,7 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import type { ServerPriorityAction } from '@/lib/dashboard/dashboardMetrics';
+import {
+  getIstDateKey,
+  PRIORITY_CATALOG_XP,
+  type ServerPriorityAction,
+} from '@/lib/dashboard/dashboardMetrics';
 
 export interface ActionProfile {
   user_id?: string;
@@ -31,6 +35,8 @@ interface Action {
   href: string;
   cta: string;
   xp: string;
+  xpAmount?: number;
+  rewardClaimed?: boolean;
   color: string;
   bg: string;
   border: string;
@@ -47,101 +53,99 @@ function pickActions(profile: ActionProfile): Action[] {
   const vault = profile?.vault_count || 0;
   const intDone = profile?.interviews_done || 0;
   const trackName = profile?.target_role || (profile?.active_track === 'iot' ? 'IoT Hardware' : 'your target track');
+  const dayKey = getIstDateKey();
+  const dayIdx = Math.floor(Date.parse(`${dayKey}T00:00:00Z`) / 86400000);
 
   const candidates: Action[] = [
-    // 1. Resume / ATS Optimization
     {
-      id: 'resume',
-      icon: 'RESUME',
+      id: ats === 0 ? 'upload_resume' : 'daily_quest_lesson',
+      icon: ats === 0 ? 'RESUME' : 'QUEST',
       color: '#6366f1',
       bg: 'rgba(99,102,241,0.12)',
       border: 'rgba(99,102,241,0.25)',
-      title: ats === 0 ? 'Optimize Resume' : `Resume Score: ${ats}`,
+      title: ats === 0 ? 'Optimize Resume' : 'Complete 1 Roadmap Lesson',
       desc: ats === 0
         ? `Upload your resume to map keyword gaps for ${trackName}.`
-        : `Close missing technical keywords to reach benchmark standing.`,
-      href: '/career-builder',
-      cta: 'Open Resume Builder',
-      xp: '+50 XP',
-      urgency: ats === 0 ? 95 : ats < 55 ? 75 : 10,
+        : `Clear today's focused lesson module in your ${trackName} roadmap.`,
+      href: ats === 0 ? '/career-builder' : '/quests',
+      cta: ats === 0 ? 'Open Resume Builder' : 'Open Quests',
+      xp: ats === 0 ? '+15 Weekly XP' : '+12 Weekly XP',
+      xpAmount: ats === 0 ? 15 : 12,
+      urgency: ats === 0 ? 95 : 80 + ((dayIdx + 0) % 15),
     },
-    // 2. Mission Streak
     {
-      id: 'streak',
-      icon: 'STREAK',
+      id: streak === 0 ? 'daily_streak_guard' : 'daily_mission_sprint',
+      icon: streak === 0 ? 'STREAK' : 'SPRINT',
       color: '#f59e0b',
       bg: 'rgba(245,158,11,0.12)',
       border: 'rgba(245,158,11,0.25)',
       title: streak === 0 ? 'Start Daily Streak' : `Extend ${streak}-Day Streak`,
       desc: streak === 0
-        ? 'Complete a 15-min daily mission to begin building your consistency record.'
-        : `Complete today's quick sprint to keep your focus streak alive.`,
+        ? 'Complete a 15-min daily mission today to start earning Weekly EXP.'
+        : `Finish today's quick sprint to earn Weekly EXP and extend your streak.`,
       href: '/missions',
       cta: "Launch Today's Mission",
-      xp: '+35 XP',
-      urgency: streak === 0 ? 90 : streak < 3 ? 60 : 15,
+      xp: streak === 0 ? '+10 Weekly XP' : '+12 Weekly XP',
+      xpAmount: streak === 0 ? 10 : 12,
+      urgency: streak === 0 ? 90 : 75 + ((dayIdx + 1) % 15),
     },
-    // 3. Trust Score
     {
-      id: 'trust',
+      id: 'daily_trust_verify',
       icon: 'TRUST',
       color: '#10b981',
       bg: 'rgba(16,185,129,0.12)',
       border: 'rgba(16,185,129,0.25)',
       title: trust < 50 ? 'Boost Trust Quotient' : `Trust Standing: ${Math.round(trust)}`,
       desc: trust < 50
-        ? 'Verify a certificate or pass a quick coding quiz to build recruiter trust.'
-        : 'Institutional trust is active. Keep attendance clean to preserve 90+ standing.',
-      href: '/trust',
-      cta: 'Verify Credentials',
-      xp: '+40 XP',
-      urgency: trust < 50 ? 88 : trust < 70 ? 45 : 8,
+        ? 'Verify a certificate or pass a quick quiz today to earn Weekly EXP.'
+        : 'Keep institutional trust active and verify new credentials in Vault.',
+      href: trust < 50 ? '/trust' : '/vault',
+      cta: trust < 50 ? 'Verify Credentials' : 'Verify Proof',
+      xp: '+10 Weekly XP',
+      xpAmount: 10,
+      urgency: trust < 50 ? 88 : 70 + ((dayIdx + 2) % 15),
     },
-    // 4. Mock Interviews
     {
-      id: 'mock',
+      id: 'daily_mock_interview',
       icon: 'MOCK',
       color: '#3b82f6',
       bg: 'rgba(59,130,246,0.12)',
       border: 'rgba(59,130,246,0.25)',
-      title: intDone === 0 ? 'First AI Mock Round' : `Mock Practice (${intDone} Cleared)`,
-      desc: intDone === 0
-        ? 'Practice a 10-minute technical interview with Ms. Priya to calibrate confidence.'
-        : 'Take an advanced system design or problem-solving mock round.',
+      title: intDone === 0 ? 'Complete 1 AI Interview Round' : `Mock Practice (${intDone} Cleared)`,
+      desc: 'Practice a focused technical round with Ms. Priya today for Weekly EXP.',
       href: '/interview',
       cta: 'Start Mock Interview',
-      xp: '+75 XP',
-      urgency: intDone === 0 ? 82 : intDone < 3 ? 40 : 12,
+      xp: '+15 Weekly XP',
+      xpAmount: 15,
+      urgency: 72 + ((dayIdx + 3) % 15),
     },
-    // 5. Evidence Vault
     {
-      id: 'vault',
-      icon: 'VAULT',
-      color: '#a855f7',
-      bg: 'rgba(168,85,247,0.12)',
-      border: 'rgba(168,85,247,0.25)',
-      title: vault === 0 ? 'Add Proof to Vault' : `Vault Assets (${vault})`,
-      desc: vault === 0
-        ? 'Store GitHub repos, degrees, or certifications in your tamper-proof Vault.'
-        : 'Your vault credentials back your verified skill score.',
-      href: '/vault',
-      cta: 'Open Vault',
-      xp: '+60 XP',
-      urgency: vault === 0 ? 84 : vault < 3 ? 50 : 15,
+      id: 'daily_arena_duel',
+      icon: 'ARENA',
+      color: '#06b6d4',
+      bg: 'rgba(6,182,212,0.12)',
+      border: 'rgba(6,182,212,0.25)',
+      title: vault === 0 ? 'Play 1 Coding Arena Duel' : `Arena Sprint (${vault} Proofs)`,
+      desc: 'Compete in a quick timed Arena match today to boost League Points.',
+      href: '/arena',
+      cta: 'Enter Arena',
+      xp: '+15 Weekly XP',
+      xpAmount: 15,
+      urgency: 74 + ((dayIdx + 4) % 15),
     },
-    // 6. Group Discussion Boardroom
     {
-      id: 'debate',
+      id: 'daily_gd_round',
       icon: 'DEBATE',
       color: '#14b8a6',
       bg: 'rgba(20,184,166,0.12)',
       border: 'rgba(20,184,166,0.25)',
-      title: 'AI Boardroom Debate',
-      desc: 'Sharpen your technical communication and collaborative argumentation skills.',
-      href: '/group-discussion',
-      cta: 'Enter Boardroom',
-      xp: '+45 XP',
-      urgency: 25,
+      title: 'Join 1 Group Discussion',
+      desc: 'Sharpen your technical communication in the AI Boardroom today.',
+      href: '/interview?tab=gd',
+      cta: 'Join GD Room',
+      xp: '+12 Weekly XP',
+      xpAmount: 12,
+      urgency: 68 + ((dayIdx + 5) % 15),
     },
   ];
 
@@ -173,6 +177,8 @@ export default function WhatToDoToday({
         href: sa.href,
         cta: sa.cta,
         xp: sa.xp,
+        xpAmount: sa.xpAmount,
+        rewardClaimed: sa.rewardClaimed,
         color: sa.color,
         bg: sa.bg,
         border: sa.border,
@@ -186,9 +192,10 @@ export default function WhatToDoToday({
 
   // Honest baseline: 0 items pre-checked on initial render; server-verified actions override local state
   const [completedItems, setCompletedItems] = useState<Record<string, boolean>>({});
+  const [claimingId, setClaimingId] = useState<string | null>(null);
   const uidSegment = safeProfile.user_id ? `${safeProfile.user_id}_` : '';
   const todayKey = typeof window !== 'undefined'
-    ? `pinit_daily_actions_${uidSegment}${new Date().toISOString().slice(0, 10)}`
+    ? `pinit_daily_actions_${uidSegment}${getIstDateKey()}`
     : 'pinit_daily_actions';
 
   useEffect(() => {
@@ -204,14 +211,46 @@ export default function WhatToDoToday({
     } catch {}
   }, [todayKey]);
 
-  const toggleComplete = (actionId: string) => {
+  const toggleComplete = async (action: Action) => {
+    if (action.serverCompleted || completedItems[action.id] || claimingId === action.id) {
+      return;
+    }
+
     setCompletedItems(prev => {
-      const next = { ...prev, [actionId]: !prev[actionId] };
+      const next = { ...prev, [action.id]: true };
       if (typeof window !== 'undefined') {
         try { localStorage.setItem(todayKey, JSON.stringify(next)); } catch {}
       }
       return next;
     });
+
+    if (!PRIORITY_CATALOG_XP[action.id] || typeof fetch === 'undefined') return;
+    setClaimingId(action.id);
+    try {
+      const res = await fetch('/api/dashboard/priority-complete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priorityId: action.id }),
+      });
+      if (res.ok) {
+        const data = await res.json().catch(() => null);
+        if (data && typeof window !== 'undefined') {
+          window.dispatchEvent(
+            new CustomEvent('pinit:user_profile_updated', {
+              detail: {
+                source: 'priority_complete',
+                ...(typeof data.newWeeklyXp === 'number' ? { weekly_xp: data.newWeeklyXp } : {}),
+                ...(typeof data.newXp === 'number' ? { xp_total: data.newXp } : {}),
+              },
+            })
+          );
+        }
+      }
+    } catch {
+      // Non-fatal network error; next dashboard refresh reconciles state
+    } finally {
+      setClaimingId(null);
+    }
   };
 
   const doneCount = actions.filter(a => Boolean(a.serverCompleted || completedItems[a.id])).length;
@@ -360,7 +399,7 @@ export default function WhatToDoToday({
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    toggleComplete(action.id);
+                    void toggleComplete(action);
                   }}
                   style={{
                     width: 20,
@@ -464,7 +503,7 @@ export default function WhatToDoToday({
                       whiteSpace: 'nowrap',
                     }}
                   >
-                    {action.xp}
+                    {isDone && typeof action.xpAmount === 'number' ? `+${action.xpAmount} XP Done` : action.xp}
                   </span>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" style={{ color: 'var(--t3)', opacity: 0.7 }}>
                     <polyline points="9 18 15 12 9 6" />

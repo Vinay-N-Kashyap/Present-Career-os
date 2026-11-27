@@ -8,7 +8,7 @@
       "codeHash": "f617d7a1439e706264037e5692e7ccaebad25fad82592c2257d6865fc3964f56",
       "spec": {
         "template": "funnel",
-        "title": "Conceptual Foundations of Audit Eviden... \u2014 Assurance Review",
+        "title": "Conceptual Foundations of Audit Evidence: Sufficiency — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "78d49a991639b27c90628f1442f181b800a59f84a5b85d9e101bfd956363caaf",
       "spec": {
         "template": "funnel",
-        "title": "The Hierarchy of Evidence Reliability:... \u2014 Assurance Review",
+        "title": "The Hierarchy of Evidence Reliability: External Third-Party Sources — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "4677736ab05cb5812e25857c9005a846ef77441b9a15e8c97645a374d77a009f",
       "spec": {
         "template": "funnel",
-        "title": "Management's Specialist vs Auditor's S... \u2014 Assurance Review",
+        "title": "Management's Specialist vs Auditor's Specialist: Competence — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "1972f9dcf70ffa10fab51ccf05a0aa6fcd9743eb58e3387b3bda11578f975bad",
       "spec": {
         "template": "funnel",
-        "title": "Electronic Evidence & Information Prod... \u2014 Assurance Review",
+        "title": "Electronic Evidence & Information Produced by the Entity (IPE) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "d5b2c80438145388f86df38a4f9597faa6e1874fdb7f0c1e6c10871ce6221748",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Audit Evidence Evaluatio... \u2014 Assurance Review",
+        "title": "Comprehensive Audit Evidence Evaluation & IPE Verification Engine — Assurance Review",
         "steps": [
           {
             "at": "intro",

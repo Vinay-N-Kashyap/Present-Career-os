@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Section sixteen.",
+            "caption": "Open primary taxable supply ledger entry for Section sixteen.",
             "title": "Day 8 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 330000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 8 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 380000,
@@ -141,11 +141,11 @@
       "codeHash": "e1bbf3d77fd4aff8153baf7afc1cb1f0f9e08b40b006dcc53f565aa73e8ee072",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The 180-Day Payment Invariant: Second Proviso to S — GST Ledger Verification",
+        "title": "The 180-Day Payment Invariant: Second Proviso to Section 16(2) — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for The multiple-Day.",
+            "caption": "Open primary taxable supply ledger entry for The multiple-Day.",
             "title": "Day 8 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 335000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 8 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 387500,
@@ -272,11 +272,11 @@
       "codeHash": "467505b28eecd9a45ac1a94bf50a49da1d3bfa9daa52d2011af200c58e2d3eab",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Blocked Credits Taxonomy: Section 17(5)(a) Motor V — GST Ledger Verification",
+        "title": "Blocked Credits Taxonomy: Section 17(5)(a) Motor Vehicles — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Blocked Credits.",
+            "caption": "Open primary taxable supply ledger entry for Blocked Credits Taxonomy.",
             "title": "Day 8 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 340000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 8 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 395000,
@@ -403,11 +403,11 @@
       "codeHash": "661109b1bd77042efc4122b56a0607bfab24099bec2359b051d16ccda002262e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Blocked Credits Taxonomy: Section 17(5)(b)-(h) Foo — GST Ledger Verification",
+        "title": "Blocked Credits Taxonomy: Section 17(5)(b)-(h) Food, Works Contracts — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Blocked Credits.",
+            "caption": "Open primary taxable supply ledger entry for Blocked Credits Taxonomy.",
             "title": "Day 8 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 345000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 8 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 402500,
@@ -534,11 +534,11 @@
       "codeHash": "1884fc053f954a401130b99470663dfabf6359ae24a30a25f8bb5e0297069974",
       "spec": {
         "template": "ledger-sheet",
-        "title": "ITC Apportionment Mechanics: Rule 42 (Inputs) & Ru — GST Ledger Verification",
+        "title": "ITC Apportionment Mechanics: Rule 42 (Inputs) & Rule 43 (Capital Goods) Calculus — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for ITC Apportionment.",
+            "caption": "Open primary taxable supply ledger entry for ITC Apportionment Mechanics.",
             "title": "Day 8 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 350000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 8 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 410000,

@@ -10,11 +10,11 @@
       "codeHash": "27170e99dc996ae6ace693b8d46f6faa8a00cd3c36c440e91420ec99a9a7c7c9",
       "spec": {
         "template": "funnel",
-        "title": "Media Planning Mathematics: Reach, Frequen... — Conversion Funnel",
+        "title": "Media Planning Mathematics: Reach — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (thirty-two,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "17ce1fe786ddacc0de73a247f6fefbb5794429b612a49818412d932fa7258cc0",
       "spec": {
         "template": "funnel",
-        "title": "Effective Frequency & Krugman's Three-Expo... — Conversion Funnel",
+        "title": "Effective Frequency & Krugman's Three-Exposure Hypothesis — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (thirty-two,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "238d2abdf4177bc412dceb1e0f13cd78028232be5e4520efe83e6f030a855996",
       "spec": {
         "template": "funnel",
-        "title": "Programmatic Media Buying: CPM, CPC, CPA &... — Conversion Funnel",
+        "title": "Programmatic Media Buying: CPM, CPC, CPA & Real-Time Bidding (RTB) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "ef21a388e6b431a47cd78ee94f6244d811951b0c00e56a3002b7f289812b8ad7",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Touch Attribution (MTA) & Algorithmi... — Conversion Funnel",
+        "title": "Multi-Touch Attribution (MTA) & Algorithmic Markov Chains — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "98240a3ca6f3e62b5d5b67b7ce51c3f657b754585c6a2e13ccc9f8a03dcfe402",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Media Governance: Ad Fraud, Vie... — Conversion Funnel",
+        "title": "Enterprise Media Governance: Ad Fraud — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

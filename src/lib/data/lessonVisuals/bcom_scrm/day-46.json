@@ -8,7 +8,7 @@
       "codeHash": "48b5fe598a9d3ebb1076d9c160305dba76a6f9df34c54d3cf18ffe405f0f2d12",
       "spec": {
         "template": "funnel",
-        "title": "Integration Topologies: Point-to-Po... - RevOps Funnel",
+        "title": "Integration Topologies: Point-to-Point vs Enterprise Service Bus - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "e77421ec8a9a94ad1d1136393ff16cdf218e537b71ed3e8e79823cab4d186fa8",
       "spec": {
         "template": "funnel",
-        "title": "Bi-Directional Synchronization Mech... - RevOps Funnel",
+        "title": "Bi-Directional Synchronization Mechanics: Watermarks, Deltas - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "4dc54b28b8642eacd093b77515289b34d8c4a76461b98fc230b0b449d138d5d5",
       "spec": {
         "template": "funnel",
-        "title": "Distributed Concurrency & Conflict ... - RevOps Funnel",
+        "title": "Distributed Concurrency & Conflict Resolution: Last-Write-Wins (LWW) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "e5d7108cc39f7b169ea46ebdd9226c894fd44110d038331a84477ec664521000",
       "spec": {
         "template": "funnel",
-        "title": "Event-Driven Webhook Architecture: ... - RevOps Funnel",
+        "title": "Event-Driven Webhook Architecture: Delivery Guarantees, Exponential - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "a5201847afaa40d4415809dbe7a67806907b8bfb6e5763597f75d7577fb583ad",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Resilie... - RevOps Funnel",
+        "title": "Full Python Implementation: Resilient Bi-Directional CRM-ERP Integration & Conflict Resolution - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

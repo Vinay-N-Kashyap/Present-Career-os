@@ -10,7 +10,7 @@
       "codeHash": "771554015989df064f602be3a67df69e648d639951d5ee9e3cb84abfe90f9048",
       "spec": {
         "template": "funnel",
-        "title": "Inventory Carrying Costs, Stockout Revenue... — Conversion Funnel",
+        "title": "Inventory Carrying Costs, Stockout Revenue Loss & The Bullwhip Dilemma — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "2007150e9d448703a200adbc2a9078bb386ba073109724aff94ef7ee191ab2df",
       "spec": {
         "template": "funnel",
-        "title": "Stochastic Safety Stock Modeling (SS = Z *... — Conversion Funnel",
+        "title": "Stochastic Safety Stock Modeling (SS = Z * sigma_L * sqrt(L)) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "6741138daeaddcb40c305099a72fdf8f0e6f7cd9324ed4297cf4e8e9ab533d7c",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Reorder Point (ROP = (D * L) + SS)... — Conversion Funnel",
+        "title": "Dynamic Reorder Point (ROP = (D * L) + SS) & Economic Order Quantity — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "6920e9bea047adc99819ce020d4dbcb693fa955d325454686d4e75cfce189d36",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Python Simulation: Continuous ... — Conversion Funnel",
+        "title": "Interactive Python Simulation: Continuous — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "b644124ab14b5d20c75db1bc671542cc3147f8e8192edd869f698427c8796152",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Inventory Telemetry & Productio... — Conversion Funnel",
+        "title": "Enterprise Inventory Telemetry & Production Replenishment Command — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

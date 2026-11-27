@@ -8,7 +8,7 @@
       "codeHash": "1bbd01abf0af388d69b819b984846ff9c25372591acce1ecd62c78290a3cbfcc",
       "spec": {
         "template": "funnel",
-        "title": "Phase 1: Neuromarketing UX Audit, Visu... \u2014 Conversion Funnel",
+        "title": "Phase 1: Neuromarketing UX Audit — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "073641a3dbbf0cffb50e1df2efd7b3e77f84df694c7c8c92e77418393abbe5be",
       "spec": {
         "template": "funnel",
-        "title": "Phase 2: Composable MarTech Migration,... \u2014 Conversion Funnel",
+        "title": "Phase 2: Composable MarTech — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "78e8fe76e0f1527759c68e413e313045cb384835be5bb0c7367b3de707de45a5",
       "spec": {
         "template": "funnel",
-        "title": "Phase 3: Dark Pattern Remediation, Reg... \u2014 Conversion Funnel",
+        "title": "Phase 3: Dark Pattern Remediation — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "89de3fe56843fd9250fed1e57ef83ee73f064c2455092d5ea07c4e88f556698d",
       "spec": {
         "template": "funnel",
-        "title": "Phase 4: Transmedia Brand Storytelling... \u2014 Conversion Funnel",
+        "title": "Phase 4: Transmedia Brand — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "37d48db8e9d0c3169a86426a3c13116f4edcb8b7d1e2f014e8dd1130a85e1435",
       "spec": {
         "template": "funnel",
-        "title": "Phase 5: Boardroom Defense, Valuation ... \u2014 Conversion Funnel",
+        "title": "Phase 5: Boardroom Defense — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

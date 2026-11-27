@@ -8,7 +8,7 @@
       "codeHash": "a1fa0b1b79bf715064b716bace8431c5c61f1f41b368123dbaf3e70f7313095f",
       "spec": {
         "template": "funnel",
-        "title": "Phase 1: Longitudinal Cohort Retention... \u2014 Conversion Funnel",
+        "title": "Phase 1: Longitudinal Cohort — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "8955445d76d9a5d52d4bc787d49fc51404a5ca72dc00bc908df0c2caf2e98138",
       "spec": {
         "template": "funnel",
-        "title": "Phase 2: Enterprise Good-Better-Best S... \u2014 Conversion Funnel",
+        "title": "Phase 2: Enterprise Good-Better-Best — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "decb3409f540b8d407e59c6130082eeb793275e2241afa8fdd1a91395dc43f6b",
       "spec": {
         "template": "funnel",
-        "title": "Phase 3: Global 2000 Account-Based Mar... \u2014 Conversion Funnel",
+        "title": "Phase 3: Global 2000 Account-Based — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "c5fb722d976222db1dc223039da10cb3b6220645755fddc9f9f3db5bf84953ef",
       "spec": {
         "template": "funnel",
-        "title": "Phase 4: Zero-Day Outage PR War Room &... \u2014 Conversion Funnel",
+        "title": "Phase 4: Zero-Day Outage PR War Room — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "0154374fa7896da72b6b9fb5a14da31f28dcc83cb69473c8b9cad249160e7500",
       "spec": {
         "template": "funnel",
-        "title": "Phase 5: Boardroom Turnaround Defense ... \u2014 Conversion Funnel",
+        "title": "Phase 5: Boardroom Turnaround — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

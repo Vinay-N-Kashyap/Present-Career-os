@@ -8,7 +8,7 @@
       "codeHash": "e39a991f5f37ab08c54b7920c90c21f414d5af1f22d7ba8b1cef9cd1fc0f4adc",
       "spec": {
         "template": "funnel",
-        "title": "Econometric Media Mix Modeling (MMM) F... \u2014 Conversion Funnel",
+        "title": "Econometric Media Mix Modeling (MMM) Foundations: Adstock Decay, Hill — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "48a86efa7a778b8d76cade6bac9bd47e3033596378ebe96d4aa1c35c7d495f7a",
       "spec": {
         "template": "funnel",
-        "title": "Hierarchical Bayesian Regression, Mark... \u2014 Conversion Funnel",
+        "title": "Hierarchical Bayesian Regression, Markov Chain Monte Carlo (MCMC) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "f0dd8de3f11ec3565195c7d592a3cb9b599bbee29eb9475bb653ef6276aeef45",
       "spec": {
         "template": "funnel",
-        "title": "Unified Attribution Synthesis: Calibra... \u2014 Conversion Funnel",
+        "title": "Unified Attribution Synthesis: Calibrating MMM with Causal Lift — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "a26a2ff9de5c88e9683091257e444864411d34dfce47331be32e2dc38e3aea86",
       "spec": {
         "template": "funnel",
-        "title": "Capital Allocation Optimization: Karus... \u2014 Conversion Funnel",
+        "title": "Capital Allocation Optimization: Karush-Kuhn-Tucker (KKT) Conditions — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "1b329e2a768c99b5e371463c57c1ed172eb5ff152036d8069d2d720a2d940bb9",
       "spec": {
         "template": "funnel",
-        "title": "Econometric Bayesian Media Mix Modelin... \u2014 Conversion Funnel",
+        "title": "Econometric Bayesian Media Mix Modeling & Marginal ROAS Optimization — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

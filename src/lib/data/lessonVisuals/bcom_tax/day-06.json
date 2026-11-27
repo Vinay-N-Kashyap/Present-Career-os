@@ -10,11 +10,11 @@
       "codeHash": "30b678f4b4a05731a12e62a97eb344da580f2a69b1d0d012a3db8451deb65cd0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Taxable Event Revolution: From Manufacture/Sal — GST Ledger Verification",
+        "title": "The Taxable Event Revolution: From Manufacture/Sale to 'Supply' — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for The Taxable Event.",
+            "caption": "Open primary taxable supply ledger entry for The Taxable Event Revolution.",
             "title": "Day 6 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 310000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 6 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 360000,
@@ -141,11 +141,11 @@
       "codeHash": "b4b02490fe9d1c679ab99391903aa23b788bb5d471d9de465042f7f0f013d0cb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Deemed Supplies without Consideration: Schedule I  — GST Ledger Verification",
+        "title": "Deemed Supplies without Consideration: Schedule I Mechanics — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Deemed Supplies.",
+            "caption": "Open primary taxable supply ledger entry.",
             "title": "Day 6 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 315000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 6 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 367500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated commercial case study for Deemed Supplies without.",
+            "caption": "Execute simulated commercial case study.",
             "title": "Day 6 GST Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 367500,
@@ -272,11 +272,11 @@
       "codeHash": "0513882a2c3962ec8152f0bf2bd617a3629b48e9f4a4deff4bd66859cf315f1f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Categorization Matrix: Schedule II Classification  — GST Ledger Verification",
+        "title": "Categorization Matrix: Schedule II Classification as 'Goods' — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Categorization.",
+            "caption": "Open primary taxable supply ledger entry for Categorization Matrix.",
             "title": "Day 6 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 320000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 6 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 375000,
@@ -403,11 +403,11 @@
       "codeHash": "b9702f9b55297609040925ccbf58ae1e10dc4c3cc34af1bd2f0647f14c136023",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Composite vs Mixed Supplies: Section 8 Bundling Ru — GST Ledger Verification",
+        "title": "Composite vs Mixed Supplies: Section 8 Bundling Rules & Principal — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Composite vs.",
+            "caption": "Open primary taxable supply ledger entry for Composite vs Mixed Supplies.",
             "title": "Day 6 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 325000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 6 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 382500,
@@ -534,11 +534,11 @@
       "codeHash": "bffe2be25adbe25aee8846cf5bafca1c964a4f85859f78cd1807736a9b84cb65",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Non-Supplies & Statutory Carve-Outs: Schedule III  — GST Ledger Verification",
+        "title": "Non-Supplies & Statutory Carve-Outs: Schedule III Negative List — GST Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable supply ledger entry (multiple) for Non-Supplies &.",
+            "caption": "Open primary taxable supply ledger entry for Non-Supplies.",
             "title": "Day 6 GST Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 330000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory accrual adjustment (multiple) under applicable CGST/IGST.",
+            "caption": "Record statutory accrual adjustment under applicable CGST/IGST.",
             "title": "Day 6 GST Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 390000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated commercial case study for Non-Supplies & Statutory.",
+            "caption": "Execute simulated commercial case study for Non-Supplies & Statutory Carve-Outs.",
             "title": "Day 6 GST Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 390000,

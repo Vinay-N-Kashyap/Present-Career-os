@@ -8,7 +8,7 @@
       "codeHash": "e5f44373882c1c452a4891f10d8b0f658dbdbafaf02d155e0fb0774fe107a1d9",
       "spec": {
         "template": "funnel",
-        "title": "Overall Audit Responses vs Assertion-L... \u2014 Assurance Review",
+        "title": "Overall Audit Responses vs Assertion-Level Responses: Designing — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "865bf3e4875eee7456bd707f204e4fea40e811439d1ffabcc682146cbe777c68",
       "spec": {
         "template": "funnel",
-        "title": "Tests of Controls (ToC): Operating Eff... \u2014 Assurance Review",
+        "title": "Tests of Controls (ToC): Operating — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "cf41c9d002fef1ec26c3df2eee66a0ede63a6e225e9ca5054178784b3c63d914",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Analytical Procedures (SAP... \u2014 Assurance Review",
+        "title": "Substantive Analytical Procedures (SAP): Expectations, Thresholds — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "1bbef8dce95c7d4c6e22dc6f196c8812c592862d39bcf7a8b5b337fb5a1f3a01",
       "spec": {
         "template": "funnel",
-        "title": "Tests of Details (ToD) & Dual-Purpose ... \u2014 Assurance Review",
+        "title": "Tests of Details (ToD) & Dual-Purpose Testing: Vouching, Tracing — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "d81f9dadbe11c5ad34fff91fb5086e53fe6e7c4fce002e7ef65c5173ed6b806e",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Substantive Audit Strate... \u2014 Assurance Review",
+        "title": "Comprehensive Substantive Audit Strategy & Dual-Purpose Execution — Assurance Review",
         "steps": [
           {
             "at": "intro",

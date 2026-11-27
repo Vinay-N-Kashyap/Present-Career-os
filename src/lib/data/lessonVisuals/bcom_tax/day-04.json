@@ -10,11 +10,11 @@
       "codeHash": "1b2b41a24c3e0cf9c1bad22f7c346352b4c9572c51f0cae5b0568e4278281805",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Global VAT/GST Destination Principle & Revers... — General Ledger Verification",
+        "title": "Global VAT/GST Destination Principle & Reverse Charge Mechanism (RCM) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Global VAT/GST Destination Prin...",
+            "caption": "Open primary debit entry for Global VAT/GST Destination Principle.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Global VAT/GST Destination Principle & Revers... — General Ledger Verification",
+        "title": "Global VAT/GST Destination Principle & Reverse Charge Mechanism (RCM) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3100) for Global VAT/GST Destination Prin...",
+            "caption": "Step 1: Open primary debit entry (3100).",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -264,11 +264,11 @@
       "codeHash": "a8021b858fcc878083ce4b002ec3ebc4ca69810b8cc56db821dfc57dc8dd226a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Customs Valuation (WTO Valuation Agreement) &... — General Ledger Verification",
+        "title": "Customs Valuation (WTO Valuation Agreement) & Transfer Pricing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Customs Valuation (WTO Valuatio...",
+            "caption": "Open primary debit entry for Customs Valuation.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Customs Valuation (WTO Valuation Agreement) &... — General Ledger Verification",
+        "title": "Customs Valuation (WTO Valuation Agreement) & Transfer Pricing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3300) for Customs Valuation (WTO Valuatio...",
+            "caption": "Step 1: Open primary debit entry (3300) for Customs Valuation.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -518,11 +518,11 @@
       "codeHash": "b6eaf512b2dd5e17293a95c4e684452c3a396d81236ffbff0599088b4215b0d0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Incoterms 2020, Permanent Establishment (PE) ... — General Ledger Verification",
+        "title": "Incoterms 2020, Permanent Establishment (PE) Risk & US Wayfair Sales — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Incoterms multiple, Permanent.",
+            "caption": "Open primary debit entry for Incoterms multiple, Permanent.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Incoterms 2020, Permanent Establishment (PE) ... — General Ledger Verification",
+        "title": "Incoterms 2020, Permanent Establishment (PE) Risk & US Wayfair Sales — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3500) for Incoterms 2020, Permanent Estab...",
+            "caption": "Step 1: Open primary debit entry (3500) for Incoterms 2020.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -772,11 +772,11 @@
       "codeHash": "e6b1a966044d4b7a35babbd19488cebc5ebd45d37f4f8f3ab8080dff5221dcc4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Digital Services Taxes (DST) vs OECD Pillar O... — General Ledger Verification",
+        "title": "Digital Services Taxes (DST) vs OECD Pillar One Amount A Allocation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Digital Services Taxes (DST) vs...",
+            "caption": "Open primary debit entry for Digital Services Taxes.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Digital Services Taxes (DST) vs OECD Pillar O... — General Ledger Verification",
+        "title": "Digital Services Taxes (DST) vs OECD Pillar One Amount A Allocation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3700) for Digital Services Taxes (DST) vs...",
+            "caption": "Step 1: Open primary debit entry (3700) for Digital Services Taxes.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -1026,11 +1026,11 @@
       "codeHash": "b379b67926dc1d13a08eba48faf4480edd97d84a18a50a3a19582695de9ceda3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Synthesis: Global Supply Chain In... — General Ledger Verification",
+        "title": "Milestone 1 Synthesis: Global Supply Chain — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Milestone one Synthesis: Global.",
+            "caption": "Open primary debit entry for Milestone one Synthesis: Global.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Synthesis: Global Supply Chain In... — General Ledger Verification",
+        "title": "Milestone 1 Synthesis: Global Supply Chain — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3900) for Milestone 1 Synthesis: Global S...",
+            "caption": "Step 1: Open primary debit entry (3900) for Milestone 1 Synthesis: Global",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,

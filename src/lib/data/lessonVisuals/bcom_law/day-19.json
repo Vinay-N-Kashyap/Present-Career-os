@@ -10,11 +10,11 @@
       "codeHash": "6a7581675aeddf1f9e2e136533bad211231bf84f2050eae340c59da4ee1e5d0f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Democracy & Statutory Shareholde... — General Ledger Verification",
+        "title": "Corporate Democracy & Statutory Shareholder Voting Rights — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Corporate.",
+            "caption": "Open primary facility debit entry for Corporate Democracy.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 91500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 109800,
@@ -139,11 +139,11 @@
       "codeHash": "0bfbc2c94d63f34595602895dc3030bca12128c514ed484c9a7a81ac5126a1ee",
       "spec": {
         "template": "ledger-sheet",
-        "title": "SEC Proxy Regulation & Schedule 14A Mechan... — General Ledger Verification",
+        "title": "SEC Proxy Regulation & Schedule 14A Mechanics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for SEC Proxy.",
+            "caption": "Open primary facility debit entry for SEC Proxy Regulation.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 92750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 111300,
@@ -268,11 +268,11 @@
       "codeHash": "3ff511ea6a731886b591aca6924e5380144dee1afd374d50f27cf87c34aae5ba",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Rule 14a-8 Shareholder Proposals & Exclusi... — General Ledger Verification",
+        "title": "Rule 14a-8 Shareholder Proposals & Exclusionary Grounds — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Rule a-eight.",
+            "caption": "Open primary facility debit entry for Rule a-eight.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 112800,
@@ -397,11 +397,11 @@
       "codeHash": "f4ccfe50d41d900d6c05e0f21ccd47afc29251eb50fcac36cdf00f859eab6b8b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Proxy Contests & The Universal Proxy Rule ... — General Ledger Verification",
+        "title": "Proxy Contests & The Universal Proxy Rule (Rule 14a-19) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Proxy Contests.",
+            "caption": "Open primary facility debit entry for Proxy Contests.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 95250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 114300,
@@ -526,11 +526,11 @@
       "codeHash": "884a66a4bd7892221f4b1de5c36593429b50aabe2e4260497a7f03320849d037",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Defending Corporate Democracy & Blasius Co... — General Ledger Verification",
+        "title": "Defending Corporate Democracy & Blasius Compelling Justification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Defending.",
+            "caption": "Open primary facility debit entry for Defending Corporate Democracy.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 96500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 115800,

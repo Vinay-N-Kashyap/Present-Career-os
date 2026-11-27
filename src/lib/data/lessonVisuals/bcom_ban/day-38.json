@@ -8,7 +8,7 @@
       "codeHash": "2e518319b95689a98fd91f0f1b44a725e1d96797f1f4ef9742e86866d07ae370",
       "spec": {
         "template": "funnel",
-        "title": "The Sovereign Debt Architecture: G-Sec... — Treasury Risk Operations",
+        "title": "The Sovereign Debt Architecture: G-Secs, T-Bills & State Development — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "867b5d180e6a8f982653b6ef1207352a7afa7e413df4bc31645efe24f0225f55",
       "spec": {
         "template": "funnel",
-        "title": "Primary Auction Mechanics: Uniform Pri... — Treasury Risk Operations",
+        "title": "Primary Auction Mechanics: Uniform — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "8887473fda9e5c308164da2ef1b9bce6530710365662a288d744a0ab34df880d",
       "spec": {
         "template": "funnel",
-        "title": "Secondary Market Electronic Trading: T... — Treasury Risk Operations",
+        "title": "Secondary Market Electronic Trading: The NDS-OM Platform & DvP-III Settlement — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "6aa440191f957ea48f4f54d2e5a61c65c8c772a863204acb3e002070384476dd",
       "spec": {
         "template": "funnel",
-        "title": "Quantitative Fixed-Income Analytics: Y... — Treasury Risk Operations",
+        "title": "Quantitative Fixed-Income Analytics: YTM, Duration, Modified Duration — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "e5aefe4583969241c098d85bd523c398521dd0ad66e2d70d102c5f24cb8f9788",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Sovereign Deb... — Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Sovereign Debt Trading & Yield Curve Shock — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

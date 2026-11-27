@@ -8,7 +8,7 @@
       "codeHash": "11f6234f0d259623d7ed065a518ca2ca01197079c1b89fa7aa4650331e31471d",
       "spec": {
         "template": "funnel",
-        "title": "Physical Inventory Count Observation P... — Assurance Review",
+        "title": "Physical Inventory Count Observation Protocol under ISA 501 & PCAOB — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "67c35801114c5aaabbbd00f9a7219780c186bd8306c03b3f16561f2da9048b96",
       "spec": {
         "template": "funnel",
-        "title": "Inventory Roll-Forward and Roll-Back P... — Assurance Review",
+        "title": "Inventory Roll-Forward and Roll-Back Procedures for Interim Physical — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "5336d6785a820cdc6070e5ce759288da912f2944fb907792969a832ed33cfbef",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Inventory Costing & Standa... — Assurance Review",
+        "title": "Substantive Inventory Costing & Standard Cost Variance Allocations — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "e37f92596b911f6f5c7cbe97362cc188e648ad6c53a556a3b708955c481eb83f",
       "spec": {
         "template": "funnel",
-        "title": "Lower of Cost and Net Realizable Value... — Assurance Review",
+        "title": "Lower of Cost and Net Realizable Value (NRV) & Obsolescence Reserves — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "698d73df3184bc6b62301176a85b90a71b446793f535d6feecaeb19175ff6d34",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Substantive Inventory Va... — Assurance Review",
+        "title": "Comprehensive Substantive Inventory Valuation & Physical Count — Assurance Review",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "2f755f22ad82e55f00d5847c39294f1be95a8ceeba019724e6d52c4ee557986b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Statutory Definition of a Security & T... — General Ledger Verification",
+        "title": "The Statutory Definition of a Security & The Howey Investment — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Statutory Definition of a Security.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 63500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 76200,
@@ -139,11 +139,11 @@
       "codeHash": "b9e3a8195ce48cdfd60258ad4176f7350ed0b466fae98c88641911fc91c531b0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Section 5 Registration Timeline: Pre-F... — General Ledger Verification",
+        "title": "The Section 5 Registration Timeline: Pre-Filing, Waiting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($sixty-four,multiple) for The Section.",
+            "caption": "Open primary facility debit entry for The Section 5 Registration Timeline.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 64750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 77700,
@@ -268,11 +268,11 @@
       "codeHash": "a76cfe68a52e66ce34ecf91a7e1cd27161014cb4677a92c93ffe7926635e9669",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Gun-Jumping Invariants & Statutory Communi... — General Ledger Verification",
+        "title": "Gun-Jumping Invariants & Statutory Communication Safe Harbors (Rules 163A, 168 & 169) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Gun-Jumping.",
+            "caption": "Open primary facility debit entry for Gun-Jumping Invariants.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 66000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 79200,
@@ -397,11 +397,11 @@
       "codeHash": "ee272d006bdcbd6852b807c5b649e8222b42960bd21ef6143d6807a14165b642",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Exempted Securities (Section 3) vs. Exempt... — General Ledger Verification",
+        "title": "Exempted Securities (Section 3) vs. Exempted Transactions (Section 4) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Exempted.",
+            "caption": "Open primary facility debit entry for Exempted Securities.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 67250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 80700,
@@ -526,11 +526,11 @@
       "codeHash": "bd34abd846cba574755354816ae0bf091d8f76452c749067ef18d2c112493339",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Civil Liability for Registration Deficienc... — General Ledger Verification",
+        "title": "Civil Liability for Registration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Civil.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 68500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 82200,

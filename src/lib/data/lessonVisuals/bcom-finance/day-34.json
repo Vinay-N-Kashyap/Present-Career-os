@@ -10,12 +10,12 @@
       "codeHash": "c2c37f9fb27238b1f8783c8d34701f6bcb2e993fc308ee6e07cd356d8efd2bf9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Modigliani-Miller Propositions I & II: P \u2014 General Ledger Verification",
+        "title": "Modigliani-Miller Propositions I & II: Perfect Markets vs Corporate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Modigliani-Miller Propositions.",
-            "title": "Day 34 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Modigliani-Miller Propositions I & II.",
+            "title": "Day 34 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 134000,
             "totalCredit": 134000,
@@ -41,7 +41,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 34 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 34 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 160800,
             "totalCredit": 160800,
@@ -72,7 +72,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 34 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 34 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 160800,
             "totalCredit": 160800,
@@ -103,7 +103,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 34 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 34 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 160800,
             "totalCredit": 160800,
@@ -139,12 +139,12 @@
       "codeHash": "c2c37f9fb27238b1f8783c8d34701f6bcb2e993fc308ee6e07cd356d8efd2bf9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trade-Off Theory, Financial Distress Cos \u2014 General Ledger Verification",
+        "title": "Trade-Off Theory, Financial Distress Costs & Debt Capacity Boundaries — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Trade-Off Theory, Financial Di.",
-            "title": "Day 34 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Trade-Off Theory.",
+            "title": "Day 34 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 134250,
             "totalCredit": 134250,
@@ -170,7 +170,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 34 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 34 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 161100,
             "totalCredit": 161100,
@@ -201,7 +201,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 34 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 34 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 161100,
             "totalCredit": 161100,
@@ -232,7 +232,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 34 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 34 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 161100,
             "totalCredit": 161100,
@@ -268,12 +268,12 @@
       "codeHash": "c2c37f9fb27238b1f8783c8d34701f6bcb2e993fc308ee6e07cd356d8efd2bf9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Hamada Equation: Asset Beta Unleveri \u2014 General Ledger Verification",
+        "title": "The Hamada Equation: Asset Beta Unlevering and Equity Beta Relevering — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for The Hamada Equation: Asset Bet.",
-            "title": "Day 34 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for The Hamada Equation.",
+            "title": "Day 34 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 134500,
             "totalCredit": 134500,
@@ -299,7 +299,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 34 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 34 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 161400,
             "totalCredit": 161400,
@@ -330,7 +330,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 34 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 34 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 161400,
             "totalCredit": 161400,
@@ -361,7 +361,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 34 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 34 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 161400,
             "totalCredit": 161400,
@@ -397,12 +397,12 @@
       "codeHash": "c2c37f9fb27238b1f8783c8d34701f6bcb2e993fc308ee6e07cd356d8efd2bf9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Credit Rating Transitions, Synthetic Rat \u2014 General Ledger Verification",
+        "title": "Credit Rating Transitions, Synthetic Rating Spreads & Marginal Cost — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Credit Rating Transitions, Syn.",
-            "title": "Day 34 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Credit Rating Transitions.",
+            "title": "Day 34 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 134750,
             "totalCredit": 134750,
@@ -428,7 +428,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 34 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 34 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 161700,
             "totalCredit": 161700,
@@ -459,7 +459,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 34 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 34 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 161700,
             "totalCredit": 161700,
@@ -490,7 +490,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 34 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 34 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 161700,
             "totalCredit": 161700,
@@ -526,12 +526,12 @@
       "codeHash": "c2c37f9fb27238b1f8783c8d34701f6bcb2e993fc308ee6e07cd356d8efd2bf9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The U-Shaped WACC Curve, Enterprise Valu \u2014 General Ledger Verification",
+        "title": "The U-Shaped WACC Curve, Enterprise Value Maximization & Optimization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for The U-Shaped WACC Curve, Enter.",
-            "title": "Day 34 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for The U-Shaped WACC Curve.",
+            "title": "Day 34 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 135000,
             "totalCredit": 135000,
@@ -557,7 +557,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 34 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 34 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 162000,
             "totalCredit": 162000,
@@ -588,7 +588,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 34 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 34 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 162000,
             "totalCredit": 162000,
@@ -619,7 +619,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 34 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 34 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 162000,
             "totalCredit": 162000,

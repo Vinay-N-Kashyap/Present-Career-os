@@ -10,11 +10,11 @@
       "codeHash": "6269ba8a9c077a7208982b4929881a8ad1fe05a4fbc11f86e161b869b33deebe",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Single-Bank Credit Concentration Dilem... — General Ledger Verification",
+        "title": "The Single-Bank Credit Concentration Dilemma & The Syndication Mandate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 46000,
@@ -139,11 +139,11 @@
       "codeHash": "68977332c49d117f55d094e478085e8a64679fd8cc698d8d73282ecca2bfeab6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Club Deals vs Broad Syndications: Mechanic... — General Ledger Verification",
+        "title": "Club Deals vs Broad Syndications: Mechanical Risk & Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Club Deals vs.",
+            "caption": "Open primary facility debit entry for Club Deals vs Broad Syndications.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 47250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 56700,
@@ -268,11 +268,11 @@
       "codeHash": "1a9f695a38c5a3736c63bcfcf914681d5fe3ee3f8d41eb86eb23d5ca38503508",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Syndicate Economics: The Fee Waterfall & A... — General Ledger Verification",
+        "title": "Syndicate Economics: The Fee Waterfall — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Syndicate.",
+            "caption": "Open primary facility debit entry for Syndicate Economics.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 48500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 58200,
@@ -397,11 +397,11 @@
       "codeHash": "59e24dce04ee6c02a427af97f6c6588d27a44c7c22862958e96e0584ee32e1c1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Financial Covenants: Debt-to-EBITDA, Inter... — General Ledger Verification",
+        "title": "Financial Covenants: Debt-to-EBITDA — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Financial.",
+            "caption": "Open primary facility debit entry for Financial Covenants.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59700,
@@ -526,11 +526,11 @@
       "codeHash": "4ed7aa2454e8e3fc7148cb9c8f83bc298e462ed642d3638fd8e5d19d4d3618f4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synthesis, Post-Mortem & Wholesale Banking... — General Ledger Verification",
+        "title": "Synthesis, Post-Mortem & Wholesale Banking Executive Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Synthesis.",
+            "caption": "Open primary facility debit entry for Synthesis.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 51000,

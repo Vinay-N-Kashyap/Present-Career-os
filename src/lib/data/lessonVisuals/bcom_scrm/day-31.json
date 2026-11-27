@@ -8,7 +8,7 @@
       "codeHash": "2c3dd850965cc9bd0993a885a8c2f1188b73ac234dc5e6e3ebfb44df89ab67aa",
       "spec": {
         "template": "funnel",
-        "title": "Relational Entity Topology & Object... - RevOps Funnel",
+        "title": "Relational Entity Topology & Object Graph Foundations - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "f2e0b0d079d5d0912df2f66b7fe82df49f86ad66290a12914ba553e1510f0627",
       "spec": {
         "template": "funnel",
-        "title": "Master-Detail Relationships vs Loos... - RevOps Funnel",
+        "title": "Master-Detail Relationships vs Loose Lookups - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "c81169c6f64cf5c32e0d31ff8491537b1ca92ae82e77b9ee2214538ffdd89434",
       "spec": {
         "template": "funnel",
-        "title": "The Orphan Opportunity Outage Foren... - RevOps Funnel",
+        "title": "The Orphan Opportunity Outage Forensic Audit ($45M Disaster) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "fa4bbb4bd78867062a6c1e749a36732d3acb4f161569c2375180152c4ad4861c",
       "spec": {
         "template": "funnel",
-        "title": "Role Hierarchy, Sharing Rules & Fie... - RevOps Funnel",
+        "title": "Role Hierarchy, Sharing Rules & Field-Level Security (FLS) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "60c1f60f264937df8ec680dd9add5314aad381643fac7003cc13933524bbcbc4",
       "spec": {
         "template": "funnel",
-        "title": "Building the Enterprise Relational ... - RevOps Funnel",
+        "title": "Building the Enterprise Relational CRM Graph Engine - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

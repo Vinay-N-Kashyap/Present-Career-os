@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Mandatory.",
+            "caption": "Open primary enterprise tax / governance ledger.",
             "title": "Day 28 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1490000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 28 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1615000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise case study for Mandatory E-Invoicing.",
+            "caption": "Execute simulated enterprise case study for Mandatory E-Invoicing Framework.",
             "title": "Day 28 Enterprise Tax Ledger — Executive Audit",
             "isBalanced": true,
             "totalDebit": 1615000,
@@ -141,11 +141,11 @@
       "codeHash": "d2bd2a744c9f9bceb1c7c71d75f6644f32fd644116ce49e997da0b49726b7fda",
       "spec": {
         "template": "ledger-sheet",
-        "title": "IRN Generation Mechanics, Schema Validation & Cryp — Tax Governance Ledger",
+        "title": "IRN Generation Mechanics, Schema Validation & Cryptographic Signing — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for IRN.",
+            "caption": "Open primary enterprise tax / governance ledger for IRN Generation Mechanics.",
             "title": "Day 28 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1505000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 28 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1637500,
@@ -272,11 +272,11 @@
       "codeHash": "d50baf7f6a19ab84326b0a5803933b4732062e173d3c69ccce6d59bc82875732",
       "spec": {
         "template": "ledger-sheet",
-        "title": "E-Way Bill Integration & Dynamic Multi-Modal Logis — Tax Governance Ledger",
+        "title": "E-Way Bill Integration & Dynamic Multi-Modal Logistics (Rule 138) — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for E-Way Bill.",
+            "caption": "Open primary enterprise tax / governance ledger for E-Way Bill Integration.",
             "title": "Day 28 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1520000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 28 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1660000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise case study for E-Way Bill Integration &.",
+            "caption": "Execute simulated enterprise case study for E-Way Bill Integration.",
             "title": "Day 28 Enterprise Tax Ledger — Executive Audit",
             "isBalanced": true,
             "totalDebit": 1660000,
@@ -407,7 +407,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Transit.",
+            "caption": "Open primary enterprise tax / governance ledger for Transit Detention.",
             "title": "Day 28 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1535000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 28 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1682500,
@@ -534,11 +534,11 @@
       "codeHash": "8f5356b06d01aecdddb4ff1026b418fdd309c40fdb9b9f8086ebb85754b7dcce",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Real-Time GST Analytics & Automated E-Way Bill Mis — Tax Governance Ledger",
+        "title": "Real-Time GST Analytics & Automated E-Way Bill Mismatch Engine — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Real-Time.",
+            "caption": "Open primary enterprise tax / governance ledger for Real-Time GST Analytics.",
             "title": "Day 28 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1550000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 28 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1705000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise case study for Real-Time GST Analytics &.",
+            "caption": "Execute simulated enterprise case study for Real-Time GST Analytics.",
             "title": "Day 28 Enterprise Tax Ledger — Executive Audit",
             "isBalanced": true,
             "totalDebit": 1705000,

@@ -10,7 +10,7 @@
       "codeHash": "2bdfa4c3549aee71a7dde37da73898194713ebc349958488f4bcafb0cb5a9a80",
       "spec": {
         "template": "tree-graph",
-        "title": "Information Retrieval & TF-IDF Vectorization ... — Enterprise AI Decision Graph",
+        "title": "Information Retrieval & TF-IDF Vectorization for Audit Intelligence — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Information Retrieval & TF-IDF ...",
+            "caption": "Ingest enterprise Context Query for Information Retrieval.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Information Retrieval & TF-IDF Vectorization ... — Enterprise AI Decision Graph",
+        "title": "Information Retrieval & TF-IDF Vectorization for Audit Intelligence — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Information Retrieval & TF-IDF ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Information Retrieval.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "6c635eed89c3d82a996bfe731098afcc5ea4804beb9dd9c093bd8e107fb706bb",
       "spec": {
         "template": "tree-graph",
-        "title": "Customer Sentiment Analysis & VADER Valence S... — Enterprise AI Decision Graph",
+        "title": "Customer Sentiment Analysis & VADER Valence Scoring Engine — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Customer Sentiment Analysis & V...",
+            "caption": "Ingest enterprise Context Query for Customer Sentiment Analysis.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Customer Sentiment Analysis & VADER Valence S... — Enterprise AI Decision Graph",
+        "title": "Customer Sentiment Analysis & VADER Valence Scoring Engine — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Customer Sentiment Analysis & V...",
+            "caption": "Step 1: Ingest enterprise Context Query for Customer Sentiment Analysis.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "a74d86326f79f5235109524a88b8778a1fd28ad14b00866630a061964f718ace",
       "spec": {
         "template": "tree-graph",
-        "title": "Named Entity Recognition (NER) & PII Redactio... — Enterprise AI Decision Graph",
+        "title": "Named Entity Recognition (NER) & PII Redaction for Data Privacy — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Named Entity Recognition (NER) ...",
+            "caption": "Ingest enterprise Context Query for Named Entity Recognition.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Named Entity Recognition (NER) & PII Redactio... — Enterprise AI Decision Graph",
+        "title": "Named Entity Recognition (NER) & PII Redaction for Data Privacy — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Named Entity Recognition (NER) ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Named Entity Recognition.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "7533112fa4209ce49cce098a440982b4c79adc296483315dcfcdbb418a4b65b0",
       "spec": {
         "template": "tree-graph",
-        "title": "Intelligent Financial Document Processing & A... — Enterprise AI Decision Graph",
+        "title": "Intelligent Financial Document Processing & Automated Invoice — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Intelligent Financial Document ...",
+            "caption": "Ingest enterprise Context Query for Intelligent Financial Document Processing.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Intelligent Financial Document Processing & A... — Enterprise AI Decision Graph",
+        "title": "Intelligent Financial Document Processing & Automated Invoice — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Intelligent Financial Document ...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "98749c375f2c4fccf706b992ee1f71149162cb7ccc3ff94af0d422d4ad1592f2",
       "spec": {
         "template": "tree-graph",
-        "title": "Customer Churn Early Warning Engine & Multi-M... — Enterprise AI Decision Graph",
+        "title": "Customer Churn Early Warning Engine & Multi-Modal NLP Risk Scoring — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Customer Churn Early Warning En...",
+            "caption": "Ingest enterprise Context Query for Customer Churn Early Warning Engine.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Customer Churn Early Warning Engine & Multi-M... — Enterprise AI Decision Graph",
+        "title": "Customer Churn Early Warning Engine & Multi-Modal NLP Risk Scoring — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Customer Churn Early Warning En...",
+            "caption": "Step 1: Ingest enterprise Context Query for Customer Churn Early Warning Engine.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

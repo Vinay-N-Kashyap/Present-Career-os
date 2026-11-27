@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Harmonized System Nomenclature (HSN) Architec... — General Ledger Verification",
+        "title": "Harmonized System Nomenclature (HSN) Architecture & Customs Tariff — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Harmonized System Nome (Beta Alpha).",
+            "caption": "Open primary debit entry for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 8800,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Harmonized System Nome (Alpha).",
+            "caption": "Record secondary accrual adjustment for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10560,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Harmonized System Nome (Beta).",
+            "caption": "Reconcile sub-ledger balances for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10560,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Harmonized System Nome (Alpha).",
+            "caption": "Verify double-entry trial balance for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10560,
@@ -134,11 +134,11 @@
       "partTitle": "Harmonized System Nomenclature (HSN) Architecture & Customs Tariff Act, 1975",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Harmonized System Nomenclature (HSN) Architec... — General Ledger Verification",
+        "title": "Harmonized System Nomenclature (HSN) Architecture & Customs Tariff — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Harmonized System Nome (Beta Alpha).",
+            "caption": "Open primary debit entry for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 8800,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Harmonized System Nome (Alpha).",
+            "caption": "Record secondary accrual adjustment for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10560,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Harmonized System Nome (Beta).",
+            "caption": "Reconcile sub-ledger balances for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10560,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Harmonized System Nome (Alpha).",
+            "caption": "Verify double-entry trial balance for Harmonized System Nomenclature.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10560,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "General Rules of Interpretation (GRI 1-6): Hi... — General Ledger Verification",
+        "title": "General Rules of Interpretation (GRI 1-6): Hierarchy, Essential — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for General Rules of Inter (Beta Beta).",
+            "caption": "Open primary debit entry for General Rules of Interpretation.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9000,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for General Rules of Inter (Beta).",
+            "caption": "Record secondary accrual adjustment for General Rules of Interpretation.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for General Rules of Inter (Beta).",
+            "caption": "Reconcile sub-ledger balances for General Rules of Interpretation.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for General Rules of Inter (Beta).",
+            "caption": "Verify double-entry trial balance for General Rules of Interpretation.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -389,11 +389,11 @@
       "partTitle": "General Rules of Interpretation (GRI 1-6): Hierarchy, Essential Character & Composite Goods",
       "filled": {
         "template": "ledger-sheet",
-        "title": "General Rules of Interpretation (GRI 1-6): Hi... — General Ledger Verification",
+        "title": "General Rules of Interpretation (GRI 1-6): Hierarchy, Essential — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for General Rules of Inter (Beta Beta).",
+            "caption": "Open primary debit entry for General Rules of Interpretation.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9000,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for General Rules of Inter (Beta).",
+            "caption": "Record secondary accrual adjustment for General Rules of Interpretation.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for General Rules of Inter (Beta).",
+            "caption": "Reconcile sub-ledger balances for General Rules of Interpretation.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for General Rules of Inter (Beta).",
+            "caption": "Verify double-entry trial balance for General Rules of Interpretation.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10800,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Customs Valuation under Section 14 & Mandator... — General Ledger Verification",
+        "title": "Customs Valuation under Section 14 & Mandatory Rule 10 Inclusions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Customs Valuation unde (Beta Gamma).",
+            "caption": "Open primary debit entry for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9200,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Customs Valuation unde (Gamma).",
+            "caption": "Record secondary accrual adjustment for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11040,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Customs Valuation unde (Beta).",
+            "caption": "Reconcile sub-ledger balances for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11040,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Customs Valuation unde (Gamma).",
+            "caption": "Verify double-entry trial balance for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11040,
@@ -644,11 +644,11 @@
       "partTitle": "Customs Valuation under Section 14 & Mandatory Rule 10 Inclusions Architecture",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Customs Valuation under Section 14 & Mandator... — General Ledger Verification",
+        "title": "Customs Valuation under Section 14 & Mandatory Rule 10 Inclusions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Customs Valuation unde (Beta Gamma).",
+            "caption": "Open primary debit entry for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9200,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Customs Valuation unde (Gamma).",
+            "caption": "Record secondary accrual adjustment for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11040,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Customs Valuation unde (Beta).",
+            "caption": "Reconcile sub-ledger balances for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11040,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Customs Valuation unde (Gamma).",
+            "caption": "Verify double-entry trial balance for Customs Valuation under Section 14.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11040,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Alternative Valuation Hierarchy: Rules 4 thro... — General Ledger Verification",
+        "title": "Alternative Valuation Hierarchy: Rules 4 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Alternative Valuation (Beta Delta).",
+            "caption": "Open primary debit entry for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9400,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Alternative Valuation (Delta).",
+            "caption": "Record secondary accrual adjustment for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Alternative Valuation (Beta).",
+            "caption": "Reconcile sub-ledger balances for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Alternative Valuation (Delta).",
+            "caption": "Verify double-entry trial balance for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -899,11 +899,11 @@
       "partTitle": "Alternative Valuation Hierarchy: Rules 4 through 9 (Identical, Similar, Deductive, Computed & Fallback)",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Alternative Valuation Hierarchy: Rules 4 thro... — General Ledger Verification",
+        "title": "Alternative Valuation Hierarchy: Rules 4 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Alternative Valuation (Beta Delta).",
+            "caption": "Open primary debit entry for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9400,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Alternative Valuation (Delta).",
+            "caption": "Record secondary accrual adjustment for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Alternative Valuation (Beta).",
+            "caption": "Reconcile sub-ledger balances for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Alternative Valuation (Delta).",
+            "caption": "Verify double-entry trial balance for Alternative Valuation Hierarchy.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "title": "Production Python Architecture: Deterministic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Beta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9600,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Beta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Deterministic Customs Valuation & GRI Classifier Engine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "title": "Production Python Architecture: Deterministic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Beta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9600,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 42 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Beta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 42 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 42 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11520,

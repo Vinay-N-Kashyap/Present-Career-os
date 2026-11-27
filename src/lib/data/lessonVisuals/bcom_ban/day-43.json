@@ -8,7 +8,7 @@
       "codeHash": "c4244045ca93ec1510a814ae678dd56ec7156819f883397749fe964f0ff20c65",
       "spec": {
         "template": "funnel",
-        "title": "The Correspondent Banking Network & No... — Treasury Risk Operations",
+        "title": "The Correspondent Banking Network & Nostro, Vostro and Loro Taxonomy — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "49aff26a703932f1d6dcda4a3ac03c6875cab91d387c279d57b8e23934348279",
       "spec": {
         "template": "funnel",
-        "title": "The Global SWIFT Migration: Legacy MT ... — Treasury Risk Operations",
+        "title": "The Global SWIFT Migration: Legacy — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "36c8b98d836da9a61bc79dd6c87c34e03541f84111df056413cbca58ab9fcb9b",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Currency Mirror Accounting & Sha... — Treasury Risk Operations",
+        "title": "Multi-Currency Mirror Accounting & Shadow Ledger Operations — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "651b3ba24831439e671a69e6fcabfd848325cf7ad3a64f93821a44e7a9a74377",
       "spec": {
         "template": "funnel",
-        "title": "Nostro Reconciliation Mechanics, Outst... — Treasury Risk Operations",
+        "title": "Nostro Reconciliation Mechanics, Outstanding Items & Transit Float — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "75332e77cd59652126dd14578152f5cab48f0d29523dd05840a9c30bf93e343c",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Cross-Border ... — Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Cross-Border Settlement & Nostro Simulator — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "17de13288829cc7d16cdee6aa0c696702660c66017073a9b0cdd080326c02441",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Statutory Private Placement Exemption:... — General Ledger Verification",
+        "title": "The Statutory Private Placement Exemption: Section 4(a)(2) & Ralston — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Statutory.",
+            "caption": "Open primary facility debit entry for The Statutory Private Placement Exemption.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 67000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 80400,
@@ -139,11 +139,11 @@
       "codeHash": "7b8ea8c8ac6533a273c567c44c249468f3edf734f928bc75efed2baa4b8f7432",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Regulation D Safe Harbors: Rule 504 vs. Ru... — General Ledger Verification",
+        "title": "Regulation D Safe Harbors: Rule 504 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Regulation D.",
+            "caption": "Open primary facility debit entry for Regulation D Safe Harbors.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 68250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 81900,
@@ -268,11 +268,11 @@
       "codeHash": "f71710d67b36178a68cc1d0787d76ccaabe5e50475d537db204020efe76036cd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Accredited Investor Verification Invariant... — General Ledger Verification",
+        "title": "Accredited Investor Verification Invariants (Rule 501) & Form D Filings — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Accredited.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 69500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 83400,
@@ -397,11 +397,11 @@
       "codeHash": "32d898090392a2b07f26f068273b217f9a58b7b945e08b71dd760545369fe558",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Secondary Resale Restrictions: Rule 144 Ho... — General Ledger Verification",
+        "title": "Secondary Resale Restrictions: Rule 144 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Secondary.",
+            "caption": "Open primary facility debit entry for Secondary Resale Restrictions.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 70750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 84900,
@@ -526,11 +526,11 @@
       "codeHash": "b04ad50816aaa97690988ccb6cb462ceb26a9878f55ca3537196c0c27e04db30",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Offerings: Regulation S Offsh... — General Ledger Verification",
+        "title": "Cross-Border Offerings: Regulation S Offshore Safe Harbors & Flowback Invariants — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cross-Border.",
+            "caption": "Open primary facility debit entry for Cross-Border Offerings.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 72000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 86400,

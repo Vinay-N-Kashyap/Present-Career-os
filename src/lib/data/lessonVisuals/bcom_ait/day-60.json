@@ -10,7 +10,7 @@
       "codeHash": "867c1f46373979ccb6d05d908424013092c1025e9061a0cb16a6bb1cab778397",
       "spec": {
         "template": "tree-graph",
-        "title": "The Unified Autonomous Enterprise OS (AEOS v2... — Enterprise AI Decision Graph",
+        "title": "The Unified Autonomous Enterprise OS (AEOS v2): Full Cognitive Mesh — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The Unified Autonomous Enterpri...",
+            "caption": "Ingest enterprise Context Query for The Unified Autonomous Enterprise OS.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The Unified Autonomous Enterprise OS (AEOS v2... — Enterprise AI Decision Graph",
+        "title": "The Unified Autonomous Enterprise OS (AEOS v2): Full Cognitive Mesh — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The Unified Autonomous Enterpri...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "854fcb4a156c705c781b6cec795dab54d35e21e51bbfaed65ade73f21062a4ac",
       "spec": {
         "template": "tree-graph",
-        "title": "Real-Time Dynamic Simulation: Macroeconomic S... — Enterprise AI Decision Graph",
+        "title": "Real-Time Dynamic Simulation: Macroeconomic — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Real-Time Dynamic Simulation: M...",
+            "caption": "Ingest enterprise Context Query for Real-Time Dynamic Simulation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Real-Time Dynamic Simulation: Macroeconomic S... — Enterprise AI Decision Graph",
+        "title": "Real-Time Dynamic Simulation: Macroeconomic — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Real-Time Dynamic Simulation: M...",
+            "caption": "Step 1: Ingest enterprise Context Query for Real-Time Dynamic Simulation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "5950bd0bb48e76eb808b6ac6bd5c1817019c8f1dc68354c1f7cfbda076ba1ec0",
       "spec": {
         "template": "tree-graph",
-        "title": "End-to-End Autonomous Execution: Multi-Agent ... — Enterprise AI Decision Graph",
+        "title": "End-to-End Autonomous Execution: Multi-Agent — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for End-to-End Autonomous Execution...",
+            "caption": "Ingest enterprise Context Query for End-to-End Autonomous Execution.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "End-to-End Autonomous Execution: Multi-Agent ... — Enterprise AI Decision Graph",
+        "title": "End-to-End Autonomous Execution: Multi-Agent — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for End-to-End Autonomous Execution...",
+            "caption": "Step 1: Ingest enterprise Context Query for End-to-End Autonomous Execution.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "9d6b9264ef8007b70db794854de792359980cbd9f4b784099c918adf20ed431f",
       "spec": {
         "template": "tree-graph",
-        "title": "Board of Directors Final Defense: Fiduciary G... — Enterprise AI Decision Graph",
+        "title": "Board of Directors Final Defense: Fiduciary — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Board of Directors Final Defens...",
+            "caption": "Ingest enterprise Context Query for Board of Directors Final Defense.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Board of Directors Final Defense: Fiduciary G... — Enterprise AI Decision Graph",
+        "title": "Board of Directors Final Defense: Fiduciary — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Board of Directors Final Defens...",
+            "caption": "Step 1: Ingest enterprise Context Query for Board of Directors Final Defense.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "201544bd1863f1873ff56b529912323ff9dd172ba1de46ff44a233895144cf8c",
       "spec": {
         "template": "tree-graph",
-        "title": "Grand Master Course Capstone Synthesis: The P... — Enterprise AI Decision Graph",
+        "title": "Grand Master Course Capstone Synthesis — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Grand Master Course Capstone Sy...",
+            "caption": "Ingest enterprise Context Query for Grand Master Course Capstone Synthesis.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Grand Master Course Capstone Synthesis: The P... — Enterprise AI Decision Graph",
+        "title": "Grand Master Course Capstone Synthesis — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Grand Master Course Capstone Sy...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

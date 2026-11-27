@@ -10,7 +10,7 @@
       "codeHash": "8afa8d133735c004a3fe335918b0be1a4e610371d7d476d1ea15b6f79d56e1fa",
       "spec": {
         "template": "funnel",
-        "title": "Top-of-Funnel Multi-Channel Paid Acquisiti... — Conversion Funnel",
+        "title": "Top-of-Funnel Multi-Channel Paid Acquisition & Shapley ROAS/POAS Allocation — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "164c8f18bff828b1cd9275948bbc45a64ac286acebabb8d4fab0bbc6bfdcbf79",
       "spec": {
         "template": "funnel",
-        "title": "Technical SEO Organic Engine & Structured ... — Conversion Funnel",
+        "title": "Technical SEO Organic Engine & Structured Schema Rich Snippet — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,7 +334,7 @@
       "codeHash": "0b2c445c837e43c4a16710f82c1e34941b861778116543a3ad4b9fb71b82b7a4",
       "spec": {
         "template": "funnel",
-        "title": "Conversion Rate Optimization (CRO), Bayesi... — Conversion Funnel",
+        "title": "Conversion Rate Optimization (CRO), Bayesian A/B Testing & Dynamic — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,11 +496,11 @@
       "codeHash": "e4c4df15545826f3620354636cc0bf330616ed2432e66c1f8e8dcadccd19e8af",
       "spec": {
         "template": "funnel",
-        "title": "Retention Engineering, RFM Lifecycle Autom... — Conversion Funnel",
+        "title": "Retention Engineering, RFM Lifecycle Automation & Predictive Churn — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "4c4a024d09f3ffa48b101195954e0358e33cc7337310b4b824cd4ece3f62e372",
       "spec": {
         "template": "funnel",
-        "title": "Grand Milestone 3 Capstone Accreditation: ... — Conversion Funnel",
+        "title": "Grand Milestone 3 Capstone Accreditation: Certified Digital Growth — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

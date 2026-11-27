@@ -10,11 +10,11 @@
       "codeHash": "9cdcbead079362eb673161ab2a71211daefdf8e3f3f9a7999fb28181ada2c33f",
       "spec": {
         "template": "funnel",
-        "title": "Customer Segment Taxonomies & Multi-Sided  - Venture Pipeline",
+        "title": "Customer Segment Taxonomies & Multi-Sided - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Customer Segment Taxonomies & Multi-Sided  - Venture Pipeline",
+        "title": "Customer Segment Taxonomies & Multi-Sided - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "6e5b29179a867d005a9aa44908bff2e15c0adb7d44cc1304266038a81108a1ba",
       "spec": {
         "template": "funnel",
-        "title": "Channel Phase Architecture: Awareness to P - Venture Pipeline",
+        "title": "Channel Phase Architecture: Awareness to Post-Purchase Delivery - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Channel Phase Architecture: Awareness to P - Venture Pipeline",
+        "title": "Channel Phase Architecture: Awareness to Post-Purchase Delivery - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "15212d28c4de8b18b311558d9e210917e390e800452678b8820e93dc5f191522",
       "spec": {
         "template": "funnel",
-        "title": "Customer Relationship Archetypes & Retenti - Venture Pipeline",
+        "title": "Customer Relationship Archetypes & Retention Engineering - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Customer Relationship Archetypes & Retenti - Venture Pipeline",
+        "title": "Customer Relationship Archetypes & Retention Engineering - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "8038722e3f7b3809b44ac4a028d0deb9676eb8862fa5a3591c99c4eca5c93402",
       "spec": {
         "template": "funnel",
-        "title": "Omnichannel Acquisition Economics & Blende - Venture Pipeline",
+        "title": "Omnichannel Acquisition Economics & Blended CAC Optimization - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Omnichannel Acquisition Economics & Blende - Venture Pipeline",
+        "title": "Omnichannel Acquisition Economics & Blended CAC Optimization - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "bde6c7967735513361a2107fc91d6fc01d2687c8154352c85f17e29592ca3ca7",
       "spec": {
         "template": "funnel",
-        "title": "Master Customer Delivery Control Tower & G - Venture Pipeline",
+        "title": "Master Customer Delivery Control Tower & Go-to-Market Certification - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Customer Delivery Control Tower & G - Venture Pipeline",
+        "title": "Master Customer Delivery Control Tower & Go-to-Market Certification - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {

@@ -10,11 +10,11 @@
       "codeHash": "4623fc8304a0e1a79e9183698a1b9b37e1980b2b128be1c535e350975809bc10",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Yield Measures Spectrum: Coupon, Current &... — General Ledger Verification",
+        "title": "Yield Measures Spectrum: Coupon, Current — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Yield.",
+            "caption": "Open primary facility debit entry for Yield Measures Spectrum.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59400,
@@ -139,11 +139,11 @@
       "codeHash": "7da2db9777f7f53eef7ea7eda405d4f807652ce62a47035f75c56eb1469037ff",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Standard Market YTM Approximation Equation... — General Ledger Verification",
+        "title": "Standard Market YTM Approximation Equation & Calibration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Standard.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 50750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 60900,
@@ -268,11 +268,11 @@
       "codeHash": "d9be4853b5270e344c5d70e6a0d9d8c27506b9d41318c284d4bcf7c8ec5da1cb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Exact Yield to Maturity Numerical Solver &... — General Ledger Verification",
+        "title": "Exact Yield to Maturity Numerical Solver & Convergence Analysis — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Exact Yield to.",
+            "caption": "Open primary facility debit entry for Exact Yield to Maturity Numerical Solver.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52000,
@@ -397,11 +397,11 @@
       "codeHash": "87bd4390f2e4025ebb445d9e4876c9691725427c85ed4c5742aee88147848ae5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Yield Decomposition: Current Yield & Capit... — General Ledger Verification",
+        "title": "Yield Decomposition: Current Yield — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Yield.",
+            "caption": "Open primary facility debit entry for Yield Decomposition.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63900,
@@ -526,11 +526,11 @@
       "codeHash": "90b55aa0639d8a82d61a215a9869d4357c9ad68ae079270780ff1c5dc19f312f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Yield Curve Structures: Normal, Inverted &... — General Ledger Verification",
+        "title": "Yield Curve Structures: Normal, Inverted — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Yield.",
+            "caption": "Open primary facility debit entry for Yield Curve Structures.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65400,

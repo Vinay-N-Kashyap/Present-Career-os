@@ -10,11 +10,11 @@
       "codeHash": "74f1b43657cc476b2e4267eda9ac752e96fef4273ef35c29191d1f3e718684d8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Trinity of Bank Risk: Credit Risk (EAD... — General Ledger Verification",
+        "title": "The Trinity of Bank Risk: Credit Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Trinity of.",
+            "caption": "Open primary facility debit entry for The Trinity of Bank Risk.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 88000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 105600,
@@ -139,11 +139,11 @@
       "codeHash": "c6de21505f1b5d2c028312c340fc6f51ebd83a9e156b537ab64d756777701632",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Market Risk: Value at Risk (VaR), Expected... — General Ledger Verification",
+        "title": "Market Risk: Value at Risk (VaR) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Market Risk.",
+            "caption": "Open primary facility debit entry for Market Risk.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 89250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 107100,
@@ -268,11 +268,11 @@
       "codeHash": "343444dfa9d7a3ae3bd02788761a68aa67981b670f6b9b9132293739f2336dad",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Basel III/IV Capital Ratios: CET1, Tier 1,... — General Ledger Verification",
+        "title": "Basel III/IV Capital Ratios: CET1, Tier — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Basel.",
+            "caption": "Open primary facility debit entry for Basel III/IV Capital Ratios.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 90500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 108600,
@@ -397,11 +397,11 @@
       "codeHash": "789ea532696ebf53f17867180360ca2854f2ec2091ecabb98e09a0ba630d0ae8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive Capital Analysis and Review ... — General Ledger Verification",
+        "title": "Comprehensive Capital Analysis and Review (CCAR): Supervisory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Comprehensive.",
+            "caption": "Open primary facility debit entry for Comprehensive Capital Analysis and Review.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 91750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 110100,
@@ -526,11 +526,11 @@
       "codeHash": "faeb0c3412c826807407bb80ce3e5541befaf4de21e7b907ab011eb2f9212e8c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Risk Governance: Enterprise Risk Managemen... — General Ledger Verification",
+        "title": "Risk Governance: Enterprise Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Risk.",
+            "caption": "Open primary facility debit entry for Risk Governance.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 93000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 111600,

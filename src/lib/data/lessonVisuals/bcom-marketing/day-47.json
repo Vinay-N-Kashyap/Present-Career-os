@@ -8,7 +8,7 @@
       "codeHash": "f803402a77f011319b0459c9f1df21b89c4c3307c792a97c8f337c993be49c51",
       "spec": {
         "template": "funnel",
-        "title": "Monolithic vs. Composable MarTech Stac... \u2014 Conversion Funnel",
+        "title": "Monolithic vs. Composable MarTech Stacks, Modern Data Stack — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "4ba9387251ad6b6a75639a46b2292bb44990e1e1c321d2caf1276443ee633904",
       "spec": {
         "template": "funnel",
-        "title": "Customer Data Platforms (CDP): Event S... \u2014 Conversion Funnel",
+        "title": "Customer Data Platforms (CDP): Event — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "1bde36fa132f73f292563d9645d5777cbcdc4abc2c78b75d38b1ea961a1bf6de",
       "spec": {
         "template": "funnel",
-        "title": "Reverse-ETL & Operational Data Activat... \u2014 Conversion Funnel",
+        "title": "Reverse-ETL & Operational Data Activation: Bridging Analytical — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "03aefb44a2251f636733995a433ec3f5a550996ff40ca5cd9b48da57e1350877",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Touch Attribution (MTA) Engines:... \u2014 Conversion Funnel",
+        "title": "Multi-Touch Attribution (MTA) Engines: Algorithmic Markov Chains — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "e2500950eee47c0b7543c0e83e184250fcd82b9af184cf90fbe9bca2e3f10bf8",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Composable MarTech Pipelin... \u2014 Conversion Funnel",
+        "title": "Algorithmic Composable MarTech Pipeline & Reverse-ETL Synchronization — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

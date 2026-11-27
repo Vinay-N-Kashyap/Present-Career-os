@@ -10,11 +10,11 @@
       "codeHash": "4cf222a79b289c4e14eec4f8d56a7d9c7ed0b7383da6adf3bf1ab20e5df9e64e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Quantitative Audit Risk Model & Substanti... — General Ledger Verification",
+        "title": "The Quantitative Audit Risk Model & Substantive Testing Scope — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for The Quantitative Audit Risk Mod...",
+            "caption": "Open primary debit entry for The Quantitative Audit Risk Model.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "The Quantitative Audit Risk Model & Substanti... — General Ledger Verification",
+        "title": "The Quantitative Audit Risk Model & Substantive Testing Scope — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2650) for The Quantitative Audit Risk Mod...",
+            "caption": "Step 1: Open primary debit entry (2650) for The Quantitative Audit Risk Model.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -264,11 +264,11 @@
       "codeHash": "c4f42aaa5157c8e9aa386e71a755e149c0ee72a85ce10eb8f0bd1d35fed9da06",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Fraud Analytics & Benford's Law Chi-... — General Ledger Verification",
+        "title": "Forensic Fraud Analytics & Benford's Law Chi-Square Testing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Forensic Fraud Analytics & Benf...",
+            "caption": "Open primary debit entry for Forensic Fraud Analytics.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Forensic Fraud Analytics & Benford's Law Chi-... — General Ledger Verification",
+        "title": "Forensic Fraud Analytics & Benford's Law Chi-Square Testing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2850) for Forensic Fraud Analytics & Benf...",
+            "caption": "Step 1: Open primary debit entry (2850) for Forensic Fraud Analytics.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -518,11 +518,11 @@
       "codeHash": "5ba08fe9a3545fe4e8ea4a1be7f98524d01bb19c4553b52255660f446f631bad",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Monetary Unit Sampling (MUS) & Upper Error Li... — General Ledger Verification",
+        "title": "Monetary Unit Sampling (MUS) & Upper Error Limit Projections — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Monetary Unit Sampling (MUS) & ...",
+            "caption": "Open primary debit entry for Monetary Unit Sampling.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Monetary Unit Sampling (MUS) & Upper Error Li... — General Ledger Verification",
+        "title": "Monetary Unit Sampling (MUS) & Upper Error Limit Projections — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3050) for Monetary Unit Sampling (MUS) & ...",
+            "caption": "Step 1: Open primary debit entry (3050) for Monetary Unit Sampling.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -772,11 +772,11 @@
       "codeHash": "56b5f1642321efae89a99dc3ad93ff8fc3da30232c5848ea2ea857b2dc56c1a9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Internal Controls Testing & SOX 404 Segregati... — General Ledger Verification",
+        "title": "Internal Controls Testing & SOX 404 Segregation of Duties — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Internal Controls Testing & SOX...",
+            "caption": "Open primary debit entry for Internal Controls Testing.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Internal Controls Testing & SOX 404 Segregati... — General Ledger Verification",
+        "title": "Internal Controls Testing & SOX 404 Segregation of Duties — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Internal Controls Testing & SOX...",
+            "caption": "Step 1: Open primary debit entry (3250) for Internal Controls Testing.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -1026,11 +1026,11 @@
       "codeHash": "145e2f3dcaef3c4624944e6f2b7bcfc8f995ce0887e4b82ded19f00eb57e0165",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Audit Opinion Formulation & Going C... — General Ledger Verification",
+        "title": "Statutory Audit Opinion Formulation & Going Concern Review — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Statutory Audit Opinion Formula...",
+            "caption": "Open primary debit entry for Statutory Audit Opinion Formulation.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Statutory Audit Opinion Formulation & Going C... — General Ledger Verification",
+        "title": "Statutory Audit Opinion Formulation & Going Concern Review — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for Statutory Audit Opinion Formula...",
+            "caption": "Step 1: Open primary debit entry (3450) for Statutory Audit Opinion Formulation.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,

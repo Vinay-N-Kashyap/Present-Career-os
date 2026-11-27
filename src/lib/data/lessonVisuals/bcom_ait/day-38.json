@@ -10,7 +10,7 @@
       "codeHash": "4e8efcf8b122b6676125f4fdddfc151d72faceafefdb36053b0b3d345a24f029",
       "spec": {
         "template": "tree-graph",
-        "title": "Limitations of Vector-Only RAG: Multi-Hop Rea... — Enterprise AI Decision Graph",
+        "title": "Limitations of Vector-Only RAG: Multi-Hop — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Limitations of Vector-Only RAG:...",
+            "caption": "Ingest enterprise Context Query for Limitations of Vector-Only RAG.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Limitations of Vector-Only RAG: Multi-Hop Rea... — Enterprise AI Decision Graph",
+        "title": "Limitations of Vector-Only RAG: Multi-Hop — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Limitations of Vector-Only RAG:...",
+            "caption": "Step 1: Ingest enterprise Context Query for Limitations of Vector-Only RAG.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "f21c0d3fd95a6c434245fa92ceb86ed314465c34d7b9cd5fe74a6599705c86b6",
       "spec": {
         "template": "tree-graph",
-        "title": "Automated Entity Extraction, Relation Extract... — Enterprise AI Decision Graph",
+        "title": "Automated Entity Extraction, Relation Extraction & Knowledge Graph — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Automated Entity Extraction, Re...",
+            "caption": "Ingest enterprise Context Query for Automated Entity Extraction.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Automated Entity Extraction, Relation Extract... — Enterprise AI Decision Graph",
+        "title": "Automated Entity Extraction, Relation Extraction & Knowledge Graph — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Automated Entity Extraction, Re...",
+            "caption": "Step 1: Ingest enterprise Context Query for Automated Entity Extraction.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "38c0ee17651d4b4d61f70eedf0afc7066cfcd572478622ca7e0ea3d0af2cd0b7",
       "spec": {
         "template": "tree-graph",
-        "title": "Graph Traversal, Community Detection & Hierar... — Enterprise AI Decision Graph",
+        "title": "Graph Traversal, Community Detection & Hierarchical Graph — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Graph Traversal, Community Dete...",
+            "caption": "Ingest enterprise Context Query for Graph Traversal.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Graph Traversal, Community Detection & Hierar... — Enterprise AI Decision Graph",
+        "title": "Graph Traversal, Community Detection & Hierarchical Graph — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Graph Traversal, Community Dete...",
+            "caption": "Step 1: Ingest enterprise Context Query for Graph Traversal.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "e2c5cfc2e6522a1a760218642c70167ceb1b1946cedf6a54068689910c598d0a",
       "spec": {
         "template": "tree-graph",
-        "title": "Cypher Query Generation & Graph-Augmented Vec... — Enterprise AI Decision Graph",
+        "title": "Cypher Query Generation & Graph-Augmented Vector Retrieval (Hybrid GraphRAG) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Cypher Query Generation & Graph...",
+            "caption": "Ingest enterprise Context Query for Cypher Query Generation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Cypher Query Generation & Graph-Augmented Vec... — Enterprise AI Decision Graph",
+        "title": "Cypher Query Generation & Graph-Augmented Vector Retrieval (Hybrid GraphRAG) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Cypher Query Generation & Graph...",
+            "caption": "Step 1: Ingest enterprise Context Query for Cypher Query Generation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "ce6047f2ce2e42a0edc6e233988ec1dd49497441ffd2310b00cb7592b7265f09",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

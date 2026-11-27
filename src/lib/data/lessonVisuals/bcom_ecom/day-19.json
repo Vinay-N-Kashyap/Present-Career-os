@@ -10,11 +10,11 @@
       "codeHash": "b623f9c723d8babce61bd79c1b790969c4fdd2c8c1de53dd2e8de64f91b2d4d4",
       "spec": {
         "template": "funnel",
-        "title": "Retention Economics, Customer Lifetime Val... — Conversion Funnel",
+        "title": "Retention Economics, Customer Lifetime Value (LTV), Payback Period — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "ae86e0fce1a7014670cb3c8cc21ea6ae91c801d7632a9487ffe9a689bbcd3fd3",
       "spec": {
         "template": "funnel",
-        "title": "RFM (Recency, Frequency, Monetary) Segment... — Conversion Funnel",
+        "title": "RFM (Recency, Frequency, Monetary) Segmentation & Quintile Scoring — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "4fba0913d31e43d660b1b7b6bd9ceda599bc34f27aa2d4a193686edce484f6b8",
       "spec": {
         "template": "funnel",
-        "title": "Automated Lifecycle Flows (Welcome, Abando... — Conversion Funnel",
+        "title": "Automated Lifecycle Flows (Welcome, Abandonment, Win-Back) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,OK total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "62906826560bdc9160d281a04e16456656b0c90a423cfcf53edb8a5c334ad78a",
       "spec": {
         "template": "funnel",
-        "title": "Predictive Machine Learning Churn Modeling... — Conversion Funnel",
+        "title": "Predictive Machine Learning Churn Modeling & Survival Analysis — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "df14782a87bde3077e7bd5af138fda1cc55469b903303d6840dfb309101b6d36",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Customer Retention Command Gate... — Conversion Funnel",
+        "title": "Enterprise Customer Retention Command Gateway & Lifecycle Health — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

@@ -8,7 +8,7 @@
       "codeHash": "9ba181b313d6fdebf251cad477494277ada0372f1a43bfe97a575909c00b7295",
       "spec": {
         "template": "funnel",
-        "title": "Churn Hazard Mechanics: Voluntary v... - RevOps Funnel",
+        "title": "Churn Hazard Mechanics: Voluntary - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "0e19f5bc124d5024559efb84207b748b32bce17a6fbca67eab1e93e93cf540e0",
       "spec": {
         "template": "funnel",
-        "title": "Feature Engineering: Feature Adopti... - RevOps Funnel",
+        "title": "Feature Engineering: Feature - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "0ff5500f3ad5839d274b2e9c3d4c8583d807ba4b41d8378fdf1ddf7e80e9ddbb",
       "spec": {
         "template": "funnel",
-        "title": "Parametric Hazard Estimation: Pure ... - RevOps Funnel",
+        "title": "Parametric Hazard Estimation: Pure - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "801f19e0b11630a8ff57e41b96d93180a72a35dbe6c9be9a51ee5d81610965a5",
       "spec": {
         "template": "funnel",
-        "title": "Survival Curve Calibration & 90-Day... - RevOps Funnel",
+        "title": "Survival Curve Calibration & 90-Day Early Warning Threshold Alerts - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "32849b43fb57e2c94521771f378259095cc37a439130c14a1c274c5aec7d610b",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Churn H... - RevOps Funnel",
+        "title": "Full Python Implementation: Churn - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

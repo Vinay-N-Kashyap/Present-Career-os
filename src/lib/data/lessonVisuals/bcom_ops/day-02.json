@@ -10,7 +10,7 @@
       "codeHash": "92fab19a50de35ce0619000e68c8fd96c7c6e03e72c43c63e467e7f7b893306e",
       "spec": {
         "template": "workflow",
-        "title": "Goldratt's Theory of Constraints (TOC) & The ... — Operational Workflow",
+        "title": "Goldratt's Theory of Constraints (TOC) & The 5 Focusing Steps — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Goldratt's Theory of Constraints (TOC) & The ... — Operational Workflow",
+        "title": "Goldratt's Theory of Constraints (TOC) & The 5 Focusing Steps — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Goldratt's Theory of Constraints (TOC...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Goldratt's Theory of Constraints",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize The Drum-Buffer-Rope (DBR) Scheduling...",
+            "caption": "Stage 1 (Demand Forecast): Initialize The Drum-Buffer-Rope (DBR)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "92cd44f9dc528f320a906e3ee473ee99ae1deb56177d26d5dc7fd969c6313f2c",
       "spec": {
         "template": "workflow",
-        "title": "Overall Equipment Effectiveness (OEE) & The 6... — Operational Workflow",
+        "title": "Overall Equipment Effectiveness (OEE) & The 6 Big Losses — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Overall Equipment Effectiveness (OEE) & The 6... — Operational Workflow",
+        "title": "Overall Equipment Effectiveness (OEE) & The 6 Big Losses — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Overall Equipment Effectiveness (OEE)...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Overall Equipment Effectiveness",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "d1673d3e89248124d88f74e6c360b4a86a6b48fe2f28d71c29a007f1a347c0a2",
       "spec": {
         "template": "workflow",
-        "title": "Lean Kanban Card Sizing & CONWIP Work-In-Prog... — Operational Workflow",
+        "title": "Lean Kanban Card Sizing & CONWIP Work-In-Progress Physics — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Lean Kanban Card Sizing & CONWIP Work-In-Prog... — Operational Workflow",
+        "title": "Lean Kanban Card Sizing & CONWIP Work-In-Progress Physics — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Lean Kanban Card Sizing & CONWIP Work...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Lean Kanban Card Sizing & CONWIP",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "8812fe183ff3ce080ff26ef059423590c6564a3430c9185ac8bddd15e32e5b5a",
       "spec": {
         "template": "workflow",
-        "title": "Monte Carlo Lead Time Forecasting & SLA Confi... — Operational Workflow",
+        "title": "Monte Carlo Lead Time Forecasting & SLA Confidence Intervals — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Monte Carlo Lead Time Forecasting & SLA Confi... — Operational Workflow",
+        "title": "Monte Carlo Lead Time Forecasting & SLA Confidence Intervals — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Monte Carlo Lead Time Forecasting & S...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Monte Carlo Lead Time Forecasting",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

@@ -10,11 +10,11 @@
       "codeHash": "4135d82b8a3ee4d26478a109650d01bbefc2054c4594fb2fdd6d33f65f808a60",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Working Capital Architecture: Gross vs Net... — General Ledger Verification",
+        "title": "Working Capital Architecture: Gross — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Working.",
+            "caption": "Open primary facility debit entry for Working Capital Architecture.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 88000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 105600,
@@ -139,11 +139,11 @@
       "codeHash": "99e7204d83944963de8608299371c7db70be69550f914927bc2f048de269165d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Working Capital Financing Policies: Hedgin... — General Ledger Verification",
+        "title": "Working Capital Financing Policies: Hedging, Conservative & Aggressive — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Working.",
+            "caption": "Open primary facility debit entry for Working Capital Financing Policies.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 89250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 107100,
@@ -268,11 +268,11 @@
       "codeHash": "1582d63d7f1bb0214198d02f8c3c9e5beb5c7dc0862b249565493e431eb62956",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Quarterly Cash Budgeting & Rolling Liquidi... — General Ledger Verification",
+        "title": "Quarterly Cash Budgeting & Rolling Liquidity Schedules — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Quarterly.",
+            "caption": "Open primary facility debit entry for Quarterly Cash Budgeting.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 90500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 108600,
@@ -397,11 +397,11 @@
       "codeHash": "962ab1ed4c2140dc681a8313e964ff09c05dd2260f40b40bd75c077ffe012df0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Receivables Management: Credit Terms & Bad... — General Ledger Verification",
+        "title": "Receivables Management: Credit Terms — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Receivables.",
+            "caption": "Open primary facility debit entry for Receivables Management.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 91750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 110100,
@@ -526,11 +526,11 @@
       "codeHash": "1a35efdb6c733bc663255398a30a38379f9e35ae0ab5fcb55076c01b171e7716",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Working Capital Liquidity & Tre... — General Ledger Verification",
+        "title": "Enterprise Working Capital Liquidity & Treasury Control Tower — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Working Capital Liquidity.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 93000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 111600,

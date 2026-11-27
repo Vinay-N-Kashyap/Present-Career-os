@@ -10,11 +10,11 @@
       "codeHash": "99081f01b9181b0b79b9255518ccd8235f9075e570058a44b441259a8c467df8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Related Party Definition, Risks & Auditor Responsi — Forensic Audit Ledger",
+        "title": "Related Party Definition, Risks & Auditor Responsibilities: SA 550 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Related Party.",
+            "caption": "Open forensic assurance verification ledger for Related Party Definition.",
             "title": "Day 17 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1630000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1815000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Related Party.",
+            "caption": "Execute simulated enterprise forensic case study for Related Party Definition.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1815000,
@@ -145,7 +145,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Identifying.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 17 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1650000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1844500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Identifying.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1844500,
@@ -272,11 +272,11 @@
       "codeHash": "ea5d67ee6785f3881242a3f086a6b3f2858bbef43d65314aaa142ae2be6cd23d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Arm's-Length Assertion Verification & Pricing Meth — Forensic Audit Ledger",
+        "title": "Arm's-Length Assertion Verification & Pricing Methodologies: SA 550 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Arm's-Length.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 17 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1670000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1874000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Arm's-Length.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1874000,
@@ -403,11 +403,11 @@
       "codeHash": "1148b49a8cd4cf0d5b99a6ecd37baf440f299cd9e581b68a142c152a7eace78b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Governance & Compliance: Companies Act S — Forensic Audit Ledger",
+        "title": "Statutory Governance & Compliance: Companies Act Section 188 & CARO 2020 Clause (xiii) — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Statutory.",
+            "caption": "Open forensic assurance verification ledger for Statutory Governance.",
             "title": "Day 17 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1690000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1903500,
@@ -534,11 +534,11 @@
       "codeHash": "72f5bb48df61900afdd058281c421fbb84fb351deff399f6aa11c4d65039ac58",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive Related Party Audit Program & Workin — Forensic Audit Ledger",
+        "title": "Comprehensive Related Party Audit Program & Working Paper — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Comprehensive.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 17 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1710000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1933000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Comprehensive.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 17 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1933000,

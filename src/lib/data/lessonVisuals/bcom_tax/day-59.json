@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Expat Secondment, Corporate Guar... — General Ledger Verification",
+        "title": "Cross-Border Expat Secondment, Corporate Guarantees & The Northern — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Cross Border Expat Sec (Tau Alpha).",
+            "caption": "Open primary debit entry for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11350,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Cross Border Expat Sec (Alpha).",
+            "caption": "Record secondary accrual adjustment for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Cross Border Expat Sec (Tau).",
+            "caption": "Reconcile sub-ledger balances for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Cross Border Expat Sec (Alpha).",
+            "caption": "Verify double-entry trial balance for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -134,11 +134,11 @@
       "partTitle": "Cross-Border Expat Secondment, Corporate Guarantees & The Northern Operating Systems Doctrine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Expat Secondment, Corporate Guar... — General Ledger Verification",
+        "title": "Cross-Border Expat Secondment, Corporate Guarantees & The Northern — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Cross Border Expat Sec (Tau Alpha).",
+            "caption": "Open primary debit entry for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11350,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Cross Border Expat Sec (Alpha).",
+            "caption": "Record secondary accrual adjustment for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Cross Border Expat Sec (Tau).",
+            "caption": "Reconcile sub-ledger balances for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Cross Border Expat Sec (Alpha).",
+            "caption": "Verify double-entry trial balance for Cross-Border Expat Secondment.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13620,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Inverted Duty Structure (IDS) Refunds & Rule ... — General Ledger Verification",
+        "title": "Inverted Duty Structure (IDS) Refunds & Rule 89(5) Mathematical — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Inverted Duty Structur (Tau Beta).",
+            "caption": "Open primary debit entry for Inverted Duty Structure.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11550,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Inverted Duty Structur (Beta).",
+            "caption": "Record secondary accrual adjustment for Inverted Duty Structure.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Inverted Duty Structur (Tau).",
+            "caption": "Reconcile sub-ledger balances for Inverted Duty Structure.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Inverted Duty Structur (Beta).",
+            "caption": "Verify double-entry trial balance for Inverted Duty Structure.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -389,11 +389,11 @@
       "partTitle": "Inverted Duty Structure (IDS) Refunds & Rule 89(5) Mathematical Mechanics",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Inverted Duty Structure (IDS) Refunds & Rule ... — General Ledger Verification",
+        "title": "Inverted Duty Structure (IDS) Refunds & Rule 89(5) Mathematical — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Inverted Duty Structur (Tau Beta).",
+            "caption": "Open primary debit entry for Inverted Duty Structure.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11550,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Inverted Duty Structur (Beta).",
+            "caption": "Record secondary accrual adjustment for Inverted Duty Structure.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Inverted Duty Structur (Tau).",
+            "caption": "Reconcile sub-ledger balances for Inverted Duty Structure.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Inverted Duty Structur (Beta).",
+            "caption": "Verify double-entry trial balance for Inverted Duty Structure.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13860,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Real Estate, Works Contracts & Section 17(5) ... — General Ledger Verification",
+        "title": "Real Estate, Works Contracts & Section 17(5) ITC Restrictions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Real Estate Works Cont (Tau Gamma).",
+            "caption": "Open primary debit entry for Real Estate.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11750,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Real Estate Works Cont (Gamma).",
+            "caption": "Record secondary accrual adjustment for Real Estate.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14100,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Real Estate Works Cont (Tau).",
+            "caption": "Reconcile sub-ledger balances for Real Estate.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14100,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Real Estate Works Cont (Gamma).",
+            "caption": "Verify double-entry trial balance for Real Estate.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14100,
@@ -644,11 +644,11 @@
       "partTitle": "Real Estate, Works Contracts & Section 17(5) ITC Restrictions post-Safari Retreats",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Real Estate, Works Contracts & Section 17(5) ... — General Ledger Verification",
+        "title": "Real Estate, Works Contracts & Section 17(5) ITC Restrictions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Real Estate Works Cont (Tau Gamma).",
+            "caption": "Open primary debit entry for Real Estate.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11750,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Real Estate Works Cont (Gamma).",
+            "caption": "Record secondary accrual adjustment for Real Estate.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14100,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Real Estate Works Cont (Tau).",
+            "caption": "Reconcile sub-ledger balances for Real Estate.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14100,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Real Estate Works Cont (Gamma).",
+            "caption": "Verify double-entry trial balance for Real Estate.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14100,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Anti-Profiteering Architecture under Section ... — General Ledger Verification",
+        "title": "Anti-Profiteering Architecture under Section 171 & Competition — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Anti Profiteering Arch (Tau Delta).",
+            "caption": "Open primary debit entry for Anti-Profiteering Architecture under Section 171.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11950,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Anti Profiteering Arch (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14340,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Anti Profiteering Arch (Tau).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14340,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Anti Profiteering Arch (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14340,
@@ -899,11 +899,11 @@
       "partTitle": "Anti-Profiteering Architecture under Section 171 & Competition Commission Enforcement",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Anti-Profiteering Architecture under Section ... — General Ledger Verification",
+        "title": "Anti-Profiteering Architecture under Section 171 & Competition — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Anti Profiteering Arch (Tau Delta).",
+            "caption": "Open primary debit entry for Anti-Profiteering Architecture under Section 171.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11950,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Anti Profiteering Arch (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14340,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Anti Profiteering Arch (Tau).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14340,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Anti Profiteering Arch (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14340,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Advanced Ente... — General Ledger Verification",
+        "title": "Production Python Architecture: Advanced — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Tau Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12150,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14580,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Tau).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14580,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14580,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Advanced Enterprise GST Controversy & Compliance Engine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Advanced Ente... — General Ledger Verification",
+        "title": "Production Python Architecture: Advanced — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Tau Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 12150,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 59 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14580,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Tau).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 59 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14580,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 59 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14580,

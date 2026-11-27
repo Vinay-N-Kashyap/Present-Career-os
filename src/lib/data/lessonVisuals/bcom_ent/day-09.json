@@ -10,11 +10,11 @@
       "codeHash": "dc9a0e7997b881e6e4b4877341523e4795c2020684ce03048b1bfaf2509366b9",
       "spec": {
         "template": "funnel",
-        "title": "Cost Structure Architectures: Cost-Driven  - Venture Pipeline",
+        "title": "Cost Structure Architectures: Cost-Driven - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Cost Structure Architectures: Cost-Driven  - Venture Pipeline",
+        "title": "Cost Structure Architectures: Cost-Driven - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "f178aad4423ca306cb345f6f39726cfa965058857e75d9733bc1cb33dabd23f8",
       "spec": {
         "template": "funnel",
-        "title": "Revenue Stream Taxonomies & Pricing Mechan - Venture Pipeline",
+        "title": "Revenue Stream Taxonomies & Pricing Mechanics - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Revenue Stream Taxonomies & Pricing Mechan - Venture Pipeline",
+        "title": "Revenue Stream Taxonomies & Pricing Mechanics - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "ed3cabbc5b9c43c33ced633238fa8ec73ee59ae12af0220c957e8e00a19eaf82",
       "spec": {
         "template": "funnel",
-        "title": "SaaS & Recurring Revenue Unit Economics: M - Venture Pipeline",
+        "title": "SaaS & Recurring Revenue Unit Economics: MRR, ARR, NRR & Churn Physics - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "SaaS & Recurring Revenue Unit Economics: M - Venture Pipeline",
+        "title": "SaaS & Recurring Revenue Unit Economics: MRR, ARR, NRR & Churn Physics - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "37f5d11cc93c88b8d8c58e8830cf105e68900a130de8b513545dac059fe0ad81",
       "spec": {
         "template": "funnel",
-        "title": "Contribution Margin & Break-Even Physics U - Venture Pipeline",
+        "title": "Contribution Margin & Break-Even Physics Under Uncertainty - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Contribution Margin & Break-Even Physics U - Venture Pipeline",
+        "title": "Contribution Margin & Break-Even Physics Under Uncertainty - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "ac93cc41c79fc79d951c3d6e42516c106fb684454b8ae30fe5229a29bb955c2b",
       "spec": {
         "template": "funnel",
-        "title": "Master Financial Viability Control Tower & - Venture Pipeline",
+        "title": "Master Financial Viability Control Tower - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Financial Viability Control Tower & - Venture Pipeline",
+        "title": "Master Financial Viability Control Tower - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {

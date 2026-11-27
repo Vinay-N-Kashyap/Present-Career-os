@@ -10,11 +10,11 @@
       "codeHash": "89f68bf35769f506593ac285d57c0ed0f665252c848b821e1572979be223bac9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Purchases Day Book Architecture: Inward In... — General Ledger Verification",
+        "title": "Purchases Day Book Architecture: Inward — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Purchases.",
+            "caption": "Open primary facility debit entry for Purchases Day Book Architecture.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59400,
@@ -139,11 +139,11 @@
       "codeHash": "3828e745dc834807d9664c225d98a43b9f45e07d36042407c71fe554f8823826",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Sales Day Book Architecture: Outward Invoi... — General Ledger Verification",
+        "title": "Sales Day Book Architecture: Outward — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Sales Day Book.",
+            "caption": "Open primary facility debit entry for Sales Day Book Architecture.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 50750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 60900,
@@ -268,11 +268,11 @@
       "codeHash": "5b09b8f20348b3fe4798651120e7799726a8a6ad3ec246c517e33762243780e5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Returns Books & Evidentiary Memos: Debit N... — General Ledger Verification",
+        "title": "Returns Books & Evidentiary Memos: Debit — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Returns Books.",
+            "caption": "Open primary facility debit entry for Returns Books & Evidentiary Memos.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52000,
@@ -397,11 +397,11 @@
       "codeHash": "1a995cfa6c787309ce7a71f5babeeeff9d459f3eedba1ee10f81b174afc2fa33",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bills Receivable & Bills Payable Registers... — General Ledger Verification",
+        "title": "Bills Receivable & Bills Payable Registers: Negotiable Instruments — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Bills.",
+            "caption": "Open primary facility debit entry for Bills Receivable.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63900,
@@ -526,11 +526,11 @@
       "codeHash": "98e20444f26f36dd0eb2f816163163c8eeb50ec019c68064a21042a7aa5a69cc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Control Accounts & Subsidiary Ledger Recon... — General Ledger Verification",
+        "title": "Control Accounts & Subsidiary Ledger Reconciliation Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Control.",
+            "caption": "Open primary facility debit entry for Control Accounts.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65400,

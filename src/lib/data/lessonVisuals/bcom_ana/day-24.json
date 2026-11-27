@@ -8,7 +8,7 @@
       "codeHash": "7cde6737638ed4d0ecab338a5d47bd5ea7630ec9a9bc25997f1ec452bf5a27af",
       "spec": {
         "template": "bars",
-        "title": "The Multi-Touch Attribution Dilemma: H... \u2014 Operations Evaluation",
+        "title": "The Multi-Touch Attribution Dilemma: Heuristic Attribution Models — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "c596e2d26c5e827357ed52b8a8bb4b43610f8a8d5999688981d5535677fdfd5e",
       "spec": {
         "template": "bars",
-        "title": "Probabilistic Attribution via First-Or... \u2014 Operations Evaluation",
+        "title": "Probabilistic Attribution via First-Order Markov Chains — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "28950a6b97ae39cafbd1c1a9e2d94ea7742f9304747cbf647b36e48b2881973d",
       "spec": {
         "template": "bars",
-        "title": "The Removal Effect Algorithm & Margina... \u2014 Operations Evaluation",
+        "title": "The Removal Effect Algorithm & Marginal Channel Value — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "f29e73df6c4c2f7db5a4df68b68fccd8b3e7f53d95983ea7616a5420ca0f1509",
       "spec": {
         "template": "bars",
-        "title": "Comparison with Cooperative Game Theor... \u2014 Operations Evaluation",
+        "title": "Comparison with Cooperative Game Theory: Shapley Value Attribution — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "e904d98f9ef6ad6a72f69cea2dc17686c985e26447a5e7816165790501c28fdf",
       "spec": {
         "template": "bars",
-        "title": "Building an End-to-End Markov Multi-To... \u2014 Operations Evaluation",
+        "title": "Building an End-to-End Markov Multi-Touch Attribution Engine in Python — Operations Evaluation",
         "steps": [
           {
             "at": "intro",

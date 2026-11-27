@@ -10,11 +10,11 @@
       "codeHash": "be20c3c4fcb97726d32f0e7d8824b46aa41363ba516a9c7aab7bd7847267dfbd",
       "spec": {
         "template": "funnel",
-        "title": "Fiduciary Duties (Care vs. Loyalty) & Ba - Governance Funnel",
+        "title": "Fiduciary Duties (Care vs. Loyalty) & Balanced Board Composition - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (ten,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Fiduciary Duties (Care vs. Loyalty) & Ba - Governance Funnel",
+        "title": "Fiduciary Duties (Care vs. Loyalty) & Balanced Board Composition - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (ten,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -286,7 +286,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "80143d755cd306b2d07aa905f17255685b2c684fc37bb2371d24fc3ada4f90e9",
       "spec": {
         "template": "funnel",
-        "title": "Supermajority Voting (75%) & Protective  - Governance Funnel",
+        "title": "Supermajority Voting (75%) & Protective - Governance Funnel",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Supermajority Voting (75%) & Protective  - Governance Funnel",
+        "title": "Supermajority Voting (75%) & Protective - Governance Funnel",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -606,7 +606,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "c6cdd2794d4c62496599e3b52cbf5790712f23fe6ecdcfefb00f5721927926dd",
       "spec": {
         "template": "funnel",
-        "title": "Statutory Board Meeting Protocols, Resol - Governance Funnel",
+        "title": "Statutory Board Meeting Protocols, Resolution Minutes & D&O Insurance - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (eight,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Statutory Board Meeting Protocols, Resol - Governance Funnel",
+        "title": "Statutory Board Meeting Protocols, Resolution Minutes & D&O Insurance - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (eight,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -926,7 +926,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "e3d585998ecd8d79da2754536b98118651c48f7120d30b342c65813ad518e44f",
       "spec": {
         "template": "funnel",
-        "title": "Investor Information Rights & Board Obse - Governance Funnel",
+        "title": "Investor Information Rights & Board Observer Seat Protocol Management - Governance Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Investor Information Rights & Board Obse - Governance Funnel",
+        "title": "Investor Information Rights & Board Observer Seat Protocol Management - Governance Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "cd2e8aad89b4cb09848f3849363079944f7ab50515e5d0822fcbd3d6997884b8",
       "spec": {
         "template": "funnel",
-        "title": "Master Corporate Governance & Board Dyna - Governance Funnel",
+        "title": "Master Corporate Governance & Board Dynamics Control Tower: 4-Gate - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (multiple,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Corporate Governance & Board Dyna - Governance Funnel",
+        "title": "Master Corporate Governance & Board Dynamics Control Tower: 4-Gate - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (multiple,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {

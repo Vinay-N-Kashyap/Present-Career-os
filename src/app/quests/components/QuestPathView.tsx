@@ -18,6 +18,82 @@ import {
   playPopSound
 } from './useQuestProgression';
 
+export function formatConciseStageDesc(rawDesc: string, questCount: number): string {
+  let text = String(rawDesc || '')
+    .replace(/^(?:🔀\s*)?Fused Goal Trajectory:\s*/i, '')
+    .trim();
+  const arrowParensIdx = text.search(/\([^()]*?(?:⚡|→|Fast-Track Jump:)/i);
+  if (arrowParensIdx >= 0) {
+    const tailoredIdx = text.indexOf('. Tailored for', arrowParensIdx);
+    if (tailoredIdx >= 0) {
+      text = text.slice(0, arrowParensIdx).trim() + text.slice(tailoredIdx).trim();
+    } else {
+      text = text.slice(0, arrowParensIdx).trim();
+    }
+  }
+  text = text
+    .replace(/\s*\([^)]*archetype[^)]*QT1:[^)]*\)/gi, '')
+    .replace(/\s*covering\s+\d+\s+calibrated\s+quests\.?\s*/i, ` — ${questCount} focused quests. `)
+    .replace(/\s*\.\s*\./g, '.')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!text) return `${questCount} focused quests covering core practice and milestone verification.`;
+  if (text.length > 130) text = `${text.slice(0, 127).trimEnd()}...`;
+  return text;
+}
+
+export function formatRoadmapNodeLabel(title: string): string {
+  const raw = String(title || '').trim();
+  if (!raw) return 'Milestone Stage';
+  const cleaned = raw.replace(/^Phase\s*\d+:\s*/i, '').trim();
+  const dashIdx = cleaned.indexOf('—');
+  if (dashIdx >= 0) {
+    const suffix = cleaned.slice(dashIdx + 1).trim();
+    if (suffix.length >= 4) return suffix;
+  }
+  return cleaned;
+}
+
+export function buildDynamicSCurveGeometry(nodeCount: number) {
+  const safeCount = Math.max(1, Math.min(12, nodeCount));
+  const rowGap = 80;
+  const firstRowY = 115;
+  const RAINBOW_COLORS = ['#ef4444', '#f59e0b', '#10b981', '#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f97316'];
+
+  let d = 'M 50,35 H 250';
+  const waypoints = Array.from({ length: safeCount }, (_, i) => {
+    const prevY = i === 0 ? 35 : firstRowY + (i - 1) * rowGap;
+    const rowY = firstRowY + i * rowGap;
+    const alignRight = i % 2 === 0;
+    if (alignRight) {
+      d += ` C 295,${prevY} 295,${rowY} 250,${rowY} H 60`;
+    } else {
+      d += ` C 15,${prevY} 15,${rowY} 60,${rowY} H 250`;
+    }
+    return {
+      x: alignRight ? 250 : 60,
+      y: rowY,
+      alignRight,
+      color: RAINBOW_COLORS[i % RAINBOW_COLORS.length],
+    };
+  });
+
+  const lastY = firstRowY + (safeCount - 1) * rowGap;
+  const finishY = lastY + 72;
+  const lastAlignRight = (safeCount - 1) % 2 === 0;
+  let finishX = 220;
+  if (lastAlignRight) {
+    d += ` C 15,${lastY} 15,${finishY} 60,${finishY} H 220`;
+    finishX = 220;
+  } else {
+    d += ` C 295,${lastY} 295,${finishY} 250,${finishY} H 100`;
+    finishX = 100;
+  }
+  const svgHeight = finishY + 42;
+
+  return { path: d, waypoints, finishX, finishY, svgHeight };
+}
+
 export interface QuestPathViewProps {
   activeCourseId: string | null;
   setActiveCourseId: (id: string) => void;
@@ -96,19 +172,23 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
     if (activeSubTab === 'custom_roadmap' && modules && modules.length > 0) {
       let dayCursor = 1;
       const totalQ = Math.max(1, modules.reduce((s, m) => s + (m.quests?.length || 0), 0));
+      const lastModuleEnd = typeof (modules[modules.length - 1] as any)?.endDay === 'number'
+        ? Number((modules[modules.length - 1] as any).endDay)
+        : 0;
+      const useExplicitDays = lastModuleEnd > 0 && lastModuleEnd === totalDurationDays;
       return modules.map((m: any, idx) => {
         const qs = m.quests || [];
         const cleared = qs.filter((q: Quest) => completedQuests.includes(q.id)).length;
         const pct = Math.min(100, Math.round((cleared / Math.max(1, qs.length)) * 100));
         const isCompleted = qs.length > 0 && cleared === qs.length;
-        const explicitStart = typeof m.startDay === 'number' ? m.startDay : null;
-        const explicitEnd = typeof m.endDay === 'number' ? m.endDay : null;
+        const explicitStart = useExplicitDays && typeof m.startDay === 'number' ? m.startDay : null;
+        const explicitEnd = useExplicitDays && typeof m.endDay === 'number' ? m.endDay : null;
         const estSpan = idx === modules.length - 1
           ? Math.max(1, totalDurationDays - dayCursor + 1)
           : Math.max(1, Math.round((qs.length / totalQ) * totalDurationDays));
         const startDay = explicitStart ?? dayCursor;
-        const endDay = explicitEnd ?? Math.min(totalDurationDays, startDay + estSpan - 1);
-        dayCursor = endDay + 1;
+        const endDay = explicitEnd ?? (idx === modules.length - 1 ? totalDurationDays : Math.min(totalDurationDays, startDay + estSpan - 1));
+        dayCursor = Math.min(totalDurationDays, endDay + 1);
         return {
           key: m.id,
           anchorId: `stage-card-${m.id}`,
@@ -120,7 +200,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
           difficulty: m.difficulty || 'Intermediate',
           startDay,
           endDay,
-          estimatedWeeks: m.estimatedWeeks || Math.max(1, Math.round((endDay - startDay + 1) / 7)),
+          estimatedWeeks: Math.max(1, Math.round((endDay - startDay + 1) / 7)),
           cleared,
           total: qs.length,
           pct,
@@ -200,471 +280,704 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
         className="animate-fade-in"
         id="quest-roadmap-chart-section"
       >
-        {/* Top Command Header */}
+        {/* Unified Top Command Deck (Header + Saved Roadmap Tabs + Execution Timeline) */}
         <div
+          data-testid="roadmap-command-deck"
+          className="glass-card-premium"
           style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            marginBottom: 18,
-            flexWrap: 'wrap',
-            gap: 16,
-            padding: '20px 24px',
-            borderRadius: 20,
-            background: 'linear-gradient(135deg, rgba(16,185,129,0.08), rgba(99,102,241,0.08))',
+            borderRadius: 22,
+            background: 'linear-gradient(155deg, rgba(16,185,129,0.09) 0%, var(--bg2) 42%, rgba(99,102,241,0.07) 100%)',
             border: '1px solid var(--border)',
+            overflow: 'hidden',
+            marginBottom: 22,
+            boxShadow: 'var(--shadow-md)',
           }}
         >
-          <div style={{ flex: '1 1 380px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 8 }}>
-              <span
-                data-testid="roadmap-duration-badge"
-                style={{
-                  fontSize: 11.5,
-                  fontWeight: 900,
-                  padding: '4px 10px',
-                  borderRadius: 999,
-                  background: 'rgba(16,185,129,0.16)',
-                  border: '1px solid rgba(16,185,129,0.35)',
-                  color: '#34d399',
-                  letterSpacing: '0.04em',
-                  textTransform: 'uppercase',
-                }}
+          {/* Tier 1: Top Command Header */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              flexWrap: 'wrap',
+              gap: 16,
+              padding: '20px 24px 16px 24px',
+            }}
+          >
+            <div style={{ flex: '1 1 380px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 8 }}>
+                <span
+                  data-testid="roadmap-duration-badge"
+                  style={{
+                    fontSize: 11.5,
+                    fontWeight: 900,
+                    padding: '4px 10px',
+                    borderRadius: 999,
+                    background: 'rgba(16,185,129,0.16)',
+                    border: '1px solid rgba(16,185,129,0.35)',
+                    color: '#34d399',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {formatDurationLabel(totalDurationDays)}
+                </span>
+                <span
+                  style={{
+                    fontSize: 11.5,
+                    fontWeight: 800,
+                    padding: '4px 10px',
+                    borderRadius: 999,
+                    background: isResumePersonalized ? 'rgba(99,102,241,0.18)' : 'rgba(148,163,184,0.14)',
+                    border: `1px solid ${isResumePersonalized ? 'rgba(99,102,241,0.35)' : 'var(--border)'}`,
+                    color: isResumePersonalized ? '#a5b4fc' : 'var(--t2)',
+                  }}
+                >
+                  {isResumePersonalized ? 'Resume + Gap Personalized' : 'Goal-Aligned Curriculum'}
+                </span>
+                <span
+                  style={{
+                    fontSize: 11.5,
+                    fontWeight: 800,
+                    padding: '4px 10px',
+                    borderRadius: 999,
+                    background: 'var(--bg3)',
+                    border: '1px solid var(--border)',
+                    color: 'var(--t2)',
+                    fontFamily: 'var(--font-mono)',
+                  }}
+                >
+                  {overallClearedCount} / {overallTotalCount} Quests ({overallPct}%)
+                </span>
+              </div>
+
+              <h2
+                data-testid="quest-roadmap-title"
+                style={{ fontSize: 22, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)', letterSpacing: '-0.3px', margin: 0 }}
               >
-                {formatDurationLabel(totalDurationDays)}
-              </span>
-              <span
-                style={{
-                  fontSize: 11.5,
-                  fontWeight: 800,
-                  padding: '4px 10px',
-                  borderRadius: 999,
-                  background: isResumePersonalized ? 'rgba(99,102,241,0.18)' : 'rgba(148,163,184,0.14)',
-                  border: `1px solid ${isResumePersonalized ? 'rgba(99,102,241,0.35)' : 'var(--border)'}`,
-                  color: isResumePersonalized ? '#a5b4fc' : 'var(--t2)',
-                }}
-              >
-                {isResumePersonalized ? 'Resume + Gap Personalized' : 'Goal-Aligned Curriculum'}
-              </span>
-              <span
-                style={{
-                  fontSize: 11.5,
-                  fontWeight: 800,
-                  padding: '4px 10px',
-                  borderRadius: 999,
-                  background: 'var(--bg3)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--t2)',
-                  fontFamily: 'var(--font-mono)',
-                }}
-              >
-                {overallClearedCount} / {overallTotalCount} Quests ({overallPct}%)
-              </span>
+                Dynamic Career Roadmap ({activeExtra?.goal || COURSES_REGISTRY.find(c => c.id === activeCourseId)?.title.split('(')[0].trim() || onboardingAnswers?.role || trajectory.roleTitle})
+              </h2>
+              <p style={{ fontSize: 13.5, color: 'var(--t3)', margin: '6px 0 0 0' }}>
+                Click any timeline stop or winding map node to launch calibrated lessons, coding labs, and milestone tests.
+              </p>
             </div>
 
-            <h2
-              data-testid="quest-roadmap-title"
-              style={{ fontSize: 22, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)', letterSpacing: '-0.3px', margin: 0 }}
-            >
-              Dynamic Career Roadmap ({activeExtra?.goal || COURSES_REGISTRY.find(c => c.id === activeCourseId)?.title.split('(')[0].trim() || onboardingAnswers?.role || trajectory.roleTitle})
-            </h2>
-            <p style={{ fontSize: 13.5, color: 'var(--t3)', margin: '6px 0 0 0' }}>
-              Click any timeline phase or stage card to launch calibrated lessons, coding labs, and milestone tests.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
-            <button
-              type="button"
-              data-testid="btn-open-custom-roadmap"
-              onClick={() => {
-                playPopSound();
-                setShowRoadmapModal(true);
-              }}
-              style={{
-                padding: '10px 18px',
-                borderRadius: 12,
-                border: 'none',
-                background: 'linear-gradient(135deg, #10b981, #059669)',
-                color: '#ffffff',
-                fontSize: 13,
-                fontWeight: 900,
-                cursor: 'pointer',
-                boxShadow: '0 6px 18px rgba(16,185,129,0.28)',
-              }}
-            >
-              + New Custom Roadmap
-            </button>
-            <button
-              type="button"
-              data-testid="btn-view-detailed-journey"
-              onClick={() => setShowFullJourneyModal(true)}
-              style={{
-                padding: '10px 16px',
-                borderRadius: 12,
-                border: '1.5px solid rgba(16,185,129,0.45)',
-                background: 'rgba(16,185,129,0.12)',
-                color: '#34d399',
-                fontSize: 13,
-                fontWeight: 800,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-              }}
-            >
-              View Entire Detailed Journey ➔
-            </button>
-          </div>
-        </div>
-
-        {/* Clean Saved Roadmap Tab Bar */}
-        {activeSubTab === 'custom_roadmap' && (
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '10px 14px',
-            borderRadius: 16,
-            background: 'var(--bg2)',
-            border: '1px solid var(--border)',
-            marginBottom: 18,
-            flexWrap: 'wrap',
-            gap: 10,
-          }}>
-            <div role="tablist" aria-label="Learning roadmaps" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', maxWidth: '100%' }}>
+            <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
               <button
                 type="button"
-                role="tab"
-                aria-selected={learningPathMode === 'fused_roadmap'}
-                onClick={() => {
-                  playPopSound();
-                  setLearningPathMode('fused_roadmap');
-                  if (fusedCourseId) setActiveCourseId(fusedCourseId);
-                }}
-                style={{
-                  padding: '8px 14px',
-                  borderRadius: 10,
-                  border: `1.5px solid ${learningPathMode === 'fused_roadmap' ? '#10b981' : 'var(--border)'}`,
-                  background: learningPathMode === 'fused_roadmap' ? 'rgba(16,185,129,0.16)' : 'var(--bg3)',
-                  color: learningPathMode === 'fused_roadmap' ? '#34d399' : 'var(--t2)',
-                  fontSize: 13.5,
-                  fontWeight: 800,
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 8,
-                }}
-              >
-                <span>Fused Career Trajectory</span>
-                <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.22)', padding: '2px 7px', borderRadius: 6, color: '#34d399' }}>
-                  Primary
-                </span>
-              </button>
-
-              {extraRoadmaps.map(rm => {
-                const isOn = learningPathMode === extraRoadmapMode(rm.id);
-                return (
-                  <div
-                    key={rm.id}
-                    role="tab"
-                    aria-selected={isOn}
-                    onClick={() => {
-                      playPopSound();
-                      setLearningPathMode(extraRoadmapMode(rm.id));
-                      setActiveCourseId(rm.courseId);
-                    }}
-                    onAuxClick={(e) => {
-                      if (e.button === 1) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeExtraRoadmap(rm.id);
-                      }
-                    }}
-                    title={`${rm.goal} · ${formatDurationLabel(rm.durationDays)} · close with ×`}
-                    style={{
-                      padding: '7px 8px 7px 14px',
-                      borderRadius: 10,
-                      border: `1.5px solid ${isOn ? '#f59e0b' : 'var(--border)'}`,
-                      background: isOn ? 'rgba(245,158,11,0.16)' : 'var(--bg3)',
-                      color: isOn ? '#fbbf24' : 'var(--t2)',
-                      fontSize: 13.5,
-                      fontWeight: 800,
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 7,
-                    }}
-                  >
-                    <span style={{ whiteSpace: 'nowrap' }}>Roadmap {rm.number}</span>
-                    <span style={{
-                      fontSize: 10.5,
-                      fontWeight: 900,
-                      fontFamily: 'var(--font-mono)',
-                      padding: '2px 6px',
-                      borderRadius: 5,
-                      background: isOn ? 'rgba(245,158,11,0.22)' : 'rgba(255,255,255,0.06)',
-                      color: isOn ? '#fcd34d' : 'var(--t3)',
-                    }}>
-                      {formatCompactDuration(rm.durationDays)}
-                    </span>
-                    <button
-                      type="button"
-                      aria-label={`Close Roadmap ${rm.number}`}
-                      title="Close tab"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        closeExtraRoadmap(rm.id);
-                      }}
-                      style={{
-                        width: 20,
-                        height: 20,
-                        borderRadius: 6,
-                        border: 'none',
-                        background: isOn ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.06)',
-                        color: isOn ? '#fff' : 'var(--t3)',
-                        cursor: 'pointer',
-                        fontSize: 14,
-                        lineHeight: '20px',
-                        padding: 0,
-                      }}
-                    >
-                      ×
-                    </button>
-                  </div>
-                );
-              })}
-
-              <button
-                type="button"
-                title="Create new custom roadmap"
+                data-testid="btn-open-custom-roadmap"
                 onClick={() => {
                   playPopSound();
                   setShowRoadmapModal(true);
                 }}
                 style={{
-                  width: 34,
-                  height: 34,
-                  borderRadius: 10,
-                  border: '1.5px dashed rgba(16,185,129,0.5)',
-                  background: 'rgba(16,185,129,0.08)',
-                  color: '#34d399',
-                  fontSize: 20,
-                  fontWeight: 800,
+                  padding: '10px 18px',
+                  borderRadius: 12,
+                  border: 'none',
+                  background: 'linear-gradient(135deg, #10b981, #059669)',
+                  color: '#ffffff',
+                  fontSize: 13,
+                  fontWeight: 900,
                   cursor: 'pointer',
-                  lineHeight: 1
+                  boxShadow: '0 6px 18px rgba(16,185,129,0.28)',
                 }}
               >
-                +
+                + New Custom Roadmap
+              </button>
+              <button
+                type="button"
+                data-testid="btn-view-detailed-journey"
+                onClick={() => setShowFullJourneyModal(true)}
+                style={{
+                  padding: '10px 16px',
+                  borderRadius: 12,
+                  border: '1.5px solid rgba(16,185,129,0.45)',
+                  background: 'rgba(16,185,129,0.12)',
+                  color: '#34d399',
+                  fontSize: 13,
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                View Entire Detailed Journey ➔
               </button>
             </div>
           </div>
-        )}
 
-        {/* Interactive Horizontal Phase Timeline Strip */}
-        {stageItems.length > 0 && (
-          <div
-            data-testid="roadmap-timeline-strip"
-            style={{
-              padding: '18px 20px',
-              borderRadius: 20,
-              background: 'var(--bg2)',
-              border: '1px solid var(--border)',
-              marginBottom: 22,
-              boxShadow: 'var(--shadow-sm)',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 10 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ fontSize: 12, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#34d399' }}>
-                  Execution Timeline
-                </span>
-                <span style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--t2)' }}>
-                  Day 1 → Day {totalDurationDays} ({stageItems.length} Phases)
-                </span>
-              </div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
-                Est. Target Finish: <strong style={{ color: 'var(--t1)' }}>{targetFinishLabel}</strong>
-              </div>
-            </div>
+          {/* Tier 2: Integrated Saved Roadmap Tab Bar */}
+          {activeSubTab === 'custom_roadmap' && (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '12px 24px',
+              borderTop: '1px solid rgba(255,255,255,0.07)',
+              background: 'rgba(0,0,0,0.16)',
+              flexWrap: 'wrap',
+              gap: 10,
+            }}>
+              <div role="tablist" aria-label="Learning roadmaps" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', maxWidth: '100%' }}>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={learningPathMode === 'fused_roadmap'}
+                  onClick={() => {
+                    playPopSound();
+                    setLearningPathMode('fused_roadmap');
+                    if (fusedCourseId) setActiveCourseId(fusedCourseId);
+                  }}
+                  style={{
+                    padding: '8px 14px',
+                    borderRadius: 10,
+                    border: `1.5px solid ${learningPathMode === 'fused_roadmap' ? '#10b981' : 'var(--border)'}`,
+                    background: learningPathMode === 'fused_roadmap' ? 'rgba(16,185,129,0.16)' : 'var(--bg3)',
+                    color: learningPathMode === 'fused_roadmap' ? '#34d399' : 'var(--t2)',
+                    fontSize: 13.5,
+                    fontWeight: 800,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                  }}
+                >
+                  <span>Fused Career Trajectory</span>
+                  <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.22)', padding: '2px 7px', borderRadius: 6, color: '#34d399' }}>
+                    Primary
+                  </span>
+                </button>
 
-            {/* Overall Progress Rail */}
-            <div style={{ position: 'relative', height: 8, borderRadius: 999, background: 'var(--bg3)', overflow: 'hidden', marginBottom: 14, border: '1px solid var(--border)' }}>
-              <div
-                style={{
-                  width: `${Math.max(overallPct > 0 ? overallPct : 3, 0)}%`,
-                  height: '100%',
-                  borderRadius: 999,
-                  background: 'linear-gradient(90deg, #10b981, #06b6d4, #6366f1)',
-                  transition: 'width 0.4s ease',
-                }}
-              />
-            </div>
-
-            {/* Clickable Phase Timeline Stops */}
-            <div style={{ display: 'flex', gap: 10, overflowX: 'auto', paddingBottom: 4 }}>
-              {stageItems.map((item, idx) => {
-                const accent = STEP_ACCENTS[idx % STEP_ACCENTS.length];
-                const isActive = (focusedStageIdx ?? activeStageIdxComputed) === idx;
-                return (
-                  <button
-                    key={item.key || `tl-${idx}`}
-                    type="button"
-                    onClick={() => scrollToStage(item, idx)}
-                    style={{
-                      flex: '1 0 155px',
-                      minWidth: 155,
-                      maxWidth: 230,
-                      textAlign: 'left',
-                      padding: '10px 12px',
-                      borderRadius: 12,
-                      border: `1.5px solid ${item.isCompleted ? '#10b981' : isActive ? accent : 'var(--border)'}`,
-                      background: isActive ? `${accent}18` : 'var(--bg3)',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 4,
-                      transition: 'all 0.2s ease',
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6 }}>
-                      <span style={{ fontSize: 10.5, fontWeight: 900, fontFamily: 'var(--font-mono)', color: item.isCompleted ? '#10b981' : accent }}>
-                        Day {item.startDay}–{item.endDay}
-                      </span>
-                      <span style={{
-                        fontSize: 9.5,
-                        fontWeight: 900,
-                        padding: '1px 6px',
-                        borderRadius: 4,
-                        background: item.isCompleted ? 'rgba(16,185,129,0.2)' : isActive ? `${accent}26` : 'rgba(255,255,255,0.06)',
-                        color: item.isCompleted ? '#34d399' : isActive ? '#ffffff' : 'var(--t3)',
-                      }}>
-                        {item.isCompleted ? 'DONE' : isActive ? 'ACTIVE' : `${item.pct}%`}
-                      </span>
-                    </div>
-                    <div style={{
-                      fontSize: 12.5,
-                      fontWeight: 800,
-                      color: 'var(--t1)',
-                      lineHeight: 1.3,
-                      display: '-webkit-box',
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden',
-                    }}>
-                      {idx + 1}. {item.shortLabel}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* ── 32% / 68% CLEAN EXECUTIVE TIMELINE + STAGE WORKSPACE ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(260px, 32%) minmax(0, 1fr)', gap: 22, marginTop: 12, alignItems: 'start' }}>
-
-          {/* ── LEFT COLUMN (32%): Sticky Milestone Progress Spine ── */}
-          <div
-            className="glass-card-premium"
-            style={{
-              padding: '20px 18px',
-              borderRadius: 22,
-              border: '1px solid var(--border)',
-              background: 'var(--bg2)',
-              position: 'sticky',
-              top: 18,
-              boxShadow: 'var(--shadow-md)',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-              <div>
-                <h3 style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', margin: 0, fontFamily: 'var(--font-display)' }}>
-                  Milestone Map
-                </h3>
-                <span style={{ fontSize: 11.5, color: 'var(--t3)' }}>
-                  {stageItems.length} structured phases · {totalDurationDays} days
-                </span>
-              </div>
-              <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.14)', color: '#34d399', padding: '3px 9px', borderRadius: 999 }}>
-                Live Flow
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {stageItems.map((item, idx) => {
-                const accent = STEP_ACCENTS[idx % STEP_ACCENTS.length];
-                const isSelected = (focusedStageIdx ?? activeStageIdxComputed) === idx;
-                const isPrevPending = idx > 0 && !stageItems[idx - 1].isCompleted && stageItems[idx - 1].total > 0;
-                return (
-                  <button
-                    key={item.key || `tl-${idx}`}
-                    type="button"
-                    onClick={() => scrollToStage(item, idx)}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: 12,
-                      width: '100%',
-                      textAlign: 'left',
-                      padding: '11px 12px',
-                      borderRadius: 14,
-                      border: `1.5px solid ${isSelected ? accent : item.isCompleted ? 'rgba(16,185,129,0.4)' : 'var(--border)'}`,
-                      background: isSelected ? `linear-gradient(135deg, ${accent}1a, var(--bg3))` : 'var(--bg3)',
-                      cursor: 'pointer',
-                      opacity: isPrevPending && !isSelected ? 0.72 : 1,
-                      transition: 'all 0.2s ease',
-                    }}
-                  >
+                {extraRoadmaps.map(rm => {
+                  const isOn = learningPathMode === extraRoadmapMode(rm.id);
+                  return (
                     <div
+                      key={rm.id}
+                      role="tab"
+                      aria-selected={isOn}
+                      onClick={() => {
+                        playPopSound();
+                        setLearningPathMode(extraRoadmapMode(rm.id));
+                        setActiveCourseId(rm.courseId);
+                      }}
+                      onAuxClick={(e) => {
+                        if (e.button === 1) {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          closeExtraRoadmap(rm.id);
+                        }
+                      }}
+                      title={`${rm.goal} · ${formatDurationLabel(rm.durationDays)} · close with ×`}
                       style={{
-                        width: 34,
-                        height: 34,
-                        borderRadius: '50%',
-                        flexShrink: 0,
-                        background: item.isCompleted ? '#10b981' : isSelected ? accent : 'var(--bg2)',
-                        border: `2px solid ${item.isCompleted ? '#34d399' : accent}`,
-                        color: item.isCompleted || isSelected ? '#ffffff' : 'var(--t1)',
+                        padding: '7px 8px 7px 14px',
+                        borderRadius: 10,
+                        border: `1.5px solid ${isOn ? '#f59e0b' : 'var(--border)'}`,
+                        background: isOn ? 'rgba(245,158,11,0.16)' : 'var(--bg3)',
+                        color: isOn ? '#fbbf24' : 'var(--t2)',
+                        fontSize: 13.5,
+                        fontWeight: 800,
+                        cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: 13,
-                        fontWeight: 900,
-                        fontFamily: 'var(--font-mono)',
+                        gap: 7,
                       }}
                     >
-                      {item.isCompleted ? '✓' : idx + 1}
+                      <span style={{ whiteSpace: 'nowrap' }}>Roadmap {rm.number}</span>
+                      <span style={{
+                        fontSize: 10.5,
+                        fontWeight: 900,
+                        fontFamily: 'var(--font-mono)',
+                        padding: '2px 6px',
+                        borderRadius: 5,
+                        background: isOn ? 'rgba(245,158,11,0.22)' : 'rgba(255,255,255,0.06)',
+                        color: isOn ? '#fcd34d' : 'var(--t3)',
+                      }}>
+                        {formatCompactDuration(rm.durationDays)}
+                      </span>
+                      <button
+                        type="button"
+                        aria-label={`Close Roadmap ${rm.number}`}
+                        title="Close tab"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          closeExtraRoadmap(rm.id);
+                        }}
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: 6,
+                          border: 'none',
+                          background: isOn ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.06)',
+                          color: isOn ? '#fff' : 'var(--t3)',
+                          cursor: 'pointer',
+                          fontSize: 14,
+                          lineHeight: '20px',
+                          padding: 0,
+                        }}
+                      >
+                        ×
+                      </button>
                     </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6, marginBottom: 3 }}>
-                        <span style={{ fontSize: 10.5, fontWeight: 800, color: item.isCompleted ? '#34d399' : accent, fontFamily: 'var(--font-mono)' }}>
-                          DAYS {item.startDay}–{item.endDay}
+                  );
+                })}
+
+                <button
+                  type="button"
+                  title="Create new custom roadmap"
+                  onClick={() => {
+                    playPopSound();
+                    setShowRoadmapModal(true);
+                  }}
+                  style={{
+                    width: 34,
+                    height: 34,
+                    borderRadius: 10,
+                    border: '1.5px dashed rgba(16,185,129,0.5)',
+                    background: 'rgba(16,185,129,0.08)',
+                    color: '#34d399',
+                    fontSize: 20,
+                    fontWeight: 800,
+                    cursor: 'pointer',
+                    lineHeight: 1,
+                  }}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Tier 3: Integrated Execution Timeline Strip */}
+          {stageItems.length > 0 && (
+            <div
+              data-testid="roadmap-timeline-strip"
+              style={{
+                padding: '16px 24px 18px 24px',
+                borderTop: '1px solid rgba(255,255,255,0.07)',
+                background: 'rgba(0,0,0,0.08)',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 10 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span style={{ fontSize: 12, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#34d399' }}>
+                    Execution Timeline
+                  </span>
+                  <span style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--t2)' }}>
+                    Day 1 → Day {totalDurationDays} ({stageItems.length} Phases)
+                  </span>
+                </div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+                  Est. Target Finish: <strong style={{ color: 'var(--t1)' }}>{targetFinishLabel}</strong>
+                </div>
+              </div>
+
+              {/* Overall Progress Rail */}
+              <div style={{ position: 'relative', height: 8, borderRadius: 999, background: 'var(--bg3)', overflow: 'hidden', marginBottom: 14, border: '1px solid var(--border)' }}>
+                <div
+                  style={{
+                    width: `${Math.max(overallPct > 0 ? overallPct : 3, 0)}%`,
+                    height: '100%',
+                    borderRadius: 999,
+                    background: 'linear-gradient(90deg, #10b981, #06b6d4, #6366f1)',
+                    transition: 'width 0.4s ease',
+                  }}
+                />
+              </div>
+
+              {/* Clickable Phase Timeline Stops */}
+              <div style={{ display: 'flex', gap: 10, overflowX: 'auto', paddingBottom: 4 }}>
+                {stageItems.map((item, idx) => {
+                  const accent = STEP_ACCENTS[idx % STEP_ACCENTS.length];
+                  const isActive = (focusedStageIdx ?? activeStageIdxComputed) === idx;
+                  return (
+                    <button
+                      key={item.key || `tl-${idx}`}
+                      type="button"
+                      onClick={() => scrollToStage(item, idx)}
+                      style={{
+                        flex: '1 0 155px',
+                        minWidth: 155,
+                        maxWidth: 230,
+                        textAlign: 'left',
+                        padding: '10px 12px',
+                        borderRadius: 12,
+                        border: `1.5px solid ${item.isCompleted ? '#10b981' : isActive ? accent : 'var(--border)'}`,
+                        background: isActive ? `${accent}18` : 'var(--bg3)',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 4,
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6 }}>
+                        <span style={{ fontSize: 10.5, fontWeight: 900, fontFamily: 'var(--font-mono)', color: item.isCompleted ? '#10b981' : accent }}>
+                          Day {item.startDay}–{item.endDay}
                         </span>
-                        <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
-                          {item.cleared}/{item.total}
+                        <span style={{
+                          fontSize: 9.5,
+                          fontWeight: 900,
+                          padding: '1px 6px',
+                          borderRadius: 4,
+                          background: item.isCompleted ? 'rgba(16,185,129,0.2)' : isActive ? `${accent}26` : 'rgba(255,255,255,0.06)',
+                          color: item.isCompleted ? '#34d399' : isActive ? '#ffffff' : 'var(--t3)',
+                        }}>
+                          {item.isCompleted ? 'DONE' : isActive ? 'ACTIVE' : `${item.pct}%`}
                         </span>
                       </div>
                       <div style={{
-                        fontSize: 13,
+                        fontSize: 12.5,
                         fontWeight: 800,
                         color: 'var(--t1)',
-                        lineHeight: 1.35,
+                        lineHeight: 1.3,
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
                         overflow: 'hidden',
                       }}>
-                        {item.title}
+                        {idx + 1}. {item.shortLabel}
                       </div>
-                      <div style={{ height: 4, borderRadius: 999, background: 'rgba(255,255,255,0.06)', marginTop: 7, overflow: 'hidden' }}>
-                        <div style={{ width: `${item.pct}%`, height: '100%', background: item.isCompleted ? '#10b981' : accent }} />
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
+        </div>
+
+        {/* ── 38% / 62% CREATIVE CARTOON S-CURVE ROADMAP + STAGE WORKSPACE ── */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 38%) minmax(0, 1fr)', gap: 22, marginTop: 12, alignItems: 'start' }}>
+
+          {/* ── LEFT COLUMN (38%): Restored & Enhanced Rainbow Hairpin S-Curve Roadmap ── */}
+          {(() => {
+            const visibleCurveStages = stageItems.slice(0, 12);
+            const sCurve = buildDynamicSCurveGeometry(visibleCurveStages.length);
+            const activeStageIdx = focusedStageIdx ?? activeStageIdxComputed;
+            const activeWp = sCurve.waypoints[Math.min(activeStageIdxComputed, Math.max(0, sCurve.waypoints.length - 1))];
+            return (
+              <div
+                data-testid="visual-scurve-roadmap"
+                className="glass-card-premium"
+                style={{
+                  padding: '20px 18px 22px 18px',
+                  borderRadius: 22,
+                  border: '1px solid var(--border)',
+                  background: 'var(--bg2)',
+                  position: 'sticky',
+                  top: 18,
+                  boxShadow: 'var(--shadow-lg)',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
+                  <div>
+                    <h3 style={{ fontSize: 17.5, fontWeight: 900, color: 'var(--t1)', margin: 0, fontFamily: 'var(--font-display)' }}>
+                      Visual Roadmap Chart
+                    </h3>
+                    <span style={{ fontSize: 11.5, color: 'var(--t3)' }}>
+                      {visibleCurveStages.length} milestones · {totalDurationDays} days
+                    </span>
+                  </div>
+                  <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.15)', color: '#34d399', padding: '4px 11px', borderRadius: 20 }}>
+                    Interactive Flow
+                  </span>
+                </div>
+
+                {visibleCurveStages.length > 0 && activeWp && (
+                  <div style={{ position: 'relative', width: '100%', maxWidth: 340, margin: '0 auto', height: sCurve.svgHeight, overflow: 'hidden' }}>
+                    <svg
+                      viewBox={`0 0 320 ${sCurve.svgHeight}`}
+                      preserveAspectRatio="none"
+                      aria-hidden="true"
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }}
+                    >
+                      <defs>
+                        <linearGradient id="scurveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#ef4444" />
+                          <stop offset="16%" stopColor="#f97316" />
+                          <stop offset="32%" stopColor="#f59e0b" />
+                          <stop offset="48%" stopColor="#10b981" />
+                          <stop offset="64%" stopColor="#06b6d4" />
+                          <stop offset="80%" stopColor="#3b82f6" />
+                          <stop offset="92%" stopColor="#8b5cf6" />
+                          <stop offset="100%" stopColor="#ec4899" />
+                        </linearGradient>
+                      </defs>
+                      {/* Outer Thick Road Shadow / Border */}
+                      <path
+                        d={sCurve.path}
+                        fill="none"
+                        stroke="rgba(0,0,0,0.24)"
+                        strokeWidth={34}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      {/* Vibrant Rainbow Road Surface */}
+                      <path
+                        d={sCurve.path}
+                        fill="none"
+                        stroke="url(#scurveGradient)"
+                        strokeWidth={24}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      {/* Crisp Dashed White Center Line */}
+                      <path
+                        d={sCurve.path}
+                        fill="none"
+                        stroke="#ffffff"
+                        strokeWidth={2.5}
+                        strokeDasharray="10 9"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        opacity={0.88}
+                        vectorEffect="non-scaling-stroke"
+                      />
+                    </svg>
+
+                    {/* Top-Left Starting Node */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 14,
+                        left: 16,
+                        zIndex: 4,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: 42,
+                          height: 42,
+                          borderRadius: '50%',
+                          background: '#ef4444',
+                          border: '4px solid #ffffff',
+                          boxShadow: '0 4px 14px rgba(239,68,68,0.45)',
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: 12,
+                          fontWeight: 900,
+                          color: '#ef4444',
+                          background: 'rgba(255,255,255,0.96)',
+                          padding: '4px 11px',
+                          borderRadius: 20,
+                          boxShadow: '0 2px 8px rgba(0,0,0,0.16)',
+                        }}
+                      >
+                        START
+                      </span>
+                    </div>
+
+                    {/* Floating Active Runner Marker Above Active Stage */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        left: activeWp.alignRight ? '78%' : '22%',
+                        top: activeWp.y - 54,
+                        transform: 'translateX(-50%)',
+                        zIndex: 10,
+                        pointerEvents: 'none',
+                        transition: 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: 9.5,
+                          fontWeight: 900,
+                          background: activeWp.color,
+                          color: '#ffffff',
+                          padding: '2px 8px',
+                          borderRadius: 10,
+                          boxShadow: `0 4px 12px ${activeWp.color}66`,
+                          whiteSpace: 'nowrap',
+                          marginBottom: 3,
+                        }}
+                      >
+                        YOU ARE HERE
+                      </div>
+                      <div
+                        style={{
+                          width: 30,
+                          height: 30,
+                          borderRadius: '50%',
+                          background: '#f8fafc',
+                          border: `3px solid ${activeWp.color}`,
+                          boxShadow: `0 0 0 4px ${activeWp.color}33, 0 6px 14px ${activeWp.color}88`,
+                        }}
+                      />
+                    </div>
+
+                    {/* Dynamic Milestones Anchored on Each Hairpin Horizontal Rail */}
+                    {visibleCurveStages.map((item, idx) => {
+                      const wp = sCurve.waypoints[idx];
+                      const itemColor = wp.color;
+                      const isSelected = activeStageIdx === idx;
+                      const isCurrentTarget = activeStageIdxComputed === idx;
+                      const nodeTitle = formatRoadmapNodeLabel(item.title);
+
+                      return (
+                        <div
+                          key={item.key || `scurve-${idx}`}
+                          onClick={() => scrollToStage(item, idx)}
+                          className="card-hover"
+                          title={`${item.title} (Days ${item.startDay}–${item.endDay})`}
+                          style={{
+                            position: 'absolute',
+                            top: wp.y,
+                            transform: 'translateY(-50%)',
+                            left: wp.alignRight ? undefined : 14,
+                            right: wp.alignRight ? 14 : undefined,
+                            display: 'flex',
+                            flexDirection: wp.alignRight ? 'row' : 'row-reverse',
+                            alignItems: 'center',
+                            gap: 0,
+                            zIndex: isSelected ? 6 : 4,
+                            cursor: 'pointer',
+                            maxWidth: 'calc(100% - 28px)',
+                          }}
+                        >
+                          {/* Circular Milestone S1..SN Node */}
+                          <div
+                            style={{
+                              width: 42,
+                              height: 42,
+                              borderRadius: '50%',
+                              background: item.isCompleted ? '#10b981' : '#f8fafc',
+                              border: `3.5px solid ${item.isCompleted ? '#10b981' : itemColor}`,
+                              color: item.isCompleted ? '#ffffff' : '#0f172a',
+                              fontSize: 13.5,
+                              fontWeight: 900,
+                              fontFamily: 'var(--font-mono)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              flexShrink: 0,
+                              boxShadow: isSelected
+                                ? `0 0 0 4px ${itemColor}44, 0 6px 14px rgba(0,0,0,0.3)`
+                                : '0 4px 12px rgba(0,0,0,0.28)',
+                              zIndex: 2,
+                            }}
+                          >
+                            {item.isCompleted ? '✓' : `S${idx + 1}`}
+                          </div>
+
+                          {/* Crisp Horizontal White Step Banner */}
+                          <div
+                            style={{
+                              background: 'rgba(255,255,255,0.96)',
+                              padding: '8px 12px',
+                              borderRadius: wp.alignRight ? '0 12px 12px 0' : '12px 0 0 12px',
+                              marginLeft: wp.alignRight ? -4 : 0,
+                              marginRight: wp.alignRight ? 0 : -4,
+                              boxShadow: isSelected
+                                ? `0 0 18px ${itemColor}55, 0 4px 14px rgba(0,0,0,0.2)`
+                                : '0 4px 14px rgba(0,0,0,0.16)',
+                              borderTop: isSelected ? `1.5px solid ${itemColor}` : 'none',
+                              borderBottom: isSelected ? `1.5px solid ${itemColor}` : 'none',
+                              borderRight: wp.alignRight ? (isSelected ? `1.5px solid ${itemColor}` : 'none') : `4px solid ${item.isCompleted ? '#10b981' : itemColor}`,
+                              borderLeft: wp.alignRight ? `4px solid ${item.isCompleted ? '#10b981' : itemColor}` : (isSelected ? `1.5px solid ${itemColor}` : 'none'),
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 7,
+                              maxWidth: 224,
+                              minWidth: 0,
+                              transition: 'all 0.25s ease',
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontSize: 10.5,
+                                fontWeight: 900,
+                                color: item.isCompleted ? '#10b981' : itemColor,
+                                textTransform: 'uppercase',
+                                flexShrink: 0,
+                              }}
+                            >
+                              STEP {idx + 1}
+                            </span>
+                            <span
+                              style={{
+                                fontSize: 12,
+                                fontWeight: 800,
+                                color: '#1e293b',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                              }}
+                            >
+                              {nodeTitle}
+                            </span>
+                            {isCurrentTarget && !item.isCompleted && (
+                              <span
+                                style={{
+                                  fontSize: 9,
+                                  fontWeight: 900,
+                                  background: `${itemColor}22`,
+                                  color: itemColor,
+                                  padding: '2px 5px',
+                                  borderRadius: 4,
+                                  textTransform: 'uppercase',
+                                  flexShrink: 0,
+                                }}
+                              >
+                                ACTIVE
+                              </span>
+                            )}
+                            {item.isCompleted && (
+                              <span
+                                style={{
+                                  fontSize: 9,
+                                  fontWeight: 900,
+                                  background: 'rgba(16,185,129,0.18)',
+                                  color: '#059669',
+                                  padding: '2px 5px',
+                                  borderRadius: 4,
+                                  textTransform: 'uppercase',
+                                  flexShrink: 0,
+                                }}
+                              >
+                                CLEARED
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                    {/* Clean Finish Node Anchored Right After Last Milestone */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        left: `${(sCurve.finishX / 320) * 100}%`,
+                        top: `${(sCurve.finishY / sCurve.svgHeight) * 100}%`,
+                        transform: 'translate(-50%, -50%)',
+                        padding: '5px 12px',
+                        borderRadius: 20,
+                        background: 'rgba(255,255,255,0.96)',
+                        color: '#059669',
+                        fontSize: 10.5,
+                        fontWeight: 900,
+                        letterSpacing: '0.05em',
+                        whiteSpace: 'nowrap',
+                        border: '2.5px solid #10b981',
+                        boxShadow: '0 4px 14px rgba(16,185,129,0.4)',
+                        zIndex: 4,
+                      }}
+                    >
+                      GOAL · DAY {totalDurationDays}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
 
           {/* ── RIGHT COLUMN (68%): Detailed Stage Cards & Calibrated Quests ── */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
@@ -768,7 +1081,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                             {item.title}
                           </h3>
                           <p style={{ fontSize: 13, color: 'var(--t3)', margin: '6px 0 0 0', lineHeight: 1.45 }}>
-                            {item.desc}
+                            {formatConciseStageDesc(item.desc, item.total)}
                           </p>
                           {mod?.whyThisStage && (
                             <div style={{ fontSize: 12, color: '#34d399', fontWeight: 700, marginTop: 6 }}>
@@ -777,11 +1090,11 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                           )}
                         </div>
 
-                        <div style={{ minWidth: 155, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6, marginLeft: 'auto' }}>
+                        <div style={{ minWidth: 165, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 7, marginLeft: 'auto' }}>
                           <div style={{ fontSize: 12.5, fontWeight: 800, color: isStageCompleted ? '#10b981' : currentColor, fontFamily: 'var(--font-mono)' }}>
                             {item.cleared} / {item.total} Cleared ({item.pct}%)
                           </div>
-                          <div style={{ width: 136, height: 6, background: 'var(--bg3)', borderRadius: 999, overflow: 'hidden', border: '1px solid var(--border)' }}>
+                          <div style={{ width: 142, height: 6, background: 'var(--bg3)', borderRadius: 999, overflow: 'hidden', border: '1px solid var(--border)' }}>
                             <div style={{ width: `${item.pct}%`, height: '100%', background: isStageCompleted ? '#10b981' : currentColor }} />
                           </div>
                           <button
@@ -791,21 +1104,24 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                               background: isStageCompleted ? 'rgba(16,185,129,0.12)' : isLocked ? 'var(--bg3)' : `linear-gradient(135deg, ${currentColor}, #059669)`,
                               border: isStageCompleted ? '1px solid #10b981' : 'none',
                               color: isStageCompleted ? '#34d399' : isLocked ? 'var(--t4)' : '#ffffff',
-                              padding: '7px 14px',
-                              borderRadius: 10,
-                              fontSize: 12.5,
-                              fontWeight: 800,
+                              padding: '10px 24px',
+                              minWidth: 112,
+                              borderRadius: 12,
+                              fontSize: 14,
+                              fontWeight: 900,
+                              letterSpacing: '0.02em',
+                              boxShadow: !isLocked && !isStageCompleted ? `0 6px 18px ${currentColor}33` : 'none',
                               cursor: isLocked ? 'not-allowed' : 'pointer',
                             }}
                           >
-                            {isStageCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Continue Stage ➔'}
+                            {isStageCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Start ➔'}
                           </button>
                         </div>
                       </div>
 
                       {stageQuests.length > 0 && (
-                        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 12 }}>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
                             <span style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--t3)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                               Calibrated Quests ({visibleQuests.length} of {stageQuests.length} shown)
                             </span>
@@ -820,7 +1136,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                                   background: 'none',
                                   border: 'none',
                                   color: currentColor,
-                                  fontSize: 12,
+                                  fontSize: 12.5,
                                   fontWeight: 800,
                                   cursor: 'pointer',
                                   padding: '2px 6px',
@@ -830,7 +1146,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                               </button>
                             )}
                           </div>
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: 8 }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: 12 }}>
                             {visibleQuests.map((q) => {
                               const realIdx = stageQuests.findIndex((sq) => sq.id === q.id);
                               const isQDone = completedQuests.includes(q.id);
@@ -841,7 +1157,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                               const isQuestLocked = isLocked || (!isQDone && !isPrevQuestDone);
                               return (
                                 <button
-                                  key={q.id}
+                                  key={q.id || `q-${realIdx}`}
                                   type="button"
                                   disabled={isQuestLocked}
                                   onClick={(e) => {
@@ -860,34 +1176,61 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                                   className={isQuestLocked ? '' : 'card-hover'}
                                   style={{
                                     textAlign: 'left',
-                                    fontSize: 12.5,
+                                    fontSize: 13.5,
                                     fontWeight: 700,
-                                    background: isQDone ? 'rgba(16,185,129,0.14)' : isQuestLocked ? 'var(--bg3)' : 'rgba(15,23,42,0.55)',
-                                    border: `1px solid ${isQDone ? '#10b981' : isQuestLocked ? 'rgba(255,255,255,0.05)' : 'var(--border)'}`,
-                                    color: isQDone ? '#34d399' : isQuestLocked ? 'var(--t4)' : 'var(--t1)',
-                                    padding: '9px 11px',
-                                    borderRadius: 10,
+                                    minHeight: 60,
+                                    background: isQDone
+                                      ? 'rgba(16,185,129,0.14)'
+                                      : isQuestLocked
+                                        ? 'rgba(15,23,42,0.45)'
+                                        : 'linear-gradient(135deg, rgba(30,41,59,0.78), rgba(15,23,42,0.88))',
+                                    border: `1.5px solid ${isQDone ? '#10b981' : isQuestLocked ? 'rgba(255,255,255,0.06)' : 'rgba(99,102,241,0.34)'}`,
+                                    color: isQDone ? '#34d399' : isQuestLocked ? 'var(--t3)' : '#f8fafc',
+                                    padding: '13px 15px',
+                                    borderRadius: 14,
                                     cursor: isQuestLocked ? 'not-allowed' : 'pointer',
-                                    opacity: isQuestLocked ? 0.65 : 1,
+                                    opacity: isQuestLocked ? 0.62 : 1,
                                     display: 'flex',
                                     alignItems: 'center',
-                                    gap: 8,
+                                    justifyContent: 'space-between',
+                                    gap: 12,
+                                    boxShadow: !isQuestLocked && !isQDone ? '0 4px 14px rgba(0,0,0,0.22)' : 'none',
                                   }}
                                 >
-                                  <span style={{
-                                    fontSize: 10,
-                                    fontWeight: 900,
-                                    padding: '2px 6px',
-                                    borderRadius: 5,
-                                    background: isQDone ? 'rgba(16,185,129,0.22)' : 'rgba(255,255,255,0.07)',
-                                    color: isQDone ? '#34d399' : isCode ? '#38bdf8' : isExam ? '#fbbf24' : '#a5b4fc',
-                                    flexShrink: 0,
-                                  }}>
-                                    {isQDone ? 'DONE' : catLabel}
-                                  </span>
-                                  <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                                    {q.title.replace(/^Day \d+[:\s-]*/i, '').replace(/Challenge:?\s*/i, '').replace(/Assignment:?\s*/i, '')}
-                                  </span>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0, flex: 1 }}>
+                                    <span style={{
+                                      fontSize: 10.5,
+                                      fontWeight: 900,
+                                      padding: '4px 8px',
+                                      borderRadius: 7,
+                                      letterSpacing: '0.05em',
+                                      background: isQDone
+                                        ? 'rgba(16,185,129,0.22)'
+                                        : isCode
+                                          ? 'rgba(56,189,248,0.16)'
+                                          : isExam
+                                            ? 'rgba(245,158,11,0.16)'
+                                            : 'rgba(99,102,241,0.2)',
+                                      color: isQDone ? '#34d399' : isCode ? '#38bdf8' : isExam ? '#fbbf24' : '#a5b4fc',
+                                      flexShrink: 0,
+                                    }}>
+                                      {isQDone ? 'DONE' : catLabel}
+                                    </span>
+                                    <span style={{
+                                      lineHeight: 1.35,
+                                      display: '-webkit-box',
+                                      WebkitLineClamp: 2,
+                                      WebkitBoxOrient: 'vertical',
+                                      overflow: 'hidden',
+                                    }}>
+                                      {q.title.replace(/^Day \d+[:\s-]*/i, '').replace(/Challenge:?\s*/i, '').replace(/Assignment:?\s*/i, '')}
+                                    </span>
+                                  </div>
+                                  {!isQuestLocked && (
+                                    <span style={{ fontSize: 14, fontWeight: 900, color: isQDone ? '#34d399' : currentColor, flexShrink: 0 }}>
+                                      ➔
+                                    </span>
+                                  )}
                                 </button>
                               );
                             })}
@@ -1033,14 +1376,17 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                             background: isNodeCompleted ? 'rgba(16,185,129,0.12)' : isLocked ? 'var(--bg3)' : `linear-gradient(135deg, ${currentColor}, #059669)`,
                             border: isNodeCompleted ? '1px solid #10b981' : 'none',
                             color: isNodeCompleted ? '#34d399' : isLocked ? 'var(--t4)' : '#ffffff',
-                            padding: '7px 14px',
-                            borderRadius: 10,
-                            fontSize: 12.5,
-                            fontWeight: 800,
+                            padding: '10px 24px',
+                            minWidth: 112,
+                            borderRadius: 12,
+                            fontSize: 14,
+                            fontWeight: 900,
+                            letterSpacing: '0.02em',
+                            boxShadow: !isLocked && !isNodeCompleted ? `0 6px 18px ${currentColor}33` : 'none',
                             cursor: isLocked ? 'not-allowed' : 'pointer',
                           }}
                         >
-                          {isNodeCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Continue Quest ➔'}
+                          {isNodeCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Start ➔'}
                         </button>
                       </div>
                     </div>
@@ -1223,29 +1569,38 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                       transition: 'all 0.2s'
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 14, flex: 1, minWidth: 260 }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, flex: 1, minWidth: 260 }}>
                       <div style={{
-                        width: 44,
-                        height: 44,
-                        borderRadius: 14,
-                        background: item.type === 'quest' ? 'rgba(var(--success-rgb),0.12)' : 'rgba(var(--warning-rgb),0.12)',
-                        border: `1px solid ${item.type === 'quest' ? 'rgba(var(--success-rgb),0.3)' : 'rgba(var(--warning-rgb),0.3)'}`,
+                        minWidth: 62,
+                        height: 34,
+                        padding: '0 10px',
+                        borderRadius: 10,
+                        flexShrink: 0,
+                        background: item.type === 'quest' ? 'rgba(var(--success-rgb),0.14)' : item.type === 'quiz' ? 'rgba(99,102,241,0.16)' : 'rgba(var(--warning-rgb),0.14)',
+                        border: `1px solid ${item.type === 'quest' ? 'rgba(var(--success-rgb),0.35)' : item.type === 'quiz' ? 'rgba(99,102,241,0.38)' : 'rgba(var(--warning-rgb),0.35)'}`,
+                        color: item.type === 'quest' ? '#34d399' : item.type === 'quiz' ? '#a5b4fc' : '#fbbf24',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: 24
+                        fontSize: 10.5,
+                        fontWeight: 900,
+                        letterSpacing: '0.07em',
+                        fontFamily: 'var(--font-mono)',
+                        whiteSpace: 'nowrap',
                       }}>
                         {item.icon}
                       </div>
 
-                      <div>
+                      <div style={{ minWidth: 0, flex: 1 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                           <span style={{ fontSize: 15.5, fontWeight: 900, color: 'var(--t1)' }}>{item.title}</span>
                           <span style={{ fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 6, background: 'rgba(255,255,255,0.06)', color: 'var(--success)', border: '1px solid var(--border)' }}>
                             {item.courseTitle}
                           </span>
                         </div>
-                        <p style={{ fontSize: 13, color: 'var(--t3)', margin: '3px 0 0 0', lineHeight: 1.4 }}>{item.desc}</p>
+                        <p style={{ fontSize: 13, color: 'var(--t3)', margin: '4px 0 0 0', lineHeight: 1.45, overflowWrap: 'anywhere' }}>
+                          {String(item.desc || '').replace(/`([^`]+)`/g, '$1')}
+                        </p>
                       </div>
                     </div>
 

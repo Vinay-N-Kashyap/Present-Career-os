@@ -10,11 +10,11 @@
       "codeHash": "3c3b87747402439a3b585bc66cc37d1628b41d0b1bc72b4bafdaf42af07f22b1",
       "spec": {
         "template": "funnel",
-        "title": "Device Fingerprinting, Browser Telemetry &... — Conversion Funnel",
+        "title": "Device Fingerprinting, Browser Telemetry & Behavioral Biometrics — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "a63f9265165b79aabfc7d1fd97bd54df52d2f05c559e087e281577d1cdfb6de7",
       "spec": {
         "template": "funnel",
-        "title": "Synthetic Identity & Account Takeover (ATO... — Conversion Funnel",
+        "title": "Synthetic Identity & Account Takeover (ATO) Detection Algorithms — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "adb9017639ef3048a4edf440581a3d659c726df5ae48a538ae19c95d9e126a51",
       "spec": {
         "template": "funnel",
-        "title": "Real-Time Transaction Risk Scoring & Dynam... — Conversion Funnel",
+        "title": "Real-Time Transaction Risk Scoring & Dynamic 3DS2 Challenge Rules — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "02aff345c601712bc1925548296c0f57f883332546a95efed3c42c47a7f362ab",
       "spec": {
         "template": "funnel",
-        "title": "Chargeback Dispute Automation & Evidence P... — Conversion Funnel",
+        "title": "Chargeback Dispute Automation & Evidence Packet Synthesis — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "bc933e06415f559d84d4bc7a0a27788fa95d24fe0f69e96ef690db60efa0833a",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Fraud Defense Control Tower & D... — Conversion Funnel",
+        "title": "Enterprise Fraud Defense Control Tower & Dispute Ratio Governance — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

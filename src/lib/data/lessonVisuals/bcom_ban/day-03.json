@@ -10,11 +10,11 @@
       "codeHash": "4a6bac95e06a485dc29ca3f65113954b3068fb7b500c5bfc561f2b75c40823a4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Syndicated Loan Facility Structuring & Lead A... — General Ledger Verification",
+        "title": "Syndicated Loan Facility Structuring & Lead Arranger Bookrunner — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Syndicated Loan Facility Struct...",
+            "caption": "Open primary debit entry for Syndicated Loan Facility Structuring.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Syndicated Loan Facility Structuring & Lead A... — General Ledger Verification",
+        "title": "Syndicated Loan Facility Structuring & Lead Arranger Bookrunner — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2950) for Syndicated Loan Facility Struct...",
+            "caption": "Step 1: Open primary debit entry (2950).",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -264,11 +264,11 @@
       "codeHash": "76bb08723a896cb52b3139e31ec48cb619806e9f70d93c1a99cfe435aab82725",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Structured Trade Finance, Documentary Letters... — General Ledger Verification",
+        "title": "Structured Trade Finance, Documentary Letters of Credit (UCP 600) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Structured Trade Finance, Docum...",
+            "caption": "Open primary debit entry for Structured Trade Finance.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Structured Trade Finance, Documentary Letters... — General Ledger Verification",
+        "title": "Structured Trade Finance, Documentary Letters of Credit (UCP 600) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3150) for Structured Trade Finance, Docum...",
+            "caption": "Step 1: Open primary debit entry (3150) for Structured Trade Finance.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -518,11 +518,11 @@
       "codeHash": "9f0f07465eaf3fd0bc7853dc99e96c1de7d5a8f4a2d1b9a41ab320c5758e0681",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Treasury Asset-Liability Management (ALM) & I... — General Ledger Verification",
+        "title": "Treasury Asset-Liability Management (ALM) & Interest Rate Swap (IRS) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Treasury Asset-Liability Manage...",
+            "caption": "Open primary debit entry for Treasury Asset-Liability Management.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Treasury Asset-Liability Management (ALM) & I... — General Ledger Verification",
+        "title": "Treasury Asset-Liability Management (ALM) & Interest Rate Swap (IRS) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3350) for Treasury Asset-Liability Manage...",
+            "caption": "Step 1: Open primary debit entry (3350) for Treasury Asset-Liability Management.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -772,11 +772,11 @@
       "codeHash": "6c770732cdb905bd6f8ab9882cba96f80e386ae5f844aec9a8d2aa0aa0debb63",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Basel III Liquidity Risk Stress Testing: LCR,... — General Ledger Verification",
+        "title": "Basel III Liquidity Risk Stress Testing: LCR, NSFR & 30-Day Runoff Modeling — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Basel III Liquidity Risk Stress...",
+            "caption": "Open primary debit entry for Basel III Liquidity Risk Stress Testing.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Basel III Liquidity Risk Stress Testing: LCR,... — General Ledger Verification",
+        "title": "Basel III Liquidity Risk Stress Testing: LCR, NSFR & 30-Day Runoff Modeling — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3550) for Basel III Liquidity Risk Stress...",
+            "caption": "Step 1: Open primary debit entry (3550).",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -1026,11 +1026,11 @@
       "codeHash": "05a614563ea4a3aaef1d50e2d6791491cf640229c51f5a730359684312df55c9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Counterparty Credit Risk, Credit Valuation Ad... — General Ledger Verification",
+        "title": "Counterparty Credit Risk, Credit Valuation Adjustment (CVA) & ISDA Master Agreement Netting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Counterparty Credit Risk, Credi...",
+            "caption": "Open primary debit entry for Counterparty Credit Risk.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Counterparty Credit Risk, Credit Valuation Ad... — General Ledger Verification",
+        "title": "Counterparty Credit Risk, Credit Valuation Adjustment (CVA) & ISDA Master Agreement Netting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3750) for Counterparty Credit Risk, Credi...",
+            "caption": "Step 1: Open primary debit entry (3750) for Counterparty Credit Risk.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,

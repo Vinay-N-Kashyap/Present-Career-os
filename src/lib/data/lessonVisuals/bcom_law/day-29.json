@@ -10,11 +10,11 @@
       "codeHash": "b608fe1bd2449c71d4f622a32183a2f777e1e247feb51b96bfd28f0ea33c58fa",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Foreign Corrupt Practices Act (FCPA): ... — General Ledger Verification",
+        "title": "The Foreign Corrupt Practices Act (FCPA): Anti-Bribery Provisions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Foreign Corrupt Practices Act (FCPA).",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 126500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 151800,
@@ -139,11 +139,11 @@
       "codeHash": "b9f0d3373fef56177a1ec5cc1eddaf8f601c4ead7a90a56e529537fb7aeaa58d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "FCPA Books-and-Records & Internal Accounti... — General Ledger Verification",
+        "title": "FCPA Books-and-Records & Internal Accounting Controls Provisions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for FCPA.",
+            "caption": "Open primary facility debit entry for FCPA Books-and-Records.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 127750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 153300,
@@ -268,11 +268,11 @@
       "codeHash": "25d77bb1fd93abb827fa2f38618d24ff16088fbc5a7f4fd10b6d243afe12d008",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The UK Bribery Act 2010: Section 7 & The '... — General Ledger Verification",
+        "title": "The UK Bribery Act 2010: Section 7 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The UK Bribery.",
+            "caption": "Open primary facility debit entry for The UK Bribery Act 2010.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 129000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 154800,
@@ -397,11 +397,11 @@
       "codeHash": "98f38489356579015b3ffd43eada2a609a29a82c87372a8460ea294f7b579c43",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The DOJ Corporate Enforcement Policy (CEP)... — General Ledger Verification",
+        "title": "The DOJ Corporate Enforcement Policy (CEP) & Voluntary Self-Disclosure — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The DOJ.",
+            "caption": "Open primary facility debit entry for The DOJ Corporate Enforcement Policy.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 130250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 156300,
@@ -526,11 +526,11 @@
       "codeHash": "71247bb94fdaba5b41e960d756d375902b42d5508ecbbcc2f84732c39afb47eb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Sovereign Anti-Corruption Forensic Triage ... — General Ledger Verification",
+        "title": "Sovereign Anti-Corruption Forensic Triage & Settlement Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Sovereign.",
+            "caption": "Open primary facility debit entry for Sovereign Anti-Corruption Forensic Triage.",
             "title": "Day 29 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 131500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 29 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 157800,

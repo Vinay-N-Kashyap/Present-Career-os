@@ -8,7 +8,7 @@
       "codeHash": "0ae8a1edafd15ed4ed1e74070f889e3b415a22e86e16321f7f1b5913d522da56",
       "spec": {
         "template": "funnel",
-        "title": "Milestone Architecture: Unifying Te... - RevOps Funnel",
+        "title": "Milestone Architecture: Unifying - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "c48c58e1a1c3bd1c51d168db7d94269ce3bb2cb702e95a9f304b7eb450683a2f",
       "spec": {
         "template": "funnel",
-        "title": "Real-Time Telemetry & Composite Hea... - RevOps Funnel",
+        "title": "Real-Time Telemetry & Composite Health Scoring Engine Integration - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "ea54c4504fb6bb03de29e52e5a55c0da21a692038f35ac28f5b78647b78a4179",
       "spec": {
         "template": "funnel",
-        "title": "Automated Journey State Transitions... - RevOps Funnel",
+        "title": "Automated Journey State Transitions & Playbook Trigger Validation - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "6e5d11deef093e62068a16ad11f1f1e01eb71c16ff253b9ca15bc5c91b2fc698",
       "spec": {
         "template": "funnel",
-        "title": "Cohort Retention & Expansion Revenu... - RevOps Funnel",
+        "title": "Cohort Retention & Expansion Revenue Forecasting - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "44aa036e5656f3d310df45127d2b9cd0bff173d4ba43025aceafc818e2042e5d",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: The Ape... - RevOps Funnel",
+        "title": "Full Python Implementation - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

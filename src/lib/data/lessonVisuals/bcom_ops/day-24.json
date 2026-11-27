@@ -10,7 +10,7 @@
       "codeHash": "7e90cd1c333dc19859a0a221ba9926ad5190eccd3351f797a11bc15f69b1b2ec",
       "spec": {
         "template": "workflow",
-        "title": "Digital Twin Architecture: Physical Asset Syn... — Operational Workflow",
+        "title": "Digital Twin Architecture: Physical Asset — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Digital Twin Architecture: Physical Asset Syn... — Operational Workflow",
+        "title": "Digital Twin Architecture: Physical Asset — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Digital Twin Architecture: Physical Asse...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Digital Twin Architecture: Physical",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "4ba9543d8e876199f47d17cc247e7b36a7c8d0375d7bf55191ffa737fe3b3922",
       "spec": {
         "template": "workflow",
-        "title": "Discrete Event Simulation (DES): Queues, Serv... — Operational Workflow",
+        "title": "Discrete Event Simulation (DES): Queues — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Discrete Event Simulation (DES): Queues, Serv... — Operational Workflow",
+        "title": "Discrete Event Simulation (DES): Queues — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Discrete Event Simulation (DES): Queues,...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Discrete Event Simulation (DES): Queues",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "737ddc66c391ec1d5ab39570bd6fa6d3e40dfba9b17f6d0054efed2ffa98e1b6",
       "spec": {
         "template": "workflow",
-        "title": "Scenario What-If Modeling: Port Congestion, L... — Operational Workflow",
+        "title": "Scenario What-If Modeling: Port Congestion — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Scenario What-If Modeling: Port Congestion, L... — Operational Workflow",
+        "title": "Scenario What-If Modeling: Port Congestion — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Scenario What-If Modeling: Port Congesti...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Scenario What-If Modeling: Port",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "0e929045f7e7fbeb0beb4aff0ff49fd725b23214da3247f5941d2add6b034849",
       "spec": {
         "template": "workflow",
-        "title": "Predictive Anomaly Detection & AI Residual Di... — Operational Workflow",
+        "title": "Predictive Anomaly Detection & AI Residual Divergence in Asset Health — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Predictive Anomaly Detection & AI Residual Di... — Operational Workflow",
+        "title": "Predictive Anomaly Detection & AI Residual Divergence in Asset Health — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Predictive Anomaly Detection & AI Residu...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Predictive Anomaly Detection & AI",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "24d265a5979cdeac13775990873721655eecc770604b61bb2a47981b851df14c",
       "spec": {
         "template": "workflow",
-        "title": "Enterprise Logistics Digital Twin & Executive... — Operational Workflow",
+        "title": "Enterprise Logistics Digital Twin & Executive Predictive Command — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Enterprise Logistics Digital Twin & Executive... — Operational Workflow",
+        "title": "Enterprise Logistics Digital Twin & Executive Predictive Command — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Enterprise Logistics Digital Twin & Exec...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Enterprise Logistics Digital Twin",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

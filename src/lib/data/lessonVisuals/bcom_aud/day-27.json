@@ -10,11 +10,11 @@
       "codeHash": "6b4a8038fa903095d270c957d9af845bdd25be438b439175ad43d15a5c61bf85",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cyber Incident Response Auditing & NIST Cybersecur — Forensic Assurance Ledger",
+        "title": "Cyber Incident Response Auditing & NIST Cybersecurity Framework (CSF) — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for Cyber.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 27 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2800000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 27 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3110000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Cyber Incident.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 27 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3110000,
@@ -141,11 +141,11 @@
       "codeHash": "ed757169e7643b124062015a03e5a65d70f59dce4b1c02a05d033700664deb4b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Business Email Compromise (BEC) & Treasury Wire Fr — Forensic Assurance Ledger",
+        "title": "Business Email Compromise (BEC) & Treasury Wire Fraud Forensics — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for Business.",
+            "caption": "Open forensic evidence and audit recovery ledger for Business Email Compromise.",
             "title": "Day 27 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2825000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 27 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3147500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Business Email.",
+            "caption": "Execute simulated enterprise forensic case study for Business Email Compromise.",
             "title": "Day 27 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3147500,
@@ -272,11 +272,11 @@
       "codeHash": "8e4bcc856279cbb77a69402a372b30acf548a7147b8739b64691a2a209657a8b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ransomware Forensics, Double-Extortion & Accountin — Forensic Assurance Ledger",
+        "title": "Ransomware Forensics, Double-Extortion & Accounting under Ind AS 37 — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 27 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 27 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3185000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Ransomware.",
+            "caption": "Execute simulated enterprise forensic case study for Ransomware Forensics.",
             "title": "Day 27 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3185000,
@@ -403,11 +403,11 @@
       "codeHash": "d490da10456e57f4998a64a846fcc1bdd21b259c0f3f05288978bfa4b98bd0f8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "CERT-In Mandatory 6-Hour Reporting Direction & Cyb — Forensic Assurance Ledger",
+        "title": "CERT-In Mandatory 6-Hour Reporting Direction & Cyber Compliance — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for CERT-In.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 27 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2875000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 27 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3222500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for CERT-In Mandatory.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 27 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3222500,
@@ -534,11 +534,11 @@
       "codeHash": "a7328f2eaa0eb6f1964b4dcf359f06e3a35fcc4c89c6b03640dc024d359c6454",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive Cyber Incident Audit Dossier & Gover — Forensic Assurance Ledger",
+        "title": "Comprehensive Cyber Incident Audit Dossier & Governance Sign-Off — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 27 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2900000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 27 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3260000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Comprehensive Cyber.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 27 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3260000,

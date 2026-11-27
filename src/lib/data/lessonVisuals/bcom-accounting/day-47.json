@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Strategic Foundations of ROE & The 3-Sta... — Ledger Verification",
+        "title": "Strategic Foundations of ROE & The 3-Stage DuPont Architecture — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94005000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "5-Stage Extended DuPont Model: Operating... — Ledger Verification",
+        "title": "5-Stage Extended DuPont Model: Operating — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94010000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "ROIC vs ROE: The Neutrality of Capital S... — Ledger Verification",
+        "title": "ROIC vs ROE: The Neutrality of Capital — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for ROIC.",
+            "caption": "Open primary Ind AS ledger posting for ROIC vs ROE.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94015000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Economic Value Added (EVA) & Value-Based... — Ledger Verification",
+        "title": "Economic Value Added (EVA) & Value-Based Management Frameworks — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94020000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Python DuPont & EVA Decomposition Suite ... — Ledger Verification",
+        "title": "Python DuPont & EVA Decomposition Suite Execution & Controllership — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94025000,

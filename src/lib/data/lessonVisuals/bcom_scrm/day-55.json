@@ -8,7 +8,7 @@
       "codeHash": "dce16302e51d73d1cc75ec83d73334a13e488f6e89eef915df5fe59da56be804",
       "spec": {
         "template": "funnel",
-        "title": "Product Catalog Relational Graphs, ... - RevOps Funnel",
+        "title": "Product Catalog Relational Graphs, Hierarchical Bundles & Dependency - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "c31aeead28b59ab4b21081359a2ef94cc53f381ff8c9fab424921ec8ae834ada",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Constraint Rules: Co-requis... - RevOps Funnel",
+        "title": "Dynamic Constraint Rules: Co-requisites, Mutual Exclusions - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "61d5f12533c3552f508edc74fdf675253a20fb143c5a969dbbc6b8706332f755",
       "spec": {
         "template": "funnel",
-        "title": "Mid-Term Co-Terming & Daily Prorati... - RevOps Funnel",
+        "title": "Mid-Term Co-Terming & Daily Proration Calculus (Exact Day-Count Fractions) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "accc5cd0a012f582f0abe9c832c464a84476c287ef0476b3aaca2b5dd21ba234",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Tier Discount Waterfalls, Mar... - RevOps Funnel",
+        "title": "Multi-Tier Discount Waterfalls, Margin Preservation & Quote Document - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "6f59024ca1df4bf59d8139c39ff3eebde43e6ebd060240737aeefcef1a1181a4",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Complet... - RevOps Funnel",
+        "title": "Full Python Implementation: Complete ApexCPQ Hierarchical Bundle - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "936fbcf55198ed7eda95494ce9d8d009cadf401f302bfd7ba0b8225648766980",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Commercial Bank Liquidity Dilemma & Th... — General Ledger Verification",
+        "title": "The Commercial Bank Liquidity Dilemma & The Interbank Money Market — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Commercial.",
+            "caption": "Open primary facility debit entry for The Commercial Bank Liquidity Dilemma.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63600,
@@ -139,11 +139,11 @@
       "codeHash": "59ddefa7af6d2fac2af2b116b9f402d565d5bafaea942722e40085adc0e9ccb7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bilateral vs Tri-Party Repurchase Agreemen... — General Ledger Verification",
+        "title": "Bilateral vs Tri-Party Repurchase Agreements (Repo) & Haircut — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Bilateral vs.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65100,
@@ -268,11 +268,11 @@
       "codeHash": "519166a177184ebdbcb3f35c02b5734ed4228b577091c547803641aa812222e3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Benchmark Interest Rate Reform: The Histor... — General Ledger Verification",
+        "title": "Benchmark Interest Rate Reform — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Benchmark.",
+            "caption": "Open primary facility debit entry for Benchmark Interest Rate Reform.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 55500,
@@ -397,11 +397,11 @@
       "codeHash": "ab3a2061a18e99d6ae308fcd6c27078d02daff43d529c5492e3da17a15829c6d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Commercial Paper, Certificates of Deposit ... — General Ledger Verification",
+        "title": "Commercial Paper, Certificates of Deposit & Treasury Liquidity Ladders — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Commercial.",
+            "caption": "Open primary facility debit entry for Commercial Paper.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 68100,
@@ -526,11 +526,11 @@
       "codeHash": "e308857df37712f7e9303f1c6e853ecaa95d589577218848976b194d004665b1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synthesis, Post-Mortem & Treasury Liquidit... — General Ledger Verification",
+        "title": "Synthesis, Post-Mortem & Treasury Liquidity Governance Checklist — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Synthesis.",
+            "caption": "Open primary facility debit entry for Synthesis.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 58000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69600,

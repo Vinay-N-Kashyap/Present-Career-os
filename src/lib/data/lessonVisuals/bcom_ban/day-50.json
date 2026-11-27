@@ -8,7 +8,7 @@
       "codeHash": "1aba0b675d7318b1492e971c2a5dca578e82196791c0bb516f869ca206f86213",
       "spec": {
         "template": "funnel",
-        "title": "The Enterprise Risk Management Committ... — Treasury Risk Operations",
+        "title": "The Enterprise Risk Management Committee (RMCB) Charter: Executive — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "ca9204fcf277e159d35de8d9742a24a6ccc77642594692773589e79fbc3499be",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Horizon Macroeconomic Stress Sim... — Treasury Risk Operations",
+        "title": "Multi-Horizon Macroeconomic Stress Simulation: PPNR & Credit — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "83beda15e1758d0bf576d0025cb7bbc09482f762e8c52ac04e06fa58330526d7",
       "spec": {
         "template": "funnel",
-        "title": "Basel IV Capital Stack Rebalancing: Ou... — Treasury Risk Operations",
+        "title": "Basel IV Capital Stack Rebalancing: Output Floors & Standardized RWA Escalation — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "a1ccadfc5f5d24bf3c6ae92f925b65f9eed9a1551660c744f0e6ba96e2904d6f",
       "spec": {
         "template": "funnel",
-        "title": "Reverse Stress Testing & Capital Recov... — Treasury Risk Operations",
+        "title": "Reverse Stress Testing & Capital Recovery Action Playbook: Living — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "8933cc09db32d0fa6c0e87c062776b8bc08257477afdddc693fa6ab2d516d814",
       "spec": {
         "template": "funnel",
-        "title": "The Master Enterprise War Room Solvenc... — Treasury Risk Operations",
+        "title": "The Master Enterprise War Room Solvency Engine: Full Portfolio — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

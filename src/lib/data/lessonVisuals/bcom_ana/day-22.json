@@ -8,7 +8,7 @@
       "codeHash": "c4b70016ef803b9ba40ae9141bc1529d0d95bedf004bbb83bd7d2f233cd76a38",
       "spec": {
         "template": "bars",
-        "title": "The Pareto Principle in SKU Portfolio ... \u2014 Operations Evaluation",
+        "title": "The Pareto Principle in SKU Portfolio Management: Cumulative Revenue — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "db6cb26d10825ea3d033d1e18d6c78db42d681c7e998649006b8cb33f7b5ff91",
       "spec": {
         "template": "bars",
-        "title": "XYZ Volatility Matrix: Demand Coeffici... \u2014 Operations Evaluation",
+        "title": "XYZ Volatility Matrix: Demand — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "9148606d74544768ba73dc5ca1c91f3307f53628072f7f0f92c6189ce6f75d91",
       "spec": {
         "template": "bars",
-        "title": "The 9-Box Multi-Dimensional ABC/XYZ Go... \u2014 Operations Evaluation",
+        "title": "The 9-Box Multi-Dimensional ABC/XYZ Governance Matrix — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "eb1757b0d39eee0d943b17e25dd7321d3791bc11b2037feadd21db76a3db8c90",
       "spec": {
         "template": "bars",
-        "title": "Differential Service Level Optimizatio... \u2014 Operations Evaluation",
+        "title": "Differential Service Level Optimization Across the SKU Matrix — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "3fc0e048d7b64b1bb9e31c9f732266df659c9e2a46b84f8098d30a8d7dfc979b",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise ABC/XYZ Matrix ... \u2014 Operations Evaluation",
+        "title": "Building an Enterprise ABC/XYZ Matrix Engine from First Principles — Operations Evaluation",
         "steps": [
           {
             "at": "intro",

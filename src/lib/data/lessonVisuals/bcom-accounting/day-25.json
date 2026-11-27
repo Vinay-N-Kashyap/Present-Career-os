@@ -10,11 +10,11 @@
       "codeHash": "36e0519aa079095d8498f52ac2c24e1ad40e56bd030b99b58a14f40f55f9e219",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 115BAC New Concessional Tax Regime... — General Ledger Verification",
+        "title": "Section 115BAC New Concessional Tax Regime Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Section.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 112500,
@@ -139,11 +139,11 @@
       "codeHash": "e1fccbf7233091ee95fd7277071199f0afab228d6307b02e1190bef12fcc185d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Old Tax Regime Architecture: Chapter VI-A ... — General Ledger Verification",
+        "title": "Old Tax Regime Architecture: Chapter — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Old Tax Regime.",
+            "caption": "Open primary facility debit entry for Old Tax Regime Architecture.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 113750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 136500,
@@ -268,11 +268,11 @@
       "codeHash": "a5aefbd007c4cce7d5ff36fd85fe55afd829f2d88494f8a002cf4de01f719178",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Algorithmic Regime Comparison & Breakeven ... — General Ledger Verification",
+        "title": "Algorithmic Regime Comparison & Breakeven Indifference Point — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Algorithmic.",
+            "caption": "Open primary facility debit entry for Algorithmic Regime Comparison.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 115000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 138000,
@@ -397,11 +397,11 @@
       "codeHash": "4cc52af9a4a0ef9422be93a3211f6e08c5c7a0b02cd0e631d8ad1878a5ea411b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 192 Monthly Salary Withholding Sch... — General Ledger Verification",
+        "title": "Section 192 Monthly Salary Withholding Schedule & Form 16 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Section.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 116250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 139500,
@@ -526,11 +526,11 @@
       "codeHash": "d5ac1a2d8e1b3ec36f27bbcb1f8115bf415645013a6ac4531afc2d8b116e709e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Financial Controller Direct Tax Compliance... — General Ledger Verification",
+        "title": "Financial Controller Direct Tax Compliance Dashboard & Accreditation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Financial.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 117500,

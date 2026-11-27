@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Scope, Governance & The Acquisition Meth... — Ledger Verification",
+        "title": "Scope, Governance & The Acquisition Method Framework (Ind AS 103) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 14505000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Measuring Consideration Transferred & Ac... — Ledger Verification",
+        "title": "Measuring Consideration Transferred & Accounting for Acquisition — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 14510000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Purchase Price Allocation (PPA) & Deferr... — Ledger Verification",
+        "title": "Purchase Price Allocation (PPA) & Deferred Tax on Fair Value — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 14515000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Goodwill vs Gain on Bargain Purchase & N... — Ledger Verification",
+        "title": "Goodwill vs Gain on Bargain Purchase & Non-Controlling Interest (NCI) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 14520000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Executing the Python M&A Engine & Post-M... — Ledger Verification",
+        "title": "Executing the Python M&A Engine & Post-Merger Financial Statement — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 41 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 14525000,

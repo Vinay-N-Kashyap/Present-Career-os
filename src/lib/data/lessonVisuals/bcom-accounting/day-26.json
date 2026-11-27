@@ -10,11 +10,11 @@
       "codeHash": "6017f84f9cd84fa3718afaead166fb139f6e421405d38cc36f46cccf6b81b21c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Asset Classification & Holding Per... — General Ledger Verification",
+        "title": "Capital Asset Classification & Holding Period Rules — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capital Asset.",
+            "caption": "Open primary facility debit entry for Capital Asset Classification.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 116000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 139200,
@@ -139,11 +139,11 @@
       "codeHash": "17ebeec88e0fc856fc89e78c1f2aa4ee3535ea4c9bec768c487afb80f6694719",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 112A LTCG (12.5%) & Section 111A S... — General Ledger Verification",
+        "title": "Section 112A LTCG (12.5%) & Section 111A STCG (20%) Taxation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Section A LTCG.",
+            "caption": "Open primary facility debit entry for Section 112A LTCG.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 117250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 140700,
@@ -268,11 +268,11 @@
       "codeHash": "3871e0bcf4010276ebd1d0f9c2bd1f01d78e5361e845e3ee9c0e888903f40fac",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Income Tax under Section 115BAA ... — General Ledger Verification",
+        "title": "Corporate Income Tax under Section 115BAA (25.168% Rate) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Corporate.",
+            "caption": "Open primary facility debit entry for Corporate Income Tax under Section 115BAA.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 118500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 142200,
@@ -397,11 +397,11 @@
       "codeHash": "aa8a4ea3b1ca052255dae9a5c9d4aebb9050d376a1d114d74f329a0836b18e9c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Advance Tax Schedules & Section 234B/234C ... — General Ledger Verification",
+        "title": "Advance Tax Schedules & Section 234B/234C Mandatory Interest — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Advance Tax.",
+            "caption": "Open primary facility debit entry for Advance Tax Schedules.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143700,
@@ -526,11 +526,11 @@
       "codeHash": "356d4ec3d60e5b9679ecbeffff83936281b731611f30fcab93ab2019be0c0374",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Tax Audit Dossier & Form ITR-6 F... — General Ledger Verification",
+        "title": "Corporate Tax Audit Dossier & Form ITR-6 Filing Readiness — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Corporate Tax.",
+            "caption": "Open primary facility debit entry for Corporate Tax Audit Dossier.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 121000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 145200,

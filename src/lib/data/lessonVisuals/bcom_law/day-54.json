@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 1: Defining Related Parties under Sec... — Compliance Workflow",
+        "title": "Part 1: Defining Related Parties — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part one: Defining Related Parties under...",
+            "caption": "Stage one: Initialize Part one: Defining Related Parties",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 2: Audit Committee Prior Approvals & ... — Compliance Workflow",
+        "title": "Part 2: Audit Committee Prior Approvals — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part two: Audit Committee Prior Approval...",
+            "caption": "Stage one: Initialize Part two: Audit Committee Prior",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 3: Material RPTs & The Mandatory Mino... — Compliance Workflow",
+        "title": "Part 3: Material RPTs & The Mandatory — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part three: Material RPTs & The Mandatory ...",
+            "caption": "Stage one: Initialize Part three: Material RPTs",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 4: Section 188(3)/(4)/(5) Voidability... — Compliance Workflow",
+        "title": "Part 4: Section 188(3)/(4)/(5) — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 5: Production Section 188 RPT Gatekee... — Compliance Workflow",
+        "title": "Part 5: Production Section 188 RPT Gatekeeper & SEBI Materiality Engine — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part five: Production Section multiple RPT Gat...",
+            "caption": "Stage one: Initialize Part five: Production Section multiple RPT",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

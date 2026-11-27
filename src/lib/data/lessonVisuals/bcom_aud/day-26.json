@@ -10,11 +10,11 @@
       "codeHash": "34a15d0f32f4114f5a24ae55e124d51c79c28338aaca8dd4828811f4f6c4bed6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Digital Forensic Principles, Evidence Custody & IS — Forensic Assurance Ledger",
+        "title": "Digital Forensic Principles, Evidence Custody & ISO/IEC 27037 — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for Digital.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 26 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2750000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 26 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3060000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Digital Forensic.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 26 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3060000,
@@ -141,11 +141,11 @@
       "codeHash": "823190d437992ad1449ba9fadd36c695abfd2293bb8e1abfc804defd09b1db65",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Electronic Evidence Admissibility & Section 65B Ce — Forensic Assurance Ledger",
+        "title": "Electronic Evidence Admissibility & Section 65B Certification (Indian Evidence Act / BSA) — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 26 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2775000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 26 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3097500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Electronic Evidence.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 26 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3097500,
@@ -272,11 +272,11 @@
       "codeHash": "4fba28eaade22488f1d269a058492faa5370a49289099ca040c4dfc5c6040f4b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Electronic Discovery Reference Model (EDRM): F — Forensic Assurance Ledger",
+        "title": "The Electronic Discovery Reference Model (EDRM): Forensic Data Culling — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for The.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 26 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2800000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 26 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3135000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for The Electronic.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 26 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3135000,
@@ -403,11 +403,11 @@
       "codeHash": "224f831408e3b2d93464081946d622e0144c7e593a3468651b1aa869f2854bcc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Anti-Forensics Detection: Timestomping, Memory Car — Forensic Assurance Ledger",
+        "title": "Anti-Forensics Detection: Timestomping, Memory Carving & Log Scrubbing — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 26 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2825000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 26 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3172500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Anti-Forensics.",
+            "caption": "Execute simulated enterprise forensic case study for Anti-Forensics Detection.",
             "title": "Day 26 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3172500,
@@ -534,11 +534,11 @@
       "codeHash": "1dabc2fcfdf0723515545b9d1654872d8fc2dc2e7796d05fe3257e1e29bdd072",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive Digital Forensic Dossier & Expert Wi — Forensic Assurance Ledger",
+        "title": "Comprehensive Digital Forensic Dossier & Expert Witness Preparation — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 26 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 26 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3210000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Comprehensive.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 26 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3210000,

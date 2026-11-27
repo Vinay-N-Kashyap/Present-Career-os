@@ -349,25 +349,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Alpha Alpha) — SigmaBeta Alpha Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Alpha Beta) — SigmaBeta Alpha Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Alpha Gamma) — SigmaBeta Alpha Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Alpha Delta) — SigmaBeta Alpha Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -402,25 +402,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Alpha Alpha) — SigmaBeta Alpha Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Alpha Beta) — SigmaBeta Alpha Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Alpha Gamma) — SigmaBeta Alpha Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Alpha Delta) — SigmaBeta Alpha Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -459,25 +459,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Beta Alpha) — SigmaBeta Beta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Beta Beta) — SigmaBeta Beta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Beta Gamma) — SigmaBeta Beta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Beta Delta) — SigmaBeta Beta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -512,25 +512,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Beta Alpha) — SigmaBeta Beta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Beta Beta) — SigmaBeta Beta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Beta Gamma) — SigmaBeta Beta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Beta Delta) — SigmaBeta Beta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -540,7 +540,7 @@
       "codeHash": "091f66d5c4d1526963c5f5d971ba1aaa5afb005a5a1b8a7cdda9306e6a7d315b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "LBO Ledger: Management Equity Rollovers & ",
+        "title": "LBO Ledger: Management Equity Rollovers",
         "caption": "Returns attribution ledger reconciling value creation gains.",
         "sheet": {
           "isBalanced": true,
@@ -569,31 +569,31 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Gamma Alpha) — SigmaBeta Gamma Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Gamma Beta) — SigmaBeta Gamma Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Gamma Gamma) — SigmaBeta Gamma Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Gamma Delta) — SigmaBeta Gamma Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "LBO Ledger: Management Equity Rollovers & ",
+        "title": "LBO Ledger: Management Equity Rollovers",
         "caption": "Returns attribution ledger reconciling value creation gains.",
         "sheet": {
           "isBalanced": true,
@@ -622,25 +622,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Gamma Alpha) — SigmaBeta Gamma Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Gamma Beta) — SigmaBeta Gamma Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Gamma Gamma) — SigmaBeta Gamma Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Gamma Delta) — SigmaBeta Gamma Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -650,7 +650,7 @@
       "codeHash": "091f66d5c4d1526963c5f5d971ba1aaa5afb005a5a1b8a7cdda9306e6a7d315b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "LBO Ledger: Multi-Dimensional Sensitivity ",
+        "title": "LBO Ledger: Multi-Dimensional Sensitivity",
         "caption": "Returns attribution ledger reconciling value creation gains.",
         "sheet": {
           "isBalanced": true,
@@ -679,31 +679,31 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Delta Alpha) — SigmaBeta Delta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Delta Beta) — SigmaBeta Delta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Delta Gamma) — SigmaBeta Delta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Delta Delta) — SigmaBeta Delta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "LBO Ledger: Multi-Dimensional Sensitivity ",
+        "title": "LBO Ledger: Multi-Dimensional Sensitivity",
         "caption": "Returns attribution ledger reconciling value creation gains.",
         "sheet": {
           "isBalanced": true,
@@ -732,25 +732,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Delta Alpha) — SigmaBeta Delta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Delta Beta) — SigmaBeta Delta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Delta Gamma) — SigmaBeta Delta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Delta Delta) — SigmaBeta Delta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -789,25 +789,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Epsilon Alpha) — SigmaBeta Epsilon Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Epsilon Beta) — SigmaBeta Epsilon Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Epsilon Gamma) — SigmaBeta Epsilon Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Epsilon Delta) — SigmaBeta Epsilon Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -842,25 +842,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Epsilon Alpha) — SigmaBeta Epsilon Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Epsilon Beta) — SigmaBeta Epsilon Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Epsilon Gamma) — SigmaBeta Epsilon Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Epsilon Delta) — SigmaBeta Epsilon Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }

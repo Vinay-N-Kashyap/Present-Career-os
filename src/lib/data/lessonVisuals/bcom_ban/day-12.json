@@ -10,11 +10,11 @@
       "codeHash": "3eacacc641a1aa7f7c22dc9926a710e5e38768c3acc02ef51e7a92606d3935cd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Debt Capital Markets: The Direct... — General Ledger Verification",
+        "title": "Corporate Debt Capital Markets — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Corporate Debt.",
+            "caption": "Open primary facility debit entry for Corporate Debt Capital Markets.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 67000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 80400,
@@ -139,11 +139,11 @@
       "codeHash": "4796ef9a41c076a817221ebaf84413c6170a01b607ad2786832aa27359d2e55d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bond Pricing & Benchmark Spreads: Yield Cu... — General Ledger Verification",
+        "title": "Bond Pricing & Benchmark Spreads: Yield — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Bond Pricing &.",
+            "caption": "Open primary facility debit entry for Bond Pricing & Benchmark Spreads.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 68250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 81900,
@@ -268,11 +268,11 @@
       "codeHash": "39e7b34b81447fec71953e60c612df5676b21bb392c35ddc0a663eec909a5515",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Interest Rate Risk & Bond Physics: Duratio... — General Ledger Verification",
+        "title": "Interest Rate Risk & Bond Physics: Duration, Modified Duration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Interest.",
+            "caption": "Open primary facility debit entry for Interest Rate Risk & Bond Physics.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 69500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 83400,
@@ -397,11 +397,11 @@
       "codeHash": "adc69ed75b7da7767e0247e79af84254ca9875e49393eb9fece205010a56539f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Placement Architecture: Rule ... — General Ledger Verification",
+        "title": "Cross-Border Placement Architecture: Rule — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cross-Border.",
+            "caption": "Open primary facility debit entry for Cross-Border Placement Architecture.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 70750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 84900,
@@ -526,11 +526,11 @@
       "codeHash": "6cf0b3298d7ab6b5599df8f43fd153b6910e1e537777deff00b9a6c03f2f07f6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synthesis, Indenture Governance & The DCM ... — General Ledger Verification",
+        "title": "Synthesis, Indenture Governance & The DCM Underwriting Compliance Gate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Synthesis.",
+            "caption": "Open primary facility debit entry for Synthesis.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 72000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 86400,

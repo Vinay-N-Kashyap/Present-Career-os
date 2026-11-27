@@ -10,11 +10,11 @@
       "codeHash": "f29c6aaf54d51a56a72a34c81cbbfdb681699f82847f390bd45993a642b712eb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Phase 1: Enterprise Capital Budge... — General Ledger Verification",
+        "title": "Capstone Phase 1: Enterprise Capital — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capstone Phase.",
+            "caption": "Open primary facility debit entry for Enterprise Capital Budgeting.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 130000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 156000,
@@ -139,11 +139,11 @@
       "codeHash": "cd311ae49571ae9a4ccc41444d32a543d0e233bcf3adffe51a503ef0a5283c83",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Phase 2: Intrinsic DCF Equity Val... — General Ledger Verification",
+        "title": "Capstone Phase 2: Intrinsic DCF Equity — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capstone Phase.",
+            "caption": "Open primary facility debit entry for Intrinsic DCF Equity Valuation.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 131250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 157500,
@@ -268,11 +268,11 @@
       "codeHash": "9bb159bb7851c3fc1606940c00376ea30b46f0e00962fa7e560d848e8bfa9183",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Phase 3: Global Treasury, FX Nett... — General Ledger Verification",
+        "title": "Capstone Phase 3: Global Treasury, FX Netting & Interest Rate Hedging — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Capstone.",
+            "caption": "Open primary facility debit entry for Global Treasury.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 132500,
@@ -397,11 +397,11 @@
       "codeHash": "772fc4107fc0dc5a5e15504b6590fa27d71dff9560d69484d74bf39a308761db",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Phase 4: Markowitz Portfolio Opti... — General Ledger Verification",
+        "title": "Capstone Phase 4: Markowitz Portfolio — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capstone Phase.",
+            "caption": "Open primary facility debit entry for Markowitz Portfolio Optimization.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 133750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 160500,
@@ -526,11 +526,11 @@
       "codeHash": "361a876a4f438a50f2f836bf4b218d9b9a2e43cfd288450b0b628dbfc6ae091d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Phase 5: Grand Executive CFO Comm... — General Ledger Verification",
+        "title": "Capstone Phase 5: Grand Executive CFO Command Center & Master Accreditation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capstone Phase.",
+            "caption": "Open primary facility debit entry for Grand Executive CFO Command Center.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 135000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 162000,

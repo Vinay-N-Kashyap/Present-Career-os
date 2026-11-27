@@ -10,7 +10,7 @@
       "codeHash": "a37f846980b70d80ea55e34e7f5497613545755c33fa3e52a1f0f08e2d30bf73",
       "spec": {
         "template": "tree-graph",
-        "title": "The Regulatory Architecture of the EU AI Act:... — Enterprise AI Decision Graph",
+        "title": "The Regulatory Architecture of the EU AI Act: Risk Tiers, Prohibited — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The Regulatory Architecture of ...",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The Regulatory Architecture of the EU AI Act:... — Enterprise AI Decision Graph",
+        "title": "The Regulatory Architecture of the EU AI Act: Risk Tiers, Prohibited — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The Regulatory Architecture of ...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "7ef806eb23fbb2a7c702d1a80fd5a9f8bee22e9b4b32a072f5b64f8255d54381",
       "spec": {
         "template": "tree-graph",
-        "title": "Technical Documentation & Conformity Assessme... — Enterprise AI Decision Graph",
+        "title": "Technical Documentation & Conformity Assessment: Annex IV Systemic — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Technical Documentation & Confo...",
+            "caption": "Ingest enterprise Context Query for Technical Documentation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Technical Documentation & Conformity Assessme... — Enterprise AI Decision Graph",
+        "title": "Technical Documentation & Conformity Assessment: Annex IV Systemic — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Technical Documentation & Confo...",
+            "caption": "Step 1: Ingest enterprise Context Query for Technical Documentation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "fc68f23ad4a061aef6374a879ab27c4d940a57d9a1222a139e83d532a6a27f9d",
       "spec": {
         "template": "tree-graph",
-        "title": "Human Oversight Architecture: Four-Eyes Princ... — Enterprise AI Decision Graph",
+        "title": "Human Oversight Architecture: Four-Eyes — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Human Oversight Architecture: F...",
+            "caption": "Ingest enterprise Context Query for Human Oversight Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Human Oversight Architecture: Four-Eyes Princ... — Enterprise AI Decision Graph",
+        "title": "Human Oversight Architecture: Four-Eyes — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Human Oversight Architecture: F...",
+            "caption": "Step 1: Ingest enterprise Context Query for Human Oversight Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "4ea9df54583c73f9a576c3acced258b9d63113b93860f0e50c38df8a3496abf3",
       "spec": {
         "template": "tree-graph",
-        "title": "Fiduciary Boardroom Telemetry: Audit Committe... — Enterprise AI Decision Graph",
+        "title": "Fiduciary Boardroom Telemetry: Audit — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Fiduciary Boardroom Telemetry: ...",
+            "caption": "Ingest enterprise Context Query for Fiduciary Boardroom Telemetry:",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Fiduciary Boardroom Telemetry: Audit Committe... — Enterprise AI Decision Graph",
+        "title": "Fiduciary Boardroom Telemetry: Audit — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Fiduciary Boardroom Telemetry: ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Fiduciary Boardroom Telemetry:",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "231bade9e1c377c4bf4b2e945688614d00f67eac3a6082146e0eb367d3edfcf5",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Comprehensive Boar... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Comprehensive — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The Comp...",
+            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Comprehensive Boar... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Comprehensive — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The Comp...",
+            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

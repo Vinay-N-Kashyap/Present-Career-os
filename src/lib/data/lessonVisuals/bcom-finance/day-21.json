@@ -10,11 +10,11 @@
       "codeHash": "b43134cc9c3e1310a687177be6476f28ff6743b52c8e67962bb384439a80dd66",
       "spec": {
         "template": "ledger-sheet",
-        "title": "⭐ Milestone 4 Synthesis: Integrated Operat... — General Ledger Verification",
+        "title": "⭐ Milestone 4 Synthesis: Integrated — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for ⭐.",
+            "caption": "Open primary facility debit entry for ⭐ Milestone 4 Synthesis.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 98500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 118200,
@@ -139,11 +139,11 @@
       "codeHash": "62fb4dd63bb6072915cf149ddcb898d6d184e687585a71da2ee87b791d7abea6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 4 Optimization: Static Trade-Off... — General Ledger Verification",
+        "title": "Milestone 4 Optimization: Static — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Milestone four.",
+            "caption": "Open primary facility debit entry for Milestone four.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 99750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 119700,
@@ -268,11 +268,11 @@
       "codeHash": "effce5313ba52e3d789eceda968f8b2d0c699c614f4c676906804e209c02b7f4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 4 Execution: Operational Working... — General Ledger Verification",
+        "title": "Milestone 4 Execution: Operational — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Milestone four.",
+            "caption": "Open primary facility debit entry for Milestone four.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 101000,
@@ -397,11 +397,11 @@
       "codeHash": "2e6d9e335e85512db199d381a4aca14f38789395bf1b1e3d863197eabec95fcd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 4 Synthesis: Walter, Gordon & Sh... — General Ledger Verification",
+        "title": "Milestone 4 Synthesis: Walter, Gordon — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Milestone four.",
+            "caption": "Open primary facility debit entry for Milestone four.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 102250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 122700,
@@ -526,11 +526,11 @@
       "codeHash": "a0a928367b6bbedc1288a77f20776780f5391e29c8b8b17a84595d972b944c36",
       "spec": {
         "template": "ledger-sheet",
-        "title": "⭐ Milestone 4 Capstone: Executive Capital ... — General Ledger Verification",
+        "title": "⭐ Milestone 4 Capstone: Executive — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for ⭐.",
+            "caption": "Open primary facility debit entry for ⭐ Milestone 4 Capstone.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 103500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 124200,

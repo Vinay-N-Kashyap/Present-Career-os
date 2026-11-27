@@ -8,7 +8,7 @@
       "codeHash": "dac24c2eb8b82006b1cd33becf5118d49df4361777b9c840cd82f43c88ff7543",
       "spec": {
         "template": "funnel",
-        "title": "Synthetic Securitization vs True Sale:... \u2014 Structured Credit Operations",
+        "title": "Synthetic Securitization vs True Sale: Balance Sheet Credit Risk — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "429c744be2a86d68814045d8909c3d5b0041db1870e423eba96b4e96b36c70a8",
       "spec": {
         "template": "funnel",
-        "title": "Significant Risk Transfer (SRT) Regula... \u2014 Structured Credit Operations",
+        "title": "Significant Risk Transfer (SRT) Regulatory Tests: EBA & Basel Core — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "53a24b77fed42d5d89e0f9dbd4f60722ba7671af991dd15f75365d07ab092cfa",
       "spec": {
         "template": "funnel",
-        "title": "First-Loss & Mezzanine Tranche Sizing:... \u2014 Structured Credit Operations",
+        "title": "First-Loss & Mezzanine Tranche Sizing: Thickness Determination — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "168d792fb57d5dec79c84e0f655c1e28f9e44787dd2e8a134de80f8c11d0904d",
       "spec": {
         "template": "funnel",
-        "title": "Basel Capital Relief Mechanics: SEC-ER... \u2014 Structured Credit Operations",
+        "title": "Basel Capital Relief Mechanics: SEC-ERBA, SEC-SA & SEC-IRBA Risk-Weight Reductions & ROE — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "76ebdfad4072d2b0702d1a7347ee959283bf062ab974b1ea40c93196321fdee3",
       "spec": {
         "template": "funnel",
-        "title": "Industrial SRT Lab: Synthetic Risk Tra... \u2014 Structured Credit Operations",
+        "title": "Industrial SRT Lab: Synthetic Risk — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",

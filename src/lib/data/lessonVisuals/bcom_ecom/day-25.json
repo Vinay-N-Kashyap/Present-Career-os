@@ -10,7 +10,7 @@
       "codeHash": "fbcb1644ea79c9b724fbe2964d0956392e2d934713bfb97ca74486bcf704a6e4",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: Cross-Border International DDP Eng... — Conversion Funnel",
+        "title": "Tier 1: Cross-Border International DDP Engine & Multi-Currency Hedged Landed Cost Allocation — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "fbf51adddee168d6bdf98fc6bfc81dcb93766e21e1a8870ecdd7f0e76f6f11c5",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Omnichannel Unified Commerce Engin... — Conversion Funnel",
+        "title": "Tier 2: Omnichannel Unified Commerce — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,7 +334,7 @@
       "codeHash": "3efada4598b1390ac75bb0d48a43079247e6bca4cc0b6bbc4e8e00db36b4b8f1",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Social Commerce & Creator Livestre... — Conversion Funnel",
+        "title": "Tier 3: Social Commerce & Creator — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,11 +496,11 @@
       "codeHash": "7049b1b0129412d6ccac39c30a6512c4d4403747a75e9eef738b0819033eb334",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: Enterprise B2B Wholesale Commerce ... — Conversion Funnel",
+        "title": "Tier 4: Enterprise B2B Wholesale — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "6f017877787d1257ad9a3cdde1002b3d00c9211d5e5663dc66c53ef039540c4e",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Sovereign Corporate Boardroom Defe... — Conversion Funnel",
+        "title": "Tier 5: Sovereign Corporate Boardroom — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Corporate Control Contests, Hostile Takeov... Compliance Workflow",
+        "title": "Corporate Control Contests, Hostile Takeovers & Comparative Defense — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Corporate Control Contests, Hostile Ta...",
+            "caption": "Stage one: Initialize Corporate Control Contests, Hostile",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "SEBI SAST Regulations 2011: The 25% Initia... Compliance Workflow",
+        "title": "SEBI SAST Regulations 2011: The 25% Initial Trigger & 5% Creeping — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize SEBI SAST Regulations multiple: The multiple% In...",
+            "caption": "Stage one: Initialize SEBI SAST Regulations multiple: The multiple%",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Open Offer Sizing (26% Minimum), Pricing F... Compliance Workflow",
+        "title": "Open Offer Sizing (26% Minimum), Pricing Formulations & Regulation 17 — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Open Offer Sizing (multiple% Minimum), Prici...",
+            "caption": "Stage one: Initialize Open Offer Sizing (multiple% Minimum)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Target Board Neutrality under Regulation 2... Compliance Workflow",
+        "title": "Target Board Neutrality under Regulation 26 & White Knight — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Target Board Neutrality under Regulati...",
+            "caption": "Stage one: Initialize Target Board Neutrality",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Post-Offer Delisting under Regulation 5A, ... Compliance Workflow",
+        "title": "Post-Offer Delisting under Regulation 5A, Penalties under Regulation 32 & Takeover Simulator — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Post-Offer Delisting under Regulation ...",
+            "caption": "Stage one: Initialize Post-Offer Delisting",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

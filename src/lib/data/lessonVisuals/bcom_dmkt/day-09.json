@@ -10,11 +10,11 @@
       "codeHash": "94e62509ea0f922b49d6ec193455e98793f713b1a499d600e55c3dd09d478c54",
       "spec": {
         "template": "funnel",
-        "title": "Customer Data Platform (CDP) Ingestion & R... — Conversion Funnel",
+        "title": "Customer Data Platform (CDP) Ingestion & RFM Value Decile Segmentation — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "04a0f4b84ca41d1730d048f1cc32c05f8a07a8b953cf277ef9bd8ae71135cbe3",
       "spec": {
         "template": "funnel",
-        "title": "Privacy-Preserving Custom Audience Cryptog... — Conversion Funnel",
+        "title": "Privacy-Preserving Custom Audience Cryptographic Hashing — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "90464ac0abde7137ff48d2efa9ff0f52f21370ae1c2c878bcdc5e7c71fdda69e",
       "spec": {
         "template": "funnel",
-        "title": "Lookalike (LAL) Modeling & Algorithmic See... — Conversion Funnel",
+        "title": "Lookalike (LAL) Modeling & Algorithmic Seed Audience Scaling — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,OK total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "c4191cd662238c327cffb92c403808625347a0e36b08a5615465d2c07acda687",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Exclusion Lists & Audience Overlap... — Conversion Funnel",
+        "title": "Dynamic Exclusion Lists & Audience Overlap Suppression — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "03a2cc3755f077cdebd8166838caa8a0a5a7f3f0b104091e3d17fee70436ea9d",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise First-Party Audience Command Ga... — Conversion Funnel",
+        "title": "Enterprise First-Party Audience Command Gateway & Growth Director — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

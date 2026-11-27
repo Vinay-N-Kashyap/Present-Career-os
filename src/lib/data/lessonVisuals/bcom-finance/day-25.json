@@ -10,11 +10,11 @@
       "codeHash": "fb5a01bf69c9bd236d40097524207893f7bf329b258e409377dd820d78575aa8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Sharpe Ratio & Total Risk-Adjusted Ret... — General Ledger Verification",
+        "title": "The Sharpe Ratio & Total Risk-Adjusted Return — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The Sharpe.",
+            "caption": "Open primary facility debit entry for The Sharpe Ratio.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 112500,
@@ -139,11 +139,11 @@
       "codeHash": "2f51a32f9120871f83c806326e6b37802fb9efa644b6f0f2cd3b9338eb33ec15",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Treynor Ratio & Systematic Risk Effici... — General Ledger Verification",
+        "title": "The Treynor Ratio & Systematic Risk Efficiency — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Treynor.",
+            "caption": "Open primary facility debit entry for The Treynor Ratio.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 113750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 136500,
@@ -268,11 +268,11 @@
       "codeHash": "92f0fdbb58f0d9afa857e01a3a333476287a5f147691808f3d132d06595803e4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Jensen's Alpha & Fama's Performance Decomp... — General Ledger Verification",
+        "title": "Jensen's Alpha & Fama's Performance Decomposition — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Jensen's Alpha.",
+            "caption": "Open primary facility debit entry for Jensen's Alpha.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 115000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 138000,
@@ -397,11 +397,11 @@
       "codeHash": "8e666f9b2e33375cc736233bad782a61079369cd308247e0e5f9b50077e721ee",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tracking Error & The Information Ratio... — General Ledger Verification",
+        "title": "Tracking Error & The Information Ratio — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tracking Error.",
+            "caption": "Open primary facility debit entry for Tracking Error & The Information Ratio.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 116250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 139500,
@@ -526,11 +526,11 @@
       "codeHash": "cf6c20c336e602de7d9ff1b32b76f99abcc7ffd0e4a51dfcf81dd32bb8d2d117",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Integrated Performance Scorecard & Compreh... — General Ledger Verification",
+        "title": "Integrated Performance Scorecard & Comprehensive Evaluation Matrix — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Integrated.",
+            "caption": "Open primary facility debit entry for Integrated Performance Scorecard.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 117500,

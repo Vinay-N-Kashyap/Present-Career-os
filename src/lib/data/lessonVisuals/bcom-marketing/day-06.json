@@ -10,11 +10,11 @@
       "codeHash": "dc6c1bd0fc3af3a5a4a98aab1febf10725956a3f63c57733a862111ef60a926d",
       "spec": {
         "template": "funnel",
-        "title": "Geographic & Demographic Segmentation: Mac... — Conversion Funnel",
+        "title": "Geographic & Demographic Segmentation: Macro Boundaries vs Ecological — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "626d40b8c534c8f2263089f42ff2888fabd55132135f3c22a0829432a4db80b2",
       "spec": {
         "template": "funnel",
-        "title": "Psychographic Stratification: The VALS Fra... — Conversion Funnel",
+        "title": "Psychographic Stratification: The VALS Framework & Cognitive Identity — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "da66717850efee678698f0ea88a6ce04361f2b44388baaa156a12d2d7691ff1a",
       "spec": {
         "template": "funnel",
-        "title": "Behavioral Quintiles: RFM Scoring & Usage ... — Conversion Funnel",
+        "title": "Behavioral Quintiles: RFM Scoring — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "2570871d5ae53dafc3c938b2c21a0976ecf81baa3635171ae8c53166028d5a68",
       "spec": {
         "template": "funnel",
-        "title": "The MASDA Viability Hurdle: Gating Substan... — Conversion Funnel",
+        "title": "The MASDA Viability Hurdle: Gating — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "689de3534b66d0236d90d183e17ba10be93d681ebe9f8bb984642c1e16555ce1",
       "spec": {
         "template": "funnel",
-        "title": "Production Post-Mortem & Strategic Segment... — Conversion Funnel",
+        "title": "Production Post-Mortem & Strategic Segmentation Synthesis — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

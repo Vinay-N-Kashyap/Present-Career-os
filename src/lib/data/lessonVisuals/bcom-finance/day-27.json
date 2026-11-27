@@ -10,11 +10,11 @@
       "codeHash": "2b02fdd075d3218b917549df1cfce79cdfc85b9f0a0d1b9b476d317fcba6bb3d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Strategic Motives, M&A Typologies & Synerg... — General Ledger Verification",
+        "title": "Strategic Motives, M&A Typologies & Synergy Quantification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Strategic.",
+            "caption": "Open primary facility debit entry for Strategic Motives.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143400,
@@ -139,11 +139,11 @@
       "codeHash": "c88e5819896a9c1a457649bcee9c91fa24539c3aed56933324579daa7ef980ef",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Acquisition Financing, Maximum Offer Price... — General Ledger Verification",
+        "title": "Acquisition Financing, Maximum Offer Price & Takeover Premium — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Acquisition.",
+            "caption": "Open primary facility debit entry for Acquisition Financing.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 120750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 144900,
@@ -268,11 +268,11 @@
       "codeHash": "4077bb539c64e16d8afa2e1262bd59ba1604e1d047603798ffe4bd7d4ab5e361",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Post-Merger EPS Accretion / Dilution Analy... — General Ledger Verification",
+        "title": "Post-Merger EPS Accretion / Dilution Analysis & Deal Structuring — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Post-Merger.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 122000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 146400,
@@ -397,11 +397,11 @@
       "codeHash": "de6455bff2af53f81a2e1b329ea4217b800cd0d163247abd294e4c5584f49547",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Share Exchange Ratio Mechanics & Boundary ... — General Ledger Verification",
+        "title": "Share Exchange Ratio Mechanics & Boundary Bargaining — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Share Exchange.",
+            "caption": "Open primary facility debit entry for Share Exchange Ratio Mechanics.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147900,
@@ -526,11 +526,11 @@
       "codeHash": "f4e40753e2c723d997a6646ae90f4536fb0b2f9c427edbe392063cebd3c188ea",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Restructuring & Anti-Takeover Go... — General Ledger Verification",
+        "title": "Corporate Restructuring & Anti-Takeover Governance Defense — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Corporate.",
+            "caption": "Open primary facility debit entry for Corporate Restructuring.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149400,

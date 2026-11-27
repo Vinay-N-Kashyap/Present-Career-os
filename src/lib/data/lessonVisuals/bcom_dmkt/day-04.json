@@ -10,11 +10,11 @@
       "codeHash": "56608f4d6d89066f0dd68ed94c5b646cd5c8b6c7c501736e02a5efe65c3f4943",
       "spec": {
         "template": "funnel",
-        "title": "Geo-Lift & Quasi-Experimental Incrementality ... — Conversion Pipeline",
+        "title": "Geo-Lift & Quasi-Experimental Incrementality Testing (iROAS) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,7 +168,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Geo-Lift & Quasi-Experimental Incrementality ... — Conversion Pipeline",
+        "title": "Geo-Lift & Quasi-Experimental Incrementality Testing (iROAS) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -330,11 +330,11 @@
       "codeHash": "ab93aec0f0e4244076339fc289f583862fa52aaa3a059e6fd05290598d33bbe9",
       "spec": {
         "template": "funnel",
-        "title": "Non-Linear Media Saturation & Marginal ROAS (... — Conversion Pipeline",
+        "title": "Non-Linear Media Saturation & Marginal ROAS (mROAS) Optimization — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Non-Linear Media Saturation & Marginal ROAS (... — Conversion Pipeline",
+        "title": "Non-Linear Media Saturation & Marginal ROAS (mROAS) Optimization — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -650,11 +650,11 @@
       "codeHash": "ab815149aa557a1696696b0764c1e446602f4d0b825c86ce40e15524631b6014",
       "spec": {
         "template": "funnel",
-        "title": "Customer Data Platform (CDP) & Identity Graph... — Conversion Pipeline",
+        "title": "Customer Data Platform (CDP) & Identity Graph Resolution — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,7 +808,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Customer Data Platform (CDP) & Identity Graph... — Conversion Pipeline",
+        "title": "Customer Data Platform (CDP) & Identity Graph Resolution — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -970,11 +970,11 @@
       "codeHash": "de8c761fa6ea1d92252071a3c1fe9ba17a4b32bc4826944bd6747739ae0dee56",
       "spec": {
         "template": "funnel",
-        "title": "High-ACV Account-Based Marketing (ABM) Intent... — Conversion Pipeline",
+        "title": "High-ACV Account-Based Marketing (ABM) Intent Telemetry — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "High-ACV Account-Based Marketing (ABM) Intent... — Conversion Pipeline",
+        "title": "High-ACV Account-Based Marketing (ABM) Intent Telemetry — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1290,11 +1290,11 @@
       "codeHash": "f4daf4bb25cacd24c082140cbf0944fc744adccb4676292986db4e8d47cb2899",
       "spec": {
         "template": "funnel",
-        "title": "Omni-Channel Incrementality & Performance Con... — Conversion Pipeline",
+        "title": "Omni-Channel Incrementality & Performance Control Tower — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,7 +1448,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Omni-Channel Incrementality & Performance Con... — Conversion Pipeline",
+        "title": "Omni-Channel Incrementality & Performance Control Tower — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

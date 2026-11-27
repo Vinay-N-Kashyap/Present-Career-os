@@ -8,7 +8,7 @@
       "codeHash": "0dc4738c50fe0e053996179688f8b54ca1f8c4b57e5761a1267b7cab4ebd5b60",
       "spec": {
         "template": "funnel",
-        "title": "The Statutory Taxonomy of Modified Opi... — Assurance Review",
+        "title": "The Statutory Taxonomy of Modified Opinions (PCAOB AS 3105 & ISA 705) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "03b65af4a5972416e52dc7f09b21c73c63a0c82a07f34308fc92187c44861ca3",
       "spec": {
         "template": "funnel",
-        "title": "Qualified Opinions: GAAP Departures vs... — Assurance Review",
+        "title": "Qualified Opinions: GAAP Departures — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "ea44f22d75814391213a1d24f8078a6d16e876aaf1ca28e1f7a57900a998d623",
       "spec": {
         "template": "funnel",
-        "title": "Adverse Opinions: Pervasive GAAP Depar... — Assurance Review",
+        "title": "Adverse Opinions: Pervasive GAAP Departures & Fraudulent Reporting — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "245a1a63bbfb7851a617e60c65101ab67aa0e56cc1b0e9e5f121548dc41d8cac",
       "spec": {
         "template": "funnel",
-        "title": "Disclaimers of Opinion: Severe Scope L... — Assurance Review",
+        "title": "Disclaimers of Opinion: Severe Scope — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "0ae13b36cc8e2584c68acd6d030613025a1d2c4e47cf0d15570acda124341cf2",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Opinion Decis... — Assurance Review",
+        "title": "Comprehensive Enterprise Opinion Decision Engine & Modification — Assurance Review",
         "steps": [
           {
             "at": "intro",

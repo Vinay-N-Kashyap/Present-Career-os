@@ -10,7 +10,7 @@
       "codeHash": "7430488974c729ae3ccb7394388abfe41e966f889587fadce69983ce61a1d6ef",
       "spec": {
         "template": "funnel",
-        "title": "Monolith vs Decoupled Headless Commerce: A... — Conversion Funnel",
+        "title": "Monolith vs Decoupled Headless Commerce: Architectural Trade-Offs — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "95015ce6f574136f80ad9497b16333b6725f6555464487e0646bfcbb9a4d0002",
       "spec": {
         "template": "funnel",
-        "title": "Headless Commerce APIs: Storefront Front-E... — Conversion Funnel",
+        "title": "Headless Commerce APIs: Storefront — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "33c2dcdcd033ae3ccd52bbe2f432d6a8a62c79ef80584d9f9ae42d89c35957c5",
       "spec": {
         "template": "funnel",
-        "title": "Core Web Vitals, Edge Performance & Millis... — Conversion Funnel",
+        "title": "Core Web Vitals, Edge Performance & Millisecond Conversion Elasticity — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "98075ea02481d2577c2097ce68bffe862a4f8964cb5e9381de6af8a6ff8ed81e",
       "spec": {
         "template": "funnel",
-        "title": "High-Concurrency Flash Sale Architecture: ... — Conversion Funnel",
+        "title": "High-Concurrency Flash Sale Architecture: Virtual Queues & Redis Locks — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "9ec348a636f61134881b06605a637ddaaa4a8e4425303d43672096c8ef491b86",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Headless Commerce Architecture ... — Conversion Funnel",
+        "title": "Enterprise Headless Commerce Architecture Gateway — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

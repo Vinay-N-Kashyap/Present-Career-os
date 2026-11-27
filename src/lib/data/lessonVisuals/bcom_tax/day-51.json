@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Gateway to First Appeals: Section 2... — General Ledger Verification",
+        "title": "Statutory Gateway to First Appeals: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Statutory Gateway to F (Lambda Alpha).",
+            "caption": "Open primary debit entry for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10150,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Statutory Gateway to F (Alpha).",
+            "caption": "Record secondary accrual adjustment for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Statutory Gateway to F (Lambda).",
+            "caption": "Reconcile sub-ledger balances for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Statutory Gateway to F (Alpha).",
+            "caption": "Verify double-entry trial balance for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -134,11 +134,11 @@
       "partTitle": "Statutory Gateway to First Appeals: Section 246A Appealable Orders & Form 35 Mechanics",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Statutory Gateway to First Appeals: Section 2... — General Ledger Verification",
+        "title": "Statutory Gateway to First Appeals: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Statutory Gateway to F (Lambda Alpha).",
+            "caption": "Open primary debit entry for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10150,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Statutory Gateway to F (Alpha).",
+            "caption": "Record secondary accrual adjustment for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Statutory Gateway to F (Lambda).",
+            "caption": "Reconcile sub-ledger balances for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Statutory Gateway to F (Alpha).",
+            "caption": "Verify double-entry trial balance for Statutory Gateway to First Appeals.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mandatory Tax Payment Conditions under Sectio... — General Ledger Verification",
+        "title": "Mandatory Tax Payment Conditions under Section 249(4) & Stay — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Mandatory Tax Payment (Lambda Beta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10350,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Mandatory Tax Payment (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Mandatory Tax Payment (Lambda).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Mandatory Tax Payment (Beta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -389,11 +389,11 @@
       "partTitle": "Mandatory Tax Payment Conditions under Section 249(4) & Stay of Demand Protocols",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Mandatory Tax Payment Conditions under Sectio... — General Ledger Verification",
+        "title": "Mandatory Tax Payment Conditions under Section 249(4) & Stay — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Mandatory Tax Payment (Lambda Beta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10350,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Mandatory Tax Payment (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Mandatory Tax Payment (Lambda).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Mandatory Tax Payment (Beta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Appellate Powers under Section 251: Annulment... — General Ledger Verification",
+        "title": "Appellate Powers under Section 251: Annulment — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Appellate Powers under (Lambda Gamma).",
+            "caption": "Open primary debit entry for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10550,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Appellate Powers under (Gamma).",
+            "caption": "Record secondary accrual adjustment for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12660,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Appellate Powers under (Lambda).",
+            "caption": "Reconcile sub-ledger balances for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12660,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Appellate Powers under (Gamma).",
+            "caption": "Verify double-entry trial balance for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12660,
@@ -644,11 +644,11 @@
       "partTitle": "Appellate Powers under Section 251: Annulment, Enhancement & The Bar on Remand",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Appellate Powers under Section 251: Annulment... — General Ledger Verification",
+        "title": "Appellate Powers under Section 251: Annulment — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Appellate Powers under (Lambda Gamma).",
+            "caption": "Open primary debit entry for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10550,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Appellate Powers under (Gamma).",
+            "caption": "Record secondary accrual adjustment for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12660,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Appellate Powers under (Lambda).",
+            "caption": "Reconcile sub-ledger balances for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12660,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Appellate Powers under (Gamma).",
+            "caption": "Verify double-entry trial balance for Appellate Powers under Section 251.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12660,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Admission of Additional Evidence under Rule 4... — General Ledger Verification",
+        "title": "Admission of Additional Evidence under Rule 46A & The Faceless Appeal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Admission of Additiona (Lambda Delta).",
+            "caption": "Open primary debit entry for Admission of Additional Evidence under Rule 46A.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10750,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Admission of Additiona (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Admission of Additiona (Lambda).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Admission of Additiona (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -899,11 +899,11 @@
       "partTitle": "Admission of Additional Evidence under Rule 46A & The Faceless Appeal Scheme under Section 250",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Admission of Additional Evidence under Rule 4... — General Ledger Verification",
+        "title": "Admission of Additional Evidence under Rule 46A & The Faceless Appeal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Admission of Additiona (Lambda Delta).",
+            "caption": "Open primary debit entry for Admission of Additional Evidence under Rule 46A.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10750,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Admission of Additiona (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Admission of Additiona (Lambda).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Admission of Additiona (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12900,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: First Appella... — General Ledger Verification",
+        "title": "Production Python Architecture: First — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Lambda Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10950,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Lambda).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: First Appellate Portfolio & Stay Compliance Engine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: First Appella... — General Ledger Verification",
+        "title": "Production Python Architecture: First — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Lambda Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10950,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 51 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Lambda).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 51 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13140,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 51 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13140,

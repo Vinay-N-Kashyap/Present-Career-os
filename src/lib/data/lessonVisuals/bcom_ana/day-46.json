@@ -8,7 +8,7 @@
       "codeHash": "5dc5cbe49cd8a6dd2bde0b4a47a3f92fd0db83d271dda8fe8bf738d9045c9e3f",
       "spec": {
         "template": "bars",
-        "title": "The Distributed Memory Architecture: R... - Learning Evaluation",
+        "title": "The Distributed Memory Architecture: RDD Lineage & The Catalyst - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "8e1f30b78778740b993c3771148a57f42be356586f4ff77ff7e3e4d3cb65609d",
       "spec": {
         "template": "bars",
-        "title": "Distributed Shuffle Physics, Data Skew... - Learning Evaluation",
+        "title": "Distributed Shuffle Physics, Data Skew & Partition Tuning - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "61f17c8be012c33a445d89906679272b567b34e77325d18077f59999619f4834",
       "spec": {
         "template": "bars",
-        "title": "High-Performance Distributed Aggregati... - Learning Evaluation",
+        "title": "High-Performance Distributed Aggregations & Broadcast Joins - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "f64b2ca4c32bbaa32ba750955782b7cf5c628415d869789d11588c86a04cbb5f",
       "spec": {
         "template": "bars",
-        "title": "Tuning Executor Memory, Off-Heap Stora... - Learning Evaluation",
+        "title": "Tuning Executor Memory, Off-Heap Storage & Garbage Collection - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "e0454a67a6fe6a18931d5fd814eaaebf99695ef27115acddb12b2f16cda60a1f",
       "spec": {
         "template": "bars",
-        "title": "Production Big Data Pipeline Architect... - Learning Evaluation",
+        "title": "Production Big Data Pipeline Architecture & Cloud Cost Economics - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

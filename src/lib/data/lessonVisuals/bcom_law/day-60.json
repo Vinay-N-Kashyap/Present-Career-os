@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "The Strategic Role of the Transnational Ge... Compliance Workflow",
+        "title": "The Strategic Role of the Transnational General Counsel & Multi-Front — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize The Strategic Role of the Transnationa...",
+            "caption": "Stage one: Initialize The Strategic Role",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Neutralizing the Hostile Raid: SEBI SAST T... Compliance Workflow",
+        "title": "Neutralizing the Hostile Raid: SEBI SAST Triggers, Regulation 17 — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Neutralizing the Hostile Raid: SEBI SA...",
+            "caption": "Stage one: Initialize Neutralizing the Hostile Raid: SEBI",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Deploying the Sanctions Shield: OFAC SDN C... Compliance Workflow",
+        "title": "Deploying the Sanctions Shield: OFAC SDN Contagion, FATF Blacklists — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Deploying the Sanctions Shield: OFAC S...",
+            "caption": "Stage one: Initialize Deploying the Sanctions Shield: OFAC",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Cross-Border Restructuring & Enforcing For... Compliance Workflow",
+        "title": "Cross-Border Restructuring & Enforcing Foreign ISDS Awards — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Cross-Border Restructuring & Enforcing...",
+            "caption": "Stage one: Initialize Cross-Border Restructuring",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "The Grand Master Boardroom Crisis Simulato... Compliance Workflow",
+        "title": "The Grand Master Boardroom Crisis Simulator Execution & 60-Day — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize The Grand Master Boardroom Crisis Simu...",
+            "caption": "Stage one: Initialize The Grand Master Boardroom Crisis",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

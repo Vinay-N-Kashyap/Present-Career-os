@@ -10,11 +10,11 @@
       "codeHash": "4dc06f38843bbc3cadbc8b4555da1131345b4019edd41fac4c2cd9d344d63137",
       "spec": {
         "template": "funnel",
-        "title": "ISO 31000 5x5 Risk Assessment Matrix: Li - Governance Funnel",
+        "title": "ISO 31000 5x5 Risk Assessment Matrix: Likelihood vs. Impact Scoring - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (ten,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "ISO 31000 5x5 Risk Assessment Matrix: Li - Governance Funnel",
+        "title": "ISO 31000 5x5 Risk Assessment Matrix: Likelihood vs. Impact Scoring - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (ten,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -286,7 +286,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -606,7 +606,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "b64ef0faa90c6a0f9ed8c1ea916678b1e9edf1e6cdc7e9e8906290c9581ef687",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Risk Register & Key Risk Indi - Governance Funnel",
+        "title": "Enterprise Risk Register & Key Risk Indicator (KRI) Early-Warning - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (eight,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Enterprise Risk Register & Key Risk Indi - Governance Funnel",
+        "title": "Enterprise Risk Register & Key Risk Indicator (KRI) Early-Warning - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (eight,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -926,7 +926,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "749433dfc9002d6712b15c424056b7264b6f9b05d3b41d78fb864bdbf568043b",
       "spec": {
         "template": "funnel",
-        "title": "Business Continuity Planning (BCP) & Dis - Governance Funnel",
+        "title": "Business Continuity Planning (BCP) & Disaster Recovery: RTO vs. RPO Compliance - Governance Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Business Continuity Planning (BCP) & Dis - Governance Funnel",
+        "title": "Business Continuity Planning (BCP) & Disaster Recovery: RTO vs. RPO Compliance - Governance Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (one,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Vested options & ERM safeguards preserve capital (multiple stakeholders).",
+            "caption": "Vested options & ERM safeguards preserve capital.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "4b059029c939601cab51f2e2b2517be3a1271136fc971e75656cd4dcfadbc096",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise Risk Management Contro - Governance Funnel",
+        "title": "Master Enterprise Risk Management Control Tower: 4-Gate Resilience - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (multiple,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Enterprise Risk Management Contro - Governance Funnel",
+        "title": "Master Enterprise Risk Management Control Tower: 4-Gate Resilience - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (multiple,multiple prospects).",
+            "caption": "Enterprise talent reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Governance alignment confirms (two,multiple key leaders).",
+            "caption": "Governance alignment confirms.",
             "activeStageId": "target",
             "stages": [
               {

@@ -10,7 +10,7 @@
       "codeHash": "bfd102bba976f7dc83e06bfb182752f019a5b5038709caeb395a71ef8e4e0d01",
       "spec": {
         "template": "funnel",
-        "title": "Econometric Marketing Mix Modeling (MMM) & Ad... — Conversion Pipeline",
+        "title": "Econometric Marketing Mix Modeling (MMM) & Adstock Carryover Decay — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,7 +168,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Econometric Marketing Mix Modeling (MMM) & Ad... — Conversion Pipeline",
+        "title": "Econometric Marketing Mix Modeling (MMM) & Adstock Carryover Decay — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -330,7 +330,7 @@
       "codeHash": "544508e547dfc52bb8bc5b6118544f8cd094d4bfdbd8e24a31d7967a0c139cf9",
       "spec": {
         "template": "funnel",
-        "title": "Customer Acquisition Cost (CAC) Payback Perio... — Conversion Pipeline",
+        "title": "Customer Acquisition Cost (CAC) Payback Period & Cohort Retention — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Customer Acquisition Cost (CAC) Payback Perio... — Conversion Pipeline",
+        "title": "Customer Acquisition Cost (CAC) Payback Period & Cohort Retention — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -650,7 +650,7 @@
       "codeHash": "f67f864ef8ce957e560477898b03a57076cf1e58189ce81649485566b6e01dfa",
       "spec": {
         "template": "funnel",
-        "title": "Search Engine Crawl Budget, Canonicalization ... — Conversion Pipeline",
+        "title": "Search Engine Crawl Budget, Canonicalization & Log File Auditing — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,7 +808,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Search Engine Crawl Budget, Canonicalization ... — Conversion Pipeline",
+        "title": "Search Engine Crawl Budget, Canonicalization & Log File Auditing — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -970,7 +970,7 @@
       "codeHash": "d2c12d226069f962dc85f0752d56ddf69f36348f90f139bc623ca6d558980a55",
       "spec": {
         "template": "funnel",
-        "title": "Retargeting Audience Decay, Frequency Capping... — Conversion Pipeline",
+        "title": "Retargeting Audience Decay, Frequency Capping & Negative Exclusion — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Retargeting Audience Decay, Frequency Capping... — Conversion Pipeline",
+        "title": "Retargeting Audience Decay, Frequency Capping & Negative Exclusion — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1290,7 +1290,7 @@
       "codeHash": "2769aeeb860b04fbd86653d9afa7a3a3b01e89d2f987137fc2605be6340847bb",
       "spec": {
         "template": "funnel",
-        "title": "Bayesian Beta-Binomial Conversion Uplift & St... — Conversion Pipeline",
+        "title": "Bayesian Beta-Binomial Conversion Uplift & Statistical Decision Rules — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,7 +1448,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Bayesian Beta-Binomial Conversion Uplift & St... — Conversion Pipeline",
+        "title": "Bayesian Beta-Binomial Conversion Uplift & Statistical Decision Rules — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "9bb7a9fb5b510f5d803d4c810ea50f1e0955db434ef8840fcf8d045dbe2eb379",
       "spec": {
         "template": "funnel",
-        "title": "Relational CRM Schema Architecture: Standa \u2014 RevOps Funnel",
+        "title": "Relational CRM Schema Architecture: Standard Objects & Cardinality — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (ten,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Relational CRM Schema Architecture: Standa \u2014 RevOps Funnel",
+        "title": "Relational CRM Schema Architecture: Standard Objects & Cardinality — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (ten,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "f63ddaf1a082066bb415a137c0905672a4a701d156e8bbf5648ed0a48d9acea6",
       "spec": {
         "template": "funnel",
-        "title": "Deterministic & Fuzzy Deduplication Algori \u2014 RevOps Funnel",
+        "title": "Deterministic & Fuzzy Deduplication Algorithms: String Normalization — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Deterministic & Fuzzy Deduplication Algori \u2014 RevOps Funnel",
+        "title": "Deterministic & Fuzzy Deduplication Algorithms: String Normalization — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "00d38c9c9d405ea00b78a8848f4002d69e74a39abf842dc8e5e54f8cfe49ae68",
       "spec": {
         "template": "funnel",
-        "title": "Pipeline Stage-Gating: Enforcing Validatio \u2014 RevOps Funnel",
+        "title": "Pipeline Stage-Gating: Enforcing Validation Rules Before Advancing — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (eight,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Pipeline Stage-Gating: Enforcing Validatio \u2014 RevOps Funnel",
+        "title": "Pipeline Stage-Gating: Enforcing Validation Rules Before Advancing — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (eight,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "ba82bf49fb8960e633f652b803eab74779cd7ae8776c88ee273056cb0039330f",
       "spec": {
         "template": "funnel",
-        "title": "CRM Data Decay Physics & Automated Enrichm \u2014 RevOps Funnel",
+        "title": "CRM Data Decay Physics & Automated Enrichment Pipelines — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "CRM Data Decay Physics & Automated Enrichm \u2014 RevOps Funnel",
+        "title": "CRM Data Decay Physics & Automated Enrichment Pipelines — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (one,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "5cd71c8055750ebf3070e340c0039f9be9b42904d4e7ef53de8834bc9708bf18",
       "spec": {
         "template": "funnel",
-        "title": "Master RevOps CRM Architecture & Data Hygi \u2014 RevOps Funnel",
+        "title": "Master RevOps CRM Architecture & Data Hygiene Control Tower — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (multiple,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master RevOps CRM Architecture & Data Hygi \u2014 RevOps Funnel",
+        "title": "Master RevOps CRM Architecture & Data Hygiene Control Tower — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (multiple,multiple leads).",
+            "caption": "Inbound revenue funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted conversion workflows advance (two,multiple deals).",
+            "caption": "Targeted conversion workflows advance.",
             "activeStageId": "target",
             "stages": [
               {

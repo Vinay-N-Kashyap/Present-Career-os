@@ -8,7 +8,7 @@
       "codeHash": "3c0168a3f34e1c8e32a7de434b5dc022c2b3038f3ecf308eb382a8c24e594f6a",
       "spec": {
         "template": "bars",
-        "title": "Capstone System Architecture: Integrat... \u2014 Decision Evaluation",
+        "title": "Capstone System Architecture: Integrating Descriptive, Predictive — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "97c03bfc63d7113ce810c1fa0477edab964c143ecad3545b967ad4f84b833ba1",
       "spec": {
         "template": "bars",
-        "title": "Automated Time Series Cleansing, Stati... \u2014 Decision Evaluation",
+        "title": "Automated Time Series Cleansing, Stationarity Transformations — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "dede060d64e3a221df46852b0ae33f58894a67759f65be261d87804cf1a772f8",
       "spec": {
         "template": "bars",
-        "title": "Dynamic Safety Stock & Multi-Echelon R... \u2014 Decision Evaluation",
+        "title": "Dynamic Safety Stock & Multi-Echelon Reorder Point Optimization — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "ec1abd8fc384b0a7cc933f2f52ef47ce0d1647c1d1257de45d379dad2aa64f1e",
       "spec": {
         "template": "bars",
-        "title": "Prescriptive Linear Programming Produc... \u2014 Decision Evaluation",
+        "title": "Prescriptive Linear Programming Production Mix with Dual Shadow Price — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "866702723dd0caa4df4667b4aeeb06564560c6687e6097159fe36ea97e15323f",
       "spec": {
         "template": "bars",
-        "title": "Executive Boardroom Decision Tree Roll... \u2014 Decision Evaluation",
+        "title": "Executive Boardroom Decision Tree Rollback, EVPI Analysis & Milestone — Decision Evaluation",
         "steps": [
           {
             "at": "intro",

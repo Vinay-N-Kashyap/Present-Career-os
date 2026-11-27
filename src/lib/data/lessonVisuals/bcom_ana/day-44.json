@@ -8,7 +8,7 @@
       "codeHash": "6a6e317253bd62f696cb1070bfb3f46db7c360d8d5066455eca817518348faff",
       "spec": {
         "template": "bars",
-        "title": "The Black-Box Governance Crisis & Regu... - Learning Evaluation",
+        "title": "The Black-Box Governance Crisis & Regulatory Adverse Action Compliance - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "d3323bcf6c5b42988db4b8d5f88cb7940c210b6de92c24ab7a7c6b19bf8c722d",
       "spec": {
         "template": "bars",
-        "title": "Axiomatic Foundations of Cooperative G... - Learning Evaluation",
+        "title": "Axiomatic Foundations of Cooperative Game Theory & Shapley Values - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "2a85994fe353096ced9ff2d3d2b8388725d818c8c0f6f288c6bdcb72f57dacff",
       "spec": {
         "template": "bars",
-        "title": "TreeSHAP Algorithmic Mechanics & Water... - Learning Evaluation",
+        "title": "TreeSHAP Algorithmic Mechanics & Waterfall Feature Attribution - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "9007ea5c394677f3bf4acd41463241427ac65d01a4478558e8f85ab29f87afe9",
       "spec": {
         "template": "bars",
-        "title": "Local Interpretable Model-Agnostic Exp... - Learning Evaluation",
+        "title": "Local Interpretable Model-Agnostic Explanations (LIME) vs SHAP - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "e9ea3c82591b57dce0b7fcf83e55e94518db67f18b6f68216e54a9da9aa67d85",
       "spec": {
         "template": "bars",
-        "title": "Production Real-Time Explainability AP... - Learning Evaluation",
+        "title": "Production Real-Time Explainability APIs & Adverse Action Notice - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

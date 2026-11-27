@@ -10,7 +10,7 @@
       "codeHash": "983902f524422ef88bc6dffd6eef49b302661abf9af408d05de6515469eb2395",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: Enterprise AI Recommendation & Sem... — Conversion Funnel",
+        "title": "Tier 1: Enterprise AI Recommendation — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "2606e23b646ef9a435dd6c91aadf3a69ea2aaf1ac3ca19e221097f85206d7bda",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Real-Time Fraud Defense, Bot Shiel... — Conversion Funnel",
+        "title": "Tier 2: Real-Time Fraud Defense, Bot — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,7 +334,7 @@
       "codeHash": "e94f7abfc63a5e50b34f309558e85c693044af511b0380c4bf1762484ec33c4b",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Privacy-First First-Party Measurem... — Conversion Funnel",
+        "title": "Tier 3: Privacy-First First-Party — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,11 +496,11 @@
       "codeHash": "4bfe5e128765f74a37a7c15ac5d82b6a43bf23fe4a5bd9a735a265874a74b7e5",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: Sustainable Supply Chain, Green De... — Conversion Funnel",
+        "title": "Tier 4: Sustainable Supply Chain, Green — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "016978f2f1ac0b5121bd44265895540d5a9321e4c7dd628ad4c68c09ec956a40",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Sovereign Corporate Boardroom Defe... — Conversion Funnel",
+        "title": "Tier 5: Sovereign Corporate Boardroom — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

@@ -18,6 +18,34 @@ export interface RadarMetricsSummary {
   axes: RadarAxisMetric[];
 }
 
+export const PRIORITY_XP_MIN = 10;
+export const PRIORITY_XP_MAX = 15;
+export const MAX_DAILY_PRIORITY_AWARDS = 3;
+
+export function getIstDateKey(now: Date = new Date()): string {
+  const istOffsetMs = 5.5 * 60 * 60 * 1000;
+  const ist = new Date(now.getTime() + istOffsetMs);
+  return ist.toISOString().slice(0, 10);
+}
+
+export function buildPriorityXpReason(dayKey: string, priorityId: string): string {
+  return `[priority:${dayKey}:${priorityId}]`;
+}
+
+export const PRIORITY_CATALOG_XP: Record<string, { title: string; xpAmount: number }> = {
+  upload_resume: { title: 'Upload & Audit Resume', xpAmount: 15 },
+  daily_quest_lesson: { title: 'Complete 1 Roadmap Lesson', xpAmount: 12 },
+  daily_mission_sprint: { title: "Finish Today's Daily Mission", xpAmount: 12 },
+  daily_streak_guard: { title: 'Keep Daily Learning Streak Alive', xpAmount: 10 },
+  daily_arena_duel: { title: 'Play 1 Coding Arena Duel', xpAmount: 15 },
+  daily_mock_interview: { title: 'Complete 1 AI Interview Round', xpAmount: 15 },
+  daily_gd_round: { title: 'Join 1 Group Discussion', xpAmount: 12 },
+  daily_weakest_skill: { title: 'Target Weakest Skill Axis', xpAmount: 12 },
+  daily_trust_verify: { title: 'Boost Trust Quotient', xpAmount: 10 },
+  daily_attention_focus: { title: '5-Min Attention Focus Sprint', xpAmount: 10 },
+  daily_project_step: { title: 'Advance a Portfolio Project', xpAmount: 15 },
+};
+
 export interface ServerPriorityAction {
   id: string;
   icon: string;
@@ -26,6 +54,9 @@ export interface ServerPriorityAction {
   href: string;
   cta: string;
   xp: string;
+  xpAmount: number;
+  rewardClaimed?: boolean;
+  dayKey?: string;
   color: string;
   bg: string;
   border: string;
@@ -225,175 +256,287 @@ export interface PriorityActionInput {
   completedMissionToday: boolean;
   completedQuestToday: boolean;
   completedInterviewToday: boolean;
+  playedArenaToday?: boolean;
+  completedGdToday?: boolean;
+  claimedPriorityIdsToday?: string[];
+  now?: Date;
   radar: RadarMetricsSummary;
 }
 
 export function computeDashboardPriorityActions(input: PriorityActionInput): ServerPriorityAction[] {
   const roleLabel = input.targetRole?.trim() || 'your target role';
-  const resumeDone = input.hasVerifiedResume || (input.hasResumeInVault && input.atsScore >= 70);
+  const dayKey = getIstDateKey(input.now ?? new Date());
+  const dayIndex = Math.floor(Date.parse(`${dayKey}T00:00:00Z`) / 86400000);
+  const claimedSet = new Set((input.claimedPriorityIdsToday || []).map((id) => String(id).trim()));
+  const streakLabel = input.missionStreak > 0 ? `${input.missionStreak}-Day Streak` : 'Daily Streak';
 
-  // Action 1: Resume / Proof Vault verification state (always reflects real Vault state!)
-  const resumeAction: ServerPriorityAction = resumeDone
-    ? {
-        id: 'resume_verified',
-        icon: 'VAULT',
-        title: 'Resume Uploaded & Scored',
-        desc: `Vault resume is synced (${input.atsScore > 0 ? `ATS ${input.atsScore}/100` : 'Verified'}). Keep skills updated or generate your custom roadmap.`,
-        href: '/quests?tab=custom',
-        cta: 'View Custom Roadmap',
-        xp: 'Done',
+  const makeXpLabel = (xpAmount: number, completed: boolean) =>
+    completed ? `+${xpAmount} XP Done` : `+${xpAmount} Weekly XP`;
+
+  // Slot 1: Onboarding resume upload or rotating daily learning habit (10-15 Weekly XP)
+  let slot1: ServerPriorityAction;
+  if (!input.hasResumeInVault) {
+    const claimed = claimedSet.has('upload_resume');
+    const xpAmount = PRIORITY_CATALOG_XP.upload_resume.xpAmount;
+    slot1 = {
+      id: 'upload_resume',
+      icon: 'RESUME',
+      title: 'Upload & Audit Resume',
+      desc: `Upload your PDF resume in Vault to unlock ATS scoring and personalized ${roleLabel} roadmaps.`,
+      href: '/vault',
+      cta: 'Open Proof Vault',
+      xp: makeXpLabel(xpAmount, claimed),
+      xpAmount,
+      rewardClaimed: claimed,
+      dayKey,
+      color: '#6366f1',
+      bg: 'rgba(99,102,241,0.12)',
+      border: 'rgba(99,102,241,0.25)',
+      completed: claimed,
+      progressPct: claimed ? 100 : 0,
+    };
+  } else {
+    const s1Variant = ((dayIndex % 3) + 3) % 3;
+    if (s1Variant === 0) {
+      const done = Boolean(input.completedQuestToday || claimedSet.has('daily_quest_lesson'));
+      const claimed = claimedSet.has('daily_quest_lesson');
+      const xpAmount = PRIORITY_CATALOG_XP.daily_quest_lesson.xpAmount;
+      slot1 = {
+        id: 'daily_quest_lesson',
+        icon: 'QUEST',
+        title: 'Complete 1 Roadmap Lesson',
+        desc: `Clear today's focused lesson module in your ${roleLabel} track to earn +${xpAmount} Weekly EXP.`,
+        href: '/quests',
+        cta: 'Open Quests',
+        xp: makeXpLabel(xpAmount, done),
+        xpAmount,
+        rewardClaimed: claimed,
+        dayKey,
         color: '#10b981',
         bg: 'rgba(16,185,129,0.12)',
         border: 'rgba(16,185,129,0.28)',
-        completed: true,
-        completionReason: input.hasVerifiedResume ? 'Verified in Vault' : `ATS ${input.atsScore}/100`,
-        progressPct: 100,
-      }
-    : input.hasResumeInVault
-    ? {
-        id: 'verify_resume',
-        icon: 'VAULT',
-        title: 'Verify Your Resume in Oral Defense',
-        desc: `Your resume is in Proof Vault. Pass a quick Ms. Priya oral check to unlock Verified status for ${roleLabel}.`,
-        href: '/interview?mode=vault_verify',
-        cta: 'Verify Proof',
-        xp: '+50 XP',
-        color: '#6366f1',
-        bg: 'rgba(99,102,241,0.12)',
-        border: 'rgba(99,102,241,0.25)',
-        completed: false,
-        completionReason: input.atsScore > 0 ? `ATS ${input.atsScore}/100 • Unverified` : 'Uploaded • Needs Oral Defense',
-        progressPct: 50,
-      }
-    : {
-        id: 'upload_resume',
-        icon: 'RESUME',
-        title: 'Upload & Audit Resume',
-        desc: `Upload your PDF resume in Vault to unlock ATS scoring and personalized ${roleLabel} roadmaps.`,
-        href: '/vault',
-        cta: 'Open Proof Vault',
-        xp: '+50 XP',
-        color: '#6366f1',
-        bg: 'rgba(99,102,241,0.12)',
-        border: 'rgba(99,102,241,0.25)',
-        completed: false,
-        progressPct: 0,
+        completed: done,
+        completionReason: done ? 'Completed today' : undefined,
+        progressPct: done ? 100 : 0,
       };
-
-  // Action 2: Today's Sprint / Learning Consistency (checked strictly against IST today)
-  const sprintDoneToday = input.completedMissionToday || input.completedQuestToday;
-  const streakLabel = input.missionStreak > 0 ? `${input.missionStreak}-Day Streak` : 'Daily Sprint';
-  const dailySprintAction: ServerPriorityAction = sprintDoneToday
-    ? {
-        id: 'daily_sprint',
-        icon: 'STREAK',
-        title: `${streakLabel} Secured Today`,
-        desc: `You completed today's learning sprint. Keep pushing to climb this week's League standings.`,
-        href: '/missions',
-        cta: 'View Missions',
-        xp: 'Done',
-        color: '#10b981',
-        bg: 'rgba(16,185,129,0.12)',
-        border: 'rgba(16,185,129,0.28)',
-        completed: true,
-        completionReason: 'Completed today',
-        progressPct: 100,
-      }
-    : {
-        id: 'daily_sprint',
-        icon: 'STREAK',
-        title: input.missionStreak > 0 ? `Extend ${input.missionStreak}-Day Streak` : 'Start Daily Sprint',
-        desc: `Finish 1 quest or daily mission today to earn Weekly EXP and extend your streak.`,
+    } else if (s1Variant === 1) {
+      const done = Boolean(input.completedMissionToday || claimedSet.has('daily_mission_sprint'));
+      const claimed = claimedSet.has('daily_mission_sprint');
+      const xpAmount = PRIORITY_CATALOG_XP.daily_mission_sprint.xpAmount;
+      slot1 = {
+        id: 'daily_mission_sprint',
+        icon: 'SPRINT',
+        title: "Finish Today's Daily Mission",
+        desc: `Knock out a 15-minute mission briefing today to earn +${xpAmount} Weekly EXP toward your league.`,
         href: '/missions',
         cta: 'Launch Mission',
-        xp: '+35 XP',
+        xp: makeXpLabel(xpAmount, done),
+        xpAmount,
+        rewardClaimed: claimed,
+        dayKey,
+        color: '#f59e0b',
+        bg: 'rgba(245,158,11,0.12)',
+        border: 'rgba(245,158,11,0.28)',
+        completed: done,
+        completionReason: done ? 'Completed today' : undefined,
+        progressPct: done ? 100 : 0,
+      };
+    } else {
+      const done = Boolean(input.completedMissionToday || input.completedQuestToday || claimedSet.has('daily_streak_guard'));
+      const claimed = claimedSet.has('daily_streak_guard');
+      const xpAmount = PRIORITY_CATALOG_XP.daily_streak_guard.xpAmount;
+      slot1 = {
+        id: 'daily_streak_guard',
+        icon: 'STREAK',
+        title: `Extend ${streakLabel}`,
+        desc: `Complete any quest or mission today to protect your consistency record and gain +${xpAmount} Weekly EXP.`,
+        href: '/missions',
+        cta: 'Protect Streak',
+        xp: makeXpLabel(xpAmount, done),
+        xpAmount,
+        rewardClaimed: claimed,
+        dayKey,
         color: '#f59e0b',
         bg: 'rgba(245,158,11,0.12)',
         border: 'rgba(245,158,11,0.25)',
-        completed: false,
-        progressPct: 0,
+        completed: done,
+        completionReason: done ? 'Streak secured today' : undefined,
+        progressPct: done ? 100 : 0,
       };
+    }
+  }
 
-  // Action 3: Weakest Radar Dimension / Interview & Trust Action
-  const weakestAxisObj = input.radar.axes.find((a) => a.key === input.radar.weakestAxis) || input.radar.axes[0];
-  let growthAction: ServerPriorityAction;
-  if (input.completedInterviewToday) {
-    growthAction = {
-      id: 'interview_today',
-      icon: 'MOCK',
-      title: 'Mock Interview Completed Today',
-      desc: `Today's verbal evaluation is recorded. Check your Socratic radar breakdown to review feedback.`,
-      href: '/interview',
-      cta: 'Review Sessions',
-      xp: 'Done',
-      color: '#10b981',
-      bg: 'rgba(16,185,129,0.12)',
-      border: 'rgba(16,185,129,0.28)',
-      completed: true,
-      completionReason: 'Scored today',
-      progressPct: 100,
-    };
-  } else if (weakestAxisObj && weakestAxisObj.key === 'socratic') {
-    growthAction = {
-      id: 'boost_socratic',
-      icon: 'MOCK',
-      title: 'Raise Interview Readiness',
-      desc: `Socratic score is ${weakestAxisObj.score}/100. Complete a scored AI Interview or Group Discussion.`,
-      href: '/interview',
-      cta: 'Start Interview',
-      xp: '+75 XP',
-      color: '#3b82f6',
-      bg: 'rgba(59,130,246,0.12)',
-      border: 'rgba(59,130,246,0.25)',
-      completed: false,
-      progressPct: weakestAxisObj.score,
-    };
-  } else if (weakestAxisObj && weakestAxisObj.key === 'coding') {
-    growthAction = {
-      id: 'boost_coding',
+  // Slot 2: Daily rotating Arena / Mock Interview / Group Discussion challenge (12-15 Weekly XP)
+  const s2Variant = (((dayIndex + 1) % 3) + 3) % 3;
+  let slot2: ServerPriorityAction;
+  if (s2Variant === 0) {
+    const done = Boolean(input.playedArenaToday || claimedSet.has('daily_arena_duel'));
+    const claimed = claimedSet.has('daily_arena_duel');
+    const xpAmount = PRIORITY_CATALOG_XP.daily_arena_duel.xpAmount;
+    slot2 = {
+      id: 'daily_arena_duel',
       icon: 'ARENA',
-      title: 'Raise Coding & Arena Score',
-      desc: `Coding radar is ${weakestAxisObj.score}/100. Win an Arena coding duel to earn League Points.`,
+      title: 'Play 1 Coding Arena Duel',
+      desc: `Compete in today's timed Arena round to boost League Points and earn +${xpAmount} Weekly EXP.`,
       href: '/arena',
       cta: 'Enter Arena',
-      xp: '+50 Pts',
+      xp: makeXpLabel(xpAmount, done),
+      xpAmount,
+      rewardClaimed: claimed,
+      dayKey,
+      color: '#06b6d4',
+      bg: 'rgba(6,182,212,0.12)',
+      border: 'rgba(6,182,212,0.28)',
+      completed: done,
+      completionReason: done ? 'Duel logged today' : undefined,
+      progressPct: done ? 100 : 0,
+    };
+  } else if (s2Variant === 1) {
+    const done = Boolean(input.completedInterviewToday || claimedSet.has('daily_mock_interview'));
+    const claimed = claimedSet.has('daily_mock_interview');
+    const xpAmount = PRIORITY_CATALOG_XP.daily_mock_interview.xpAmount;
+    slot2 = {
+      id: 'daily_mock_interview',
+      icon: 'MOCK',
+      title: 'Complete 1 AI Interview Round',
+      desc: `Practice verbal technical answers with Ms. Priya today and earn +${xpAmount} Weekly EXP.`,
+      href: '/interview',
+      cta: 'Start Interview',
+      xp: makeXpLabel(xpAmount, done),
+      xpAmount,
+      rewardClaimed: claimed,
+      dayKey,
       color: '#3b82f6',
       bg: 'rgba(59,130,246,0.12)',
-      border: 'rgba(59,130,246,0.25)',
-      completed: false,
-      progressPct: weakestAxisObj.score,
-    };
-  } else if (input.trustScore < 65) {
-    growthAction = {
-      id: 'boost_trust',
-      icon: 'TRUST',
-      title: `Boost Trust Quotient (${Math.round(input.trustScore)})`,
-      desc: `Pass a proctored exam or verify credentials in Vault to strengthen recruiter confidence.`,
-      href: '/vault',
-      cta: 'Verify Proof',
-      xp: '+40 XP',
-      color: '#10b981',
-      bg: 'rgba(16,185,129,0.12)',
-      border: 'rgba(16,185,129,0.25)',
-      completed: false,
-      progressPct: Math.min(100, Math.round(input.trustScore)),
+      border: 'rgba(59,130,246,0.28)',
+      completed: done,
+      completionReason: done ? 'Interview scored today' : undefined,
+      progressPct: done ? 100 : 0,
     };
   } else {
-    growthAction = {
-      id: `boost_${weakestAxisObj?.key || 'data'}`,
-      icon: (weakestAxisObj?.label || 'SKILL').toUpperCase(),
-      title: `Level Up ${weakestAxisObj?.plainLabel || 'Core Skills'}`,
-      desc: weakestAxisObj?.evidenceSummary || 'Complete targeted lessons to raise your weakest competency.',
-      href: weakestAxisObj?.nextActionHref || '/quests',
-      cta: weakestAxisObj?.nextActionLabel || 'Open Quests',
-      xp: '+45 XP',
-      color: '#3b82f6',
-      bg: 'rgba(59,130,246,0.12)',
-      border: 'rgba(59,130,246,0.25)',
-      completed: false,
-      progressPct: weakestAxisObj?.score ?? 0,
+    const done = Boolean(input.completedGdToday || claimedSet.has('daily_gd_round'));
+    const claimed = claimedSet.has('daily_gd_round');
+    const xpAmount = PRIORITY_CATALOG_XP.daily_gd_round.xpAmount;
+    slot2 = {
+      id: 'daily_gd_round',
+      icon: 'DEBATE',
+      title: 'Join 1 Group Discussion',
+      desc: `Sharpen structured speaking in today's AI Boardroom debate to gain +${xpAmount} Weekly EXP.`,
+      href: '/interview?tab=gd',
+      cta: 'Join GD Room',
+      xp: makeXpLabel(xpAmount, done),
+      xpAmount,
+      rewardClaimed: claimed,
+      dayKey,
+      color: '#14b8a6',
+      bg: 'rgba(20,184,166,0.12)',
+      border: 'rgba(20,184,166,0.28)',
+      completed: done,
+      completionReason: done ? 'GD completed today' : undefined,
+      progressPct: done ? 100 : 0,
     };
   }
 
-  return [resumeAction, dailySprintAction, growthAction];
+  // Slot 3: Daily rotating Weakest Radar / Trust / Project focus (10-15 Weekly XP)
+  const weakestAxisObj = input.radar.axes.find((a) => a.key === input.radar.weakestAxis) || input.radar.axes[0];
+  const s3Variant = (((dayIndex + 2) % 3) + 3) % 3;
+  let slot3: ServerPriorityAction;
+  if (s3Variant === 0) {
+    const claimed = claimedSet.has('daily_weakest_skill');
+    const axisDone =
+      weakestAxisObj?.key === 'socratic'
+        ? Boolean(input.completedInterviewToday || input.completedGdToday)
+        : weakestAxisObj?.key === 'coding'
+          ? Boolean(input.playedArenaToday)
+          : weakestAxisObj?.key === 'data'
+            ? Boolean(input.completedQuestToday)
+            : false;
+    const done = Boolean(claimed || axisDone);
+    const xpAmount = PRIORITY_CATALOG_XP.daily_weakest_skill.xpAmount;
+    slot3 = {
+      id: 'daily_weakest_skill',
+      icon: (weakestAxisObj?.label || 'SKILL').toUpperCase(),
+      title: `Strengthen ${weakestAxisObj?.plainLabel || 'Core Skills'}`,
+      desc: `${weakestAxisObj?.label || 'Radar'} is ${weakestAxisObj?.score ?? 0}/100. Practice today for +${xpAmount} Weekly EXP.`,
+      href: weakestAxisObj?.nextActionHref || '/quests',
+      cta: weakestAxisObj?.nextActionLabel || 'Practice Now',
+      xp: makeXpLabel(xpAmount, done),
+      xpAmount,
+      rewardClaimed: claimed,
+      dayKey,
+      color: '#6366f1',
+      bg: 'rgba(99,102,241,0.12)',
+      border: 'rgba(99,102,241,0.25)',
+      completed: done,
+      completionReason: done ? 'Progress logged today' : undefined,
+      progressPct: done ? 100 : weakestAxisObj?.score ?? 0,
+    };
+  } else if (s3Variant === 1) {
+    if (input.trustScore < 85) {
+      const done = Boolean(claimedSet.has('daily_trust_verify'));
+      const xpAmount = PRIORITY_CATALOG_XP.daily_trust_verify.xpAmount;
+      slot3 = {
+        id: 'daily_trust_verify',
+        icon: 'TRUST',
+        title: `Boost Trust Quotient (${Math.round(input.trustScore)})`,
+        desc: `Verify a proof or complete an exam step today for +${xpAmount} Weekly EXP.`,
+        href: '/vault',
+        cta: 'Verify Proof',
+        xp: makeXpLabel(xpAmount, done),
+        xpAmount,
+        rewardClaimed: done,
+        dayKey,
+        color: '#10b981',
+        bg: 'rgba(16,185,129,0.12)',
+        border: 'rgba(16,185,129,0.25)',
+        completed: done,
+        completionReason: done ? 'Completed today' : undefined,
+        progressPct: done ? 100 : Math.min(100, Math.round(input.trustScore)),
+      };
+    } else {
+      const done = Boolean(claimedSet.has('daily_attention_focus'));
+      const xpAmount = PRIORITY_CATALOG_XP.daily_attention_focus.xpAmount;
+      slot3 = {
+        id: 'daily_attention_focus',
+        icon: 'FOCUS',
+        title: '5-Min Attention Focus Sprint',
+        desc: `Run a short deep-focus session today to sharpen recall and earn +${xpAmount} Weekly EXP.`,
+        href: '/attention',
+        cta: 'Start Focus',
+        xp: makeXpLabel(xpAmount, done),
+        xpAmount,
+        rewardClaimed: done,
+        dayKey,
+        color: '#8b5cf6',
+        bg: 'rgba(139,92,246,0.12)',
+        border: 'rgba(139,92,246,0.25)',
+        completed: done,
+        completionReason: done ? 'Completed today' : undefined,
+        progressPct: done ? 100 : 0,
+      };
+    }
+  } else {
+    const done = Boolean(claimedSet.has('daily_project_step'));
+    const xpAmount = PRIORITY_CATALOG_XP.daily_project_step.xpAmount;
+    slot3 = {
+      id: 'daily_project_step',
+      icon: 'BUILD',
+      title: 'Advance a Portfolio Project',
+      desc: `Ship one build milestone or code check in Projects today for +${xpAmount} Weekly EXP.`,
+      href: '/projects',
+      cta: 'Open Projects',
+      xp: makeXpLabel(xpAmount, done),
+      xpAmount,
+      rewardClaimed: done,
+      dayKey,
+      color: '#10b981',
+      bg: 'rgba(16,185,129,0.12)',
+      border: 'rgba(16,185,129,0.25)',
+      completed: done,
+      completionReason: done ? 'Completed today' : undefined,
+      progressPct: done ? 100 : 0,
+    };
+  }
+
+  return [slot1, slot2, slot3];
 }

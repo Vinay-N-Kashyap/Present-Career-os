@@ -10,11 +10,11 @@
       "codeHash": "efb88c64694917e30c60a6a79d37af6be1f5f8c513d5672fe341a154613ae5a1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Time Value of Money (TVM) & Discounted Cash F... — General Ledger Verification",
+        "title": "Time Value of Money (TVM) & Discounted Cash Flow (DCF) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Time Value of Money (TVM) & Dis...",
+            "caption": "Open primary debit entry for Time Value of Money.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Time Value of Money (TVM) & Discounted Cash F... — General Ledger Verification",
+        "title": "Time Value of Money (TVM) & Discounted Cash Flow (DCF) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2650) for Time Value of Money (TVM) & Dis...",
+            "caption": "Step 1: Open primary debit entry (2650) for Time Value of Money.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -264,11 +264,11 @@
       "codeHash": "8166a2b73432b4cef0112889231e41f1040f7f07b55e6cca81024176418976a3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Weighted Average Cost of Capital (WACC) & Cap... — General Ledger Verification",
+        "title": "Weighted Average Cost of Capital (WACC) & Capital Structure — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Weighted Average Cost of Capita...",
+            "caption": "Open primary debit entry for Weighted Average Cost of Capital.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Weighted Average Cost of Capital (WACC) & Cap... — General Ledger Verification",
+        "title": "Weighted Average Cost of Capital (WACC) & Capital Structure — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2850) for Weighted Average Cost of Capita...",
+            "caption": "Step 1: Open primary debit entry (2850) for Weighted Average Cost of Capital.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -518,11 +518,11 @@
       "codeHash": "b0906aeedb06666c45002a981adb5bcc96ca3f40a9e53b7c3394628fe23407bf",
       "spec": {
         "template": "ledger-sheet",
-        "title": "DuPont 3-Step ROE Decomposition & Operational... — General Ledger Verification",
+        "title": "DuPont 3-Step ROE Decomposition & Operational Levers — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for DuPont three-Step ROE.",
+            "caption": "Open primary debit entry for DuPont three-Step ROE.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "DuPont 3-Step ROE Decomposition & Operational... — General Ledger Verification",
+        "title": "DuPont 3-Step ROE Decomposition & Operational Levers — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3050) for DuPont 3-Step ROE Decomposition...",
+            "caption": "Step 1: Open primary debit entry (3050) for DuPont 3-Step ROE Decomposition.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -772,11 +772,11 @@
       "codeHash": "5f03cefc03dc3037ead3c83506d1c6d5a141bbd1ca31b1aa137aa35442b87742",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Working Capital Management & The Cash Convers... — General Ledger Verification",
+        "title": "Working Capital Management & The Cash Conversion Cycle (CCC) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Working Capital Management & Th...",
+            "caption": "Open primary debit entry for Working Capital Management.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Working Capital Management & The Cash Convers... — General Ledger Verification",
+        "title": "Working Capital Management & The Cash Conversion Cycle (CCC) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Working Capital Management & Th...",
+            "caption": "Step 1: Open primary debit entry (3250) for Working Capital Management.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -1026,11 +1026,11 @@
       "codeHash": "e0929197c4bbb9e84564ae11bad36d86f736284932ee3dc2d34432ac9cc9cd7e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Valuation: Free Cash Flow to Firm ... — General Ledger Verification",
+        "title": "Enterprise Valuation: Free Cash Flow — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Enterprise Valuation: Free Cash...",
+            "caption": "Open primary debit entry for Enterprise Valuation: Free",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Valuation: Free Cash Flow to Firm ... — General Ledger Verification",
+        "title": "Enterprise Valuation: Free Cash Flow — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for Enterprise Valuation: Free Cash...",
+            "caption": "Step 1: Open primary debit entry (3450) for Enterprise Valuation: Free",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,

@@ -10,11 +10,11 @@
       "codeHash": "9096fc6e60e0768686ef5a59b7976c8d2ea3bfda368c082b7085f77eb4032e86",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Standard Essential Patents (SEPs), FRAND C... — General Ledger Verification",
+        "title": "Standard Essential Patents (SEPs), FRAND Commitments & Patent Hold-Up — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Standard.",
+            "caption": "Open primary facility debit entry for Standard Essential Patents.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72000,
@@ -139,11 +139,11 @@
       "codeHash": "85bc3687c998dbe28899936207d3355bf43a26ff5c548745eddbf75d3d1f1719",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Non-Practicing Entities (NPEs / Patent Tro... — General Ledger Verification",
+        "title": "Non-Practicing Entities (NPEs / Patent Trolls), Inter Partes Review — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Non-Practicing.",
+            "caption": "Open primary facility debit entry for Non-Practicing Entities.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73500,
@@ -268,11 +268,11 @@
       "codeHash": "52012cf4947ddb65239f0063f6159b5843eebe43d130a0655c7da31d360ffd39",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Technology Transfer, IP Valuation & Relief... — General Ledger Verification",
+        "title": "Technology Transfer, IP Valuation & Relief-from-Royalty Methods (ASC 805) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Technology.",
+            "caption": "Open primary facility debit entry for Technology Transfer.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 62500,
@@ -397,11 +397,11 @@
       "codeHash": "ee46d493c06adde0015c1a9a317d6b79b0c4c3608c8ee2f156e62e326bffda65",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Antitrust & IP Intersection: Reverse Payme... — General Ledger Verification",
+        "title": "Antitrust & IP Intersection: Reverse — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Antitrust & IP.",
+            "caption": "Open primary facility debit entry for Antitrust & IP Intersection.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 63750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 76500,
@@ -526,11 +526,11 @@
       "codeHash": "3b45e27b244448839afe4f726372242becc99c9d3c58810fda1af99e69e56582",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 2 Grand Capstone Boardroom Defen... — General Ledger Verification",
+        "title": "Milestone 2 Grand Capstone Boardroom Defense: Enterprise IP Portfolio — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Milestone two.",
+            "caption": "Open primary facility debit entry for Milestone two.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 65000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 78000,

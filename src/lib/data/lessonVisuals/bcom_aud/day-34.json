@@ -8,7 +8,7 @@
       "codeHash": "e9e244fad8d89fe122806052cf4bc58af7ddb646f607364b7ee5be50474763c5",
       "spec": {
         "template": "funnel",
-        "title": "Fraud Triangle, Presumed Fraud Risks i... \u2014 Assurance Review",
+        "title": "Fraud Triangle, Presumed Fraud Risks in Revenue Recognition — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "748f5cd1e24765cb30f00cb6467e2b913104870f39ac3dde7c6f6ab1777f818b",
       "spec": {
         "template": "funnel",
-        "title": "Journal Entry Testing (JET): Automated... \u2014 Assurance Review",
+        "title": "Journal Entry Testing (JET): Automated — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "e97c90e750f45ed6f810fa39f9810a39681683d0cec25fb4435cb2ec5b55d1aa",
       "spec": {
         "template": "funnel",
-        "title": "Accounting Estimates & Retrospective B... \u2014 Assurance Review",
+        "title": "Accounting Estimates & Retrospective Bias Reviews: ISA 540 / PCAOB AS 2501 Judgments — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "77e86043684aa915ca55b6693e60aa3e06c9e18bd45e3bdda3f9035b2ce02618",
       "spec": {
         "template": "funnel",
-        "title": "Significant Unusual Transactions & Whi... \u2014 Assurance Review",
+        "title": "Significant Unusual Transactions & Whistleblower Inquiry Protocols — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "740bf8139fe494205b1f13b3e1225bf8e44541283f80adc186d3372e96b3a78f",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Fraud Detection & Automa... \u2014 Assurance Review",
+        "title": "Comprehensive Fraud Detection & Automated Journal Entry Testing (JET) — Assurance Review",
         "steps": [
           {
             "at": "intro",

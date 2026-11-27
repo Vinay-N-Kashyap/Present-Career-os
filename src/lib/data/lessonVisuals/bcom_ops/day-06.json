@@ -10,7 +10,7 @@
       "codeHash": "8e734368e6de5584c1e0ca2fd90e168757c949af31cd82e674531b98baad81e4",
       "spec": {
         "template": "workflow",
-        "title": "Aggregate Production Planning Hierarchy & Pla... — Operational Workflow",
+        "title": "Aggregate Production Planning Hierarchy & Planning Horizon Formulation — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Aggregate Production Planning Hierarchy & Pla... — Operational Workflow",
+        "title": "Aggregate Production Planning Hierarchy & Planning Horizon Formulation — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Aggregate Production Planning Hierarchy ...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Aggregate Production Planning",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "383a8589b472455a2a1811b44debbd474657ffcc9dfe63874c1587e6acb4c5dc",
       "spec": {
         "template": "workflow",
-        "title": "Pure Chase Strategy vs. Pure Level Strategy: ... — Operational Workflow",
+        "title": "Pure Chase Strategy vs. Pure Level Strategy: Economics & Trade-offs — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Pure Chase Strategy vs. Pure Level Strategy: ... — Operational Workflow",
+        "title": "Pure Chase Strategy vs. Pure Level Strategy: Economics & Trade-offs — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Pure Chase Strategy vs. Pure Level Strat...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Pure Chase Strategy vs. Pure Level",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "54ec8e0445109bee3f555ff92a97ad2f766e0341b5fabf8b2980f4d963a60903",
       "spec": {
         "template": "workflow",
-        "title": "Hybrid Aggregate Strategies: Overtime, Subcon... — Operational Workflow",
+        "title": "Hybrid Aggregate Strategies: Overtime — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Hybrid Aggregate Strategies: Overtime, Subcon... — Operational Workflow",
+        "title": "Hybrid Aggregate Strategies: Overtime — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Hybrid Aggregate Strategies: Overtime, S...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Hybrid Aggregate Strategies: Overtime",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "2c6c2327306846c9f2b420bb8da9d7fc014feda4ca342f4df793d8056c0783d5",
       "spec": {
         "template": "workflow",
-        "title": "Disaggregation & Master Production Scheduling... — Operational Workflow",
+        "title": "Disaggregation & Master Production Scheduling (MPS) Architecture — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Disaggregation & Master Production Scheduling... — Operational Workflow",
+        "title": "Disaggregation & Master Production Scheduling (MPS) Architecture — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Disaggregation & Master Production Sched...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Disaggregation & Master Production",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "4ffb796f33a09fe7f2a4f73315ad84ae0d8835cda078cf649cab5483d30a8f47",
       "spec": {
         "template": "workflow",
-        "title": "Master Scheduling Governance, Time Fences & S... — Operational Workflow",
+        "title": "Master Scheduling Governance, Time Fences & S&OP Integration — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Master Scheduling Governance, Time Fences & S... — Operational Workflow",
+        "title": "Master Scheduling Governance, Time Fences & S&OP Integration — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Master Scheduling Governance, Time Fence...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Master Scheduling Governance, Time",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

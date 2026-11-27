@@ -10,7 +10,7 @@
       "codeHash": "632b62b7b05ba352aeb4abb8cd7c726fafe9b62dba90a9cd23794d0471848d3d",
       "spec": {
         "template": "workflow",
-        "title": "Statutory Governance Framework: Companies Act... — Operational Workflow",
+        "title": "Statutory Governance Framework: Companies — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Statutory Governance Framework: Companies Act... — Operational Workflow",
+        "title": "Statutory Governance Framework: Companies — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Statutory Governance Framework: Companie...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Statutory Governance Framework: Companie",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "91db52a3f75898d134b8457c511924a07487b0e68215083f0e29965e2433b42a",
       "spec": {
         "template": "workflow",
-        "title": "Related Party Transactions (Section 188) & Ar... — Operational Workflow",
+        "title": "Related Party Transactions (Section 188) & Arm's Length Pricing — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Related Party Transactions (Section 188) & Ar... — Operational Workflow",
+        "title": "Related Party Transactions (Section 188) & Arm's Length Pricing — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Related Party Transactions (Section 188)...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Related Party Transactions (Section",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "c787fa6ab69ab7bd1405e5c2a1b510b839db495d798203ee076dfe1e014f36c5",
       "spec": {
         "template": "workflow",
-        "title": "Statutory Physical Inventory Verification: CA... — Operational Workflow",
+        "title": "Statutory Physical Inventory Verification: CARO 2020 Reporting & Bank — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Statutory Physical Inventory Verification: CA... — Operational Workflow",
+        "title": "Statutory Physical Inventory Verification: CARO 2020 Reporting & Bank — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Statutory Physical Inventory Verificatio...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Statutory Physical Inventory",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "887d6f0cf0c36c1864a22e5d737730bd9cf816314366dc40daeb1dcb917b16d0",
       "spec": {
         "template": "workflow",
-        "title": "Supply Chain Human Rights, ESG Due Diligence ... — Operational Workflow",
+        "title": "Supply Chain Human Rights, ESG Due Diligence & Vendor Code of Conduct — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Supply Chain Human Rights, ESG Due Diligence ... — Operational Workflow",
+        "title": "Supply Chain Human Rights, ESG Due Diligence & Vendor Code of Conduct — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Supply Chain Human Rights, ESG Due Dilig...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Supply Chain Human Rights, ESG Due",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "dcd69980570074d11874eb034d342ae895bdc1c76ce64fdccd2ffe0f70081c19",
       "spec": {
         "template": "workflow",
-        "title": "Integrated Anti-Bribery Compliance, FCPA/PCA ... — Operational Workflow",
+        "title": "Integrated Anti-Bribery Compliance, FCPA/PCA & Whistleblower Red-Flag — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Integrated Anti-Bribery Compliance, FCPA/PCA ... — Operational Workflow",
+        "title": "Integrated Anti-Bribery Compliance, FCPA/PCA & Whistleblower Red-Flag — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Integrated Anti-Bribery Compliance, FCPA...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Integrated Anti-Bribery Compliance",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

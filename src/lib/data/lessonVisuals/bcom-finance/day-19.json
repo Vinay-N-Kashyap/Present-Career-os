@@ -10,11 +10,11 @@
       "codeHash": "373b50571e00ce8628bb579d750edaedcd5d8ce72a196fac5e97791829b05a87",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Traditional Capital Structure: Net Income ... — General Ledger Verification",
+        "title": "Traditional Capital Structure: Net — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 91500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 109800,
@@ -139,11 +139,11 @@
       "codeHash": "6a1e3c5eda952dc90d8b70ba0cc2c2009913478310864389386ede44925ff7d8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Modigliani-Miller (MM) Theorem: Irrelevanc... — General Ledger Verification",
+        "title": "Modigliani-Miller (MM) Theorem: Irrelevance & Arbitrage (No Taxes) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 92750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 111300,
@@ -268,11 +268,11 @@
       "codeHash": "65e45ada3eafa84f693f3238b870c94bf23afccd50bb9bc9056733ea107baac7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Modigliani-Miller with Corporate Taxes: Ta... — General Ledger Verification",
+        "title": "Modigliani-Miller with Corporate Taxes: Tax Shield Value & WACC Decline — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 112800,
@@ -397,11 +397,11 @@
       "codeHash": "97e25205de310af34ada09cfad02bdf8352e9e42ccb49b11bf5a7a5d14a39f90",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Static Trade-Off Theory: Tax Shields vs Fi... — General Ledger Verification",
+        "title": "Static Trade-Off Theory: Tax Shields — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Static.",
+            "caption": "Open primary facility debit entry for Static Trade-Off Theory.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 95250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 114300,
@@ -526,11 +526,11 @@
       "codeHash": "7d6e42fec713e980936a4990fe171185745e54502137d12274567fa64d9fc9b5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Capital Structure Governance & ... — General Ledger Verification",
+        "title": "Enterprise Capital Structure Governance & Valuation Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Capital Structure Governance.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 96500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 115800,

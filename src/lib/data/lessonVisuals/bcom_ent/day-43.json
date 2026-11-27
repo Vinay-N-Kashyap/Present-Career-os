@@ -606,7 +606,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Section multiple deductions and foreign tax credit limitations under.",
+            "caption": "Section multiple deductions and foreign tax credit limitations.",
             "activeStageId": "stage_1",
             "stages": [
               {
@@ -752,7 +752,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Section multiple deductions and foreign tax credit limitations under.",
+            "caption": "Section multiple deductions and foreign tax credit limitations.",
             "activeStageId": "stage_1",
             "stages": [
               {
@@ -902,7 +902,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Permanent establishment risks and dependent agent tax exposure under.",
+            "caption": "Permanent establishment risks and dependent agent tax exposure.",
             "activeStageId": "stage_1",
             "stages": [
               {
@@ -1048,7 +1048,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Permanent establishment risks and dependent agent tax exposure under.",
+            "caption": "Permanent establishment risks and dependent agent tax exposure.",
             "activeStageId": "stage_1",
             "stages": [
               {

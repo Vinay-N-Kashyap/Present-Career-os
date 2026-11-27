@@ -8,7 +8,7 @@
       "codeHash": "b8d8d821b33145cc27e59a8257a7f638265d10968e8b028033b59b6982ae4d9c",
       "spec": {
         "template": "funnel",
-        "title": "Market Risk Architecture & Value-at-Ri... — Treasury Risk Operations",
+        "title": "Market Risk Architecture & Value-at-Risk Foundations: Parametric — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "43c8be0633cf2d6d0f1dd3b79bc319a30ca08bd2a5daccf8b457e1127d14914a",
       "spec": {
         "template": "funnel",
-        "title": "Non-Parametric Market Risk Analytics: ... — Treasury Risk Operations",
+        "title": "Non-Parametric Market Risk Analytics: Historical Simulation & Full — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "289dceda878282dba8e4b417b1c447f8fada81774e0b408056eb0e7eeb03c984",
       "spec": {
         "template": "funnel",
-        "title": "Tail Risk & Subadditivity: Stressed Va... — Treasury Risk Operations",
+        "title": "Tail Risk & Subadditivity: Stressed — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "836353538dffcb332b6916a2d039a5099791ff1d1dcd9d4d507a984916eaf28c",
       "spec": {
         "template": "funnel",
-        "title": "Operational Risk Modernization: Basel ... — Treasury Risk Operations",
+        "title": "Operational Risk Modernization: Basel — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "cb606b2a59b0d406bfecb84852fdb6ae9f17275f259dd73b8e0c852e3e91a57c",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Market & Operational Risk D... — Treasury Risk Operations",
+        "title": "Enterprise Market & Operational Risk Defense Engine: Backtesting — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

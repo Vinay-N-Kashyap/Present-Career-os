@@ -8,7 +8,7 @@
       "codeHash": "3533697929a8ebe088c3b8118a5a25ff33167df171226e37a5f2151864b0d5ff",
       "spec": {
         "template": "bars",
-        "title": "Tufte Data-Ink Ratio, Cognitive Load &... \u2014 Quantitative Evaluation",
+        "title": "Tufte Data-Ink Ratio, Cognitive Load & The Preattentive Processing — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "10488e1283b2c22e9a3218a17d74e6f806fc38d5195a2c59b2a67649b959c5dd",
       "spec": {
         "template": "bars",
-        "title": "Visual Lie Factor, Truncated Axes & Di... \u2014 Quantitative Evaluation",
+        "title": "Visual Lie Factor, Truncated Axes & Distorted Narrative Detection — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "b32cd922f7c393cbd56354fd4b5359443e6dfea5de3e74332ab794d431d879c1",
       "spec": {
         "template": "bars",
-        "title": "Layout Hierarchy: 5-Second Executive R... \u2014 Quantitative Evaluation",
+        "title": "Layout Hierarchy: 5-Second Executive — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "9736643b2526ce74ca20fb836b70ea1801feb9007dd30fda4e272801796d47e4",
       "spec": {
         "template": "bars",
-        "title": "Interactive Dashboard Architecture: Fi... \u2014 Quantitative Evaluation",
+        "title": "Interactive Dashboard Architecture: Filtering, Drill-Downs & Latency — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "6be297a06d708f15c1ac8b3e104a2b0f197be05b72553be4fd6b1b0e087f6e41",
       "spec": {
         "template": "bars",
-        "title": "Milestone 1 Grand Boardroom Review: De... \u2014 Quantitative Evaluation",
+        "title": "Milestone 1 Grand Boardroom Review: Decision Intelligence Operating — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",

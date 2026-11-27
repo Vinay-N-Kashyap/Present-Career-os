@@ -10,11 +10,11 @@
       "codeHash": "fd022e06e94e8400b90b0678f03d4b54a2b0f6e14e91e375029e55f6e2ffe36a",
       "spec": {
         "template": "funnel",
-        "title": "Speed-to-Lead Physics & Inbound Latency De \u2014 Conversion Pipeline",
+        "title": "Speed-to-Lead Physics & Inbound Latency Decay — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (one,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Speed-to-Lead Physics & Inbound Latency De \u2014 Conversion Pipeline",
+        "title": "Speed-to-Lead Physics & Inbound Latency Decay — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (one,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "f1f5ce67ef77d225b972cd49a337402f3cb9929873e308c78175f9c0880e4401",
       "spec": {
         "template": "funnel",
-        "title": "Two-Tier Lead Scoring: Firmographic ICP Fi \u2014 Conversion Pipeline",
+        "title": "Two-Tier Lead Scoring: Firmographic ICP Fit vs Behavioral Intent — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (two,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Two-Tier Lead Scoring: Firmographic ICP Fi \u2014 Conversion Pipeline",
+        "title": "Two-Tier Lead Scoring: Firmographic ICP Fit vs Behavioral Intent — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (two,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "d139264cc8d668569b32e2ef1e808d0dc387a6e58ee13d6bd173fba3dbef29ec",
       "spec": {
         "template": "funnel",
-        "title": "Intelligent Lead Routing: Round-Robin, Ter \u2014 Conversion Pipeline",
+        "title": "Intelligent Lead Routing: Round-Robin, Territory Gini — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (eight,multiple prospects).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (one,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Intelligent Lead Routing: Round-Robin, Ter \u2014 Conversion Pipeline",
+        "title": "Intelligent Lead Routing: Round-Robin, Territory Gini — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (eight,multiple prospects).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (one,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "1c1907ae85841a882381f926bcd23b8ecfcaa4a6ebd5c634aba73540d79a0086",
       "spec": {
         "template": "funnel",
-        "title": "Marketing-Sales SLA Contracts & Revenue Op \u2014 Conversion Pipeline",
+        "title": "Marketing-Sales SLA Contracts & Revenue Operations Governance — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (one,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Marketing-Sales SLA Contracts & Revenue Op \u2014 Conversion Pipeline",
+        "title": "Marketing-Sales SLA Contracts & Revenue Operations Governance — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (one,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "15847d3f2271c50fc48489f5dc21bb86b5a7ede500a9bce4e068d46a702fd7d0",
       "spec": {
         "template": "funnel",
-        "title": "Executive Inbound Revenue Pipeline & SLA O \u2014 Conversion Pipeline",
+        "title": "Executive Inbound Revenue Pipeline & SLA Orchestration Scorecard — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple prospects).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (two,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Executive Inbound Revenue Pipeline & SLA O \u2014 Conversion Pipeline",
+        "title": "Executive Inbound Revenue Pipeline & SLA Orchestration Scorecard — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple prospects).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Active validation and evaluation stage (two,multiple accounts).",
+            "caption": "Active validation and evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {

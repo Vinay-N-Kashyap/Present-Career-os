@@ -8,7 +8,7 @@
       "codeHash": "714b326cf6d8c61cae779c3d3481cfb4fcf8882aff8acc0d4d1f8061f380fc04",
       "spec": {
         "template": "funnel",
-        "title": "Sales Engagement Sequence Topology ... - RevOps Funnel",
+        "title": "Sales Engagement Sequence Topology & Event-Driven State Machines - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "18d347c6f7c5d1b7f6c9bd54fd226aa2001e7eaa8b386b164d4b2d2d4f923ae3",
       "spec": {
         "template": "funnel",
-        "title": "Idempotency Mechanics & HMAC Webhoo... - RevOps Funnel",
+        "title": "Idempotency Mechanics & HMAC Webhook Delivery - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "9e728399939cc6a2967ffd59cc2b43be1db9734bcc7ec7c57c2ce3a3aa794357",
       "spec": {
         "template": "funnel",
-        "title": "The 10-Email Spam Storm Incident Fo... - RevOps Funnel",
+        "title": "The 10-Email Spam Storm Incident Forensic Audit ($850K Disaster) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "fd4f201df6bd7dd317c5a3d2c0116add660f6c9f80127af03f8cb3f0cc309014",
       "spec": {
         "template": "funnel",
-        "title": "Atomic Reply Detection & Sequence C... - RevOps Funnel",
+        "title": "Atomic Reply Detection & Sequence Cancellation Across Channels - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "6872e6dacabdb8e7f1709fba536fc60b94ca9f91a3e7e6e8f1d53e0f718c34b3",
       "spec": {
         "template": "funnel",
-        "title": "Building the Enterprise Multi-Touch... - RevOps Funnel",
+        "title": "Building the Enterprise Multi-Touch Cadence & Idempotent Webhook - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

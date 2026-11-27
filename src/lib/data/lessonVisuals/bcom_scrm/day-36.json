@@ -8,7 +8,7 @@
       "codeHash": "b3e11aab8fda24ceec6aa8079901502c115da07b4ccaa38d4c0359d5a8b0a510",
       "spec": {
         "template": "funnel",
-        "title": "The CPQ Paradigm: Deconstructing Co... - RevOps Funnel",
+        "title": "The CPQ Paradigm: Deconstructing - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "f95a5ecbf3e18875d597538b7d551aee085aa0094261eeb754c095fc6535c3a9",
       "spec": {
         "template": "funnel",
-        "title": "Product Bundling Rules, Option Cons... - RevOps Funnel",
+        "title": "Product Bundling Rules, Option Constraints & Dependency Graphs - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "cd34539c06d62e70b9f0fd1ec7cccd3d6e00201210231c08ad5fb06aab03c14b",
       "spec": {
         "template": "funnel",
-        "title": "The $3.8M Unshippable Hardware/Soft... - RevOps Funnel",
+        "title": "The $3.8M Unshippable Hardware/Software Configuration Disaster - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "f4d8d6e24033c03c5dfb5c2459a6dfa47ebd5454cfbf4dd7407f29d0adc55d0e",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Option Pricing, Price Books... - RevOps Funnel",
+        "title": "Dynamic Option Pricing, Price Books & Nested Bundle Math - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "32e0e8b2b4e2c3508d4512023bfe78a7e56c614d764924488400599ff859bc3d",
       "spec": {
         "template": "funnel",
-        "title": "Building the Production CPQ Catalog... - RevOps Funnel",
+        "title": "Building the Production CPQ Catalog & Bundle Validation Engine - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

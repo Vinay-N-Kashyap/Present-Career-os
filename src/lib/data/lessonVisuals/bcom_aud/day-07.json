@@ -10,11 +10,11 @@
       "codeHash": "ceb38da27d84ec73407c5096b0bf3182ac75b8cee66feec566acb79dc9269bd3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Auditor's Responses to Assessed Risks: Tests o — Statutory Audit Ledger",
+        "title": "The Auditor's Responses to Assessed Risks: Tests of Controls — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for The.",
+            "caption": "Open statutory audit assurance verification ledger.",
             "title": "Day 7 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 995000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 7 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1140000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise audit case study for The Auditor's Responses.",
+            "caption": "Execute simulated enterprise audit case study.",
             "title": "Day 7 Statutory Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1140000,
@@ -141,11 +141,11 @@
       "codeHash": "2ddcbbcaf07c057a176aea616cd23090461d8eaccb092c25cb191cc015151ccd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Internal Financial Controls over Financial Reporti — Statutory Audit Ledger",
+        "title": "Internal Financial Controls over Financial Reporting (IFCoFR) — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for.",
+            "caption": "Open statutory audit assurance verification ledger.",
             "title": "Day 7 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1013000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 7 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1166500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise audit case study for Internal Financial.",
+            "caption": "Execute simulated enterprise audit case study.",
             "title": "Day 7 Statutory Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1166500,
@@ -272,11 +272,11 @@
       "codeHash": "c43fce4bef97b1b29b0aa529e130c9240c3ebccd0d079d0267f53af0d07aac93",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Evaluation of Misstatements Identified During the  — Statutory Audit Ledger",
+        "title": "Evaluation of Misstatements Identified During the Audit: SA 450 — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for.",
+            "caption": "Open statutory audit assurance verification ledger.",
             "title": "Day 7 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1031000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 7 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1193000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise audit case study for Evaluation of.",
+            "caption": "Execute simulated enterprise audit case study.",
             "title": "Day 7 Statutory Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1193000,
@@ -403,11 +403,11 @@
       "codeHash": "ae40ef82440c521195725f852d28fc029b57e58aa40f5bf65d677c7d48981b1f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Audit Sampling Architecture & Sample Size Determin — Statutory Audit Ledger",
+        "title": "Audit Sampling Architecture & Sample Size Determination: SA 530 — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for Audit.",
+            "caption": "Open statutory audit assurance verification ledger.",
             "title": "Day 7 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1049000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 7 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1219500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise audit case study for Audit Sampling.",
+            "caption": "Execute simulated enterprise audit case study for Audit Sampling Architecture.",
             "title": "Day 7 Statutory Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1219500,
@@ -534,11 +534,11 @@
       "codeHash": "e5f83c82ca4c79358def8789712e26c6280a79254448759a9730f1b4b97cc239",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Projecting Sample Misstatements & Upper Error Limi — Statutory Audit Ledger",
+        "title": "Projecting Sample Misstatements & Upper Error Limit Calculations: SA 530 — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for.",
+            "caption": "Open statutory audit assurance verification ledger.",
             "title": "Day 7 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1067000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 7 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1246000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise audit case study for Projecting Sample.",
+            "caption": "Execute simulated enterprise audit case study.",
             "title": "Day 7 Statutory Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1246000,

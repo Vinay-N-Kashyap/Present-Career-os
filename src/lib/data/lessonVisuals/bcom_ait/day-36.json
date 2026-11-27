@@ -10,7 +10,7 @@
       "codeHash": "711d86a70c50bbebc3301facc9ac425f9f5feb12b77fb3ae4a4b1a56c606e8f5",
       "spec": {
         "template": "tree-graph",
-        "title": "Dense Semantic Search vs Sparse Lexical Match... — Enterprise AI Decision Graph",
+        "title": "Dense Semantic Search vs Sparse Lexical Matching: Mathematical — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Dense Semantic Search vs Sparse...",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Dense Semantic Search vs Sparse Lexical Match... — Enterprise AI Decision Graph",
+        "title": "Dense Semantic Search vs Sparse Lexical Matching: Mathematical — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Dense Semantic Search vs Sparse...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "a9fab4ad95850667f8f39107d16fb88556a0e8f625e59709c74bbbed652755de",
       "spec": {
         "template": "tree-graph",
-        "title": "Sparse Inverted Index & Term Frequency Normal... — Enterprise AI Decision Graph",
+        "title": "Sparse Inverted Index & Term Frequency Normalization (Okapi BM25 Mechanics) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Sparse Inverted Index & Term Fr...",
+            "caption": "Ingest enterprise Context Query for Sparse Inverted Index.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Sparse Inverted Index & Term Frequency Normal... — Enterprise AI Decision Graph",
+        "title": "Sparse Inverted Index & Term Frequency Normalization (Okapi BM25 Mechanics) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Sparse Inverted Index & Term Fr...",
+            "caption": "Step 1: Ingest enterprise Context Query for Sparse Inverted Index.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "9c795ef769087f020911c1a6b21323a19eae057c70c32dc8204c39f9998bc85e",
       "spec": {
         "template": "tree-graph",
-        "title": "Dense Vector Embeddings & Vector Space Topolo... — Enterprise AI Decision Graph",
+        "title": "Dense Vector Embeddings & Vector Space Topologies — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Dense Vector Embeddings & Vecto...",
+            "caption": "Ingest enterprise Context Query for Dense Vector Embeddings.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Dense Vector Embeddings & Vector Space Topolo... — Enterprise AI Decision Graph",
+        "title": "Dense Vector Embeddings & Vector Space Topologies — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Dense Vector Embeddings & Vecto...",
+            "caption": "Step 1: Ingest enterprise Context Query for Dense Vector Embeddings.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "0bf4a89b7e5c37c04cb2352d77bb3bcdaefa1bb8074ca82fb9b59a1ef4485eaf",
       "spec": {
         "template": "tree-graph",
-        "title": "Reciprocal Rank Fusion (RRF) & Cross-Encoder ... — Enterprise AI Decision Graph",
+        "title": "Reciprocal Rank Fusion (RRF) & Cross-Encoder Re-Ranking — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Reciprocal Rank Fusion (RRF) & ...",
+            "caption": "Ingest enterprise Context Query for Reciprocal Rank Fusion.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Reciprocal Rank Fusion (RRF) & Cross-Encoder ... — Enterprise AI Decision Graph",
+        "title": "Reciprocal Rank Fusion (RRF) & Cross-Encoder Re-Ranking — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Reciprocal Rank Fusion (RRF) & ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Reciprocal Rank Fusion.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "e2491553c48d0405b25110329aa5af6a90ecd7b492542186b840c275b559d638",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query for Building an Enterprise Hybrid Search.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

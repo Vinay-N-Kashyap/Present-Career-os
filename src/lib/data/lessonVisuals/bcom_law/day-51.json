@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 1: ESG Jurisprudence & SEBI LODR Regu... — Compliance Workflow",
+        "title": "Part 1: ESG Jurisprudence & SEBI LODR Regulation 34(2)(f) Mandate — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part one: ESG Jurisprudence & SEBI LODR ...",
+            "caption": "Stage one: Initialize Part one: ESG Jurisprudence & SEBI",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 2: The BRSR Core 9-KPI Reasonable Ass... — Compliance Workflow",
+        "title": "Part 2: The BRSR Core 9-KPI Reasonable — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part two: The BRSR Core nine-KPI Reasonable...",
+            "caption": "Stage one: Initialize Part two: The BRSR Core nine-KPI",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 3: Greenwashing Liability & Anti-Frau... — Compliance Workflow",
+        "title": "Part 3: Greenwashing Liability — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part three: Greenwashing Liability & Anti-...",
+            "caption": "Stage one: Initialize Part three: Greenwashing Liability",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 4: Board Fiduciary Duties & Director ... — Compliance Workflow",
+        "title": "Part 4: Board Fiduciary Duties — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part four: Board Fiduciary Duties & Direc...",
+            "caption": "Stage one: Initialize Part four: Board Fiduciary Duties",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 5: Production SEBI BRSR Core Complian... — Compliance Workflow",
+        "title": "Part 5: Production SEBI BRSR Core — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part five: Production SEBI BRSR Core Comp...",
+            "caption": "Stage one: Initialize Part five: Production SEBI BRSR Core",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

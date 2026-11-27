@@ -8,7 +8,7 @@
       "codeHash": "42e50064cb5b7816a3ecefe8c06149218473b3c3831b4d82d1cb0bf6739c2807",
       "spec": {
         "template": "funnel",
-        "title": "Final Concluding Analytical Procedures... — Assurance Review",
+        "title": "Final Concluding Analytical Procedures under PCAOB AS 2810 & ISA 520 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "41a15dcb7722415be3d2e5687e844b9b601838dc273efe3f5afd7f0cfd2561b2",
       "spec": {
         "template": "funnel",
-        "title": "The Dual-Window Subsequent Events Audi... — Assurance Review",
+        "title": "The Dual-Window Subsequent Events Audit Framework under ISA 560 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "61709b9fb8aef9fecd9aa61c9af9c3ea4730ef0e97e31efcb6d9fefd315e24ba",
       "spec": {
         "template": "funnel",
-        "title": "Subsequent Period Substantive Fieldwor... — Assurance Review",
+        "title": "Subsequent Period Substantive Fieldwork: Minutes, Cash & Interim — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "e60d1e3ee805d8cc3ae4c9c72adb2b713b775208041d8b550eed9e7fe4c5dc40",
       "spec": {
         "template": "funnel",
-        "title": "Dual-Dating the Auditor's Report vs. R... — Assurance Review",
+        "title": "Dual-Dating the Auditor's Report vs. Reissuance for Post-Report Events — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "63baea56740cf923ec4ea3605fd896beb42c4ee18ee0d160743ba5675623ecf9",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Concluding Analytics & S... — Assurance Review",
+        "title": "Comprehensive Concluding Analytics & Subsequent Events Assurance — Assurance Review",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "8536fc662624426c9e7fdfe6225309a65d05fc1d19f76389931d52fb36994232",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Controlling Shareholder Conflict & Inh... — General Ledger Verification",
+        "title": "The Controlling Shareholder Conflict & Inherently Coercive Dynamics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Controlling Shareholder Conflict.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 126600,
@@ -139,11 +139,11 @@
       "codeHash": "a8b7eacd4363981eaf97f051d4292c54e50ba399d3df561f600e007ad5c9f82b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Dual-Track Evolution: Kahn v. Lynch vs... — General Ledger Verification",
+        "title": "The Dual-Track Evolution: Kahn v. Lynch — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Dual-Track.",
+            "caption": "Open primary facility debit entry for The Dual-Track Evolution.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 106750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 128100,
@@ -268,11 +268,11 @@
       "codeHash": "8e41eb5b9eb6b0a25d9301b95bff527d62c8d4249b3fb78ebf4f0dc58e752e37",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The MFW Framework: Dual Procedural Cleansi... — General Ledger Verification",
+        "title": "The MFW Framework: Dual Procedural — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The MFW.",
+            "caption": "Open primary facility debit entry for The MFW Framework.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 108000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 129600,
@@ -397,11 +397,11 @@
       "codeHash": "7d131aa0471c8ee66fa751b0d2043e4a051ba16801a15a7d797db0c22d342539",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Expanding MFW: In re Match Group & Conflic... — General Ledger Verification",
+        "title": "Expanding MFW: In re Match Group — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Expanding MFW.",
+            "caption": "Open primary facility debit entry for Expanding MFW.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 131100,
@@ -526,11 +526,11 @@
       "codeHash": "0dbdb821f62e55e620226e3d860aaab6357e1da62a16fa002ab25c83361781f3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Appraisal Rights under DGCL § 26... — General Ledger Verification",
+        "title": "Statutory Appraisal Rights under DGCL § 262: Fair Value Valuation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Statutory.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132600,

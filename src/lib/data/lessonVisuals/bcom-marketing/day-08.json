@@ -10,7 +10,7 @@
       "codeHash": "429c005fda83ca11fa91905979c4beeab10f1152e7555d553299f65c65efa115",
       "spec": {
         "template": "funnel",
-        "title": "Cognitive Shelf Space & The Ries-Trout Pos... — Conversion Funnel",
+        "title": "Cognitive Shelf Space & The Ries-Trout Positioning Invariant — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "b09db181192285303ed7cf66016b09ce5cdb9025bfd85b22dcd5267b5196e9dc",
       "spec": {
         "template": "funnel",
-        "title": "Perceptual Attribute Mapping & Multi-Dimen... — Conversion Funnel",
+        "title": "Perceptual Attribute Mapping & Multi-Dimensional Scaling (MDS) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "ec406fbc6efabed6457ddf0c15aa94f351c4eef8d75191c99f90163f046b46f9",
       "spec": {
         "template": "funnel",
-        "title": "Euclidean Spatial Proximity & Direct Head-... — Conversion Funnel",
+        "title": "Euclidean Spatial Proximity & Direct Head-to-Head Cannibalization — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "90f7027f2168e0e8c969b2892ff9392f381d4b7e7ddf1f6bdacc9824bef5f7a8",
       "spec": {
         "template": "funnel",
-        "title": "Points-of-Parity (POPs) vs Points-of-Diffe... — Conversion Funnel",
+        "title": "Points-of-Parity (POPs) vs Points-of-Difference (PODs): Hygiene — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "60c56661eedd614282af880b93493968935fb8e5c072ce49efe746314223fdbe",
       "spec": {
         "template": "funnel",
-        "title": "Production Post-Mortem & Brand Repositioni... — Conversion Funnel",
+        "title": "Production Post-Mortem & Brand Repositioning Architecture — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

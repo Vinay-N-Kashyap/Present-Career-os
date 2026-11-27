@@ -10,7 +10,7 @@
       "codeHash": "c34f198cd1c505866af69dec463c0f3edfe24e205e0d30918dd72d21d3345a1f",
       "spec": {
         "template": "tree-graph",
-        "title": "Cloud AI Infrastructure Tiers: IaaS vs P... — Enterprise AI Decision Graph",
+        "title": "Cloud AI Infrastructure Tiers: IaaS — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -134,7 +134,7 @@
       "codeHash": "3ee9211fa7741be755274e9fc7d42394c8faee30844f9feebaa26dffc210242a",
       "spec": {
         "template": "tree-graph",
-        "title": "Token Economics & Cost Modeling: Asymmet... — Enterprise AI Decision Graph",
+        "title": "Token Economics & Cost Modeling: Asymmetric Pricing & Sub-$0.01 — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -258,7 +258,7 @@
       "codeHash": "6e661e62a91cc42c113969733865f6710a2feb4727e66c07c24946fc11134707",
       "spec": {
         "template": "tree-graph",
-        "title": "Model Optimization: 4-Bit Quantization (... — Enterprise AI Decision Graph",
+        "title": "Model Optimization: 4-Bit Quantization — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -382,7 +382,7 @@
       "codeHash": "b6dc74d330b005a67810b4ba3aa99f8079e4cca45def7b15e69493912530c215",
       "spec": {
         "template": "tree-graph",
-        "title": "Semantic Caching & Token Cost Avoidance:... — Enterprise AI Decision Graph",
+        "title": "Semantic Caching & Token Cost Avoidance: Vector Similarity & Fast — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -506,7 +506,7 @@
       "codeHash": "16feefe5eb0428a9787c8286cc29e6a95555a3ee6a20418bd4a0ab88519a5e55",
       "spec": {
         "template": "tree-graph",
-        "title": "Enterprise FinOps for AI Control Tower: ... — Enterprise AI Decision Graph",
+        "title": "Enterprise FinOps for AI Control Tower: Cost Governance — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",

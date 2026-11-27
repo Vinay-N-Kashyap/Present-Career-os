@@ -10,7 +10,7 @@
       "codeHash": "8447196d3fdcec62774dbd30c151fe8020c915c74279570d464c49c36076622c",
       "spec": {
         "template": "workflow",
-        "title": "Scope 3 Value Chain Greenhouse Gas (GHG) Audi... — Operational Workflow",
+        "title": "Scope 3 Value Chain Greenhouse Gas (GHG) Auditing & Carbon Accounting — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Scope 3 Value Chain Greenhouse Gas (GHG) Audi... — Operational Workflow",
+        "title": "Scope 3 Value Chain Greenhouse Gas (GHG) Auditing & Carbon Accounting — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Scope 3 Value Chain Greenhouse Gas (GHG)...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Scope 3 Value Chain Greenhouse Gas",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "1e4aaa8b51317ce5eeab0350792d68260de068bcd5706fd7757474db7b1b62fa",
       "spec": {
         "template": "workflow",
-        "title": "EU Deforestation Regulation (EUDR) Compliance... — Operational Workflow",
+        "title": "EU Deforestation Regulation (EUDR) Compliance & Satellite GPS Traceability — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "EU Deforestation Regulation (EUDR) Compliance... — Operational Workflow",
+        "title": "EU Deforestation Regulation (EUDR) Compliance & Satellite GPS Traceability — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize EU Deforestation Regulation (EUDR) Compl...",
+            "caption": "Stage 1 (Demand Forecast): Initialize EU Deforestation Regulation (EUDR)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "51d9c5ed78a3da717fe3d90a6b12c986f67215de04a09a3af0a9e671d7632626",
       "spec": {
         "template": "workflow",
-        "title": "Conflict Minerals (3TG) Due Diligence & Respo... — Operational Workflow",
+        "title": "Conflict Minerals (3TG) Due Diligence & Responsible Sourcing — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Conflict Minerals (3TG) Due Diligence & Respo... — Operational Workflow",
+        "title": "Conflict Minerals (3TG) Due Diligence & Responsible Sourcing — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Conflict Minerals (3TG) Due Diligence & ...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Conflict Minerals (3TG) Due Diligence",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "efebae566f6ac55f71a6f254e5fa598ebb06e119b353579c16a4681e962fe891",
       "spec": {
         "template": "workflow",
-        "title": "Supplier Ethical Data Exchange (Sedex SMETA) ... — Operational Workflow",
+        "title": "Supplier Ethical Data Exchange (Sedex SMETA) & Fair Labor Auditing — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Supplier Ethical Data Exchange (Sedex SMETA) ... — Operational Workflow",
+        "title": "Supplier Ethical Data Exchange (Sedex SMETA) & Fair Labor Auditing — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Supplier Ethical Data Exchange (Sedex SM...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Supplier Ethical Data Exchange (Sedex",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "12776f5f9704515429c7e8ba87d4493af27789c072348aa5216cb0ce46e4a342",
       "spec": {
         "template": "workflow",
-        "title": "Executive Synthesis: The Master Sustainable P... — Operational Workflow",
+        "title": "Executive Synthesis: The Master Sustainable — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Executive Synthesis: The Master Sustainable P... — Operational Workflow",
+        "title": "Executive Synthesis: The Master Sustainable — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Executive Synthesis: The Master Sustaina...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Executive Synthesis: The Master",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

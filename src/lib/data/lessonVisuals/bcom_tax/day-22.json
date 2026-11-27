@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Income.",
+            "caption": "Open primary tax demand / controversy ledger.",
             "title": "Day 22 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1100000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 22 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1210000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated litigation case study for Income Escaping Assessment.",
+            "caption": "Execute simulated litigation case study.",
             "title": "Day 22 Tax Controversy Ledger — Tribunal Audit",
             "isBalanced": true,
             "totalDebit": 1210000,
@@ -145,7 +145,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Mandatory.",
+            "caption": "Open primary tax demand / controversy ledger.",
             "title": "Day 22 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1112500,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 22 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1228500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated litigation case study for Mandatory Pre-Notice.",
+            "caption": "Execute simulated litigation case study.",
             "title": "Day 22 Tax Controversy Ledger — Tribunal Audit",
             "isBalanced": true,
             "totalDebit": 1228500,
@@ -272,11 +272,11 @@
       "codeHash": "8fe8e2a749e815b16618efe2781e4f9df7183586c10976ebe9469707019806ec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Limitation Deadlines & High-Value Reopen — Tax Controversy Ledger",
+        "title": "Statutory Limitation Deadlines & High-Value Reopenings (Section 149) — Tax Controversy Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Statutory.",
+            "caption": "Open primary tax demand / controversy ledger for Statutory Limitation Deadlines.",
             "title": "Day 22 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1125000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 22 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1247000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated litigation case study for Statutory Limitation.",
+            "caption": "Execute simulated litigation case study for Statutory Limitation Deadlines.",
             "title": "Day 22 Tax Controversy Ledger — Tribunal Audit",
             "isBalanced": true,
             "totalDebit": 1247000,
@@ -407,7 +407,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Specified.",
+            "caption": "Open primary tax demand / controversy ledger.",
             "title": "Day 22 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1137500,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 22 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1265500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated litigation case study for Specified Authority Approvals.",
+            "caption": "Execute simulated litigation case study.",
             "title": "Day 22 Tax Controversy Ledger — Tribunal Audit",
             "isBalanced": true,
             "totalDebit": 1265500,
@@ -534,11 +534,11 @@
       "codeHash": "509b7331c20eeae50322c9d219c2a416af9f6ed43fcd98161d0d4e37ee47b839",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Search Assessments & Reopening Architecture (Secti — Tax Controversy Ledger",
+        "title": "Search Assessments & Reopening Architecture (Section 132 & 148) — Tax Controversy Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Search.",
+            "caption": "Open primary tax demand / controversy ledger for Search Assessments.",
             "title": "Day 22 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1150000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 22 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1284000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated litigation case study for Search Assessments &.",
+            "caption": "Execute simulated litigation case study for Search Assessments.",
             "title": "Day 22 Tax Controversy Ledger — Tribunal Audit",
             "isBalanced": true,
             "totalDebit": 1284000,

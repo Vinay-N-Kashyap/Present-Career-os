@@ -10,7 +10,7 @@
       "codeHash": "06d192624ff21efd4f8793e57ca68d3c1ca3450df07f7fd524866d3ae62111f2",
       "spec": {
         "template": "tree-graph",
-        "title": "Adversarial Threat Modeling: Zero-Day Prompt ... — Enterprise AI Decision Graph",
+        "title": "Adversarial Threat Modeling: Zero-Day — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Adversarial Threat Modeling: Ze...",
+            "caption": "Ingest enterprise Context Query for Adversarial Threat Modeling.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Adversarial Threat Modeling: Zero-Day Prompt ... — Enterprise AI Decision Graph",
+        "title": "Adversarial Threat Modeling: Zero-Day — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Adversarial Threat Modeling: Ze...",
+            "caption": "Step 1: Ingest enterprise Context Query for Adversarial Threat Modeling.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "96a688ed7bbd603678a5aa6d9c934da5118e554537a244b0448f4041abba7b3f",
       "spec": {
         "template": "tree-graph",
-        "title": "Training Data & Knowledge Graph Poisoning: Tr... — Enterprise AI Decision Graph",
+        "title": "Training Data & Knowledge Graph Poisoning: Training Data & Knowledge Graph Poisoning: Trojan Triggers & Backdoor Mitigation — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Training Data & Knowledge Graph...",
+            "caption": "Ingest enterprise Context Query for Training Data.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Training Data & Knowledge Graph Poisoning: Tr... — Enterprise AI Decision Graph",
+        "title": "Training Data & Knowledge Graph Poisoning: Training Data & Knowledge Graph Poisoning: Trojan Triggers & Backdoor Mitigation — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Training Data & Knowledge Graph...",
+            "caption": "Step 1: Ingest enterprise Context Query for Training Data.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "c1d2cd02030f067827d7a98df674f2eed8c791f18b6ba9100b21ce164a2a6a47",
       "spec": {
         "template": "tree-graph",
-        "title": "Autonomous Incident Response: Automated Encla... — Enterprise AI Decision Graph",
+        "title": "Autonomous Incident Response: Automated — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Autonomous Incident Response: A...",
+            "caption": "Ingest enterprise Context Query for Autonomous Incident Response.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Autonomous Incident Response: Automated Encla... — Enterprise AI Decision Graph",
+        "title": "Autonomous Incident Response: Automated — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Autonomous Incident Response: A...",
+            "caption": "Step 1: Ingest enterprise Context Query for Autonomous Incident Response.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "8f976d328ca359e1dc66fcd1a671f3f3893d0fc2bfb3e7eb71ba98fb6a25ab5c",
       "spec": {
         "template": "tree-graph",
-        "title": "Boardroom Fiduciary War Room: SEC Incident Di... — Enterprise AI Decision Graph",
+        "title": "Boardroom Fiduciary War Room: SEC Incident — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Boardroom Fiduciary War Room: S...",
+            "caption": "Ingest enterprise Context Query for Boardroom Fiduciary War Room.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Boardroom Fiduciary War Room: SEC Incident Di... — Enterprise AI Decision Graph",
+        "title": "Boardroom Fiduciary War Room: SEC Incident — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Boardroom Fiduciary War Room: S...",
+            "caption": "Step 1: Ingest enterprise Context Query for Boardroom Fiduciary War Room.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "beabe8b48e9b26707a3a4bdb8e03a4088ebb745a46aa677f4e5d0b98f2584a14",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building the Enterpris... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building the Enterpris... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

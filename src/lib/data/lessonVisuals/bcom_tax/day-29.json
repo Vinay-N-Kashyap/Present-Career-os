@@ -10,11 +10,11 @@
       "codeHash": "9965548b59267c0f48c3807900f3f0ccdd1caa15c317c3a52b996cc5d89be204",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Tax Strategy & ESG Tax Transparency in t — Tax Governance Ledger",
+        "title": "Corporate Tax Strategy & ESG Tax Transparency in the Boardroom — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Corporate.",
+            "caption": "Open primary enterprise tax / governance ledger for Corporate Tax Strategy.",
             "title": "Day 29 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1520000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 29 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1645000,
@@ -141,11 +141,11 @@
       "codeHash": "3422c7d7c5db993afedaecfc1c322b8dd358c5e3811173714bf5db2b91816e73",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Effective Tax Rate (ETR) Architecture & Multi-Juri — Tax Governance Ledger",
+        "title": "Effective Tax Rate (ETR) Architecture & Multi-Jurisdictional Modeling — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Effective.",
+            "caption": "Open primary enterprise tax / governance ledger for Effective Tax Rate.",
             "title": "Day 29 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1535000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 29 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1667500,
@@ -272,11 +272,11 @@
       "codeHash": "f6ad842a90a8a8f644831c8c59fc2e8418f2b0fe2689ae7a7269c4df12589a71",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ind AS 12 Deferred Taxes: Temporary Differences &  — Tax Governance Ledger",
+        "title": "Ind AS 12 Deferred Taxes: Temporary Differences & Balance Sheet — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for Ind AS.",
+            "caption": "Open primary enterprise tax / governance ledger for Ind AS 12 Deferred Taxes.",
             "title": "Day 29 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1550000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 29 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1690000,
@@ -407,7 +407,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for M&A Tax.",
+            "caption": "Open primary enterprise tax / governance ledger for M&A Tax Due Diligence.",
             "title": "Day 29 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1565000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 29 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1712500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise case study for M&A Tax Due Diligence &.",
+            "caption": "Execute simulated enterprise case study for M&A Tax Due Diligence.",
             "title": "Day 29 Enterprise Tax Ledger — Executive Audit",
             "isBalanced": true,
             "totalDebit": 1712500,
@@ -534,11 +534,11 @@
       "codeHash": "59f7a869e40231a1688a96e75373127e08ddc61d4344aecb5247ca29f929a892",
       "spec": {
         "template": "ledger-sheet",
-        "title": "OECD Pillar Two Global Minimum Tax (GloBE) Prepare — Tax Governance Ledger",
+        "title": "OECD Pillar Two Global Minimum Tax (GloBE) Preparedness — Tax Governance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary enterprise tax / governance ledger (multiple) for OECD.",
+            "caption": "Open primary enterprise tax / governance ledger.",
             "title": "Day 29 Enterprise Tax Ledger — Master Entry",
             "isBalanced": true,
             "totalDebit": 1580000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reconciliation entry (multiple) under.",
+            "caption": "Record statutory adjustment / reconciliation entry.",
             "title": "Day 29 Enterprise Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 1735000,

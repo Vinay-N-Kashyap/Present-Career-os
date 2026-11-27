@@ -10,11 +10,11 @@
       "codeHash": "4a90d4f16d2d5e3c795f00c3974a922cddf7d12f610a8e6252ffa7cf63f12ba0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ind AS 2 Lower of Cost and Net Realizable Value (N — Forensic Audit Ledger",
+        "title": "Ind AS 2 Lower of Cost and Net Realizable Value (NRV) Substantive — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Ind AS two.",
+            "caption": "Open forensic assurance verification ledger for Ind AS two.",
             "title": "Day 13 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1370000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1535000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Ind AS two Lower of.",
+            "caption": "Execute simulated enterprise forensic case study for Ind AS two Lower.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1535000,
@@ -141,11 +141,11 @@
       "codeHash": "6e8879a8f1b244c67863d28eefdf294bbb19eb2578c5ee2fc82b60aa0aa07cc0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Inventory Aging Analytics, Slow-Moving Reserves &  — Forensic Audit Ledger",
+        "title": "Inventory Aging Analytics, Slow-Moving Reserves & Scrap Revenue — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Inventory.",
+            "caption": "Open forensic assurance verification ledger for Inventory Aging Analytics.",
             "title": "Day 13 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1390000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1564500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Inventory Aging.",
+            "caption": "Execute simulated enterprise forensic case study for Inventory Aging Analytics.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1564500,
@@ -272,11 +272,11 @@
       "codeHash": "efe43304aa3e05a5a1ed24cb3bc38cd9b0602b4971db3609f0bacf2fff281ec8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Supply Chain Round-Tripping & Circular Trading For — Forensic Audit Ledger",
+        "title": "Supply Chain Round-Tripping & Circular Trading Forensics: SA 240 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Supply Chain.",
+            "caption": "Open forensic assurance verification ledger for Supply Chain Round-Tripping.",
             "title": "Day 13 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1410000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1594000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Supply Chain.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1594000,
@@ -403,11 +403,11 @@
       "codeHash": "984a1fe60b41b0dfd2679221cc394bf0a2f30b8ffcb1fe56658d9a14be63914d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Substantive Inventory Cut-Off Testing & Warehouse  — Forensic Audit Ledger",
+        "title": "Substantive Inventory Cut-Off Testing & Warehouse Gate Pass — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Substantive.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 13 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1430000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1623500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Substantive.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1623500,
@@ -534,11 +534,11 @@
       "codeHash": "ccdc763f8bb197b5faac195d7282809be0c85883964df8e6062ee08db1184d4b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Substantive Verification of Consignment Stock & Th — Forensic Audit Ledger",
+        "title": "Substantive Verification of Consignment Stock & Third-Party Warehouse — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Substantive.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 13 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1450000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1653000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Substantive.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 13 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1653000,

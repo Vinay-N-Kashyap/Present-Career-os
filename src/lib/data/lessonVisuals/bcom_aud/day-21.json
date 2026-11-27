@@ -10,11 +10,11 @@
       "codeHash": "293277efe45cd3fd3755ee78da082fe325a95e2b7c1310723ab503adc0bacee0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Qualitative & Quantitative Evaluation of Finan — Statutory Audit Ledger",
+        "title": "The Qualitative & Quantitative Evaluation of Financial Statements: SA 700 Revised — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit reporting verification ledger (multiple) for The.",
+            "caption": "Open statutory audit reporting verification ledger for The Qualitative.",
             "title": "Day 21 Statutory Reporting Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1890000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reporting entry (multiple) under applicable.",
+            "caption": "Record statutory adjustment / reporting entry.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 2095000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise statutory audit case study for The.",
+            "caption": "Execute simulated enterprise statutory audit case study for The Qualitative.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 2095000,
@@ -141,11 +141,11 @@
       "codeHash": "2d96af2435c6feeeedfeaf00102ccad1a65946eb6bf68b839e67064934bf8942",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Anatomy & Mandatory Sequencing of the Independent  — Statutory Audit Ledger",
+        "title": "Anatomy & Mandatory Sequencing of the Independent Auditor's Report — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit reporting verification ledger (multiple) for Anatomy.",
+            "caption": "Open statutory audit reporting verification ledger for Anatomy.",
             "title": "Day 21 Statutory Reporting Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1910000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reporting entry (multiple) under applicable.",
+            "caption": "Record statutory adjustment / reporting entry.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 2124500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise statutory audit case study for Anatomy &.",
+            "caption": "Execute simulated enterprise statutory audit case study for Anatomy.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 2124500,
@@ -272,11 +272,11 @@
       "codeHash": "23180395c86a3241bc74b41f6fa62aa0a28ee674e0721a176e358c69c8f5bd4f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Companies Act 2013 Statutory Reporting Requirement — Statutory Audit Ledger",
+        "title": "Companies Act 2013 Statutory Reporting Requirements: Section 143(3) — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit reporting verification ledger (multiple) for.",
+            "caption": "Open statutory audit reporting verification ledger.",
             "title": "Day 21 Statutory Reporting Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1930000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reporting entry (multiple) under applicable.",
+            "caption": "Record statutory adjustment / reporting entry.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 2154000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise statutory audit case study for Companies Act.",
+            "caption": "Execute simulated enterprise statutory audit case study.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 2154000,
@@ -403,11 +403,11 @@
       "codeHash": "7a16f3fe3d75f788d51aa0c465751208150a491e88a0b81a3e9b5b6d67486eef",
       "spec": {
         "template": "ledger-sheet",
-        "title": "CARO 2020 Integration & Statutory Reporting Struct — Statutory Audit Ledger",
+        "title": "CARO 2020 Integration & Statutory Reporting Structure — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit reporting verification ledger (multiple) for CARO.",
+            "caption": "Open statutory audit reporting verification ledger for CARO 2020 Integration.",
             "title": "Day 21 Statutory Reporting Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1950000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reporting entry (multiple) under applicable.",
+            "caption": "Record statutory adjustment / reporting entry.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 2183500,
@@ -534,11 +534,11 @@
       "codeHash": "994ff6ba0f7d6a46bbc3962da85534f80e01f9519ef3cf418e0a7eb1543b113a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive SA 700 & CARO 2020 Audit Report Synt — Statutory Audit Ledger",
+        "title": "Comprehensive SA 700 & CARO 2020 Audit Report Synthesis — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit reporting verification ledger (multiple) for.",
+            "caption": "Open statutory audit reporting verification ledger.",
             "title": "Day 21 Statutory Reporting Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1970000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / reporting entry (multiple) under applicable.",
+            "caption": "Record statutory adjustment / reporting entry.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 2213000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise statutory audit case study for Comprehensive.",
+            "caption": "Execute simulated enterprise statutory audit case study.",
             "title": "Day 21 Statutory Reporting Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 2213000,

@@ -8,7 +8,7 @@
       "codeHash": "78ea2690a1ba94f71626d9a01f402802d670fba0c5ff315a435f7d61bab28a4d",
       "spec": {
         "template": "bars",
-        "title": "Autoregressive Processes (AR(p)): Firs... \u2014 Temporal Evaluation",
+        "title": "Autoregressive Processes (AR(p)): First-Order Memory, Persistence — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "0543a5b0e35349394989c5266f8786da3f4361d7836802302704f5cde1e94d26",
       "spec": {
         "template": "bars",
-        "title": "Moving Average Processes (MA(q)): Fini... \u2014 Temporal Evaluation",
+        "title": "Moving Average Processes (MA(q)): Finite Shock Memory, Invertibility — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "7b2d763726d5fe2372011d8f0149320e7377a025e03956a28c0b1efb7251f974",
       "spec": {
         "template": "bars",
-        "title": "Autocorrelation Function (ACF) Mechani... \u2014 Temporal Evaluation",
+        "title": "Autocorrelation Function (ACF) Mechanics: Geometric Decay vs Sharp — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "deebb1f5cf18299ce1ba2acc99e09cd78f1f488f8c71dc5b37414e0f03794131",
       "spec": {
         "template": "bars",
-        "title": "Partial Autocorrelation Function (PACF... \u2014 Temporal Evaluation",
+        "title": "Partial Autocorrelation Function (PACF) Mechanics: Yule-Walker — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "7d1e172444b95c3ef8f42681c1f59ebf2162784ba503df626bb96b65a5e31c05",
       "spec": {
         "template": "bars",
-        "title": "The Complete Box-Jenkins Identificatio... \u2014 Temporal Evaluation",
+        "title": "The Complete Box-Jenkins Identification Protocol & Diagnostic — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",

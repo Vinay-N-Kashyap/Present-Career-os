@@ -10,11 +10,11 @@
       "codeHash": "751be4873d8ffee6825f07c436bb80a5f7c40f3cac31de49577ff9e8b0ec1589",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Derivative Matrix: Plain Vanilla Swaps... — General Ledger Verification",
+        "title": "The Derivative Matrix: Plain Vanilla — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Derivative Matrix.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 84500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 101400,
@@ -139,11 +139,11 @@
       "codeHash": "407a3d299ad4867b15dd26b9b88cb808acfa24b9ae8d7008067b50106a42df88",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Black-Scholes-Merton & Options Greeks: Del... — General Ledger Verification",
+        "title": "Black-Scholes-Merton & Options Greeks: Delta, Gamma, Vega, Theta — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 85750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 102900,
@@ -268,11 +268,11 @@
       "codeHash": "5913def355e8aeb28026287fcb1a00d83a144334084a9e9e067ae6223de3eb8b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "FX Hedging: Cross-Currency Basis Swaps, Co... — General Ledger Verification",
+        "title": "FX Hedging: Cross-Currency Basis Swaps — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for FX Hedging.",
+            "caption": "Open primary facility debit entry for FX Hedging.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 87000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 104400,
@@ -397,11 +397,11 @@
       "codeHash": "3e5941dcde82e649485e12e95a5d100ed1bc4d17307dccf140ae69568fc01dfc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Structured Notes & Exotics: Principal Prot... — General Ledger Verification",
+        "title": "Structured Notes & Exotics: Principal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Structured.",
+            "caption": "Open primary facility debit entry for Structured Notes & Exotics.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 88250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 105900,
@@ -526,11 +526,11 @@
       "codeHash": "d45ff815f44112455a45fc3bd040058f93756ef4943beac249d71225159494e4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "ISDA Master Agreement Governance: Credit S... — General Ledger Verification",
+        "title": "ISDA Master Agreement Governance: Credit — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for ISDA.",
+            "caption": "Open primary facility debit entry for ISDA Master Agreement Governance.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 89500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 107400,

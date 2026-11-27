@@ -8,7 +8,7 @@
       "codeHash": "221bf30b494af8a997fb17daf04da9ab85c456ab11482fbad4ab14d1f0d148e8",
       "spec": {
         "template": "funnel",
-        "title": "FEMA 1999 Statutory Architecture: Curr... — Treasury Risk Operations",
+        "title": "FEMA 1999 Statutory Architecture: Current Account (Section 5) — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "79aa278bfae1f82076e8d9fd21d8931a0953cb2f303d7139f42acf32974fce4b",
       "spec": {
         "template": "funnel",
-        "title": "Liberalised Remittance Scheme (LRS): U... — Treasury Risk Operations",
+        "title": "Liberalised Remittance Scheme (LRS): USD 250,000 Ceiling, Purpose — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "cc36472423d812664ecf442ac0bb2f1149f3a578f9d1d04d80c1887ff3da435e",
       "spec": {
         "template": "funnel",
-        "title": "Overseas Direct Investment (ODI) & Ove... — Treasury Risk Operations",
+        "title": "Overseas Direct Investment (ODI) & Overseas Portfolio Investment — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "b79b7248f698d7334451ebd6035cb6b946bded804ff7f572629ee2736d3c45ad",
       "spec": {
         "template": "funnel",
-        "title": "External Commercial Borrowings (ECB) &... — Treasury Risk Operations",
+        "title": "External Commercial Borrowings (ECB) & Trade Credits: Automatic — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "0b03830598d8b37a1be1e3bfff2024474f941506b59119c6e53bb673a8c901b7",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise FEMA Regulatory Comp... — Treasury Risk Operations",
+        "title": "Master Enterprise FEMA Regulatory Compliance, FIRMS Portal & Section — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

@@ -10,7 +10,7 @@
       "codeHash": "b3a220d3ce479ed850e0dd8dbd6693f1dbf1eeee34fc5cfdf78398277e809eca",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 1: Cognitive Multi-Agent Swarms &... — Enterprise AI Decision Graph",
+        "title": "Pillar 1: Cognitive Multi-Agent Swarms — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -134,7 +134,7 @@
       "codeHash": "65a29a5ef7b5f83af2fbf690aa9b4589664507adb11a52c02a71b91bec911fab",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 2: Medallion Lakehouse Data Linea... — Enterprise AI Decision Graph",
+        "title": "Pillar 2: Medallion Lakehouse Data — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -258,7 +258,7 @@
       "codeHash": "6e3e4f53aa36771899148ba6eac0ad787793397d1cb4f1f7c412d327e6be8335",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 3: Zero-Trust AI Security, Advers... — Enterprise AI Decision Graph",
+        "title": "Pillar 3: Zero-Trust AI Security — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -382,7 +382,7 @@
       "codeHash": "c07907d416068a47552f98ed491a390bfe57d1a2479aa4667ab24aa3de1ddfce",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 4: Closed-Loop Autonomous Supply ... — Enterprise AI Decision Graph",
+        "title": "Pillar 4: Closed-Loop Autonomous — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -506,7 +506,7 @@
       "codeHash": "5fa07d1a3c3bdaa41ca14fcabca184c60303eb43d6d59497f4a1d685b158af02",
       "spec": {
         "template": "tree-graph",
-        "title": "Grand Synthesis & Executive Certificatio... — Enterprise AI Decision Graph",
+        "title": "Grand Synthesis & Executive Certification: Master Fellow — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",

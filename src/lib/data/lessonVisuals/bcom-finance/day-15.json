@@ -10,11 +10,11 @@
       "codeHash": "3d23eaa07792bd8b13d59dec029553bfd762d10053f5335c16834cb4de748355",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise WACC & Multi-Period DCF Master ... — General Ledger Verification",
+        "title": "Enterprise WACC & Multi-Period DCF Master Synthesis — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise WACC.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 77500,
@@ -139,11 +139,11 @@
       "codeHash": "a97c994a27378721771341e7eb3cb5e33d5e7a3059aa7e0bb141c70cb6bbfdf7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Equipment Replacement & Equivalent... — General Ledger Verification",
+        "title": "Capital Equipment Replacement & Equivalent Annual Cost (EAC) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capital.",
+            "caption": "Open primary facility debit entry for Capital Equipment Replacement.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 78750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 15 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 94500,
@@ -268,11 +268,11 @@
       "codeHash": "9304bb2005bd53a2affd7251fbae6d4a2255eee07853decf2d61681396bde31d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "EBIT-EPS Indifference Point & Financial Fi... — General Ledger Verification",
+        "title": "EBIT-EPS Indifference Point & Financial Financing Plans — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for EBIT-EPS.",
+            "caption": "Open primary facility debit entry for EBIT-EPS Indifference Point.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 80000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 15 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 96000,
@@ -397,11 +397,11 @@
       "codeHash": "eaef24fbf8c08f9f58dd40d79d7f79b7e748f15633738c2397da5165b061d822",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multi-Project Capital Rationing Matrix & B... — General Ledger Verification",
+        "title": "Multi-Project Capital Rationing Matrix & Boundary Analysis — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Multi-Project.",
+            "caption": "Open primary facility debit entry for Multi-Project Capital Rationing Matrix.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 81250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 15 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 97500,
@@ -526,11 +526,11 @@
       "codeHash": "1ea5320ea9960fd38890fbd875b938fe127752a6ae9b4f3a8aa27d08c9f5fd73",
       "spec": {
         "template": "ledger-sheet",
-        "title": "⭐ Milestone 3 Capstone: Integrated Capital... — General Ledger Verification",
+        "title": "⭐ Milestone 3 Capstone: Integrated — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for ⭐.",
+            "caption": "Open primary facility debit entry for ⭐ Milestone 3 Capstone.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 82500,

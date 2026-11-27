@@ -8,7 +8,7 @@
       "codeHash": "f0effd81dcec9e9becd52c2db4c2326eaa7e2a0686f9f8c8f8e10060de0b6d1d",
       "spec": {
         "template": "funnel",
-        "title": "Commission Gaming Topology: Multi-Y... - RevOps Funnel",
+        "title": "Commission Gaming Topology: Multi-Year TCV Distortions vs Annual - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "447d0b9379b0f60c5167210334043e8a46677a844b51cc176e5081ec050b8ff3",
       "spec": {
         "template": "funnel",
-        "title": "Gross Margin Floors & Uncapped Acce... - RevOps Funnel",
+        "title": "Gross Margin Floors & Uncapped Accelerator Runaway Mathematics - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "c0eff1a1b2982a9e5f2f53018e49f2cf4def241ac702630a271d414b9c44d50d",
       "spec": {
         "template": "funnel",
-        "title": "Cash-Collection Milestones, Payment... - RevOps Funnel",
+        "title": "Cash-Collection Milestones, Payment Gates & 90-Day Clawback - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "3b4c3cdacb593ef2109ead022450e21ea0159350a8421af27c4c4d78fa5fb2ea",
       "spec": {
         "template": "funnel",
-        "title": "Delegated Authority Matrices & Deal... - RevOps Funnel",
+        "title": "Delegated Authority Matrices & Deal Desk Concession Auditing - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "239f27b25f635509a7f74b82d1b328c7a123e9b8d09b02c20d463e6a8cb81060",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Complet... - RevOps Funnel",
+        "title": "Full Python Implementation: Complete Margin-Gated Incentive - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

@@ -10,7 +10,7 @@
       "codeHash": "082ad8dada04a47ed051bce7c156da0651369dcc4446c078dae341b7536a4b69",
       "spec": {
         "template": "tree-graph",
-        "title": "Sovereign AI Infrastructure Architecture: Air... — Enterprise AI Decision Graph",
+        "title": "Sovereign AI Infrastructure Architecture: Air — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Sovereign AI Infrastructure Arc...",
+            "caption": "Ingest enterprise Context Query for Sovereign AI Infrastructure Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Sovereign AI Infrastructure Architecture: Air... — Enterprise AI Decision Graph",
+        "title": "Sovereign AI Infrastructure Architecture: Air — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Sovereign AI Infrastructure Arc...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "ed0f6d9be975994f917282f2209c9f7d0dff1e5cafb286bf692205045e6d4067",
       "spec": {
         "template": "tree-graph",
-        "title": "Confidential Computing & Hardware Security Mo... — Enterprise AI Decision Graph",
+        "title": "Confidential Computing & Hardware Security Modules (HSM): Enclaves — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Confidential Computing & Hardwa...",
+            "caption": "Ingest enterprise Context Query for Confidential Computing.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Confidential Computing & Hardware Security Mo... — Enterprise AI Decision Graph",
+        "title": "Confidential Computing & Hardware Security Modules (HSM): Enclaves — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Confidential Computing & Hardwa...",
+            "caption": "Step 1: Ingest enterprise Context Query for Confidential Computing.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "af65976faf75c2c8ab42cf705a89f87dd40299c9b4d4a1399a5d711f6809f344",
       "spec": {
         "template": "tree-graph",
-        "title": "Local Vector Databases & Encrypted Knowledge ... — Enterprise AI Decision Graph",
+        "title": "Local Vector Databases & Encrypted Knowledge Graphs: On-Premise — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Local Vector Databases & Encryp...",
+            "caption": "Ingest enterprise Context Query for Local Vector Databases.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Local Vector Databases & Encrypted Knowledge ... — Enterprise AI Decision Graph",
+        "title": "Local Vector Databases & Encrypted Knowledge Graphs: On-Premise — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Local Vector Databases & Encryp...",
+            "caption": "Step 1: Ingest enterprise Context Query for Local Vector Databases.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "19c166a6e3fe1208b141ec96e6ef9481e5fb702c3ae40de6c5a808a22bdb020b",
       "spec": {
         "template": "tree-graph",
-        "title": "Secure Model Weight Decryption & Memory Prote... — Enterprise AI Decision Graph",
+        "title": "Secure Model Weight Decryption & Memory Protection: Zero-Leakage — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Secure Model Weight Decryption ...",
+            "caption": "Ingest enterprise Context Query for Secure Model Weight Decryption.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Secure Model Weight Decryption & Memory Prote... — Enterprise AI Decision Graph",
+        "title": "Secure Model Weight Decryption & Memory Protection: Zero-Leakage — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Secure Model Weight Decryption ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Secure Model Weight Decryption.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "095df957ef3dc972937fea8e963e2f9ffa9e2453e04345be1edefa7b525014b4",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Air-Gapped... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Air-Gapped... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

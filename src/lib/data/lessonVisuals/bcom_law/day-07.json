@@ -10,11 +10,11 @@
       "codeHash": "a48f6866957181fcb20a72d36508e61aa32577827f50be104b68db4f738b7fab",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trademark Distinctiveness Spectrum & The A... — General Ledger Verification",
+        "title": "Trademark Distinctiveness Spectrum & The Abercrombie Hierarchy — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Trademark.",
+            "caption": "Open primary facility debit entry for Trademark Distinctiveness Spectrum.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59400,
@@ -139,11 +139,11 @@
       "codeHash": "d28b5082c8822509866a288472874ef3d0e167a6f2c49c1a03eec424f659cf8f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Likelihood of Confusion & The Polaroid Mul... — General Ledger Verification",
+        "title": "Likelihood of Confusion & The Polaroid Multi-Factor Test — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Likelihood of.",
+            "caption": "Open primary facility debit entry for Likelihood of Confusion.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 50750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 60900,
@@ -268,11 +268,11 @@
       "codeHash": "1c1eefdc798bfeda8c2d439ce6bc0a97df3b15137a4f38c4ed447f4ceb2db5ef",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trademark Dilution, Blurring, Tarnishment ... — General Ledger Verification",
+        "title": "Trademark Dilution, Blurring, Tarnishment & Anti-Cybersquatting (ACPA) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Trademark.",
+            "caption": "Open primary facility debit entry for Trademark Dilution, Blurring, Tarnishment.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52000,
@@ -397,11 +397,11 @@
       "codeHash": "bb678ecbc314292316f9b4f81409e9eb02d4a79292bb9c24242aefb980b4d5bb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "International Trademark Strategy: The Madr... — General Ledger Verification",
+        "title": "International Trademark Strategy — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for International.",
+            "caption": "Open primary facility debit entry for International Trademark Strategy.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63900,
@@ -526,11 +526,11 @@
       "codeHash": "c8b0af4d4d25e7300905e8dfef8ce4a09386c69f8109ebd633b445dcb33cdb6d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trade Dress Protection, Product Design vs ... — General Ledger Verification",
+        "title": "Trade Dress Protection, Product Design vs Packaging — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Trade.",
+            "caption": "Open primary facility debit entry for Trade Dress Protection.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65400,

@@ -10,7 +10,7 @@
       "codeHash": "5e4b967d5590a3ae8633de55bb661e6a7fb3f9000ef137c4f68da389d6a32ebe",
       "spec": {
         "template": "tree-graph",
-        "title": "Cognitive Divergence & Conflict Emergence in ... — Enterprise AI Decision Graph",
+        "title": "Cognitive Divergence & Conflict Emergence in Distributed Multi-Agent — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Cognitive Divergence & Conflict...",
+            "caption": "Ingest enterprise Context Query for Cognitive Divergence.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Cognitive Divergence & Conflict Emergence in ... — Enterprise AI Decision Graph",
+        "title": "Cognitive Divergence & Conflict Emergence in Distributed Multi-Agent — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Cognitive Divergence & Conflict...",
+            "caption": "Step 1: Ingest enterprise Context Query for Cognitive Divergence.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "491463c09f8a43c51dc5eaf947c4535f6660824893c326f6f09bb257348ea3d8",
       "spec": {
         "template": "tree-graph",
-        "title": "Voting Topologies: Majority, Borda Count, Qua... — Enterprise AI Decision Graph",
+        "title": "Voting Topologies: Majority, Borda Count — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Voting Topologies: Majority, Bo...",
+            "caption": "Ingest enterprise Context Query for Voting Topologies: Majority",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Voting Topologies: Majority, Borda Count, Qua... — Enterprise AI Decision Graph",
+        "title": "Voting Topologies: Majority, Borda Count — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Voting Topologies: Majority, Bo...",
+            "caption": "Step 1: Ingest enterprise Context Query for Voting Topologies: Majority",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "c6d1cf9b2262b773fb720e9b74dcb08f01b028fc662aff87639de0a75eee60c2",
       "spec": {
         "template": "tree-graph",
-        "title": "Dialectical Debate Protocols & Adversarial Cr... — Enterprise AI Decision Graph",
+        "title": "Dialectical Debate Protocols & Adversarial Cross-Examination between — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Dialectical Debate Protocols & ...",
+            "caption": "Ingest enterprise Context Query for Dialectical Debate Protocols.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Dialectical Debate Protocols & Adversarial Cr... — Enterprise AI Decision Graph",
+        "title": "Dialectical Debate Protocols & Adversarial Cross-Examination between — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Dialectical Debate Protocols & ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Dialectical Debate Protocols.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "b3487afb8c310a00ea2467c7eb878fda62ca087a5b5107c69c02603822d770bc",
       "spec": {
         "template": "tree-graph",
-        "title": "Byzantine Fault Tolerance & Sybil Resistance ... — Enterprise AI Decision Graph",
+        "title": "Byzantine Fault Tolerance & Sybil Resistance in Autonomous Cognitive — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Byzantine Fault Tolerance & Syb...",
+            "caption": "Ingest enterprise Context Query for Byzantine Fault Tolerance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Byzantine Fault Tolerance & Sybil Resistance ... — Enterprise AI Decision Graph",
+        "title": "Byzantine Fault Tolerance & Sybil Resistance in Autonomous Cognitive — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Byzantine Fault Tolerance & Syb...",
+            "caption": "Step 1: Ingest enterprise Context Query for Byzantine Fault Tolerance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "8b44c6d145caaee8223885154a511822dafaa5ad805eea9b756b8d26a5dccccb",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a Fault-Toler... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a Fault-Toler... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

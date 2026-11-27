@@ -260,7 +260,7 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
         courseId: course.id,
         courseTitle: cleanCourseTitle,
         title: `Phase ${moduleCount}: ${cleanCourseTitle} — ${milestoneTheme}`,
-        desc: `${isMixedGoal ? 'Fused Goal Trajectory: ' : ''}${milestoneTheme} covering ${chunk.length} calibrated quests${questRangeSummary}. Tailored for ${targetRole}.`,
+        desc: `${milestoneTheme} — ${chunk.length} focused quests for ${targetRole}.`,
         difficulty: isHighKnowledge ? 'Advanced' : isLowKnowledge ? 'Foundational' : 'Intermediate',
         estimatedWeeks: Math.max(1, Math.ceil(chunk.length / (effectivePace * 7))),
         personalizedPaceTag: allocationsTag || (isMixedGoal ? `Target Goal: ${targetRole}` : mindsetTag),

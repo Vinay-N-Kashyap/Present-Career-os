@@ -10,7 +10,7 @@
       "codeHash": "653f078a3f78e32e2689064be74175417705d7332a66cc86400bcd351c07d3b0",
       "spec": {
         "template": "tree-graph",
-        "title": "Cognitive Sourcing & AI Supplier Risk Sc... — Enterprise AI Decision Graph",
+        "title": "Cognitive Sourcing & AI Supplier Risk Scoring (Financial Health, ESG, Geopolitical Volatility) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -134,7 +134,7 @@
       "codeHash": "57f5d61823cbb7b2f970153e5d1e64244b707a61f680f4cabd89e40fefad80b7",
       "spec": {
         "template": "tree-graph",
-        "title": "Automated Contract Analysis: LLM Clause ... — Enterprise AI Decision Graph",
+        "title": "Automated Contract Analysis: LLM Clause Extraction & Commercial Risk Auditing — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -258,7 +258,7 @@
       "codeHash": "bfd5a56334e47e9186f7509383510cd75f157efcb546cdc1c721152d4abab53a",
       "spec": {
         "template": "tree-graph",
-        "title": "Autonomous Multi-Agent Negotiation & Dyn... — Enterprise AI Decision Graph",
+        "title": "Autonomous Multi-Agent Negotiation & Dynamic Procurement Auction — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -302,7 +302,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Autonomous Multi-Agent Negotiation &.",
+            "caption": "Ingest enterprise Context Query for Autonomous Multi-Agent Negotiation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -382,7 +382,7 @@
       "codeHash": "98238b4a64abd7ea13b4ee69eaa41f4d2a5f8695e6a452f359144ea7f292a481",
       "spec": {
         "template": "tree-graph",
-        "title": "Procure-to-Pay (P2P) Invoice Matching, 3... — Enterprise AI Decision Graph",
+        "title": "Procure-to-Pay (P2P) Invoice Matching, 3-Way Reconciliation & Fraud — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -506,7 +506,7 @@
       "codeHash": "694f78375d31e04854e113b33b08d7acf5daf344132893c32e6f3c172eae8149",
       "spec": {
         "template": "tree-graph",
-        "title": "Autonomous Cognitive Procurement Control... — Enterprise AI Decision Graph",
+        "title": "Autonomous Cognitive Procurement Control Tower: Spend Analytics — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -550,7 +550,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Autonomous Cognitive Procurement.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

@@ -10,11 +10,11 @@
       "codeHash": "a8be904a77960500ec8d3eaab6dd915e58b98461ac293f61074e7c00266c694c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multinational Corporate Treasury Architect... — General Ledger Verification",
+        "title": "Multinational Corporate Treasury Architecture & Cash Concentration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Multinational.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 116000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 139200,
@@ -139,11 +139,11 @@
       "codeHash": "85dd0effb7c535f1d179271fc5f0ebc0c55688e1c0745698b1a4702a32437507",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Notional Cash Pooling & BEPS ... — General Ledger Verification",
+        "title": "Cross-Border Notional Cash Pooling & BEPS Regulatory Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cross-Border.",
+            "caption": "Open primary facility debit entry for Cross-Border Notional Cash Pooling.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 117250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 140700,
@@ -268,11 +268,11 @@
       "codeHash": "ffb7bf3d7cf32efdb9af147037618e18f3d728248248008e346be8b241fbeeba",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Automated Multi-Currency FX Sweeping & Tra... — General Ledger Verification",
+        "title": "Automated Multi-Currency FX Sweeping & Transaction Exposure Hedging — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Automated.",
+            "caption": "Open primary facility debit entry for Automated Multi-Currency FX Sweeping.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 118500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 142200,
@@ -397,11 +397,11 @@
       "codeHash": "0a2534c922b7a8370ba9271065fdc8d9be976b0681bc6a4f6386aa4cbae7ab56",
       "spec": {
         "template": "ledger-sheet",
-        "title": "In-House Banking (IHB), Multilateral Netti... — General Ledger Verification",
+        "title": "In-House Banking (IHB), Multilateral Netting & POBO/COBO Structures — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for In-House.",
+            "caption": "Open primary facility debit entry for In-House Banking.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143700,
@@ -526,11 +526,11 @@
       "codeHash": "c0253d28aad3fb696e98d8bd1222a79e7b143a6280ebfcc775e325718dc42506",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Treasury Management Systems (TMS), ISO 200... — General Ledger Verification",
+        "title": "Treasury Management Systems (TMS), ISO 20022 camt.053 & Real-Time — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Treasury.",
+            "caption": "Open primary facility debit entry for Treasury Management Systems.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 121000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 145200,

@@ -8,7 +8,7 @@
       "codeHash": "3263e25a53a7e3929ef8d9bfbd53ad80c901ce6db4157ee2524289a4bd3fdde6",
       "spec": {
         "template": "funnel",
-        "title": "The Statutory Management Representatio... — Assurance Review",
+        "title": "The Statutory Management Representation Letter under PCAOB AS 2805 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "b62c8f183acd1d1ad328383ee82f884af21dcf1e3fa63d066511da56d82fefae",
       "spec": {
         "template": "funnel",
-        "title": "Mandatory Tailored Representations & S... — Assurance Review",
+        "title": "Mandatory Tailored Representations & Summary of Unadjusted — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "9a8cf5e7fba3efcd6fb6e7ad36ff21a31d4ecd23385853ff9712166e828db68a",
       "spec": {
         "template": "funnel",
-        "title": "Management Refusal to Furnish Written ... — Assurance Review",
+        "title": "Management Refusal to Furnish Written Representations: Scope — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "6842d32a7483c18ad8205a2585ba01f688a84e7f95382ca8516d7e84b6e3f366",
       "spec": {
         "template": "funnel",
-        "title": "Mandatory Audit Committee Communicatio... — Assurance Review",
+        "title": "Mandatory Audit Committee Communications under PCAOB AS 1301 & ISA 260 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "5f4ac6fb185d002d872bef25bb73cebe1fca176f17440693c38da0c023508319",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Governance Communication... — Assurance Review",
+        "title": "Comprehensive Governance Communications & Representation Defense — Assurance Review",
         "steps": [
           {
             "at": "intro",

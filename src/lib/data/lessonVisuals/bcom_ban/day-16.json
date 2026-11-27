@@ -10,11 +10,11 @@
       "codeHash": "9d1b08b5e8b7b75cf5aaf494955dc433e7064572dbd970884dd07cc14cd2aa9a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Family Office Architecture, Asset Allocati... — General Ledger Verification",
+        "title": "Family Office Architecture, Asset Allocation Hurdle Rates & Fiduciary — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Family Office.",
+            "caption": "Open primary facility debit entry for Family Office Architecture.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 81000,
@@ -139,11 +139,11 @@
       "codeHash": "91ececcbb827696719b3be9c14cd432e5ab23d24ac906322aeb40f5daeb4aed2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Markowitz Efficient Frontier: Mean-Var... — General Ledger Verification",
+        "title": "The Markowitz Efficient Frontier: Mean-Variance Optimization, Sharpe — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Markowitz.",
+            "caption": "Open primary facility debit entry for The Markowitz Efficient Frontier.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 82250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 98700,
@@ -268,11 +268,11 @@
       "codeHash": "043b8ee5f434734f4f1491db79ce3b322d1c87ef9451e32a72d924ac7f77cb00",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Private Wealth Taxation: Generation-Skippi... — General Ledger Verification",
+        "title": "Private Wealth Taxation: Generation-Skipping Transfer, Dynasty Trusts — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Private.",
+            "caption": "Open primary facility debit entry for Private Wealth Taxation.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 83500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 100200,
@@ -397,11 +397,11 @@
       "codeHash": "50d1ceb543f88cfd2d56f32ccf7768de982b3d415f05183f8b0f826cc051eb16",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Discretionary Portfolio Mandate: Monte Car... — General Ledger Verification",
+        "title": "Discretionary Portfolio Mandate: Monte — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Discretionary.",
+            "caption": "Open primary facility debit entry for Discretionary Portfolio Mandate.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 84750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 101700,
@@ -526,11 +526,11 @@
       "codeHash": "e48b19df276a8808d5b61de9c7f78889e3010af555e3096752ee1fc4997e3307",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Governance & Regulatory Compliance: SEC Fo... — General Ledger Verification",
+        "title": "Governance & Regulatory Compliance: SEC Form ADV, FINRA Rule 2111 Suitability vs Regulation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Governance &.",
+            "caption": "Open primary facility debit entry for Governance & Regulatory Compliance.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 86000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 103200,

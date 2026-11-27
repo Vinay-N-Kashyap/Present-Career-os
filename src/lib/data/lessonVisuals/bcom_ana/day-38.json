@@ -8,7 +8,7 @@
       "codeHash": "1ff7ccf8c8f22afc65694852dc222b47f915f5577e66bf4ec157113d6e79de72",
       "spec": {
         "template": "bars",
-        "title": "Unsupervised Feedback Extraction & Gen... - Learning Evaluation",
+        "title": "Unsupervised Feedback Extraction & Generative Dirichlet Distribution - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "c8ff734d51f84abeabe8a2532e3231ade7a278adf3991bfbdeb7a0962b065d9a",
       "spec": {
         "template": "bars",
-        "title": "Latent Dirichlet Allocation (LDA) & Co... - Learning Evaluation",
+        "title": "Latent Dirichlet Allocation (LDA) & Collapsed Gibbs Sampling Mechanics - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "10448ebe943c2526cd2a8ac634609afe7183a772f43576dd32a818b34acc3595",
       "spec": {
         "template": "bars",
-        "title": "Quantitative Semantic Topic Coherence ... - Learning Evaluation",
+        "title": "Quantitative Semantic Topic Coherence Metrics (C_v, U_Mass) & Optimal - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "01e6f6a1d458da5ff3eba5bbf126e3fc4b1ca9d13ab81738f0f40f1bdd15bb86",
       "spec": {
         "template": "bars",
-        "title": "Dense Semantic Clustering with Transfo... - Learning Evaluation",
+        "title": "Dense Semantic Clustering with Transformers & Class-Based TF-IDF (BERTopic) - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "f365134cccfa8a842a9dbe6115af79afbd8336912a1d815c4a06a1014ac3982c",
       "spec": {
         "template": "bars",
-        "title": "Real-Time Topic Drift Detection, Emerg... - Learning Evaluation",
+        "title": "Real-Time Topic Drift Detection, Emerging Anomaly Outages & VoC - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

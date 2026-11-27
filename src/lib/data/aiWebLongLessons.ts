@@ -14014,3 +14014,10 @@ for (const _lesson of AI_WEB_LONG_LESSONS as import('./longLessonTypes').LongLes
     if (_p.projectStep && (!_lesson.projectStep || !_lesson.projectStep.steps?.length)) (_lesson as any).projectStep = _p.projectStep;
   }
 }
+
+// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): swap in fixed ai days 1-30 ---
+import { AI_WEB_FIXED_DAYS as _AI_WEB_FIXED_DAYS } from './aiWebLongLessonsPatches';
+for (let _i = 0; _i < AI_WEB_LONG_LESSONS.length; _i++) {
+  const _fixed = _AI_WEB_FIXED_DAYS[AI_WEB_LONG_LESSONS[_i].day];
+  if (_fixed) AI_WEB_LONG_LESSONS[_i] = _fixed;
+}
